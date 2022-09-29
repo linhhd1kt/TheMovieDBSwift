@@ -1,5 +1,5 @@
 //
-//  CredentialRepostitory.swift
+//  CredentialRespostitory.swift
 //  TheMovieDBSwift
 //
 //  Created by Ha Linh on 29/08/2022.
@@ -11,13 +11,8 @@ import Alamofire
 import NSObject_Rx
 import RealmSwift
 
-protocol DataSource {
-    associatedtype T: Decodable & Identifiable
-    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<T?>
-    func save(entity: T) -> Observable<Void>
-}
 
-class CredentialRepository<L, R>: Respository where L: DataSource, L.T == Credential,
+class CredentialRespository<L, R>: Respository where L: DataSource, L.T == Credential,
                                                     R: DataSource, R.T == Credential {
     let localDataSource: L
     let remoteDataSource: R
@@ -53,4 +48,4 @@ class CredentialRepository<L, R>: Respository where L: DataSource, L.T == Creden
     }
 }
 
-extension CredentialRepository: HasDisposeBag {}
+extension CredentialRespository: HasDisposeBag {}

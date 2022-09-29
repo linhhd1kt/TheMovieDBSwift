@@ -17,8 +17,7 @@ final class CredentialRemoteDataSource: DataSource {
         return network
     }
     
-    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<T?> {
-        
+    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<T?> {        
         return network.request(target: API.createSessionWithLogin(parameters: parameters))
             .catch({ [unowned self] error in
                 if let networkError = error as? NetworkError {

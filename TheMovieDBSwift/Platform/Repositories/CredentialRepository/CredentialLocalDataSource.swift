@@ -8,18 +8,6 @@
 import Foundation
 import RxSwift
 
-//protocol CredentialRepository {
-//    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<Credential?>
-//    func save(entity: Credential) -> Observable<Void>
-//}
-
-
-protocol Respository {
-    associatedtype T: Decodable & Identifiable
-    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<T?>
-    func save(entity: T) -> Observable<Void>
-}
-
 final class CredentialLocalDataSource: DataSource {
     typealias T = Credential
     var localStorage: PersistantStorable {

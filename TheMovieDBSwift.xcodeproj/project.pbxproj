@@ -10,6 +10,9 @@
 		1FDE09D66A294E71D1ABFDF8 /* Pods_TheMovieDBSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE20518767891ADF84D2FEDB /* Pods_TheMovieDBSwiftTests.framework */; };
 		87B3E14DA535EB0CB1770C88 /* Pods_TheMovieDBSwift_TheMovieDBSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AC03D307B246C0DFB8C26B /* Pods_TheMovieDBSwift_TheMovieDBSwiftUITests.framework */; };
 		DC28BCE828E1952C000D4FF0 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCE728E1952C000D4FF0 /* ResponseParser.swift */; };
+		DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCED28E559DC000D4FF0 /* Respository.swift */; };
+		DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCEF28E55A15000D4FF0 /* DataSource.swift */; };
+		DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */; };
 		DC6E408428B75CAD00429771 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E408328B75CAD00429771 /* SceneDelegate.swift */; };
 		DC6E409928B75CAE00429771 /* TheMovieDBSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E409828B75CAE00429771 /* TheMovieDBSwiftTests.swift */; };
 		DC6E40A328B75CAE00429771 /* TheMovieDBSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E40A228B75CAE00429771 /* TheMovieDBSwiftUITests.swift */; };
@@ -51,8 +54,7 @@
 		DCB246EB28CB17D400873CF2 /* DefaultAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB246EA28CB17D400873CF2 /* DefaultAuthUseCase.swift */; };
 		DCB246EF28CB19E800873CF2 /* RxSwift+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB246EE28CB19E800873CF2 /* RxSwift+Ex.swift */; };
 		DCB246F128CB1BB000873CF2 /* PersistantStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB246F028CB1BB000873CF2 /* PersistantStorage.swift */; };
-		DCCFEC8A28BC5CED00019DBB /* CredentialRepostitory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC8928BC5CED00019DBB /* CredentialRepostitory.swift */; };
-		DCCFEC8C28BC5F8100019DBB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC8B28BC5F8100019DBB /* Repository.swift */; };
+		DCCFEC8A28BC5CED00019DBB /* CredentialRespostitory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC8928BC5CED00019DBB /* CredentialRespostitory.swift */; };
 		DCCFEC8F28BC661600019DBB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC8E28BC661600019DBB /* API.swift */; };
 		DCCFEC9228BC67DB00019DBB /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC9128BC67DB00019DBB /* Networking.swift */; };
 		DCCFEC9528BC699900019DBB /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DCCFEC9428BC699900019DBB /* Moya */; };
@@ -104,6 +106,9 @@
 		D8759C38EFF84C944041C508 /* Pods-TheMovieDBSwift-TheMovieDBSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDBSwift-TheMovieDBSwiftUITests.release.xcconfig"; path = "Target Support Files/Pods-TheMovieDBSwift-TheMovieDBSwiftUITests/Pods-TheMovieDBSwift-TheMovieDBSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DC28BCE328E15AF2000D4FF0 /* RxSwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC28BCE728E1952C000D4FF0 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
+		DC28BCED28E559DC000D4FF0 /* Respository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respository.swift; sourceTree = "<group>"; };
+		DC28BCEF28E55A15000D4FF0 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesStorage.swift; sourceTree = "<group>"; };
 		DC6E407E28B75CAD00429771 /* TheMovieDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E408328B75CAD00429771 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DC6E409428B75CAE00429771 /* TheMovieDBSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDBSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,8 +145,7 @@
 		DCB246EA28CB17D400873CF2 /* DefaultAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthUseCase.swift; sourceTree = "<group>"; };
 		DCB246EE28CB19E800873CF2 /* RxSwift+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Ex.swift"; sourceTree = "<group>"; };
 		DCB246F028CB1BB000873CF2 /* PersistantStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantStorage.swift; sourceTree = "<group>"; };
-		DCCFEC8928BC5CED00019DBB /* CredentialRepostitory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialRepostitory.swift; sourceTree = "<group>"; };
-		DCCFEC8B28BC5F8100019DBB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		DCCFEC8928BC5CED00019DBB /* CredentialRespostitory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialRespostitory.swift; sourceTree = "<group>"; };
 		DCCFEC8E28BC661600019DBB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DCCFEC9128BC67DB00019DBB /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		DCCFEC9A28BCA54200019DBB /* CredentialRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -222,6 +226,23 @@
 			path = ReponseParser;
 			sourceTree = "<group>";
 		};
+		DC28BCEC28E559CC000D4FF0 /* Respository */ = {
+			isa = PBXGroup;
+			children = (
+				DC28BCED28E559DC000D4FF0 /* Respository.swift */,
+				DC28BCEF28E55A15000D4FF0 /* DataSource.swift */,
+			);
+			path = Respository;
+			sourceTree = "<group>";
+		};
+		DC28BCF128E55B1E000D4FF0 /* UserPreferencesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */,
+			);
+			path = UserPreferencesStorage;
+			sourceTree = "<group>";
+		};
 		DC6E407528B75CAD00429771 = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +311,7 @@
 		DC6E40CA28B8638700429771 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				DC28BCEC28E559CC000D4FF0 /* Respository */,
 				DC6E40CB28B8638700429771 /* UseCases */,
 				DC6E40D028B8638700429771 /* Entries */,
 			);
@@ -330,7 +352,6 @@
 		DC6E40EC28B8638700429771 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				DCCFEC8B28BC5F8100019DBB /* Repository.swift */,
 				DCCFEC8828BC5CC800019DBB /* CredentialRepository */,
 			);
 			path = Repositories;
@@ -359,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				DC6E418428B87FA000429771 /* ServiceFacade.swift */,
+				DC28BCF128E55B1E000D4FF0 /* UserPreferencesStorage */,
 				DC6E418B28B8817300429771 /* Coordinator */,
 				DC85BC1028BCB96F00187748 /* PersistantStorage */,
 				DC28BCE628E1950F000D4FF0 /* ReponseParser */,
@@ -464,9 +486,9 @@
 		DCCFEC8828BC5CC800019DBB /* CredentialRepository */ = {
 			isa = PBXGroup;
 			children = (
-				DCCFEC8928BC5CED00019DBB /* CredentialRepostitory.swift */,
-				DCCFEC9A28BCA54200019DBB /* CredentialRemoteDataSource.swift */,
+				DCCFEC8928BC5CED00019DBB /* CredentialRespostitory.swift */,
 				DCCFEC9C28BCA55000019DBB /* CredentialLocalDataSource.swift */,
+				DCCFEC9A28BCA54200019DBB /* CredentialRemoteDataSource.swift */,
 			);
 			path = CredentialRepository;
 			sourceTree = "<group>";
@@ -715,12 +737,11 @@
 				DCCFEC9B28BCA54200019DBB /* CredentialRemoteDataSource.swift in Sources */,
 				DC6E417028B8638800429771 /* LoginViewModel.swift in Sources */,
 				DCAE4C3B28D0779300301B2C /* ActivityIndicator.swift in Sources */,
-				DCCFEC8A28BC5CED00019DBB /* CredentialRepostitory.swift in Sources */,
+				DCCFEC8A28BC5CED00019DBB /* CredentialRespostitory.swift in Sources */,
 				DCA7DA7728DC52B70013996C /* ViewController.swift in Sources */,
 				DC6E41A728B8B51B00429771 /* AuthUseCase.swift in Sources */,
 				DCCFEC9228BC67DB00019DBB /* Networking.swift in Sources */,
 				DC6E419128B8829200429771 /* MainCoordinator.swift in Sources */,
-				DCCFEC8C28BC5F8100019DBB /* Repository.swift in Sources */,
 				DC6E41A928B8B6CE00429771 /* CommonError.swift in Sources */,
 				DC6E418D28B8818700429771 /* Coordinator.swift in Sources */,
 				DC6E414F28B8638800429771 /* AppConfigurations.swift in Sources */,
@@ -732,12 +753,15 @@
 				DCA7DA7B28DD52B00013996C /* NetworkError.swift in Sources */,
 				DCA7DA7528DC0D410013996C /* ViewModel.swift in Sources */,
 				DCCFEC9D28BCA55000019DBB /* CredentialLocalDataSource.swift in Sources */,
+				DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */,
 				DC28BCE828E1952C000D4FF0 /* ResponseParser.swift in Sources */,
 				DC6E417128B8638800429771 /* LoginViewController.swift in Sources */,
 				DC6E418528B87FA000429771 /* ServiceFacade.swift in Sources */,
 				DCAE4C3828D06C8100301B2C /* ErrorTracker.swift in Sources */,
 				DC6E414E28B8638800429771 /* AppAppearance.swift in Sources */,
+				DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */,
 				DCCFEC8F28BC661600019DBB /* API.swift in Sources */,
+				DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */,
 				DCA7DA7D28DD54680013996C /* ReamlError.swift in Sources */,
 				DCB246F128CB1BB000873CF2 /* PersistantStorage.swift in Sources */,
 			);

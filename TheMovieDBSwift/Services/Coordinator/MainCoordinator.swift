@@ -20,7 +20,7 @@ class MainCoordinator: Coordinator {
     }
     
     func gotoLogin() {
-        let respository = CredentialRepository(localDataSource: CredentialLocalDataSource(),
+        let respository = CredentialRespository(localDataSource: CredentialLocalDataSource(),
                                                    remoteDataSource: CredentialRemoteDataSource())
         let useCase = DefaultAuthUseCase(respository: respository)
         let viewModel = LoginViewModel(authUseCase: useCase)
