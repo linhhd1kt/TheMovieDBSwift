@@ -1,0 +1,76 @@
+//
+//  API.swift
+//  TheMovieDBSwift
+//
+//  Created by Ha Linh on 29/08/2022.
+//
+
+import Foundation
+import Moya
+
+enum API {
+    case createRequestToken
+    case createSessionWithLogin(parameters: Dictionary<String,Any>)
+    case popular
+    case movie(movieId: String)
+    case search(query: String)
+}
+
+extension API: TargetType {
+    var baseURL: URL {
+        guard let url = URL(string: AppConfiguration().apiBaseURL) else {
+            fatalError("Base URL invalid!")
+        }
+        return url.appendingPathComponent("3")
+    }
+    
+    var path: String {
+        switch self {
+        case .createRequestToken:
+            return "/authentication/token/new"
+        case .createSessionWithLogin:
+            return "/authentication/token/validate_with_login"
+        case .popular:
+            return "movie/popular"
+        case .movie(let movieId):
+            return "movie/\(movieId)"
+        case .search:
+            return "search/movie"
+        }
+    }
+    
+    var method: Moya.Method {
+        switch self {
+        case .createSessionWithLogin:
+            return .post
+        default: return .get
+        }
+    }
+    
+    var sampleData: Data {
+        return Data()
+    }
+    
+    var task: Task {
+        switch self {
+        case .createRequestToken:
+            return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey],
+                                      encoding: URLEncoding.queryString)
+        case .createSessionWithLogin(var parameters):
+            let urlParameter: [String: Any] = ["api_key": AppConfiguration().apiKey]
+            parameters["request_token"] = "e1a4ed02b1262dd215f2a825bf28eb564d7e6c62"
+            return .requestCompositeParameters(bodyParameters: parameters,
+                                               bodyEncoding: URLEncoding.httpBody,
+                                               urlParameters: urlParameter)
+        case .popular, .movie:
+            return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey],
+                                      encoding: URLEncoding.httpBody)
+        case .search(let query):
+            return .requestParameters(parameters: ["query" : query, "api_key": AppConfiguration().apiKey], encoding: URLEncoding.queryString)
+        }
+    }
+    
+    var headers: [String : String]? {
+        return nil
+    }
+}
