@@ -1,22 +1,7 @@
-import Foundation
 import RxSwift
 import RxCocoa
-//import RxSwiftExt
 
-struct LoginInfo {
-    let username: String
-    let password: String
-}
-
-final class LoginViewModel: ViewModel {
-    struct Input {
-        let username = PublishSubject<String?>()
-        let password = PublishSubject<String?>()
-        let loginAction = PublishSubject<Void>()
-        let forgotPasswordAction = PublishSubject<Void>()
-        let registerAction = PublishSubject<Void>()
-    }
-    struct Output {}
+final class LoginViewModel: BaseViewModel {
     
     private var authUseCase: AuthUseCase
     private var coordinator: Coordinator {
@@ -36,9 +21,23 @@ final class LoginViewModel: ViewModel {
     }
 }
 
-extension LoginViewModel: ViewModelType {
+extension LoginViewModel: LoginViewModelType {
+    typealias InputType = LoginViewModelInputType
+    typealias OutputType = LoginViewModelOutputType
+
+    struct Input: LoginViewModelInputType {
+        var username = PublishSubject<String?>()
+        var password = PublishSubject<String?>()
+        var loginAction = PublishSubject<Void>()
+        var forgotPasswordAction = PublishSubject<Void>()
+        var registerAction = PublishSubject<Void>()
+    }
+    struct Output: LoginViewModelOutputType {
+        var result: Driver<Credential?>
+    }
+    
     @discardableResult
-    func transform(input: Input) -> Output {
+    func transform(input: LoginViewModelInputType) -> LoginViewModelOutputType {
         let loginAction = input.loginAction
             .withLatestFrom(Observable
                 .combineLatest(input.username.compactMap { $0 },
@@ -52,7 +51,7 @@ extension LoginViewModel: ViewModelType {
             .subscribe()
             .disposed(by: disposeBag)
         
-        return Output()
+        return Output(result: Driver.just(nil))
         
     }
     

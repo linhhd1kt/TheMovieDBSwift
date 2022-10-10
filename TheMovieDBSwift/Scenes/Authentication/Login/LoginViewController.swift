@@ -2,6 +2,9 @@ import RxSwift
 import UIKit
 import RxCocoa
 
+
+
+
 final class LoginViewController: UIViewController {
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -28,23 +31,12 @@ final class LoginViewController: UIViewController {
         viewModel.transform(input: input)
         
         viewModel.loading
-            .debug("xxx loading")
             .drive()
-            .disposed(by: disposeBag)
+            .disposed(by: disposeBag)        
         
-        viewModel.error.map { $0.localizedDescription }
-            .debug("Error XXX")
-            .do(onNext: { error in
-                print("XXX")
-                print(error)
-                print("XXX")
-            })
-            .drive()
+        viewModel.error
+            .drive(rx.error)
             .disposed(by: disposeBag)
-                
-//        output.loginResult
-//                .drive()
-//                .disposed(by: disposeBag)
                 
         usernameTextField.rx.text.bind(to: input.username).disposed(by: disposeBag)
         passwordTextField.rx.text.bind(to: input.password).disposed(by: disposeBag)
