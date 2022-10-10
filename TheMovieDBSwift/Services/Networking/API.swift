@@ -56,9 +56,8 @@ extension API: TargetType {
         case .createRequestToken:
             return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey],
                                       encoding: URLEncoding.queryString)
-        case .createSessionWithLogin(var parameters):
+        case .createSessionWithLogin(let parameters):
             let urlParameter: [String: Any] = ["api_key": AppConfiguration().apiKey]
-            parameters["request_token"] = "e1a4ed02b1262dd215f2a825bf28eb564d7e6c62"
             return .requestCompositeParameters(bodyParameters: parameters,
                                                bodyEncoding: URLEncoding.httpBody,
                                                urlParameters: urlParameter)

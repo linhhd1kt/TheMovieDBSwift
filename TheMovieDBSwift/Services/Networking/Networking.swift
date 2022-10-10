@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 import Moya
 import RxMoya
+import Alamofire
 
 protocol Networking {
     func request<T: Decodable>(target: TargetType) -> Observable<T>
@@ -45,6 +46,16 @@ class Network: Networking {
                         }
                     }
                 case .failure(let error):
+                    if let alamofireError = error.errorUserInfo["NSUnderlyingError"] as? Alamofire.AFError,
+                       let underlyingError = alamofireError.underlyingError as? NSError {
+                        if underlyingError.domain == NSURLErrorDomain {
+                            if [NSURLErrorNotConnectedToInternet, NSURLErrorTimedOut, NSURLErrorNetworkConnectionLost]
+                                .contains(underlyingError.code) {
+                                observer.onError(NetworkError.connection(message: underlyingError.localizedDescription))
+                                return
+                            }
+                        }
+                    }
                     observer.onError(NetworkError.invalidReponse(message: error.localizedDescription))
                 }
             }

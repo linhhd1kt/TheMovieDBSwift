@@ -16,22 +16,43 @@ final class CredentialRemoteDataSource: DataSource {
         }
         return network
     }
+    var userPreferencesStorage: UserPreferencesStorable {
+        guard let preferences = ServiceFacade.getService(UserPreferencesStorable.self) else {
+            preconditionFailure("User Preferences Storage service not registered!")
+        }
+        return preferences
+    }
     
-    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<T?> {        
+    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<T?> {
+        
+        var parameters = parameters
+        let storedToken: String? = userPreferencesStorage.value(for: UserPreferencesKey.requestTokenId.rawValue)
+        if let token = storedToken {
+            parameters["request_token"] = token
+        }
+
         return network.request(target: API.createSessionWithLogin(parameters: parameters))
+            .debug("CredentialRemoteDataSource get \(id ?? "") with parameter: \(parameters)")
             .catch({ [unowned self] error in
                 if let networkError = error as? NetworkError {
-                    // Invalid request token: The request token is either expired or invalid.
-                    if networkError.statusCode == 33 {
+                    // status code == 33: Invalid request token: The request token is either expired or invalid.
+                    // status code == 5: Invalid parameters: Your request parameters are incorrect.
+                    if [33, 5].contains(networkError.statusCode) {
+                        print("CredentialRemoteDataSource get \(id ?? "") with parameter: \(parameters) catch error: netowrk error with status 33")
                         return self.network.request(target: API.createRequestToken)
                     }
                 }
                 return Observable.error(error)
             })
+            .debug("CredentialRemoteDataSource get \(id ?? "") with parameter: \(parameters) catch error")
+            .do { [unowned self] credentail in
+                self.userPreferencesStorage.set(credentail?.requestToken, for: UserPreferencesKey.requestTokenId.rawValue)
+            }
+            .debug("CredentialRemoteDataSource get \(id ?? "") with parameter: \(parameters) save to user preferences")
+
     }
     
     func save(entity: T) -> Observable<Void> {
         return Observable.empty()
     }
-
 }

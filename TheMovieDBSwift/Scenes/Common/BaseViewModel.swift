@@ -15,7 +15,7 @@ protocol ViewModelType {
     func transform(input: Input) -> Output
 }
 
-class ViewModel {
+class BaseViewModel {
 
     /// 是否正在加载
     let loading = ActivityIndicator()
@@ -29,4 +29,4 @@ class ViewModel {
     }
 }
 
-extension ViewModel: HasDisposeBag {}
+extension BaseViewModel: HasDisposeBag {}

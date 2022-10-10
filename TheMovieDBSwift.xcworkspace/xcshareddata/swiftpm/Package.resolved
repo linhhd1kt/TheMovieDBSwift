@@ -89,6 +89,15 @@
         "revision" : "11e65d83ba100459a41837119a8af32f182339f1",
         "version" : "2.8.2"
       }
+    },
+    {
+      "identity" : "willow",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Nike-Inc/Willow.git",
+      "state" : {
+        "revision" : "816ff0129ca61cae3d00ca82dadce7f759d29ce9",
+        "version" : "6.0.0"
+      }
     }
   ],
   "version" : 2

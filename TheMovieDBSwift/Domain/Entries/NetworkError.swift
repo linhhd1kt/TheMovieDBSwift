@@ -13,6 +13,7 @@ enum NetworkError: Error {
     case client(code: Int, message: String)
     case server(code: Int, message: String)
     case invalidReponse(message: String)
+    case connection(message: String)
     case other(message: String)
 }
 
@@ -33,6 +34,9 @@ extension NetworkError: LocalizedError {
                                      comment: "Network Error")
         case .invalidReponse(let message):
             return NSLocalizedString("Invalid Response: \(message)",
+                                     comment: "Network Error")
+        case .connection(message: let message):
+            return NSLocalizedString("Connection Error: \(message)",
                                      comment: "Network Error")
         case .other(let message):
             return NSLocalizedString("Network Error: \(message)",

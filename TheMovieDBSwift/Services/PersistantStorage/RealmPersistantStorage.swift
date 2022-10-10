@@ -36,7 +36,7 @@ final class RealmPersistantStorage: PersistantStorable {
         return Observable<Void>.create { observer in
             do {
                 try self.realm.write {
-                    self.realm.add(entity)
+                    self.realm.add(entity, update: .modified)
                 }
                 observer.onNext(())
                 observer.onCompleted()
