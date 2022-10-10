@@ -26,6 +26,6 @@ protocol LoginViewModelOutputType {
     var result: Driver<Credential?> { get set }
 }
 
-protocol LoginViewModelType {
+protocol LoginViewModeltype {
     func transform(input: LoginViewModelInputType) -> LoginViewModelOutputType
 }

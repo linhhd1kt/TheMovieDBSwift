@@ -21,7 +21,8 @@ final class LoginViewModel: BaseViewModel {
     }
 }
 
-extension LoginViewModel: LoginViewModelType {
+extension LoginViewModel: LoginViewModeltype {
+
     typealias InputType = LoginViewModelInputType
     typealias OutputType = LoginViewModelOutputType
 

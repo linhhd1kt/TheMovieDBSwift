@@ -7,23 +7,18 @@
 
 import RxSwift
 import NSObject_Rx
+import UIKit
 
-protocol ViewModelType {
-    associatedtype Input
-    associatedtype Output
-    
-    func transform(input: Input) -> Output
+protocol Trackable {
+    var loading: ActivityIndicator { get }
+    var error: ErrorTracker { get }
 }
 
-class BaseViewModel {
 
-    /// 是否正在加载
+class BaseViewModel: Trackable {
     let loading = ActivityIndicator()
-    /// track error
     let error = ErrorTracker()
-
     required init() {}
-
     deinit {
         print("\(type(of: self)): deinit")
     }

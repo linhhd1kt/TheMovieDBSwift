@@ -42,6 +42,7 @@
 		DC6E41B528B8BFD500429771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6E41B428B8BFD500429771 /* Main.storyboard */; };
 		DC6E41B728B8C7BE00429771 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */; };
 		DC833E3F28F3D8C40028DAFA /* LoginViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */; };
+		DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E4028F3F5C90028DAFA /* ViewModelType.swift */; };
 		DC85BC1528BCBAA300187748 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DC85BC1428BCBAA300187748 /* Realm */; };
 		DC85BC1728BCBAA300187748 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC85BC1628BCBAA300187748 /* RealmSwift */; };
 		DC85BC1C28BCBDAE00187748 /* RealmPersistantStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85BC1B28BCBDAE00187748 /* RealmPersistantStorage.swift */; };
@@ -139,6 +140,7 @@
 		DC6E41B428B8BFD500429771 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelType.swift; sourceTree = "<group>"; };
+		DC833E4028F3F5C90028DAFA /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		DC85BC1B28BCBDAE00187748 /* RealmPersistantStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistantStorage.swift; sourceTree = "<group>"; };
 		DC88488428EFE7B7006698A1 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		DCA7DA7428DC0D410013996C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 		DCA7DA7328DC0D370013996C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DC833E4028F3F5C90028DAFA /* ViewModelType.swift */,
 				DCA7DA7428DC0D410013996C /* BaseViewModel.swift */,
 				DCA7DA7628DC52B70013996C /* BaseViewController.swift */,
 			);
@@ -763,6 +766,7 @@
 				DC6E419128B8829200429771 /* MainCoordinator.swift in Sources */,
 				DC6E41A928B8B6CE00429771 /* CommonError.swift in Sources */,
 				DC6E418D28B8818700429771 /* Coordinator.swift in Sources */,
+				DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */,
 				DC6E414F28B8638800429771 /* AppConfigurations.swift in Sources */,
 				DC833E3F28F3D8C40028DAFA /* LoginViewModelType.swift in Sources */,
 				DC85BC1C28BCBDAE00187748 /* RealmPersistantStorage.swift in Sources */,

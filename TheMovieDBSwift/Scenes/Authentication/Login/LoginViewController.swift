@@ -3,23 +3,26 @@ import UIKit
 import RxCocoa
 
 
+class BaseViewController: UIViewController {
+    
+}
 
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: BaseViewController {
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var forgotPasswordButton: UIButton!
     @IBOutlet private weak var registerButton: UIButton!
     
-    private let viewModel: LoginViewModel
+    private let viewModel: LoginViewModeltype & Trackable
         
     // MARK: - Initialization
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewModel: LoginViewModel) {
+    init(viewModel: LoginViewModeltype & Trackable) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,12 +31,12 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         let input = LoginViewModel.Input()
-        viewModel.transform(input: input)
+        _ = viewModel.transform(input: input)
         
         viewModel.loading
             .drive()
-            .disposed(by: disposeBag)        
-        
+            .disposed(by: disposeBag)
+
         viewModel.error
             .drive(rx.error)
             .disposed(by: disposeBag)
