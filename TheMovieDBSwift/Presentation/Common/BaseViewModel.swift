@@ -15,7 +15,9 @@ protocol Trackable {
 }
 
 
-class BaseViewModel: Trackable {
+class BaseViewModel {
+//    var tracker: Trackable = Tracker()
+    
     let loading = ActivityIndicator()
     let error = ErrorTracker()
     required init() {}

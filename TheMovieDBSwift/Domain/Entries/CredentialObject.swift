@@ -1,5 +1,5 @@
 //
-//  Credential.swift
+//  CredentialObject.swift
 //  TheMovieDBSwift
 //
 //  Created by Ha Linh on 26/08/2022.

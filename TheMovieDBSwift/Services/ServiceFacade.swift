@@ -17,8 +17,7 @@ extension Container {
 }
 
 class ServiceFacade {
-    
-    private static let logger: Logable = ELogger()
+    private static let logger: Logable = Logger()
     private static let coordinator: Coordinator = MainCoordinator(navigationController: UINavigationController())
     private static let userPreferencesStorage: UserPreferencesStorable = UserPreferencesStorage()
     private static let network: Networking = Network()

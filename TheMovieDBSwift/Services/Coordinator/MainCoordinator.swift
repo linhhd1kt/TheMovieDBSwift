@@ -20,10 +20,7 @@ class MainCoordinator: Coordinator {
     }
     
     func gotoLogin() {
-        let respository = CredentialRespository(localDataSource: CredentialLocalDataSource(),
-                                                   remoteDataSource: CredentialRemoteDataSource())
-        let useCase = DefaultAuthUseCase(respository: respository)
-        let viewModel = LoginViewModel(authUseCase: useCase)
+        let viewModel = LoginViewModel(usecase: AuthUseCase(respository: AuthRepository()))
         let vc = LoginViewController(viewModel: viewModel)
         self.navigationController = UINavigationController(rootViewController: vc)
     }

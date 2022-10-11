@@ -7,31 +7,7 @@
 
 import Foundation
 import Willow
-
-enum LogingLevel {
-    case off
-    case debug
-    case info
-    case warn
-    case error
-}
-
-extension Logger {
-    func convert(logingLevel: LogingLevel) -> LogLevel  {
-        switch logingLevel {
-        case .off:
-            return LogLevel.off
-        case .debug:
-            return LogLevel.debug
-        case .info:
-            return LogLevel.info
-        case .warn:
-            return LogLevel.warn
-        case .error:
-            return LogLevel.error
-        }
-    }
-}
+import XCGLogger
 
 protocol Logable {
     func debug(_ message: String)
@@ -40,23 +16,46 @@ protocol Logable {
     func error(_ message: String)
 }
 
-class ELogger: Logable {
-    var logger: Logger
-    
-    init(logger: Logger = Logger(logLevels: [.all], writers: [ConsoleWriter()])) {
-        self.logger = logger
+class Logger: Logable {
+    var logger: XCGLogger = .default
+    init() {
+        #if DEBUG
+            self.logger.setup(level: .verbose,
+                                    showThreadName: true,
+                                    showLevel: true,
+                                    showFileNames: true,
+                                    showLineNumbers: true,
+                                    writeToFile: nil,
+                                    fileLevel: .verbose)
+                let emojiLogFormatter = PrePostFixLogFormatter()
+                emojiLogFormatter.apply(prefix: "🗯", postfix: nil, to: .verbose)
+                emojiLogFormatter.apply(prefix: "🔹", postfix: nil, to: .debug)
+                emojiLogFormatter.apply(prefix: "ℹ️", postfix: nil, to: .info)
+                emojiLogFormatter.apply(prefix: "⚠️", postfix: nil, to: .warning)
+                emojiLogFormatter.apply(prefix: "‼️", postfix: nil, to: .error)
+                emojiLogFormatter.apply(prefix: "💣", postfix: nil, to: .severe)
+            self.logger.formatters = [emojiLogFormatter]
+        #endif
     }
     
     func debug(_ message: String) {
-        self.logger.debugMessage(message)
+        #if DEBUG
+            self.logger.debug(message)
+        #endif
     }
     func info(_ message: String) {
-        self.logger.infoMessage(message)
+        #if DEBUG
+            self.logger.info(message)
+        #endif
     }
     func warn(_ message: String) {
-        self.logger.warnMessage(message)
+        #if DEBUG
+            self.logger.warning(message)
+        #endif
     }
     func error(_ message: String) {
-        self.logger.errorMessage(message)
+        #if DEBUG
+            self.logger.error(message)
+        #endif
     }
 }

@@ -8,6 +8,10 @@
 import Foundation
 import Moya
 
+protocol ApiRequestable {
+    func toTarget() -> TargetType
+}
+
 enum API {
     case createRequestToken
     case createSessionWithLogin(parameters: Dictionary<String,Any>)
