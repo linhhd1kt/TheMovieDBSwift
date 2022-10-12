@@ -10,15 +10,25 @@ import RxCocoa
 import RxSwift
 import NSObject_Rx
 
-extension UIViewController: HasDisposeBag {}
+class BaseViewController: UIViewController {
+    var logger: Logable {
+        guard let logger = ServiceFacade.getService(Logable.self) else {
+            fatalError("Logger should be implemented!")
+        }
+        return logger
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-extension Reactive where Base: UIViewController {
-  var showMessage: Binder<String> {
-      return Binder(self.base) { view, message in
-          let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-          let action = UIAlertAction(title: "OK", style: .default)
-          alert.addAction(action)
-          view.present(alert, animated: true)
-      }
-  }
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        logger.debug("\(className) is Initialized.")
+    }
+    deinit {
+        logger.debug("\(className) is Release.")
+    }
 }
+
+extension BaseViewController: HasDisposeBag {}

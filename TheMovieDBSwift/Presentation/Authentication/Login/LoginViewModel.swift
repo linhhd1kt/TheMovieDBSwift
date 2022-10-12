@@ -3,7 +3,7 @@ import RxCocoa
 import NSObject_Rx
 import Action
 
-final class LoginViewModel {
+final class LoginViewModel: BaseViewModel {
     // MARK: - Dependency
     private let usecase: AuthUseCase
     private var coordinator: Coordinator {
@@ -27,8 +27,10 @@ final class LoginViewModel {
     
     init(usecase: AuthUseCase) {
         self.usecase = usecase
+        super.init()
         self.binding()
     }
+    
     
     private func binding() {
         // login button enabled when username and password is not empty
@@ -76,9 +78,6 @@ extension LoginViewModel: LoginViewModelInputType {
 }
 
 extension LoginViewModel: LoginViewModelOutputType {
-    var error: Observable<String> {
-        return errorObserver
-    }
     var loginButtonEnabled: Observable<Bool> {
         return loginButtonEnabledObserver
     }
@@ -86,5 +85,3 @@ extension LoginViewModel: LoginViewModelOutputType {
         return usecase.output.loginResult
     }
 }
-
-extension LoginViewModel: HasDisposeBag {}

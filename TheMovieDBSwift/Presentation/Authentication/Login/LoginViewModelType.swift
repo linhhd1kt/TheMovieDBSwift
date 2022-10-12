@@ -22,7 +22,6 @@ protocol LoginViewModelInputType {
 
 protocol LoginViewModelOutputType {
     var credential: ActionResult<CredentialModel>  { get }
-    var error: Observable<String> { get }
     var loginButtonEnabled: Observable<Bool> { get }
 }
 

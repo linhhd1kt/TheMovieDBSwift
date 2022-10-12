@@ -78,6 +78,8 @@
 		DCCFEC9928BC699900019DBB /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DCCFEC9828BC699900019DBB /* RxMoya */; };
 		DCCFEC9B28BCA54200019DBB /* CredentialRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC9A28BCA54200019DBB /* CredentialRemoteDataSource.swift */; };
 		DCCFEC9D28BCA55000019DBB /* CredentialLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC9C28BCA55000019DBB /* CredentialLocalDataSource.swift */; };
+		DCD7857D28F65CBE008E36B2 /* UIViewControler+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7857C28F65CBE008E36B2 /* UIViewControler+Rx.swift */; };
+		DCD7858028F66066008E36B2 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = DCD7857F28F66066008E36B2 /* ProgressHUD */; };
 		DCEFA4EE28E159EF00869D4E /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = DCEFA4ED28E159EF00869D4E /* RxRealm */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +180,7 @@
 		DCCFEC9128BC67DB00019DBB /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		DCCFEC9A28BCA54200019DBB /* CredentialRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialRemoteDataSource.swift; sourceTree = "<group>"; };
 		DCCFEC9C28BCA55000019DBB /* CredentialLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialLocalDataSource.swift; sourceTree = "<group>"; };
+		DCD7857C28F65CBE008E36B2 /* UIViewControler+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControler+Rx.swift"; sourceTree = "<group>"; };
 		E005B624649F319FF18DFC72 /* Pods-TheMovieDBSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDBSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieDBSwiftTests/Pods-TheMovieDBSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA223B7B760B29FA7E81A720 /* Pods-TheMovieDBSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDBSwift.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieDBSwift/Pods-TheMovieDBSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +193,7 @@
 				DC88488228EFE7A3006698A1 /* Willow in Frameworks */,
 				DC6E41B328B8BF7C00429771 /* RxSwift in Frameworks */,
 				DC6E41B128B8BF7C00429771 /* RxRelay in Frameworks */,
+				DCD7858028F66066008E36B2 /* ProgressHUD in Frameworks */,
 				DC6E41AA28B8BE1A00429771 /* Pods_TheMovieDBSwift.framework in Frameworks */,
 				DC6E41A328B8AD6D00429771 /* SwifterSwift in Frameworks */,
 				DC833E6328F569BE0028DAFA /* XCGLogger in Frameworks */,
@@ -482,26 +486,18 @@
 		DC833E4D28F52C970028DAFA /* API */ = {
 			isa = PBXGroup;
 			children = (
-				DC833E4E28F52CA10028DAFA /* Request */,
-				DC833E5128F52D6D0028DAFA /* Response */,
+				DC833E4E28F52CA10028DAFA /* Authe */,
 			);
 			path = API;
 			sourceTree = "<group>";
 		};
-		DC833E4E28F52CA10028DAFA /* Request */ = {
+		DC833E4E28F52CA10028DAFA /* Authe */ = {
 			isa = PBXGroup;
 			children = (
 				DC833E4F28F52CC40028DAFA /* AuthRequest.swift */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		DC833E5128F52D6D0028DAFA /* Response */ = {
-			isa = PBXGroup;
-			children = (
 				DC833E5328F52D880028DAFA /* AuthResponse.swift */,
 			);
-			path = Response;
+			path = Authe;
 			sourceTree = "<group>";
 		};
 		DC833E5728F552070028DAFA /* Translator */ = {
@@ -587,6 +583,7 @@
 				DCB246EE28CB19E800873CF2 /* RxSwift+Ex.swift */,
 				DC833E5D28F567580028DAFA /* Optional+Ex.swift */,
 				DC833E6428F56CE50028DAFA /* NSObject+Ex.swift */,
+				DCD7857C28F65CBE008E36B2 /* UIViewControler+Rx.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -645,6 +642,7 @@
 				DC833E4328F52A990028DAFA /* Action */,
 				DC833E6028F569BE0028DAFA /* ObjcExceptionBridging */,
 				DC833E6228F569BE0028DAFA /* XCGLogger */,
+				DCD7857F28F66066008E36B2 /* ProgressHUD */,
 			);
 			productName = TheMovieDBSwift;
 			productReference = DC6E407E28B75CAD00429771 /* TheMovieDBSwift.app */;
@@ -732,6 +730,7 @@
 				DC88488028EFE7A3006698A1 /* XCRemoteSwiftPackageReference "Willow" */,
 				DC833E4228F52A990028DAFA /* XCRemoteSwiftPackageReference "Action" */,
 				DC833E5F28F569BE0028DAFA /* XCRemoteSwiftPackageReference "XCGLogger" */,
+				DCD7857E28F66066008E36B2 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = DC6E407F28B75CAD00429771 /* Products */;
 			projectDirPath = "";
@@ -860,6 +859,7 @@
 				DC6E41A728B8B51B00429771 /* AuthUseCaseType.swift in Sources */,
 				DCCFEC9228BC67DB00019DBB /* Networking.swift in Sources */,
 				DC6E419128B8829200429771 /* MainCoordinator.swift in Sources */,
+				DCD7857D28F65CBE008E36B2 /* UIViewControler+Rx.swift in Sources */,
 				DC833E5E28F567580028DAFA /* Optional+Ex.swift in Sources */,
 				DC6E41A928B8B6CE00429771 /* CommonError.swift in Sources */,
 				DC6E418D28B8818700429771 /* Coordinator.swift in Sources */,
@@ -1319,6 +1319,14 @@
 				version = 15.0.0;
 			};
 		};
+		DCD7857E28F66066008E36B2 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
 		DCEFA4EC28E159EF00869D4E /* XCRemoteSwiftPackageReference "RxRealm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm.git";
@@ -1404,6 +1412,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DCCFEC9328BC699900019DBB /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		DCD7857F28F66066008E36B2 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCD7857E28F66066008E36B2 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 		DCEFA4ED28E159EF00869D4E /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;

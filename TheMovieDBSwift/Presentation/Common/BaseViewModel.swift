@@ -9,18 +9,10 @@ import RxSwift
 import NSObject_Rx
 import UIKit
 
-protocol Trackable {
-    var loading: ActivityIndicator { get }
-    var error: ErrorTracker { get }
-}
-
-
 class BaseViewModel {
-//    var tracker: Trackable = Tracker()
-    
-    let loading = ActivityIndicator()
-    let error = ErrorTracker()
-    required init() {}
+    init() {
+        
+    }
     deinit {
         print("\(type(of: self)): deinit")
     }

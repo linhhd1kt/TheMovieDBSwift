@@ -2,41 +2,7 @@ import RxSwift
 import UIKit
 import RxCocoa
 import NSObject_Rx
-
-class BaseViewController: UIViewController {
-    var loading: ActivityIndicator = ActivityIndicator()
-    var error: ErrorTracker = ErrorTracker()
-    
-    var logger: Logable {
-        guard let logger = ServiceFacade.getService(Logable.self) else {
-            fatalError("Logger should be implemented!")
-        }
-        return logger
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        logger.debug("\(className) is Initialized.")
-        tracking()
-    }
-
-    private func tracking() {
-//        loading
-//            .drive()
-//            .disposed(by: disposeBag)
-//        error
-//            .drive(rx.error)
-//            .disposed(by: disposeBag)
-    }
-    deinit {
-        logger.debug("\(className) is Release.")
-    }
-}
-
+import ProgressHUD
 
 final class LoginViewController: BaseViewController {
     @IBOutlet private weak var usernameTextField: UITextField!
@@ -78,12 +44,13 @@ final class LoginViewController: BaseViewController {
     }
 
     private func bindOutput(_ output: LoginViewModelOutputType) {
-        output.error
-            .bind(to: rx.showMessage)
+        output.credential.errors
+            .bind(to: rx.showError)
             .disposed(by: disposeBag)
-        output.credential.elements
-            .asDriverOnErrorJustComplete()
-            .drive()
+        output.credential.executing
+            .debug("Executing")
+            .bind(to: rx.loading)
             .disposed(by: disposeBag)
+
     }
 }

@@ -9,17 +9,11 @@ import Action
 import RxSwift
 
 class AuthRepository: AuthRepositoryType {
-//    lazy var network: Networking {
-//        guard let network = ServiceFacade.getService(Networking.self) else {
-//            preconditionFailure("Networking service not registered!")
-//        }
-//        return network
-//    }
-//
+    
     let login: Action<CredentialRequest, CredentialResponse>
-
+    
     init(network: Networking = Network()) {
-        login = Action(workFactory: { input in
+        login = Action { input in
             network.request(target: input.toTarget())
                 .catch({ error in
                     if let networkError = error as? NetworkError {
@@ -31,9 +25,7 @@ class AuthRepository: AuthRepositoryType {
                     }
                     return Observable.error(error)
                 })
-            
-        })
-//        login = Action { input in network.request(target: input.toTarget()) }
+        }
     }
-
+    
 }
