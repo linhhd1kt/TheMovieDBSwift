@@ -13,6 +13,7 @@ class AuthRepository: AuthRepositoryType {
     let login: Action<CredentialRequest, CredentialResponse>
     
     init(network: Networking = Network()) {
+        
         login = Action { input in
             network.request(target: input.toTarget())
                 .catch({ error in

@@ -44,10 +44,15 @@ final class LoginViewController: BaseViewController {
     }
 
     private func bindOutput(_ output: LoginViewModelOutputType) {
-        output.credential.errors
+        output.loginResult.enabled
+            .debug("Login Action Enabled")
+            .bind(to: loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        output.loginResult.errors
+            .debug("Error")
             .bind(to: rx.showError)
             .disposed(by: disposeBag)
-        output.credential.executing
+        output.loginResult.executing
             .debug("Executing")
             .bind(to: rx.loading)
             .disposed(by: disposeBag)

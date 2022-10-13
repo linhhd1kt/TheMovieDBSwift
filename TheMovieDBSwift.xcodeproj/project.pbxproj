@@ -486,18 +486,18 @@
 		DC833E4D28F52C970028DAFA /* API */ = {
 			isa = PBXGroup;
 			children = (
-				DC833E4E28F52CA10028DAFA /* Authe */,
+				DC833E4E28F52CA10028DAFA /* Auth */,
 			);
 			path = API;
 			sourceTree = "<group>";
 		};
-		DC833E4E28F52CA10028DAFA /* Authe */ = {
+		DC833E4E28F52CA10028DAFA /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				DC833E4F28F52CC40028DAFA /* AuthRequest.swift */,
 				DC833E5328F52D880028DAFA /* AuthResponse.swift */,
 			);
-			path = Authe;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		DC833E5728F552070028DAFA /* Translator */ = {

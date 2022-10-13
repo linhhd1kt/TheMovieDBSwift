@@ -14,8 +14,15 @@ import ProgressHUD
 extension Reactive where Base: UIViewController {
     var showError: Binder<ActionError> {
         return Binder(self.base) { view, actionError in
+            var message: String
+            switch actionError {
+            case .notEnabled:
+                message = "Action Not Enabled"
+            case .underlyingError(let error):
+                message = error.localizedDescription
+            }
             let alert = UIAlertController(title: "Error",
-                                          message: actionError.localizedDescription,
+                                          message: message,
                                           preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default)
             alert.addAction(action)

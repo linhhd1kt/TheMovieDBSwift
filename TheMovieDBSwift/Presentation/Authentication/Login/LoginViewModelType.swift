@@ -21,7 +21,7 @@ protocol LoginViewModelInputType {
 }
 
 protocol LoginViewModelOutputType {
-    var credential: ActionResult<CredentialModel>  { get }
+    var loginResult: ActionResult<CredentialModel>  { get }
     var loginButtonEnabled: Observable<Bool> { get }
 }
 

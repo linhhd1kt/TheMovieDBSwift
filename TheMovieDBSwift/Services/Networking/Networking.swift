@@ -16,7 +16,8 @@ protocol Networking {
 }
 
 class Network: Networking {
-    let provider = MoyaProvider<API>(plugins: [NetworkLoggerPlugin()])
+//    NetworkLoggerPlugin()
+    let provider = MoyaProvider<API>(plugins: [])
         
     var responseParser: ResponseParsable {
         guard let parser = ServiceFacade.getService(ResponseParsable.self) else {

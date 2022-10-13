@@ -27,3 +27,28 @@ extension ObservableType where Element: OptionalType {
         }
     }
 }
+
+extension ObservableType where Element == Any {
+    static func combineLatestAll(_ o1: Observable<Bool>, _ o2: Observable<Bool>) -> Observable<Bool> {
+        return Observable.combineLatest(o1, o2) { $0 && $1 }
+    }
+    static func combineLatestAll(_ o1: Observable<Bool>, _ o2: Observable<Bool>, _ o3: Observable<Bool>) -> Observable<Bool> {
+        return Observable.combineLatest(o1, o2, o3) { $0 && $1 && $2 }
+    }
+    static func combineLatestAll(_ o1: Observable<Bool>, _ o2: Observable<Bool>, _ o3: Observable<Bool>, _ o4: Observable<Bool>) -> Observable<Bool> {
+        return Observable.combineLatest(o1, o2, o3, o4) { $0 && $1 && $2 && $3 }
+    }
+    static func combineLatestAny(_ o1: Observable<Bool>, _ o2: Observable<Bool>) -> Observable<Bool> {
+        return Observable.combineLatest(o1, o2) { $0 || $1 }
+    }
+    static func combineLatestAny(_ o1: Observable<Bool>, _ o2: Observable<Bool>, _ o3: Observable<Bool>) -> Observable<Bool> {
+        return Observable.combineLatest(o1, o2, o3) { $0 || $1 || $2 }
+    }
+    static func combineLatestAny(_ o1: Observable<Bool>, _ o2: Observable<Bool>, _ o3: Observable<Bool>, _ o4: Observable<Bool>) -> Observable<Bool> {
+        return Observable.combineLatest(o1, o2, o3, o4) { $0 || $1 || $2 || $3 }
+    }
+    static func combineLatestAny(_ o1: Observable<Bool>, _ o2: Observable<Bool>, _ o3: Observable<Bool>, _ o4: Observable<Bool>, _ o5: Observable<Bool>) -> Observable<Bool> {
+        return Observable.combineLatest(o1, o2, o3, o4, o5) { $0 || $1 || $2 || $3 || $4 }
+    }
+}
+

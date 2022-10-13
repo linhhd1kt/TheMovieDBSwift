@@ -8,13 +8,13 @@
 import Foundation
 
 protocol AuthTranslatorType {
-    func toRequest(username: String, password: String) -> CredentialRequest
+    func toRequest(username: String, password: String, requestToken: String) -> CredentialRequest
     func toModel(reponse: CredentialResponse) -> CredentialModel
 }
 
 struct AuthTranslator: AuthTranslatorType {
-    func toRequest(username: String, password: String) -> CredentialRequest {
-        return CredentialRequest(username: username, password: password)
+    func toRequest(username: String, password: String, requestToken: String) -> CredentialRequest {
+        return CredentialRequest(username: username, password: password, requestToken: requestToken)
     }
     func toModel(reponse: CredentialResponse) -> CredentialModel {
         return CredentialModel(success: reponse.success,

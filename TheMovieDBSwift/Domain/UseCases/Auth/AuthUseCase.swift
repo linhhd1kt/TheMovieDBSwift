@@ -23,7 +23,7 @@ class AuthUseCase {
     }
 
     private func bindInput() {
-        loginObserver.map { [unowned self] in self.traslator.toRequest(username: $0, password: $1) }
+        loginObserver.map { [unowned self] in self.traslator.toRequest(username: $0, password: $1, requestToken: "") }
             .bind(to: respository.login.inputs)
             .disposed(by: disposeBag)
     }
