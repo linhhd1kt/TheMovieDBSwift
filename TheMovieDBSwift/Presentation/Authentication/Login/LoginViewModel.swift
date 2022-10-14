@@ -21,7 +21,7 @@ final class LoginViewModel: BaseViewModel {
     private let forgotPasswordActionObserver = PublishSubject<Void>()
 
     // MARK: - Output
-    private let credentialObserver = BehaviorSubject<CredentialModel>(value: .default)
+    private let credentialObserver = BehaviorSubject<Credential>(value: .default)
     private let errorObserver = BehaviorSubject<String>(value: "")
     private let loginButtonEnabledObserver = BehaviorSubject<Bool>(value: false)
     
@@ -82,7 +82,7 @@ extension LoginViewModel: LoginViewModelOutputType {
     var loginButtonEnabled: Observable<Bool> {
         return loginButtonEnabledObserver
     }
-    var loginResult: ActionResult<CredentialModel> {
+    var loginResult: ActionResult<Credential> {
         let enabled = Observable.combineLatestAll(usecase.output.loginResult.enabled.debug("Login Result Enabled"),
                                                   loginButtonEnabledObserver.debug("Login Button Enabled"))
             .debug("Login Result Enabled combine with login button")

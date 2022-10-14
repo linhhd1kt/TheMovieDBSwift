@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 final class CredentialRemoteDataSource: DataSource {
-    typealias T = Credential
+    typealias T = CredentialObject
     var network: Networking {
         guard let network = ServiceFacade.getService(Networking.self) else {
             preconditionFailure("Networking service not registered!")

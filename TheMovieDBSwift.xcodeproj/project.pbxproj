@@ -50,7 +50,7 @@
 		DC833E5428F52D880028DAFA /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E5328F52D880028DAFA /* AuthResponse.swift */; };
 		DC833E5628F52EA30028DAFA /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E5528F52EA30028DAFA /* AuthRepository.swift */; };
 		DC833E5928F5521B0028DAFA /* AuthTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E5828F5521B0028DAFA /* AuthTranslator.swift */; };
-		DC833E5C28F557170028DAFA /* CredentialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E5B28F557170028DAFA /* CredentialModel.swift */; };
+		DC833E5C28F557170028DAFA /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E5B28F557170028DAFA /* Credential.swift */; };
 		DC833E5E28F567580028DAFA /* Optional+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E5D28F567580028DAFA /* Optional+Ex.swift */; };
 		DC833E6128F569BE0028DAFA /* ObjcExceptionBridging in Frameworks */ = {isa = PBXBuildFile; productRef = DC833E6028F569BE0028DAFA /* ObjcExceptionBridging */; };
 		DC833E6328F569BE0028DAFA /* XCGLogger in Frameworks */ = {isa = PBXBuildFile; productRef = DC833E6228F569BE0028DAFA /* XCGLogger */; };
@@ -161,7 +161,7 @@
 		DC833E5328F52D880028DAFA /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		DC833E5528F52EA30028DAFA /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		DC833E5828F5521B0028DAFA /* AuthTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTranslator.swift; sourceTree = "<group>"; };
-		DC833E5B28F557170028DAFA /* CredentialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialModel.swift; sourceTree = "<group>"; };
+		DC833E5B28F557170028DAFA /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		DC833E5D28F567580028DAFA /* Optional+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ex.swift"; sourceTree = "<group>"; };
 		DC833E6428F56CE50028DAFA /* NSObject+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ex.swift"; sourceTree = "<group>"; };
 		DC85BC1B28BCBDAE00187748 /* RealmPersistantStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistantStorage.swift; sourceTree = "<group>"; };
@@ -307,7 +307,6 @@
 				DC6E40DD28B8638700429771 /* Application */,
 				DC6E418328B87F3500429771 /* Services */,
 				DC6E40CA28B8638700429771 /* Domain */,
-				DCB246E828CB17B400873CF2 /* Platform */,
 				DC833E4828F52C2F0028DAFA /* Data */,
 				DC6E410728B8638700429771 /* Presentation */,
 				DCB246EC28CB19C800873CF2 /* Utilities */,
@@ -350,7 +349,6 @@
 			children = (
 				DC833E5A28F557030028DAFA /* Model */,
 				DC833E5728F552070028DAFA /* Translator */,
-				DC28BCEC28E559CC000D4FF0 /* Respository */,
 				DC6E40CB28B8638700429771 /* UseCases */,
 				DC6E40D028B8638700429771 /* Entries */,
 				DC833E4528F52AC50028DAFA /* ActionResult.swift */,
@@ -389,18 +387,10 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		DC6E40EC28B8638700429771 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				DCCFEC8828BC5CC800019DBB /* CredentialRepository */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
 		DC6E410728B8638700429771 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				DCA7DA7328DC0D370013996C /* Common */,
+				DCA7DA7328DC0D370013996C /* Base */,
 				DC6E41A428B8B2EE00429771 /* Authentication */,
 			);
 			path = Presentation;
@@ -469,6 +459,8 @@
 		DC833E4928F52C380028DAFA /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				DC28BCEC28E559CC000D4FF0 /* Respository */,
+				DCCFEC8828BC5CC800019DBB /* Credential */,
 				DC833E4A28F52C4D0028DAFA /* Auth */,
 			);
 			path = Repository;
@@ -511,7 +503,7 @@
 		DC833E5A28F557030028DAFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DC833E5B28F557170028DAFA /* CredentialModel.swift */,
+				DC833E5B28F557170028DAFA /* Credential.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -533,14 +525,14 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
-		DCA7DA7328DC0D370013996C /* Common */ = {
+		DCA7DA7328DC0D370013996C /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				DC833E4028F3F5C90028DAFA /* ViewModelType.swift */,
 				DCA7DA7428DC0D410013996C /* BaseViewModel.swift */,
 				DCA7DA7628DC52B70013996C /* BaseViewController.swift */,
 			);
-			path = Common;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		DCAE4C3628D06C7100301B2C /* ErrorTracker */ = {
@@ -557,14 +549,6 @@
 				DCAE4C3A28D0779300301B2C /* ActivityIndicator.swift */,
 			);
 			path = ActivityIndicator;
-			sourceTree = "<group>";
-		};
-		DCB246E828CB17B400873CF2 /* Platform */ = {
-			isa = PBXGroup;
-			children = (
-				DC6E40EC28B8638700429771 /* Repositories */,
-			);
-			path = Platform;
 			sourceTree = "<group>";
 		};
 		DCB246EC28CB19C800873CF2 /* Utilities */ = {
@@ -588,14 +572,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		DCCFEC8828BC5CC800019DBB /* CredentialRepository */ = {
+		DCCFEC8828BC5CC800019DBB /* Credential */ = {
 			isa = PBXGroup;
 			children = (
 				DCCFEC8928BC5CED00019DBB /* CredentialRespostitory.swift */,
 				DCCFEC9C28BCA55000019DBB /* CredentialLocalDataSource.swift */,
 				DCCFEC9A28BCA54200019DBB /* CredentialRemoteDataSource.swift */,
 			);
-			path = CredentialRepository;
+			path = Credential;
 			sourceTree = "<group>";
 		};
 		DCCFEC8D28BC65A900019DBB /* Networking */ = {
@@ -871,7 +855,7 @@
 				DC6E414B28B8638800429771 /* ConnectionError.swift in Sources */,
 				DCB246EF28CB19E800873CF2 /* RxSwift+Ex.swift in Sources */,
 				DC6E414528B8638800429771 /* CredentialObject.swift in Sources */,
-				DC833E5C28F557170028DAFA /* CredentialModel.swift in Sources */,
+				DC833E5C28F557170028DAFA /* Credential.swift in Sources */,
 				DC6E408428B75CAD00429771 /* SceneDelegate.swift in Sources */,
 				DCA7DA7B28DD52B00013996C /* NetworkError.swift in Sources */,
 				DCA7DA7528DC0D410013996C /* BaseViewModel.swift in Sources */,

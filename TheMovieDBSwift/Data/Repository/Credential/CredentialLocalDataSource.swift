@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 final class CredentialLocalDataSource: DataSource {
-    typealias T = Credential
+    typealias T = CredentialObject
     var localStorage: PersistantStorable {
         guard let storage = ServiceFacade.getService(PersistantStorable.self) else {
             fatalError("Persistant Storage should be implementaion!")

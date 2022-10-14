@@ -12,7 +12,7 @@ import NSObject_Rx
 import RealmSwift
 
 class CredentialRespository<L, R>: Respository
-where L: DataSource, L.T == Credential, R: DataSource, R.T == Credential {
+where L: DataSource, L.T == CredentialObject, R: DataSource, R.T == CredentialObject {
     let localDataSource: L
     let remoteDataSource: R
     
@@ -35,7 +35,7 @@ where L: DataSource, L.T == Credential, R: DataSource, R.T == Credential {
         self.remoteDataSource = remoteDataSource
     }
     
-    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<Credential?> {
+    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<CredentialObject?> {
         
         // get saved credential in user preferences for username
         let getSavedCredentialId: Observable<String?> = Observable.just(id)
@@ -45,14 +45,14 @@ where L: DataSource, L.T == Credential, R: DataSource, R.T == Credential {
             }
             .debug("CredentialRespository get saved credential id from user preferences")
         
-        let localData: Observable<Credential?> = getSavedCredentialId
+        let localData: Observable<CredentialObject?> = getSavedCredentialId
             .flatMapLatest { [unowned self] in
                 self.localDataSource
                     .get(id: $0, parameters: parameters)
             }
             .debug("CredentialRespository get local data from LocalDataSource")
 
-        let remoteData: Observable<Credential?> = remoteDataSource
+        let remoteData: Observable<CredentialObject?> = remoteDataSource
             .get(id: id, parameters: parameters)
             .share()
             .debug("CredentialRespository RemoteDataSource get")
@@ -79,7 +79,7 @@ where L: DataSource, L.T == Credential, R: DataSource, R.T == Credential {
         return localData.concat(remoteData)
     }
     
-    func save(entity: Credential) -> Observable<Void> {
+    func save(entity: CredentialObject) -> Observable<Void> {
         return localDataSource.save(entity: entity)
     }
 }

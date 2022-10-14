@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Credential: Object, Identifiable, Codable {
+class CredentialObject: Object, Identifiable, Codable {
     @objc dynamic var success: Bool
     @objc dynamic var expiresAt: String
     @objc dynamic var requestToken: String

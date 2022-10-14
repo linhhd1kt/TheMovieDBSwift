@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct CredentialModel {
+struct Credential {
     let success: Bool?
     let expiresAt: String?
     let requestToken: String?
     
-    static var `default`: CredentialModel {
-        return CredentialModel(success: nil, expiresAt: nil, requestToken: nil)
+    static var `default`: Credential {
+        return Credential(success: nil, expiresAt: nil, requestToken: nil)
     }
 }

@@ -17,5 +17,5 @@ protocol AuthUseCaseInputType {
 }
 
 protocol AuthUseCaseOutputType {
-    var loginResult: ActionResult<CredentialModel> { get }
+    var loginResult: ActionResult<Credential> { get }
 }

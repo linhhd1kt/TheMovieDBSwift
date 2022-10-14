@@ -10,9 +10,7 @@ import NSObject_Rx
 import UIKit
 
 class BaseViewModel {
-    init() {
-        
-    }
+    init() { }
     deinit {
         print("\(type(of: self)): deinit")
     }

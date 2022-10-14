@@ -23,7 +23,8 @@ class AuthUseCase {
     }
 
     private func bindInput() {
-        loginObserver.map { [unowned self] in self.traslator.toRequest(username: $0, password: $1, requestToken: "") }
+        loginObserver
+            .map { [unowned self] in self.traslator.toRequest(username: $0, password: $1, requestToken: "") }
             .bind(to: respository.login.inputs)
             .disposed(by: disposeBag)
     }
@@ -44,7 +45,7 @@ extension AuthUseCase: AuthUseCaseInputType {
 
 // MARK: - AuthUseCaseOutputType
 extension AuthUseCase: AuthUseCaseOutputType {
-    var loginResult: ActionResult<CredentialModel> {
+    var loginResult: ActionResult<Credential> {
         return respository.login.toResult().map { self.traslator.toModel(reponse: $0)}
     }
 }
