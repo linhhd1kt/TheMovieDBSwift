@@ -28,8 +28,6 @@
 		DC6E417128B8638800429771 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E412328B8638700429771 /* LoginViewController.swift */; };
 		DC6E418528B87FA000429771 /* ServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E418428B87FA000429771 /* ServiceFacade.swift */; };
 		DC6E418828B87FFB00429771 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = DC6E418728B87FFB00429771 /* Swinject */; };
-		DC6E418D28B8818700429771 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E418C28B8818700429771 /* Coordinator.swift */; };
-		DC6E419128B8829200429771 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E419028B8829200429771 /* MainCoordinator.swift */; };
 		DC6E419528B8862F00429771 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6E419328B8862F00429771 /* LoginViewController.xib */; };
 		DC6E41A328B8AD6D00429771 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC6E41A228B8AD6D00429771 /* SwifterSwift */; };
 		DC6E41A728B8B51B00429771 /* AuthUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E41A628B8B51B00429771 /* AuthUseCaseType.swift */; };
@@ -67,6 +65,9 @@
 		DCA7DA7D28DD54680013996C /* ReamlError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7DA7C28DD54680013996C /* ReamlError.swift */; };
 		DCAE4C3828D06C8100301B2C /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAE4C3728D06C8100301B2C /* ErrorTracker.swift */; };
 		DCAE4C3B28D0779300301B2C /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAE4C3A28D0779300301B2C /* ActivityIndicator.swift */; };
+		DCB16F0028F96670001686C1 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB16EFF28F96670001686C1 /* BaseCoordinator.swift */; };
+		DCB16F0228F966CF001686C1 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB16F0128F966CF001686C1 /* LoginCoordinator.swift */; };
+		DCB16F0428F966E8001686C1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB16F0328F966E8001686C1 /* AppCoordinator.swift */; };
 		DCB246EB28CB17D400873CF2 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB246EA28CB17D400873CF2 /* AuthUseCase.swift */; };
 		DCB246EF28CB19E800873CF2 /* RxSwift+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB246EE28CB19E800873CF2 /* RxSwift+Ex.swift */; };
 		DCB246F128CB1BB000873CF2 /* PersistantStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB246F028CB1BB000873CF2 /* PersistantStorage.swift */; };
@@ -146,8 +147,6 @@
 		DC6E412228B8638700429771 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DC6E412328B8638700429771 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DC6E418428B87FA000429771 /* ServiceFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFacade.swift; sourceTree = "<group>"; };
-		DC6E418C28B8818700429771 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		DC6E419028B8829200429771 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DC6E419328B8862F00429771 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DC6E41A628B8B51B00429771 /* AuthUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCaseType.swift; sourceTree = "<group>"; };
 		DC6E41A828B8B6CE00429771 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
@@ -172,6 +171,9 @@
 		DCA7DA7C28DD54680013996C /* ReamlError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReamlError.swift; sourceTree = "<group>"; };
 		DCAE4C3728D06C8100301B2C /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
 		DCAE4C3A28D0779300301B2C /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		DCB16EFF28F96670001686C1 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		DCB16F0128F966CF001686C1 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		DCB16F0328F966E8001686C1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DCB246EA28CB17D400873CF2 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		DCB246EE28CB19E800873CF2 /* RxSwift+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Ex.swift"; sourceTree = "<group>"; };
 		DCB246F028CB1BB000873CF2 /* PersistantStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantStorage.swift; sourceTree = "<group>"; };
@@ -279,6 +281,13 @@
 			path = UserPreferencesStorage;
 			sourceTree = "<group>";
 		};
+		DC5486FD28FD3F21005106B0 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		DC6E407528B75CAD00429771 = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +392,7 @@
 				DC6E408328B75CAD00429771 /* SceneDelegate.swift */,
 				DC6E40DF28B8638700429771 /* AppAppearance.swift */,
 				DC6E40E028B8638700429771 /* AppConfigurations.swift */,
+				DCB16F0328F966E8001686C1 /* AppCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -391,7 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA7DA7328DC0D370013996C /* Base */,
-				DC6E41A428B8B2EE00429771 /* Authentication */,
+				DC6E41A428B8B2EE00429771 /* Auth */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -399,6 +409,7 @@
 		DC6E412028B8638700429771 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				DCB16F0128F966CF001686C1 /* LoginCoordinator.swift */,
 				DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */,
 				DC6E412228B8638700429771 /* LoginViewModel.swift */,
 				DC6E412328B8638700429771 /* LoginViewController.swift */,
@@ -411,9 +422,9 @@
 			isa = PBXGroup;
 			children = (
 				DC6E418428B87FA000429771 /* ServiceFacade.swift */,
+				DC5486FD28FD3F21005106B0 /* Coordinator */,
 				DC88488328EFE7A9006698A1 /* Logger */,
 				DC28BCF128E55B1E000D4FF0 /* UserPreferencesStorage */,
-				DC6E418B28B8817300429771 /* Coordinator */,
 				DC85BC1028BCB96F00187748 /* PersistantStorage */,
 				DC28BCE628E1950F000D4FF0 /* ReponseParser */,
 				DCCFEC8D28BC65A900019DBB /* Networking */,
@@ -421,21 +432,12 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		DC6E418B28B8817300429771 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				DC6E418C28B8818700429771 /* Coordinator.swift */,
-				DC6E419028B8829200429771 /* MainCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		DC6E41A428B8B2EE00429771 /* Authentication */ = {
+		DC6E41A428B8B2EE00429771 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				DC6E412028B8638700429771 /* Login */,
 			);
-			path = Authentication;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		DC6E41A528B8B50600429771 /* Auth */ = {
@@ -531,6 +533,7 @@
 				DC833E4028F3F5C90028DAFA /* ViewModelType.swift */,
 				DCA7DA7428DC0D410013996C /* BaseViewModel.swift */,
 				DCA7DA7628DC52B70013996C /* BaseViewController.swift */,
+				DCB16EFF28F96670001686C1 /* BaseCoordinator.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -842,11 +845,9 @@
 				DCA7DA7728DC52B70013996C /* BaseViewController.swift in Sources */,
 				DC6E41A728B8B51B00429771 /* AuthUseCaseType.swift in Sources */,
 				DCCFEC9228BC67DB00019DBB /* Networking.swift in Sources */,
-				DC6E419128B8829200429771 /* MainCoordinator.swift in Sources */,
 				DCD7857D28F65CBE008E36B2 /* UIViewControler+Rx.swift in Sources */,
 				DC833E5E28F567580028DAFA /* Optional+Ex.swift in Sources */,
 				DC6E41A928B8B6CE00429771 /* CommonError.swift in Sources */,
-				DC6E418D28B8818700429771 /* Coordinator.swift in Sources */,
 				DC833E5428F52D880028DAFA /* AuthResponse.swift in Sources */,
 				DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */,
 				DC6E414F28B8638800429771 /* AppConfigurations.swift in Sources */,
@@ -866,10 +867,13 @@
 				DC6E417128B8638800429771 /* LoginViewController.swift in Sources */,
 				DC6E418528B87FA000429771 /* ServiceFacade.swift in Sources */,
 				DCAE4C3828D06C8100301B2C /* ErrorTracker.swift in Sources */,
+				DCB16F0428F966E8001686C1 /* AppCoordinator.swift in Sources */,
 				DC6E414E28B8638800429771 /* AppAppearance.swift in Sources */,
 				DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */,
 				DC833E5628F52EA30028DAFA /* AuthRepository.swift in Sources */,
+				DCB16F0028F96670001686C1 /* BaseCoordinator.swift in Sources */,
 				DCCFEC8F28BC661600019DBB /* API.swift in Sources */,
+				DCB16F0228F966CF001686C1 /* LoginCoordinator.swift in Sources */,
 				DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */,
 				DCA7DA7D28DD54680013996C /* ReamlError.swift in Sources */,
 				DC833E5028F52CC40028DAFA /* AuthRequest.swift in Sources */,

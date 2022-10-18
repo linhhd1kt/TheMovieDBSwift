@@ -5,7 +5,7 @@ import Action
 
 final class LoginViewModel: BaseViewModel {
     // MARK: - Dependency
-    private let usecase: AuthUseCase
+    private let usecase: AuthUseCaseType
     private var coordinator: Coordinator {
         guard let coordinator = ServiceFacade.getService(Coordinator.self) else {
             preconditionFailure("Coordinator should be registered!")
@@ -21,11 +21,10 @@ final class LoginViewModel: BaseViewModel {
     private let forgotPasswordActionObserver = PublishSubject<Void>()
 
     // MARK: - Output
-    private let credentialObserver = BehaviorSubject<Credential>(value: .default)
     private let errorObserver = BehaviorSubject<String>(value: "")
     private let loginButtonEnabledObserver = BehaviorSubject<Bool>(value: false)
     
-    init(usecase: AuthUseCase) {
+    init(usecase: AuthUseCaseType = AuthUseCase()) {
         self.usecase = usecase
         super.init()
         self.binding()
@@ -46,6 +45,15 @@ final class LoginViewModel: BaseViewModel {
         loginActionObserver
             .withLatestFrom(loginInfo.map { ($0, $1) })
             .bind(to: usecase.input.login)
+            .disposed(by: disposeBag)
+        
+        usecase.output.loginResult
+            .elements
+            .filter { $0.success == true }
+            .withUnretained(self)
+            .subscribe { this, _ in
+                this.coordinator.start()
+            }
             .disposed(by: disposeBag)
         
     }

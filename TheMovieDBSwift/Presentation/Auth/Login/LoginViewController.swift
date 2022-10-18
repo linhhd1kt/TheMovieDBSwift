@@ -18,7 +18,7 @@ final class LoginViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewModel: LoginViewModelType) {
+    init(viewModel: LoginViewModelType = LoginViewModel()) {
         self.viewModel = viewModel
         super.init()
     }

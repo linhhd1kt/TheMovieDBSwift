@@ -18,13 +18,12 @@ extension Container {
 
 class ServiceFacade {
     private static let logger: Logable = Logger()
-    private static let coordinator: Coordinator = MainCoordinator(navigationController: UINavigationController())
     private static let userPreferencesStorage: UserPreferencesStorable = UserPreferencesStorage()
+    private static let appCoordinator: Coordinator = AppCoordinator()
     private static let network: Networking = Network()
     private static let persistantStorage: PersistantStorable = RealmPersistantStorage()
     private static let responseParser: ResponseParsable = ResponseParser()
     
-
     static func registerDefaultService(from windown: UIWindow?) {
         initializeService(from: windown)
     }
@@ -34,6 +33,7 @@ class ServiceFacade {
     }
 
     private static func initializeService(from window: UIWindow?) {
+        window?.makeKeyAndVisible()
         Container.default.register(Logable.self) { _ in
             ServiceFacade.logger
         }
@@ -41,7 +41,7 @@ class ServiceFacade {
             ServiceFacade.userPreferencesStorage
         }
         Container.default.register(Coordinator.self) { _ in
-            ServiceFacade.coordinator
+            ServiceFacade.appCoordinator
         }
         Container.default.register(PersistantStorable.self) { _ in
             ServiceFacade.persistantStorage

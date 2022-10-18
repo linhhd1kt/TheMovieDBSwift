@@ -16,7 +16,7 @@ class AuthUseCase {
     private let loginObserver = PublishSubject<(email: String, password: String)>()
     // MARK: - Other
     
-    init(respository: AuthRepositoryType, translator: AuthTranslatorType = AuthTranslator()) {
+    init(respository: AuthRepositoryType = AuthRepository(), translator: AuthTranslatorType = AuthTranslator()) {
         self.respository = respository
         self.traslator = translator
         bindInput()

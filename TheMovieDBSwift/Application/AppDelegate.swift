@@ -11,17 +11,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var coordiate: Coordinator? {
-        return ServiceFacade.getService(Coordinator.self)
-    }
+    private var appCoordinator: Coordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        AppAppearance.setupAppearance()
-        window = UIWindow(frame: UIScreen.main.bounds)
         ServiceFacade.registerDefaultService(from: window)
-        coordiate?.start()
-        window?.rootViewController = coordiate?.navigationController        
-        window?.makeKeyAndVisible()    
+        self.appCoordinator = ServiceFacade.getService(Coordinator.self)
+        AppAppearance.setupAppearance()
+        appCoordinator?.start()
         return true
     }
 

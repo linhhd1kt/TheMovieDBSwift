@@ -20,8 +20,7 @@ protocol UserPreferencesStorable {
 }
 
 class UserPreferencesStorage: UserPreferencesStorable {
-    
-    
+
     func value<T>(for key: String) -> T? {
         return UserDefaults.standard.value(forKey: key) as? T
     }
