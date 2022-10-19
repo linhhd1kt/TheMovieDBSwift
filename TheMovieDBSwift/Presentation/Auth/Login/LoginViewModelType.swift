@@ -24,4 +24,3 @@ protocol LoginViewModelOutputType {
     var loginResult: ActionResult<Credential>  { get }
     var loginButtonEnabled: Observable<Bool> { get }
 }
-

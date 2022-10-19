@@ -10,17 +10,12 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    private var appCoordinator: Coordinator?
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        ServiceFacade.registerDefaultService(from: window)
-        self.appCoordinator = ServiceFacade.getService(Coordinator.self)
-        AppAppearance.setupAppearance()
-        appCoordinator?.start()
+        ServiceFacade.registerDefaultService()
         return true
     }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
+    
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        return UISceneConfiguration(name: "default", sessionRole: .windowApplication)
     }
 }

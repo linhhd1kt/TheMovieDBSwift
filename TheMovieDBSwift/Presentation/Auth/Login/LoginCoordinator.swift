@@ -12,8 +12,9 @@ class LoginCoordinator: BaseCoordinator {
     
     let viewModel: LoginViewModelType
     
-    init(viewModel: LoginViewModelType) {
+    init(navigationController: UINavigationController, viewModel: LoginViewModelType) {
         self.viewModel = viewModel
+        super.init(navigationController: navigationController)
     }
     
     override func start() {

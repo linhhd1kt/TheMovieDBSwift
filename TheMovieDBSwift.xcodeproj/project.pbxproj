@@ -13,6 +13,23 @@
 		DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCED28E559DC000D4FF0 /* Respository.swift */; };
 		DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCEF28E55A15000D4FF0 /* DataSource.swift */; };
 		DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */; };
+		DC54870128FE45F9005106B0 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870028FE45F9005106B0 /* CoordinatorType.swift */; };
+		DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */; };
+		DC54870928FE538F005106B0 /* DrawerMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870528FE538F005106B0 /* DrawerMenuViewModel.swift */; };
+		DC54870D28FE53E4005106B0 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = DC54870C28FE53E4005106B0 /* SideMenu */; };
+		DC54870F28FE5425005106B0 /* DrawerMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870E28FE5425005106B0 /* DrawerMenuScreen.swift */; };
+		DC54871128FE9972005106B0 /* DrawerMenuViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871028FE9972005106B0 /* DrawerMenuViewModelType.swift */; };
+		DC54871428FEA6EB005106B0 /* DrawerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871228FEA6EB005106B0 /* DrawerMenuViewController.swift */; };
+		DC54871528FEA6EB005106B0 /* DrawerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC54871328FEA6EB005106B0 /* DrawerMenuViewController.xib */; };
+		DC54871928FEAA48005106B0 /* DrawerMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871728FEAA48005106B0 /* DrawerMenuCell.swift */; };
+		DC54871A28FEAA48005106B0 /* DrawerMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC54871828FEAA48005106B0 /* DrawerMenuCell.xib */; };
+		DC54871E28FF8FC5005106B0 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871C28FF8FC5005106B0 /* DashboardViewController.swift */; };
+		DC54871F28FF8FC5005106B0 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC54871D28FF8FC5005106B0 /* DashboardViewController.xib */; };
+		DC54872128FF8FD0005106B0 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872028FF8FCF005106B0 /* DashboardCoordinator.swift */; };
+		DC54872428FF8FFE005106B0 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872328FF8FFE005106B0 /* DashboardViewModel.swift */; };
+		DC54872528FF8FFE005106B0 /* DashboardViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872228FF8FFE005106B0 /* DashboardViewModelType.swift */; };
+		DC54872728FF90AE005106B0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872628FF90AE005106B0 /* Movie.swift */; };
+		DC54872928FFF6EB005106B0 /* ViewControllerWithSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872828FFF6EB005106B0 /* ViewControllerWithSideMenu.swift */; };
 		DC6E408428B75CAD00429771 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E408328B75CAD00429771 /* SceneDelegate.swift */; };
 		DC6E409928B75CAE00429771 /* TheMovieDBSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E409828B75CAE00429771 /* TheMovieDBSwiftTests.swift */; };
 		DC6E40A328B75CAE00429771 /* TheMovieDBSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E40A228B75CAE00429771 /* TheMovieDBSwiftUITests.swift */; };
@@ -37,7 +54,6 @@
 		DC6E41AF28B8BF7C00429771 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC6E41AE28B8BF7C00429771 /* RxCocoa */; };
 		DC6E41B128B8BF7C00429771 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = DC6E41B028B8BF7C00429771 /* RxRelay */; };
 		DC6E41B328B8BF7C00429771 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC6E41B228B8BF7C00429771 /* RxSwift */; };
-		DC6E41B528B8BFD500429771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6E41B428B8BFD500429771 /* Main.storyboard */; };
 		DC6E41B728B8C7BE00429771 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */; };
 		DC833E3F28F3D8C40028DAFA /* LoginViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */; };
 		DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E4028F3F5C90028DAFA /* ViewModelType.swift */; };
@@ -128,6 +144,22 @@
 		DC28BCED28E559DC000D4FF0 /* Respository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respository.swift; sourceTree = "<group>"; };
 		DC28BCEF28E55A15000D4FF0 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesStorage.swift; sourceTree = "<group>"; };
+		DC54870028FE45F9005106B0 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
+		DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuCoordinator.swift; sourceTree = "<group>"; };
+		DC54870528FE538F005106B0 /* DrawerMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuViewModel.swift; sourceTree = "<group>"; };
+		DC54870E28FE5425005106B0 /* DrawerMenuScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMenuScreen.swift; sourceTree = "<group>"; };
+		DC54871028FE9972005106B0 /* DrawerMenuViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMenuViewModelType.swift; sourceTree = "<group>"; };
+		DC54871228FEA6EB005106B0 /* DrawerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMenuViewController.swift; sourceTree = "<group>"; };
+		DC54871328FEA6EB005106B0 /* DrawerMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerMenuViewController.xib; sourceTree = "<group>"; };
+		DC54871728FEAA48005106B0 /* DrawerMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMenuCell.swift; sourceTree = "<group>"; };
+		DC54871828FEAA48005106B0 /* DrawerMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerMenuCell.xib; sourceTree = "<group>"; };
+		DC54871C28FF8FC5005106B0 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		DC54871D28FF8FC5005106B0 /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		DC54872028FF8FCF005106B0 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
+		DC54872228FF8FFE005106B0 /* DashboardViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelType.swift; sourceTree = "<group>"; };
+		DC54872328FF8FFE005106B0 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		DC54872628FF90AE005106B0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		DC54872828FFF6EB005106B0 /* ViewControllerWithSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWithSideMenu.swift; sourceTree = "<group>"; };
 		DC6E407E28B75CAD00429771 /* TheMovieDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E408328B75CAD00429771 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DC6E409428B75CAE00429771 /* TheMovieDBSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDBSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +182,6 @@
 		DC6E419328B8862F00429771 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DC6E41A628B8B51B00429771 /* AuthUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCaseType.swift; sourceTree = "<group>"; };
 		DC6E41A828B8B6CE00429771 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
-		DC6E41B428B8BFD500429771 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelType.swift; sourceTree = "<group>"; };
 		DC833E4028F3F5C90028DAFA /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
@@ -206,6 +237,7 @@
 				DCCFEC9728BC699900019DBB /* ReactiveMoya in Frameworks */,
 				DCCFEC9928BC699900019DBB /* RxMoya in Frameworks */,
 				DC85BC1728BCBAA300187748 /* RealmSwift in Frameworks */,
+				DC54870D28FE53E4005106B0 /* SideMenu in Frameworks */,
 				DCCFEC9528BC699900019DBB /* Moya in Frameworks */,
 				DCEFA4EE28E159EF00869D4E /* RxRealm in Frameworks */,
 				DCA7DA7228DAFA8F0013996C /* NSObject-Rx in Frameworks */,
@@ -284,8 +316,45 @@
 		DC5486FD28FD3F21005106B0 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				DC54870028FE45F9005106B0 /* CoordinatorType.swift */,
+				DCB16EFF28F96670001686C1 /* BaseCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		DC54870228FE538F005106B0 /* DrawerMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DC54871628FEAA21005106B0 /* DrawerMenuCell */,
+				DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */,
+				DC54871228FEA6EB005106B0 /* DrawerMenuViewController.swift */,
+				DC54871328FEA6EB005106B0 /* DrawerMenuViewController.xib */,
+				DC54871028FE9972005106B0 /* DrawerMenuViewModelType.swift */,
+				DC54870528FE538F005106B0 /* DrawerMenuViewModel.swift */,
+			);
+			name = DrawerMenu;
+			path = TheMovieDBSwift/Presentation/DrawerMenu;
+			sourceTree = SOURCE_ROOT;
+		};
+		DC54871628FEAA21005106B0 /* DrawerMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				DC54871728FEAA48005106B0 /* DrawerMenuCell.swift */,
+				DC54871828FEAA48005106B0 /* DrawerMenuCell.xib */,
+			);
+			path = DrawerMenuCell;
+			sourceTree = "<group>";
+		};
+		DC54871B28FF8FAA005106B0 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				DC54872028FF8FCF005106B0 /* DashboardCoordinator.swift */,
+				DC54872228FF8FFE005106B0 /* DashboardViewModelType.swift */,
+				DC54872328FF8FFE005106B0 /* DashboardViewModel.swift */,
+				DC54871C28FF8FC5005106B0 /* DashboardViewController.swift */,
+				DC54871D28FF8FC5005106B0 /* DashboardViewController.xib */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		DC6E407528B75CAD00429771 = {
@@ -348,7 +417,6 @@
 				DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */,
 				DC6E40C628B8638700429771 /* Assets.xcassets */,
 				DC6E40C928B8638700429771 /* Info.plist */,
-				DC6E41B428B8BFD500429771 /* Main.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -400,7 +468,9 @@
 		DC6E410728B8638700429771 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DC54871B28FF8FAA005106B0 /* Dashboard */,
 				DCA7DA7328DC0D370013996C /* Base */,
+				DC54870228FE538F005106B0 /* DrawerMenu */,
 				DC6E41A428B8B2EE00429771 /* Auth */,
 			);
 			path = Presentation;
@@ -506,6 +576,8 @@
 			isa = PBXGroup;
 			children = (
 				DC833E5B28F557170028DAFA /* Credential.swift */,
+				DC54872628FF90AE005106B0 /* Movie.swift */,
+				DC54870E28FE5425005106B0 /* DrawerMenuScreen.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -533,7 +605,7 @@
 				DC833E4028F3F5C90028DAFA /* ViewModelType.swift */,
 				DCA7DA7428DC0D410013996C /* BaseViewModel.swift */,
 				DCA7DA7628DC52B70013996C /* BaseViewController.swift */,
-				DCB16EFF28F96670001686C1 /* BaseCoordinator.swift */,
+				DC54872828FFF6EB005106B0 /* ViewControllerWithSideMenu.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -630,6 +702,7 @@
 				DC833E6028F569BE0028DAFA /* ObjcExceptionBridging */,
 				DC833E6228F569BE0028DAFA /* XCGLogger */,
 				DCD7857F28F66066008E36B2 /* ProgressHUD */,
+				DC54870C28FE53E4005106B0 /* SideMenu */,
 			);
 			productName = TheMovieDBSwift;
 			productReference = DC6E407E28B75CAD00429771 /* TheMovieDBSwift.app */;
@@ -718,6 +791,7 @@
 				DC833E4228F52A990028DAFA /* XCRemoteSwiftPackageReference "Action" */,
 				DC833E5F28F569BE0028DAFA /* XCRemoteSwiftPackageReference "XCGLogger" */,
 				DCD7857E28F66066008E36B2 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				DC54870B28FE53E4005106B0 /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = DC6E407F28B75CAD00429771 /* Products */;
 			projectDirPath = "";
@@ -736,8 +810,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6E41B728B8C7BE00429771 /* Launch Screen.storyboard in Resources */,
+				DC54871A28FEAA48005106B0 /* DrawerMenuCell.xib in Resources */,
 				DC6E413D28B8638800429771 /* Localizable.strings in Resources */,
-				DC6E41B528B8BFD500429771 /* Main.storyboard in Resources */,
+				DC54871F28FF8FC5005106B0 /* DashboardViewController.xib in Resources */,
+				DC54871528FEA6EB005106B0 /* DrawerMenuViewController.xib in Resources */,
 				DC6E413F28B8638800429771 /* Assets.xcassets in Resources */,
 				DC6E419528B8862F00429771 /* LoginViewController.xib in Resources */,
 			);
@@ -834,12 +910,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6E415228B8638800429771 /* AppDelegate.swift in Sources */,
+				DC54872528FF8FFE005106B0 /* DashboardViewModelType.swift in Sources */,
+				DC54871E28FF8FC5005106B0 /* DashboardViewController.swift in Sources */,
 				DC88488528EFE7B7006698A1 /* Logger.swift in Sources */,
+				DC54872928FFF6EB005106B0 /* ViewControllerWithSideMenu.swift in Sources */,
+				DC54870128FE45F9005106B0 /* CoordinatorType.swift in Sources */,
 				DCB246EB28CB17D400873CF2 /* AuthUseCase.swift in Sources */,
 				DCCFEC9B28BCA54200019DBB /* CredentialRemoteDataSource.swift in Sources */,
 				DC833E6528F56CE50028DAFA /* NSObject+Ex.swift in Sources */,
+				DC54871928FEAA48005106B0 /* DrawerMenuCell.swift in Sources */,
 				DC833E5928F5521B0028DAFA /* AuthTranslator.swift in Sources */,
 				DC6E417028B8638800429771 /* LoginViewModel.swift in Sources */,
+				DC54871128FE9972005106B0 /* DrawerMenuViewModelType.swift in Sources */,
 				DCAE4C3B28D0779300301B2C /* ActivityIndicator.swift in Sources */,
 				DCCFEC8A28BC5CED00019DBB /* CredentialRespostitory.swift in Sources */,
 				DCA7DA7728DC52B70013996C /* BaseViewController.swift in Sources */,
@@ -849,11 +931,13 @@
 				DC833E5E28F567580028DAFA /* Optional+Ex.swift in Sources */,
 				DC6E41A928B8B6CE00429771 /* CommonError.swift in Sources */,
 				DC833E5428F52D880028DAFA /* AuthResponse.swift in Sources */,
+				DC54872428FF8FFE005106B0 /* DashboardViewModel.swift in Sources */,
 				DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */,
 				DC6E414F28B8638800429771 /* AppConfigurations.swift in Sources */,
 				DC833E3F28F3D8C40028DAFA /* LoginViewModelType.swift in Sources */,
 				DC85BC1C28BCBDAE00187748 /* RealmPersistantStorage.swift in Sources */,
 				DC6E414B28B8638800429771 /* ConnectionError.swift in Sources */,
+				DC54870F28FE5425005106B0 /* DrawerMenuScreen.swift in Sources */,
 				DCB246EF28CB19E800873CF2 /* RxSwift+Ex.swift in Sources */,
 				DC6E414528B8638800429771 /* CredentialObject.swift in Sources */,
 				DC833E5C28F557170028DAFA /* Credential.swift in Sources */,
@@ -861,13 +945,16 @@
 				DCA7DA7B28DD52B00013996C /* NetworkError.swift in Sources */,
 				DCA7DA7528DC0D410013996C /* BaseViewModel.swift in Sources */,
 				DCCFEC9D28BCA55000019DBB /* CredentialLocalDataSource.swift in Sources */,
+				DC54871428FEA6EB005106B0 /* DrawerMenuViewController.swift in Sources */,
 				DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */,
 				DC28BCE828E1952C000D4FF0 /* ResponseParser.swift in Sources */,
 				DC833E4C28F52C650028DAFA /* AuthRepositotyType.swift in Sources */,
+				DC54872128FF8FD0005106B0 /* DashboardCoordinator.swift in Sources */,
 				DC6E417128B8638800429771 /* LoginViewController.swift in Sources */,
 				DC6E418528B87FA000429771 /* ServiceFacade.swift in Sources */,
 				DCAE4C3828D06C8100301B2C /* ErrorTracker.swift in Sources */,
 				DCB16F0428F966E8001686C1 /* AppCoordinator.swift in Sources */,
+				DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */,
 				DC6E414E28B8638800429771 /* AppAppearance.swift in Sources */,
 				DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */,
 				DC833E5628F52EA30028DAFA /* AuthRepository.swift in Sources */,
@@ -875,9 +962,11 @@
 				DCCFEC8F28BC661600019DBB /* API.swift in Sources */,
 				DCB16F0228F966CF001686C1 /* LoginCoordinator.swift in Sources */,
 				DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */,
+				DC54872728FF90AE005106B0 /* Movie.swift in Sources */,
 				DCA7DA7D28DD54680013996C /* ReamlError.swift in Sources */,
 				DC833E5028F52CC40028DAFA /* AuthRequest.swift in Sources */,
 				DC833E4628F52AC50028DAFA /* ActionResult.swift in Sources */,
+				DC54870928FE538F005106B0 /* DrawerMenuViewModel.swift in Sources */,
 				DCB246F128CB1BB000873CF2 /* PersistantStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1060,7 +1149,7 @@
 				INFOPLIST_FILE = TheMovieDBSwift/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "Launch Screen";
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1095,7 +1184,7 @@
 				INFOPLIST_FILE = TheMovieDBSwift/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "Launch Screen";
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1235,6 +1324,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DC54870B28FE53E4005106B0 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		DC6E418628B87FFB00429771 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -1326,6 +1423,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DC54870C28FE53E4005106B0 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC54870B28FE53E4005106B0 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
 		DC6E418728B87FFB00429771 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC6E418628B87FFB00429771 /* XCRemoteSwiftPackageReference "Swinject" */;

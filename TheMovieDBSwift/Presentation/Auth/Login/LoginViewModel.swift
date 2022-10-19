@@ -6,8 +6,8 @@ import Action
 final class LoginViewModel: BaseViewModel {
     // MARK: - Dependency
     private let usecase: AuthUseCaseType
-    private var coordinator: Coordinator {
-        guard let coordinator = ServiceFacade.getService(Coordinator.self) else {
+    private var coordinator: CoordinatorType {
+        guard let coordinator = ServiceFacade.getService(CoordinatorType.self) else {
             preconditionFailure("Coordinator should be registered!")
         }
         return coordinator
@@ -29,7 +29,6 @@ final class LoginViewModel: BaseViewModel {
         super.init()
         self.binding()
     }
-    
     
     private func binding() {
         // login button enabled when username and password is not empty
@@ -55,7 +54,6 @@ final class LoginViewModel: BaseViewModel {
                 this.coordinator.start()
             }
             .disposed(by: disposeBag)
-        
     }
 }
 
