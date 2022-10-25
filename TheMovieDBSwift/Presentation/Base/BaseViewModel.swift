@@ -9,10 +9,21 @@ import RxSwift
 import NSObject_Rx
 import UIKit
 
-class BaseViewModel {
-    init() { }
+class BaseViewModel: NSObject {
+    var logger: Logable {
+        guard let logger = ServiceFacade.getService(Logable.self) else {
+            fatalError("Logger should be implemented!")
+        }
+        return logger
+    }
+    
+    override init() {
+        super.init()
+        logger.debug("\(className) is initialized.")
+    }
+    
     deinit {
-        print("\(type(of: self)): deinit")
+        logger.debug("\(className) is release.")
     }
 }
 

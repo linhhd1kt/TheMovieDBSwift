@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -32,5 +33,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {}
 
     func sceneDidEnterBackground(_ scene: UIScene) {}
+    
 }
 

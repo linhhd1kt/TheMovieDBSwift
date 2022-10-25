@@ -17,9 +17,6 @@ class ViewControllerWithSideMenu: BaseViewController {
         super.viewDidLoad()
         panGesture = SideMenuManager.default.addPanGestureToPresent(toView: navigationController!.navigationBar)
         edgeGesture = SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: navigationController!.view, forMenu: .left)
-        
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu"), style: .plain, target: self, action: #selector(hamburgerMenuClicked))
-//        navigationItem.leftBarButtonItem?.accessibilityIdentifier = "menuButton"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,9 +42,5 @@ class ViewControllerWithSideMenu: BaseViewController {
     func showSideMenu() {
         present(SideMenuManager.default.leftMenuNavigationController!, animated: true, completion: nil)
     }
-    
-//    @objc func hamburgerMenuClicked() {
-//        showSideMenu()
-//    }
 }
 

@@ -24,7 +24,7 @@ class AppCoordinator: BaseCoordinator {
         
     override func start() {
         navigationController.navigationBar.isHidden = true
-        setUpSideMenu()
+//        setUpSideMenu()
         if let _: String = userPreference.value(for: UserPreferencesKey.requestTokenId.rawValue) {
             showDashboard()
         } else {
@@ -44,30 +44,8 @@ class AppCoordinator: BaseCoordinator {
         removeChildCoordinators()
         let viewModel = DrawerMenuViewModel()
         let coordinator = DrawerMenuCoordinator(navigationController: self.navigationController,
-                                                drawerMenuViewModel: viewModel)
+                                                viewModel: viewModel)
         start(coordinator: coordinator)
-    }
-    
-    private func setUpSideMenu() {
-        // Define the menus
-        let leftMenuNavigationController = SideMenuNavigationController(rootViewController: DrawerMenuViewController())
-        SideMenuManager.default.leftMenuNavigationController = leftMenuNavigationController
-        leftMenuNavigationController.navigationBar.isHidden = true
-
-        let style = SideMenuPresentationStyle.menuSlideIn
-        style.backgroundColor = .black
-        style.presentingEndAlpha = 0.32
-        style.onTopShadowColor = .black
-        style.onTopShadowRadius = 4.0
-        style.onTopShadowOpacity = 0.2
-        style.onTopShadowOffset = CGSize(width: 2.0, height: 0.0)
-
-        var settings = SideMenuSettings()
-        settings.presentationStyle = style
-        settings.menuWidth = max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.75), 240)
-        settings.statusBarEndAlpha = 0.0
-
-        leftMenuNavigationController.settings = settings
     }
 }
 

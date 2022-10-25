@@ -4,8 +4,8 @@ final class DrawerMenuViewModel: BaseViewModel {
     // MARK: - Dependency
     
     // MARK: - Input
-    private let menuSelectObserver = BehaviorSubject<DrawerMenuScreen>(value: .dashboard)
-    
+    private let selectMenuObserver = BehaviorSubject<DrawerMenuScreen>(value: .dashboard)
+
     // MARK: - Output
     private let menuSelectedObserver = BehaviorSubject<DrawerMenuScreen>(value: .dashboard)
     private let menuItemsObserver = BehaviorSubject<[DrawerMenuScreen]>(value: DrawerMenuScreen.allCases)
@@ -14,10 +14,10 @@ final class DrawerMenuViewModel: BaseViewModel {
         super.init()
         self.binding()
     }
-    
+
     private func binding() {
-        Observable.just(DrawerMenuScreen.allCases)
-            .bind(to: menuItemsObserver)
+        selectMenuObserver
+            .bind(to: menuSelectedObserver)
             .disposed(by: disposeBag)
     }
 }
@@ -33,13 +33,13 @@ extension DrawerMenuViewModel: DrawerMenuViewModelType {
 
 extension DrawerMenuViewModel: DrawerMenuViewModelInputType {
     var menuSelect: AnyObserver<DrawerMenuScreen> {
-        return menuSelectObserver.asObserver()
+        return selectMenuObserver.asObserver()
     }
 }
 
 extension DrawerMenuViewModel: DrawerMenuViewModelOutputType {
     var menuSelected: Observable<DrawerMenuScreen>{
-        return menuSelectedObserver.asObserver()
+        return menuSelectedObserver.asObservable()
     }
     var menuItems: Observable<[DrawerMenuScreen]> {
         return menuItemsObserver.asObservable()

@@ -23,16 +23,16 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CcT-pc-XAx">
-                            <rect key="frame" x="40" y="40" width="334" height="738"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="CcT-pc-XAx" firstAttribute="top" secondItem="gEk-Ex-dmE" secondAttribute="top" constant="40" id="GTP-Lc-wc9"/>
-                        <constraint firstAttribute="bottom" secondItem="CcT-pc-XAx" secondAttribute="bottom" constant="40" id="M7w-Z9-bpy"/>
-                        <constraint firstItem="CcT-pc-XAx" firstAttribute="leading" secondItem="gEk-Ex-dmE" secondAttribute="leading" constant="40" id="OZj-6Q-vwv"/>
-                        <constraint firstAttribute="trailing" secondItem="CcT-pc-XAx" secondAttribute="trailing" constant="40" id="RKJ-Xu-ngx"/>
+                        <constraint firstAttribute="trailing" secondItem="CcT-pc-XAx" secondAttribute="trailing" id="Q2Z-8q-QJo"/>
+                        <constraint firstItem="CcT-pc-XAx" firstAttribute="leading" secondItem="gEk-Ex-dmE" secondAttribute="leading" id="gby-fa-Nn7"/>
+                        <constraint firstAttribute="bottom" secondItem="CcT-pc-XAx" secondAttribute="bottom" id="lq3-QF-UQI"/>
+                        <constraint firstItem="CcT-pc-XAx" firstAttribute="top" secondItem="gEk-Ex-dmE" secondAttribute="top" id="zkI-u3-ERp"/>
                     </constraints>
                 </view>
             </subviews>

@@ -1,3 +1,10 @@
+//
+//  DashboardViewModel.swift
+//  TheMovieDBSwift
+//
+//  Created by Ha Linh on 20/10/2022.
+//
+
 import RxSwift
 import RxCocoa
 import NSObject_Rx

@@ -10,15 +10,26 @@ import RxSwift
 import Moya
 import RxMoya
 import Alamofire
+import Foundation
 
 protocol Networking {
     func request<T: Decodable>(target: TargetType) -> Observable<T>
 }
 
 class Network: Networking {
-//    NetworkLoggerPlugin()
-    let provider = MoyaProvider<API>(plugins: [])
-        
+    #if DEBUG
+    let provider = MoyaProvider<API>(plugins: [ApiLogPlugin()])
+    #else
+    let provider = MoyaProvider<API>()
+    #endif
+    
+    var logger: Logable {
+        guard let logger = ServiceFacade.getService(Logable.self) else {
+            fatalError("Logger should be implemented!")
+        }
+        return logger
+    }
+            
     var responseParser: ResponseParsable {
         guard let parser = ServiceFacade.getService(ResponseParsable.self) else {
             fatalError("Response Parser should be implementation!")
@@ -27,6 +38,7 @@ class Network: Networking {
     }
     
     func request<T>(target: TargetType) -> Observable<T> where T : Decodable {
+        print("XXX start request: \(target)")
         guard let target = target as? API else {
             return .error(CommonError.missingImplement(type: "\(API.self)"))
         }
@@ -42,8 +54,9 @@ class Network: Networking {
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             let object = try decoder.decode(T.self, from: response.data)
                             observer.onNext(object)
+                            observer.onCompleted()
                         } catch {
-                            observer.onError(CommonError.decode(description: error.localizedDescription))
+                            observer.onError(error)
                         }
                     }
                 case .failure(let error):
@@ -62,5 +75,9 @@ class Network: Networking {
             }
             return Disposables.create()
         }
+        .do(onError: { [unowned self] error in
+            self.logger.error(error.localizedDescription)
+        })
+
     }
 }

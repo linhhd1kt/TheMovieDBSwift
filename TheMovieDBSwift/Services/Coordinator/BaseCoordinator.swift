@@ -9,13 +9,22 @@ import UIKit
 import RxSwift
 import NSObject_Rx
 
-class BaseCoordinator: CoordinatorType {    
+class BaseCoordinator: NSObject, CoordinatorType {
     var childCoordinators: [CoordinatorType] = []
     var parentCoordinator: CoordinatorType?
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController) {
+    var logger: Logable {
+        guard let logger = ServiceFacade.getService(Logable.self) else {
+            fatalError("Logger should be implemented!")
+        }
+        return logger
+    }
+    
+    init(navigationController: UINavigationController) {        
         self.navigationController = navigationController
+        super.init()
+        logger.debug("\(className) is initialized.")
     }
     
     func start() {
@@ -37,6 +46,10 @@ class BaseCoordinator: CoordinatorType {
     func removeChildCoordinators() {
         childCoordinators.forEach { $0.removeChildCoordinators() }
         childCoordinators.removeAll()
+    }
+    
+    deinit {
+        logger.debug("\(className) is release.")
     }
 }
 

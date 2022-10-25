@@ -15,7 +15,7 @@ protocol ApiRequestable {
 enum API {
     case createRequestToken
     case createSessionWithLogin(parameters: Dictionary<String,Any>)
-    case popular
+    case popularMovie(page: Int)
     case movie(movieId: String)
     case search(query: String)
 }
@@ -34,7 +34,7 @@ extension API: TargetType {
             return "/authentication/token/new"
         case .createSessionWithLogin:
             return "/authentication/token/validate_with_login"
-        case .popular:
+        case .popularMovie:
             return "movie/popular"
         case .movie(let movieId):
             return "movie/\(movieId)"
@@ -65,7 +65,12 @@ extension API: TargetType {
             return .requestCompositeParameters(bodyParameters: parameters,
                                                bodyEncoding: URLEncoding.httpBody,
                                                urlParameters: urlParameter)
-        case .popular, .movie:
+        case .popularMovie(page: let page):
+            return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey,
+                                                   "page": page],
+                                      encoding: URLEncoding.queryString)
+
+        case .movie:
             return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey],
                                       encoding: URLEncoding.httpBody)
         case .search(let query):

@@ -56,6 +56,5 @@ final class LoginViewController: BaseViewController {
             .debug("Executing")
             .bind(to: rx.loading)
             .disposed(by: disposeBag)
-
     }
 }

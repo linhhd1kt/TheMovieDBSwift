@@ -19,9 +19,4 @@ extension CredentialRequest: ApiRequestable {
                                                        "password": password,
                                                        "request_token": requestToken])
     }
-    func toModel(response: CredentialResponse) -> Credential {
-        return Credential(success: response.success,
-                          expiresAt: response.expiresAt,
-                          requestToken: response.requestToken)
-    }
 }

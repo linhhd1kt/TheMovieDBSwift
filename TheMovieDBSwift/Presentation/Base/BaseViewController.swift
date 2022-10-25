@@ -24,10 +24,10 @@ class BaseViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        logger.debug("\(className) is Initialized.")
+        logger.debug("\(className) is initialized.")
     }
     deinit {
-        logger.debug("\(className) is Release.")
+        logger.debug("\(className) is release.")
     }
 }
 
