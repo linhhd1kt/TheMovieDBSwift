@@ -12,14 +12,14 @@ import RxCocoa
 
 class DrawerMenuViewController: BaseViewController, UIScrollViewDelegate {
     @IBOutlet weak var tableView: UITableView!    
-    private let viewModel: DrawerMenuViewModelType
+    private let viewModel: NavigationViewModelType
         
     // MARK: - Initialization
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewModel: DrawerMenuViewModelType) {
+    init(viewModel: NavigationViewModelType) {
         self.viewModel = viewModel
         super.init()
     }
@@ -42,14 +42,14 @@ class DrawerMenuViewController: BaseViewController, UIScrollViewDelegate {
         tableView.separatorStyle = .none
     }
     
-    private func bindInput(_ input: DrawerMenuViewModelInputType) {
-        tableView.rx.itemSelected
+    private func bindInput(_ input: NavigationViewModelInputType) {
+        tableView.rx.itemSelected        
             .compactMap { DrawerMenuScreen(rawValue: $0.row) }
-            .bind(to: input.menuSelect)
+            .bind(to: input.navigationSelect)
             .disposed(by: disposeBag)
     }
 
-    private func bindOutput(_ output: DrawerMenuViewModelOutputType) {
+    private func bindOutput(_ output: NavigationViewModelOutputType) {
         output.menuItems
             .bind(to: tableView.rx.items(cellIdentifier: DrawerMenuCell.className, cellType: DrawerMenuCell.self)) { row, model, cell in
                 cell.selectionStyle = .none

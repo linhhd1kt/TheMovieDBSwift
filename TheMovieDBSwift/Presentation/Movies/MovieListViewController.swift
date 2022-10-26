@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class MovieListViewController: ViewControllerWithSideMenu, UIScrollViewDelegate {
+class MovieListViewController: RickViewController, UIScrollViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     private let viewModel: MovieListViewModelType
     
@@ -17,9 +17,9 @@ class MovieListViewController: ViewControllerWithSideMenu, UIScrollViewDelegate 
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewModel: MovieListViewModelType = MovieListViewModel()) {
+    init(viewModel: MovieListViewModelType = MovieListViewModel(), navigationViewModel: NavigationViewModelType) {
         self.viewModel = viewModel
-        super.init()
+        super.init(navigationViewModel: navigationViewModel)
     }
     
     override func viewDidLoad() {

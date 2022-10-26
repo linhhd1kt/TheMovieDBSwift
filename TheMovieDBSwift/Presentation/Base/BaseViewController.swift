@@ -9,6 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import NSObject_Rx
+import SwiftUI
 
 class BaseViewController: UIViewController {
     var logger: Logable {
@@ -26,6 +27,10 @@ class BaseViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         logger.debug("\(className) is initialized.")
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
     deinit {
         logger.debug("\(className) is release.")
     }

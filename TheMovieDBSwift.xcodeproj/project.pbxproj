@@ -15,10 +15,10 @@
 		DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */; };
 		DC54870128FE45F9005106B0 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870028FE45F9005106B0 /* CoordinatorType.swift */; };
 		DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */; };
-		DC54870928FE538F005106B0 /* DrawerMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870528FE538F005106B0 /* DrawerMenuViewModel.swift */; };
+		DC54870928FE538F005106B0 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870528FE538F005106B0 /* NavigationViewModel.swift */; };
 		DC54870D28FE53E4005106B0 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = DC54870C28FE53E4005106B0 /* SideMenu */; };
 		DC54870F28FE5425005106B0 /* DrawerMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870E28FE5425005106B0 /* DrawerMenuScreen.swift */; };
-		DC54871128FE9972005106B0 /* DrawerMenuViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871028FE9972005106B0 /* DrawerMenuViewModelType.swift */; };
+		DC54871128FE9972005106B0 /* NavigationViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871028FE9972005106B0 /* NavigationViewModelType.swift */; };
 		DC54871428FEA6EB005106B0 /* DrawerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871228FEA6EB005106B0 /* DrawerMenuViewController.swift */; };
 		DC54871528FEA6EB005106B0 /* DrawerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC54871328FEA6EB005106B0 /* DrawerMenuViewController.xib */; };
 		DC54871928FEAA48005106B0 /* DrawerMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871728FEAA48005106B0 /* DrawerMenuCell.swift */; };
@@ -29,7 +29,7 @@
 		DC54872428FF8FFE005106B0 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872328FF8FFE005106B0 /* DashboardViewModel.swift */; };
 		DC54872528FF8FFE005106B0 /* DashboardViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872228FF8FFE005106B0 /* DashboardViewModelType.swift */; };
 		DC54872728FF90AE005106B0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872628FF90AE005106B0 /* Movie.swift */; };
-		DC54872928FFF6EB005106B0 /* ViewControllerWithSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872828FFF6EB005106B0 /* ViewControllerWithSideMenu.swift */; };
+		DC54872928FFF6EB005106B0 /* RickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872828FFF6EB005106B0 /* RickViewController.swift */; };
 		DC54872C2900E2F6005106B0 /* MovieListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872B2900E2F5005106B0 /* MovieListViewModelType.swift */; };
 		DC54872E2900E450005106B0 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54872D2900E450005106B0 /* MovieListViewModel.swift */; };
 		DC5487312900E644005106B0 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5487302900E644005106B0 /* MovieRepository.swift */; };
@@ -91,6 +91,7 @@
 		DC85BC1C28BCBDAE00187748 /* RealmPersistantStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85BC1B28BCBDAE00187748 /* RealmPersistantStorage.swift */; };
 		DC88488228EFE7A3006698A1 /* Willow in Frameworks */ = {isa = PBXBuildFile; productRef = DC88488128EFE7A3006698A1 /* Willow */; };
 		DC88488528EFE7B7006698A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88488428EFE7B7006698A1 /* Logger.swift */; };
+		DCA086FD2907D5310091BF79 /* NavigationItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA086FC2907D5310091BF79 /* NavigationItemFactory.swift */; };
 		DCA7DA7228DAFA8F0013996C /* NSObject-Rx in Frameworks */ = {isa = PBXBuildFile; productRef = DCA7DA7128DAFA8F0013996C /* NSObject-Rx */; };
 		DCA7DA7528DC0D410013996C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7DA7428DC0D410013996C /* BaseViewModel.swift */; };
 		DCA7DA7728DC52B70013996C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7DA7628DC52B70013996C /* BaseViewController.swift */; };
@@ -163,9 +164,9 @@
 		DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesStorage.swift; sourceTree = "<group>"; };
 		DC54870028FE45F9005106B0 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuCoordinator.swift; sourceTree = "<group>"; };
-		DC54870528FE538F005106B0 /* DrawerMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuViewModel.swift; sourceTree = "<group>"; };
+		DC54870528FE538F005106B0 /* NavigationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		DC54870E28FE5425005106B0 /* DrawerMenuScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMenuScreen.swift; sourceTree = "<group>"; };
-		DC54871028FE9972005106B0 /* DrawerMenuViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMenuViewModelType.swift; sourceTree = "<group>"; };
+		DC54871028FE9972005106B0 /* NavigationViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModelType.swift; sourceTree = "<group>"; };
 		DC54871228FEA6EB005106B0 /* DrawerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMenuViewController.swift; sourceTree = "<group>"; };
 		DC54871328FEA6EB005106B0 /* DrawerMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerMenuViewController.xib; sourceTree = "<group>"; };
 		DC54871728FEAA48005106B0 /* DrawerMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMenuCell.swift; sourceTree = "<group>"; };
@@ -176,7 +177,7 @@
 		DC54872228FF8FFE005106B0 /* DashboardViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelType.swift; sourceTree = "<group>"; };
 		DC54872328FF8FFE005106B0 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		DC54872628FF90AE005106B0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		DC54872828FFF6EB005106B0 /* ViewControllerWithSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWithSideMenu.swift; sourceTree = "<group>"; };
+		DC54872828FFF6EB005106B0 /* RickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickViewController.swift; sourceTree = "<group>"; };
 		DC54872B2900E2F5005106B0 /* MovieListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModelType.swift; sourceTree = "<group>"; };
 		DC54872D2900E450005106B0 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		DC5487302900E644005106B0 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
@@ -229,6 +230,7 @@
 		DC833E6428F56CE50028DAFA /* NSObject+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ex.swift"; sourceTree = "<group>"; };
 		DC85BC1B28BCBDAE00187748 /* RealmPersistantStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistantStorage.swift; sourceTree = "<group>"; };
 		DC88488428EFE7B7006698A1 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		DCA086FC2907D5310091BF79 /* NavigationItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemFactory.swift; sourceTree = "<group>"; };
 		DCA7DA7428DC0D410013996C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		DCA7DA7628DC52B70013996C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DCA7DA7A28DD52B00013996C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -363,8 +365,8 @@
 				DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */,
 				DC54871328FEA6EB005106B0 /* DrawerMenuViewController.xib */,
 				DC54871228FEA6EB005106B0 /* DrawerMenuViewController.swift */,
-				DC54871028FE9972005106B0 /* DrawerMenuViewModelType.swift */,
-				DC54870528FE538F005106B0 /* DrawerMenuViewModel.swift */,
+				DC54871028FE9972005106B0 /* NavigationViewModelType.swift */,
+				DC54870528FE538F005106B0 /* NavigationViewModel.swift */,
 			);
 			name = DrawerMenu;
 			path = TheMovieDBSwift/Presentation/DrawerMenu;
@@ -576,6 +578,7 @@
 		DC6E418328B87F3500429771 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DCA086FB2907D51D0091BF79 /* Factories */,
 				DC6E418428B87FA000429771 /* ServiceFacade.swift */,
 				DC5486FD28FD3F21005106B0 /* Coordinator */,
 				DC88488328EFE7A9006698A1 /* Logger */,
@@ -688,13 +691,21 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		DCA086FB2907D51D0091BF79 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				DCA086FC2907D5310091BF79 /* NavigationItemFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		DCA7DA7328DC0D370013996C /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				DC833E4028F3F5C90028DAFA /* ViewModelType.swift */,
 				DCA7DA7428DC0D410013996C /* BaseViewModel.swift */,
 				DCA7DA7628DC52B70013996C /* BaseViewController.swift */,
-				DC54872828FFF6EB005106B0 /* ViewControllerWithSideMenu.swift */,
+				DC54872828FFF6EB005106B0 /* RickViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1007,7 +1018,7 @@
 				DC54872528FF8FFE005106B0 /* DashboardViewModelType.swift in Sources */,
 				DC54871E28FF8FC5005106B0 /* DashboardViewController.swift in Sources */,
 				DC88488528EFE7B7006698A1 /* Logger.swift in Sources */,
-				DC54872928FFF6EB005106B0 /* ViewControllerWithSideMenu.swift in Sources */,
+				DC54872928FFF6EB005106B0 /* RickViewController.swift in Sources */,
 				DC54870128FE45F9005106B0 /* CoordinatorType.swift in Sources */,
 				DCB246EB28CB17D400873CF2 /* AuthUseCase.swift in Sources */,
 				DC54874E290139FC005106B0 /* ApiLogPlugin.swift in Sources */,
@@ -1020,7 +1031,7 @@
 				DC54873D2900FD91005106B0 /* MovieUseCaseType.swift in Sources */,
 				DC54873A2900F9A0005106B0 /* MovieTranslator.swift in Sources */,
 				DC54873F2900FD9C005106B0 /* MovieUseCase.swift in Sources */,
-				DC54871128FE9972005106B0 /* DrawerMenuViewModelType.swift in Sources */,
+				DC54871128FE9972005106B0 /* NavigationViewModelType.swift in Sources */,
 				DCAE4C3B28D0779300301B2C /* ActivityIndicator.swift in Sources */,
 				DCCFEC8A28BC5CED00019DBB /* CredentialRespostitory.swift in Sources */,
 				DCA7DA7728DC52B70013996C /* BaseViewController.swift in Sources */,
@@ -1060,6 +1071,7 @@
 				DC54874C2901269D005106B0 /* MovieListCoordinator.swift in Sources */,
 				DC5487332900E660005106B0 /* MovieRepositoryType.swift in Sources */,
 				DC5487482901084A005106B0 /* MovieCell.swift in Sources */,
+				DCA086FD2907D5310091BF79 /* NavigationItemFactory.swift in Sources */,
 				DCB16F0428F966E8001686C1 /* AppCoordinator.swift in Sources */,
 				DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */,
 				DC6E414E28B8638800429771 /* AppAppearance.swift in Sources */,
@@ -1074,7 +1086,7 @@
 				DC833E5028F52CC40028DAFA /* AuthRequest.swift in Sources */,
 				DC5487412901053D005106B0 /* Page.swift in Sources */,
 				DC833E4628F52AC50028DAFA /* ActionResult.swift in Sources */,
-				DC54870928FE538F005106B0 /* DrawerMenuViewModel.swift in Sources */,
+				DC54870928FE538F005106B0 /* NavigationViewModel.swift in Sources */,
 				DCB246F128CB1BB000873CF2 /* PersistantStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1255,6 +1267,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "http://image.tmdb.org";
 				INFOPLIST_FILE = TheMovieDBSwift/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TMDB;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIMainStoryboardFile = "Launch Screen";
@@ -1290,6 +1303,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "http://image.tmdb.org";
 				INFOPLIST_FILE = TheMovieDBSwift/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TMDB;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIMainStoryboardFile = "Launch Screen";

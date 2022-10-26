@@ -11,15 +11,19 @@ import UIKit
 class DashboardCoordinator: BaseCoordinator {
     
     let viewModel: DashboardViewModelType
+    let navigationViewModel: NavigationViewModelType
     
-    init(navigationController: UINavigationController, viewModel: DashboardViewModelType) {
+    init(navigationController: UINavigationController,
+         viewModel: DashboardViewModelType,
+         navigationViewModel: NavigationViewModelType) {
         self.viewModel = viewModel
+        self.navigationViewModel = navigationViewModel
         super.init(navigationController: navigationController)
     }
-    
+
     override func start() {
-        let dashboardViewController = DashboardViewController(viewModel: viewModel)
+        let dashboardViewController = DashboardViewController(viewModel: viewModel,
+                                                              navigationViewModel: self.navigationViewModel)
         self.navigationController.viewControllers = [dashboardViewController]
-        
     }
 }

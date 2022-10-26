@@ -21,7 +21,7 @@ class BaseCoordinator: NSObject, CoordinatorType {
         return logger
     }
     
-    init(navigationController: UINavigationController) {        
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         super.init()
         logger.debug("\(className) is initialized.")

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashboardViewController: ViewControllerWithSideMenu {
+class DashboardViewController: RickViewController {
 
     private let viewModel: DashboardViewModelType
         
@@ -16,15 +16,21 @@ class DashboardViewController: ViewControllerWithSideMenu {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewModel: DashboardViewModelType = DashboardViewModel()) {
+    init(viewModel: DashboardViewModelType, navigationViewModel: NavigationViewModelType) {
         self.viewModel = viewModel
-        super.init()
+        super.init(navigationViewModel: navigationViewModel)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindInput(viewModel.input)
         bindOutput(viewModel.output)
+        
+//        navigationItem.leftBarButtonItem?
+//            .rx.tap.asObservable()
+//            .subscribe { _ in
+//                print("XXXX leftBarButtonItem did tap")
+//            }.disposed(by: disposeBag)
     }
     
     private func bindInput(_ input: DashboardViewModelInputType) {

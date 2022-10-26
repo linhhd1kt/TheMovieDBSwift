@@ -10,21 +10,21 @@ import UIKit
 import SideMenu
 
 class AppCoordinator: BaseCoordinator {
-    
     private var userPreference: UserPreferencesStorable {
         guard let preference = ServiceFacade.getService(UserPreferencesStorable.self) else {
             fatalError("User preferences should be initilized!")
         }
         return preference
     }
+    private let navigationItemFactory: NavigationItemCreatable
     
-    init() {
+    init(navigationItemFactory: NavigationItemCreatable = NavigationItemFactory()) {
+        self.navigationItemFactory = navigationItemFactory
         super.init(navigationController: UINavigationController())
+        setupAppearance()
     }
-        
+    
     override func start() {
-        navigationController.navigationBar.isHidden = true
-//        setUpSideMenu()
         if let _: String = userPreference.value(for: UserPreferencesKey.requestTokenId.rawValue) {
             showDashboard()
         } else {
@@ -32,17 +32,32 @@ class AppCoordinator: BaseCoordinator {
         }
     }
     
+    func setupAppearance() {
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.backgroundColor = .blue
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        } else {
+            UINavigationBar.appearance().barTintColor = .blue
+            UINavigationBar.appearance().tintColor = .white
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
+    }
+    
     private func showSignIn() {
         removeChildCoordinators()
         let viewModel = LoginViewModel()
         let coordinator = LoginCoordinator(navigationController: self.navigationController,
-                                                viewModel: viewModel)
+                                           viewModel: viewModel)
         start(coordinator: coordinator)
     }
     
     private func showDashboard() {
         removeChildCoordinators()
-        let viewModel = DrawerMenuViewModel()
+        let viewModel = NavigationViewModel()
         let coordinator = DrawerMenuCoordinator(navigationController: self.navigationController,
                                                 viewModel: viewModel)
         start(coordinator: coordinator)
@@ -64,4 +79,3 @@ extension AppCoordinator: LoginListener {
         // TODO: Navigate to Login
     }
 }
-

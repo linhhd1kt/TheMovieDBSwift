@@ -15,14 +15,22 @@ final class AppAppearance {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            appearance.backgroundColor = UIColor(red: 37/255.0, green: 37/255.0, blue: 37.0/255.0, alpha: 1.0)
+            appearance.backgroundColor = .blue
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         } else {
-            UINavigationBar.appearance().barTintColor = .black
+            UINavigationBar.appearance().barTintColor = .blue
             UINavigationBar.appearance().tintColor = .white
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         }
+        
+        let buttonContainer = UIView(frame: CGRect(x: 0, y: 0, width: 62, height: 44))
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: -8, width: 62, height: 44)
+        button.setBackgroundImage(#imageLiteral(resourceName: "ic_logo"), for: .normal)
+        buttonContainer.addSubview(button)
+//        navigationController.navigationItem.titleView = buttonContainer
+        UINavigationBar.appearance().addSubview(buttonContainer)
     }
 }
 
