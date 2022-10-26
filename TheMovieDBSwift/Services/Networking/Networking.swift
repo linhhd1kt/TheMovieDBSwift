@@ -23,8 +23,8 @@ class Network: Networking {
     let provider = MoyaProvider<API>()
     #endif
     
-    var logger: Logable {
-        guard let logger = ServiceFacade.getService(Logable.self) else {
+    var logger: Logger {
+        guard let logger = ServiceFacade.getService(Logable.self) as? Logger else {
             fatalError("Logger should be implemented!")
         }
         return logger

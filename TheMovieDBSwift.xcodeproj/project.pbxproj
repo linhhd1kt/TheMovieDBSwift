@@ -55,7 +55,6 @@
 		DC6E413F28B8638800429771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6E40C628B8638700429771 /* Assets.xcassets */; };
 		DC6E414528B8638800429771 /* CredentialObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E40D128B8638700429771 /* CredentialObject.swift */; };
 		DC6E414B28B8638800429771 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E40DA28B8638700429771 /* ConnectionError.swift */; };
-		DC6E414E28B8638800429771 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E40DF28B8638700429771 /* AppAppearance.swift */; };
 		DC6E414F28B8638800429771 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E40E028B8638700429771 /* AppConfigurations.swift */; };
 		DC6E415228B8638800429771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E40E428B8638700429771 /* AppDelegate.swift */; };
 		DC6E417028B8638800429771 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E412228B8638700429771 /* LoginViewModel.swift */; };
@@ -207,7 +206,6 @@
 		DC6E40C928B8638700429771 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6E40D128B8638700429771 /* CredentialObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialObject.swift; sourceTree = "<group>"; };
 		DC6E40DA28B8638700429771 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
-		DC6E40DF28B8638700429771 /* AppAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		DC6E40E028B8638700429771 /* AppConfigurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
 		DC6E40E428B8638700429771 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC6E412228B8638700429771 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -544,7 +542,6 @@
 			children = (
 				DC6E40E428B8638700429771 /* AppDelegate.swift */,
 				DC6E408328B75CAD00429771 /* SceneDelegate.swift */,
-				DC6E40DF28B8638700429771 /* AppAppearance.swift */,
 				DC6E40E028B8638700429771 /* AppConfigurations.swift */,
 				DCB16F0328F966E8001686C1 /* AppCoordinator.swift */,
 			);
@@ -578,8 +575,8 @@
 		DC6E418328B87F3500429771 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DCA086FB2907D51D0091BF79 /* Factories */,
 				DC6E418428B87FA000429771 /* ServiceFacade.swift */,
+				DCA086FB2907D51D0091BF79 /* Factories */,
 				DC5486FD28FD3F21005106B0 /* Coordinator */,
 				DC88488328EFE7A9006698A1 /* Logger */,
 				DC28BCF128E55B1E000D4FF0 /* UserPreferencesStorage */,
@@ -1074,7 +1071,6 @@
 				DCA086FD2907D5310091BF79 /* NavigationItemFactory.swift in Sources */,
 				DCB16F0428F966E8001686C1 /* AppCoordinator.swift in Sources */,
 				DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */,
-				DC6E414E28B8638800429771 /* AppAppearance.swift in Sources */,
 				DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */,
 				DC833E5628F52EA30028DAFA /* AuthRepository.swift in Sources */,
 				DCB16F0028F96670001686C1 /* BaseCoordinator.swift in Sources */,

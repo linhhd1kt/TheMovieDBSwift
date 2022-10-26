@@ -15,7 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-//        AppAppearance.setupAppearance()
         let window = UIWindow(windowScene: windowScene)
         self.appCoordinator = ServiceFacade.getService(CoordinatorType.self)
         window.rootViewController = appCoordinator?.navigationController

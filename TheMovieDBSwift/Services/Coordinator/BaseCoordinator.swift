@@ -14,8 +14,8 @@ class BaseCoordinator: NSObject, CoordinatorType {
     var parentCoordinator: CoordinatorType?
     var navigationController: UINavigationController
     
-    var logger: Logable {
-        guard let logger = ServiceFacade.getService(Logable.self) else {
+    var logger: Logger {
+        guard let logger = ServiceFacade.getService(Logable.self) as? Logger else {
             fatalError("Logger should be implemented!")
         }
         return logger
