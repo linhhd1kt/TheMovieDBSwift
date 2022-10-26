@@ -1,5 +1,5 @@
 //
-//  Plugin.swift
+//  ApiLogPlugin.swift
 //  TheMovieDBSwift
 //
 //  Created by Ha Linh on 20/10/2022.

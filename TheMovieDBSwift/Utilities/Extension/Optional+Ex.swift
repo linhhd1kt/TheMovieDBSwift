@@ -1,5 +1,5 @@
 //
-//  Conversion to Swift 5 is available.swift
+//  OptionalType.swift
 //  TheMovieDBSwift
 //
 //  Created by Ha Linh on 11/10/2022.

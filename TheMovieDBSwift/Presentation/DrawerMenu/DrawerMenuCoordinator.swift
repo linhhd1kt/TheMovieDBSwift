@@ -35,7 +35,6 @@ class DrawerMenuCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        setUpNavigationItem()
         setUpSideMenu()
         bindOutput(viewModel.output)
     }
@@ -85,25 +84,6 @@ class DrawerMenuCoordinator: BaseCoordinator {
                 this.selectScreen(screen)
             }
             .disposed(by: disposeBag)
-    }
-    
-    
-    private func setUpNavigationItem() {
-        menuNavigationItem.rx.tap.asObservable()
-            .map { DrawerMenuScreen.menu }
-            .subscribe(onNext: { item in
-                print(item)
-            }).disposed(by: disposeBag)
-                
-//        ControlEvent.merge(menuNavigationItem.rx.tap.map { DrawerMenuScreen.menu },
-//                         logoNavigationItem.rx.tap.map { DrawerMenuScreen.dashboard },
-//                         profileNavigationItem.rx.tap.map { DrawerMenuScreen.profile },
-//                         searchNavigationItem.rx.tap.map { DrawerMenuScreen.search })
-//        .asObservable()
-//        .debug("xxx Navigation item Select")
-////        .bind(to: viewModel.input.menuSelect)
-//        .subscribe()
-//        .disposed(by: disposeBag)
     }
     
     private func setUpSideMenu() {

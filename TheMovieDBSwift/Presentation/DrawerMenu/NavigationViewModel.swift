@@ -1,3 +1,10 @@
+//
+//  NavigationViewModel.swift
+//  TheMovieDBSwift
+//
+//  Created by Ha Linh on 18/10/2022.
+//
+
 import RxSwift
 
 final class NavigationViewModel: BaseViewModel {
