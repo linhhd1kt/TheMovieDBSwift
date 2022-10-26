@@ -45,7 +45,7 @@ class Logger: Logable {
                  fileName: StaticString = #file,
                  lineNumber: Int = #line) {
         #if DEBUG
-        self.logger.verbose(functionName, fileName: fileName, lineNumber: lineNumber, userInfo: ["message": message])
+        self.logger.verbose(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         #endif
     }
     
@@ -54,7 +54,7 @@ class Logger: Logable {
                fileName: StaticString = #file,
                lineNumber: Int = #line) {
         #if DEBUG
-        self.logger.debug(functionName, fileName: fileName, lineNumber: lineNumber, userInfo: ["message": message])
+        self.logger.debug(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         #endif
     }
     
@@ -63,7 +63,7 @@ class Logger: Logable {
               fileName: StaticString = #file,
               lineNumber: Int = #line) {
         #if DEBUG
-        self.logger.info(functionName, fileName: fileName, lineNumber: lineNumber, userInfo: ["message": message])
+        self.logger.info(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         #endif
     }
     
@@ -72,7 +72,7 @@ class Logger: Logable {
               fileName: StaticString = #file,
               lineNumber: Int = #line) {
         #if DEBUG
-        self.logger.warning(functionName, fileName: fileName, lineNumber: lineNumber, userInfo: ["message": message])
+        self.logger.warning(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         #endif
     }
     
@@ -81,7 +81,7 @@ class Logger: Logable {
                fileName: StaticString = #file,
                lineNumber: Int = #line) {
         #if DEBUG
-        self.logger.error(functionName, fileName: fileName, lineNumber: lineNumber, userInfo: ["message": message])
+        self.logger.error(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         #endif
     }
     
@@ -90,7 +90,7 @@ class Logger: Logable {
                 fileName: StaticString = #file,
                 lineNumber: Int = #line) {
         #if DEBUG
-        self.logger.severe(functionName, fileName: fileName, lineNumber: lineNumber, userInfo: ["message": message])
+        self.logger.verbose(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         #endif
     }
 }
