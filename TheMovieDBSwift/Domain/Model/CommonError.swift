@@ -13,7 +13,6 @@ enum CommonError: Error {
     case decode(description: String)
 }
 
-
 extension CommonError: LocalizedError {
     public var errorDescription: String? {
         switch self {
