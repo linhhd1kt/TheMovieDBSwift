@@ -14,7 +14,7 @@ protocol ApiRequestable {
 
 enum API {
     case createRequestToken
-    case createSessionWithLogin(parameters: Dictionary<String,Any>)
+    case createSessionWithLogin(parameters: [String: Any])
     case popularMovie(page: Int)
     case movie(movieId: String)
     case search(query: String)
@@ -74,11 +74,11 @@ extension API: TargetType {
             return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey],
                                       encoding: URLEncoding.httpBody)
         case .search(let query):
-            return .requestParameters(parameters: ["query" : query, "api_key": AppConfiguration().apiKey], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["query": query, "api_key": AppConfiguration().apiKey], encoding: URLEncoding.queryString)
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return nil
     }
 }

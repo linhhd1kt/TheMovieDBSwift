@@ -8,11 +8,6 @@
 import Foundation
 
 struct MoviesResponse: Decodable {
-    let page: Int
-    let results: [Data]
-    let totalResults: Int
-    let totalPages: Int
-    
     struct Data: Codable {
         let posterPath: String
         let adult: Bool
@@ -29,4 +24,9 @@ struct MoviesResponse: Decodable {
         let video: Bool
         let voteAverage: Double
     }
+
+    let page: Int
+    let results: [Data]
+    let totalResults: Int
+    let totalPages: Int
 }

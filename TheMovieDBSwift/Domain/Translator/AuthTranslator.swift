@@ -18,7 +18,7 @@ struct AuthTranslator: AuthTranslatorType {
     }
     func toModel(reponse: CredentialResponse) -> Credential {
         return Credential(success: reponse.success,
-                               expiresAt: reponse.expiresAt,
-                               requestToken: reponse.requestToken)
+                          expiresAt: reponse.expiresAt,
+                          requestToken: reponse.requestToken)
     }
 }

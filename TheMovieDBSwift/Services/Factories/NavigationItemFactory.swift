@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import UIKit
 
 enum NavigationItemStyle {
     case menu
@@ -20,11 +19,11 @@ protocol NavigationItemCreatable {
 }
 
 class NavigationItemFactory: NavigationItemCreatable {
-    private func makeNavigatonIcon(_ style: NavigationItemStyle) -> UIImage {
+    private func makeNavigatonIcon(_ style: NavigationItemStyle) -> UIImage? {
         switch style {
-        case .menu: return #imageLiteral(resourceName: "ic_menu")
-        case .profile: return #imageLiteral(resourceName: "ic_profile")
-        case .search: return #imageLiteral(resourceName: "ic_search")
+        case .menu: return R.image.icMenu()
+        case .profile: return R.image.icProfile()
+        case .search: return R.image.icSearch()
         }
     }
     
@@ -34,9 +33,8 @@ class NavigationItemFactory: NavigationItemCreatable {
     }
 
     func makeLogoButton() -> UIButton {
-        var configuration = UIButton.Configuration.plain()
-        configuration.image = #imageLiteral(resourceName: "ic_logo")
-        configuration.contentInsets = .init(top: -8, leading: 0, bottom: 8, trailing: 0)
-        return UIButton(configuration: configuration)
+        let button = UIButton()
+        button.setImage(R.image.icLogo(), for: .normal)
+        return button
     }
 }

@@ -31,12 +31,12 @@ extension Reactive where Base: UIViewController {
     }
     
     var loading: Binder<Bool> {
-        return Binder(self.base) { view, isLoading in
-            ProgressHUD.colorBackground = .clear
+        return Binder(self.base) { _, isLoading in
+            ProgressHUD.colorBackground = R.color.ternary() ?? .cyan
             ProgressHUD.colorHUD = .clear
             ProgressHUD.colorProgress = .clear
             ProgressHUD.colorAnimation = .clear
-            ProgressHUD.colorAnimation  = .cyan
+            ProgressHUD.colorAnimation = R.color.primary() ?? .cyan
             if isLoading {
                 ProgressHUD.showSucceed()
             } else {

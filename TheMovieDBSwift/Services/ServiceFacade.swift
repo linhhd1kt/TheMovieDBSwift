@@ -56,5 +56,3 @@ class ServiceFacade {
     static func shutDownAllService() {
     }
 }
-
-

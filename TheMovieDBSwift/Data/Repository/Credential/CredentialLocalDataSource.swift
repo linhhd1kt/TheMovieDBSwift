@@ -17,7 +17,7 @@ final class CredentialLocalDataSource: DataSource {
         return storage
     }
         
-    func get(id: String?, parameters paramters: Dictionary<String,Any>) -> Observable<T?> {
+    func get(id: String?, parameters paramters: [String: Any]) -> Observable<T?> {
         guard let id = id else {
             preconditionFailure("Parameter must have id to get value!")
         }

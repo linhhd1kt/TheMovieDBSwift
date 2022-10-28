@@ -51,4 +51,3 @@ extension ObservableType where Element == Any {
         return Observable.combineLatest(o1, o2, o3, o4, o5) { $0 || $1 || $2 || $3 || $4 }
     }
 }
-

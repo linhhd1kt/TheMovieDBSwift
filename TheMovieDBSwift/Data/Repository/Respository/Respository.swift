@@ -10,6 +10,6 @@ import RxSwift
 
 protocol Respository {
     associatedtype T: Decodable & Identifiable
-    func get(id: String?, parameters: Dictionary<String, Any>) -> Observable<T?>
+    func get(id: String?, parameters: [String: Any]) -> Observable<T?>
     func save(entity: T) -> Observable<Void>
 }

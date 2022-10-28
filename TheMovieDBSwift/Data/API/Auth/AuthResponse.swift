@@ -8,7 +8,7 @@
 import Foundation
 
 struct CredentialResponse: Decodable {
-    let success: Bool?
+    let success: Bool
     let expiresAt: String?
     let requestToken: String?
 }

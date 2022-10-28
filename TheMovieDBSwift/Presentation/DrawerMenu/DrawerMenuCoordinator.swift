@@ -43,11 +43,10 @@ class DrawerMenuCoordinator: BaseCoordinator {
         logger.info("DrawerMenuCoordinator selectScreen: \(screen)")
         switch screen {
         case .menu:
-            self.navigationController
-                .present(SideMenuManager.default.leftMenuNavigationController!,
-                         animated: true,
-                         completion: nil)
-            break
+            if let menu = SideMenuManager.default.leftMenuNavigationController {
+                self.navigationController
+                .present(menu, animated: true, completion: nil)
+            }
         case .dashboard:
             let viewModel = DashboardViewModel()
             let coordinator = DashboardCoordinator(navigationController: self.navigationController,
@@ -55,12 +54,12 @@ class DrawerMenuCoordinator: BaseCoordinator {
                                                    navigationViewModel: self.viewModel)
             start(coordinator: coordinator)
             self.navigationController.dismiss(animated: true)
-        case .profile: // TODO navigate to profile
+        case .profile:
+            // TODO navigate to profile
             self.navigationController.dismiss(animated: true)
-            break
-        case .search: // TODO navigate to search
+        case .search:
+            // TODO navigate to search
             self.navigationController.dismiss(animated: true)
-            break
         case .movies:
             let viewModel = MovieListViewModel()
             let coordinator = MovieListCoordinator(navigationController: self.navigationController,
@@ -70,10 +69,8 @@ class DrawerMenuCoordinator: BaseCoordinator {
             self.navigationController.dismiss(animated: true)
         case .settings:
             self.navigationController.dismiss(animated: true)
-            break
         case .signOut:
             self.navigationController.dismiss(animated: true)
-            break
         }
     }
     

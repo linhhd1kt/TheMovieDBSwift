@@ -10,4 +10,3 @@ import Action
 protocol MovieRepositoryType {
     var fetchPopular: Action<PopularMovieRequest, MoviesResponse> { get }
 }
-

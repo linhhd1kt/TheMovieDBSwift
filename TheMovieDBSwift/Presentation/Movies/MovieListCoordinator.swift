@@ -26,4 +26,3 @@ class MovieListCoordinator: BaseCoordinator {
         self.navigationController.viewControllers = [viewController]
     }
 }
-

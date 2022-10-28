@@ -8,5 +8,10 @@
 import UIKit
 
 class MovieCell: UITableViewCell {
-    @IBOutlet weak var nameLabel: UILabel!    
+    @IBOutlet private weak var nameLabel: UILabel!
+    
+    func configure(_ movie: Movie) {
+        self.selectionStyle = .none
+        self.nameLabel.text = movie.title
+    }
 }

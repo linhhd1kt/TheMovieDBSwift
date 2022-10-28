@@ -17,5 +17,3 @@ protocol CoordinatorType: AnyObject {
     func didFinish(coordinator: CoordinatorType)
     func removeChildCoordinators()
 }
-
-

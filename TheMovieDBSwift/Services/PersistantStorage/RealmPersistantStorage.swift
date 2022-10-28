@@ -22,7 +22,7 @@ final class RealmPersistantStorage: PersistantStorable {
     private let scheduler: SchedulerType
     
     init(configuration: Realm.Configuration = Realm.Configuration.defaultConfiguration,
-         scheduler: SchedulerType = SerialDispatchQueueScheduler.init(qos: .utility)) {
+         scheduler: SchedulerType = SerialDispatchQueueScheduler(qos: .utility)) {
         self.configuration = configuration
         self.scheduler = scheduler
     }
@@ -79,4 +79,3 @@ final class RealmPersistantStorage: PersistantStorable {
         }.subscribe(on: scheduler)
     }
 }
-

@@ -17,7 +17,7 @@ extension CommonError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .system:
-            //TODO: load error from localized string file here
+            // TODO: load error from localized string file here
             return NSLocalizedString("Some System error occur!", comment: "System Error!")
         case .missingImplement(let type):
             return NSLocalizedString("\(type): missing implement!", comment: "Missing Implement!")
@@ -26,5 +26,3 @@ extension CommonError: LocalizedError {
         }
     }
 }
-
-

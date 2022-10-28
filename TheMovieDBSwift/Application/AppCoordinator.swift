@@ -36,14 +36,14 @@ class AppCoordinator: BaseCoordinator {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            appearance.backgroundColor = .blue
+            appearance.titleTextAttributes = [.foregroundColor: R.color.onBackground]
+            appearance.backgroundColor = R.color.background()
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         } else {
-            UINavigationBar.appearance().barTintColor = .blue
-            UINavigationBar.appearance().tintColor = .white
-            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().barTintColor = R.color.primary()
+            UINavigationBar.appearance().tintColor = R.color.background()
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: R.color.onPrimary]
         }
     }
     

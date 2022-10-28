@@ -18,5 +18,4 @@ class MovieRepository: MovieRepositoryType {
     }
 }
 
-
-extension MovieRepository:HasDisposeBag {}
+extension MovieRepository: HasDisposeBag {}

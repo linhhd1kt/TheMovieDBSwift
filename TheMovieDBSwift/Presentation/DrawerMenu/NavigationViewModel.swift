@@ -44,7 +44,7 @@ extension NavigationViewModel: NavigationViewModelInputType {
 }
 
 extension NavigationViewModel: NavigationViewModelOutputType {
-    var navigationSelected: Observable<DrawerMenuScreen>{
+    var navigationSelected: Observable<DrawerMenuScreen> {
         return navigationSelectedObserver.asObservable()
     }
     var menuItems: Observable<[DrawerMenuScreen]> {

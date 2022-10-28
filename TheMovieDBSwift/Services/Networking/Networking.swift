@@ -10,7 +10,6 @@ import RxSwift
 import Moya
 import RxMoya
 import Alamofire
-import Foundation
 
 protocol Networking {
     func request<T: Decodable>(target: TargetType) -> Observable<T>
@@ -37,13 +36,16 @@ class Network: Networking {
         return parser
     }
     
-    func request<T>(target: TargetType) -> Observable<T> where T : Decodable {
-        print("XXX start request: \(target)")
+    func request<T>(target: TargetType) -> Observable<T> where T: Decodable {
         guard let target = target as? API else {
             return .error(CommonError.missingImplement(type: "\(API.self)"))
         }
         return .create { observer in
-            self.provider.request(target) { [unowned self] result in
+            self.provider.request(target) { [weak self] result in
+                guard let self = self else {
+                    observer.onCompleted()
+                    return
+                }
                 switch result {
                 case .success(let response):
                     if let error = self.responseParser.parseError(response: response) {
@@ -75,9 +77,8 @@ class Network: Networking {
             }
             return Disposables.create()
         }
-        .do(onError: { [unowned self] error in
-            self.logger.error(error.localizedDescription)
+        .do(onError: { [weak self] error in
+            self?.logger.error(error.localizedDescription)
         })
-
     }
 }

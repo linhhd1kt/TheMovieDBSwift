@@ -68,8 +68,13 @@ class RickViewController: BaseViewController {
     }
     
     private func setupGesture() {
-        panGesture = SideMenuManager.default.addPanGestureToPresent(toView: navigationController!.navigationBar)
-        edgeGesture = SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: navigationController!.view, forMenu: .left)
+        if let navigationbar = navigationController?.navigationBar {
+            panGesture = SideMenuManager.default.addPanGestureToPresent(toView: navigationbar)
+        }
+        if let view = navigationController?.view {
+        edgeGesture = SideMenuManager.default
+                .addScreenEdgePanGesturesToPresent(toView: view, forMenu: .left)
+        }
     }
 
     private func setupNavigationItem() {
@@ -89,7 +94,9 @@ class RickViewController: BaseViewController {
     }
 
     func showSideMenu() {
-        present(SideMenuManager.default.leftMenuNavigationController!, animated: true, completion: nil)
+        guard let leftMenu = SideMenuManager.default.leftMenuNavigationController else {
+            return
+        }
+        present(leftMenu, animated: true, completion: nil)
     }
 }
-

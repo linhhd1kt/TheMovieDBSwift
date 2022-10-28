@@ -8,7 +8,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-//import RxSwiftExt
 
 extension ObservableType {
 
@@ -19,13 +18,11 @@ extension ObservableType {
     }
 
     public func asDriverOnErrorJustComplete() -> Driver<Element> {
-
-        asDriver { error in
+        asDriver { _ in
             Driver.empty()
         }
     }
 }
-
 
 final public class ErrorTracker: SharedSequenceConvertibleType {
     public typealias SharingStrategy = DriverSharingStrategy

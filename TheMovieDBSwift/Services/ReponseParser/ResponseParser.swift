@@ -39,8 +39,7 @@ class ResponseParser: ResponseParsable {
                 let networkResponse = try decoder.decode(NetworkReponse.self, from: response.data)
                 return NetworkError.client(code: networkResponse.statusCode,
                                            message: networkResponse.statusMessage)
-            }
-            catch {
+            } catch {
                 return CommonError.decode(description: error.localizedDescription)
             }
         case 500...599:
@@ -48,15 +47,11 @@ class ResponseParser: ResponseParsable {
                 let networkResponse = try JSONDecoder().decode(NetworkReponse.self, from: response.data)
                 return NetworkError.server(code: networkResponse.statusCode,
                                            message: networkResponse.statusMessage)
-
-
-            }
-            catch {
+            } catch {
                 return CommonError.decode(description: error.localizedDescription)
             }
         default:
-            return NetworkError.other(message
-                                      : "Http status code unhandle: \(response.statusCode)")
+            return NetworkError.other(message: "HTTPS status code unhandle: \(response.statusCode)")
         }
     }
 }

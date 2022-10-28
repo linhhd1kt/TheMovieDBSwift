@@ -7,6 +7,8 @@ target 'TheMovieDBSwift' do
   use_frameworks!
 
   # Pods for TheMovieDBSwift
+  pod 'R.swift'
+  pod 'SwiftLint'
 
 #  pod 'RxSwiftExt'
   target 'TheMovieDBSwiftTests' do

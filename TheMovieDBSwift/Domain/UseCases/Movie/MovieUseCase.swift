@@ -55,4 +55,3 @@ extension MovieUseCase: MovieUseCaseOutputType {
 }
 
 extension MovieUseCase: HasDisposeBag {}
-

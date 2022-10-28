@@ -52,4 +52,3 @@ extension ActionResult {
         return ActionResult<Element>(elements: elements, errors: newErrors, enabled: enabled, executing: executing)
     }
 }
-

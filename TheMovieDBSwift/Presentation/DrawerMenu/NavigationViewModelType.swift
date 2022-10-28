@@ -18,6 +18,5 @@ protocol NavigationViewModelInputType {
 
 protocol NavigationViewModelOutputType {
     var navigationSelected: Observable<DrawerMenuScreen> { get }
-    var menuItems: Observable<[DrawerMenuScreen]>  { get }
+    var menuItems: Observable<[DrawerMenuScreen]> { get }
 }
-

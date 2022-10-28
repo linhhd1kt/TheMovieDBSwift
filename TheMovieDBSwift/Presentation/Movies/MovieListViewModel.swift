@@ -64,4 +64,3 @@ extension MovieListViewModel: MovieListViewModelOutputType {
         return movieUseCase.output.fetchPopularResult
     }
 }
-

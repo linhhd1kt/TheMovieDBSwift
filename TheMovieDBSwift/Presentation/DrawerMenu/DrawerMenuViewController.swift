@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class DrawerMenuViewController: BaseViewController, UIScrollViewDelegate {
-    @IBOutlet weak var tableView: UITableView!    
+    @IBOutlet private weak var tableView: UITableView!    
     private let viewModel: NavigationViewModelType
         
     // MARK: - Initialization
@@ -37,7 +37,10 @@ class DrawerMenuViewController: BaseViewController, UIScrollViewDelegate {
     private func setupTableView() {
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
-        tableView.register(UINib(nibName: DrawerMenuCell.className, bundle: nil), forCellReuseIdentifier: DrawerMenuCell.className)
+//        tableView.register(R.nib.drawerMenuCell, forCellReuseIdentifier: R.)
+//        tableView.register(R.nib.drawerMenuCell, bundle: nil)
+//        tableView.register(R.nib.drawerMenuCell.s, forCellReuseIdentifier: <#T##String#>)
+//        tableView.register(, forCellReuseIdentifier: R.nib.drawerMenuCell.name)
         tableView.rowHeight = 40
         tableView.separatorStyle = .none
     }
@@ -51,9 +54,8 @@ class DrawerMenuViewController: BaseViewController, UIScrollViewDelegate {
 
     private func bindOutput(_ output: NavigationViewModelOutputType) {
         output.menuItems
-            .bind(to: tableView.rx.items(cellIdentifier: DrawerMenuCell.className, cellType: DrawerMenuCell.self)) { row, model, cell in
-                cell.selectionStyle = .none
-                cell.menuItemLabel.text = model.name
+            .bind(to: tableView.rx.items(cellIdentifier: R.nib.drawerMenuCell.name, cellType: DrawerMenuCell.self)) { _, model, cell in
+                cell.configure(model: model)
             }
             .disposed(by: disposeBag)
     }

@@ -47,4 +47,3 @@ struct MovieTranslator: MovieTranslatorType {
                     totalPages: response.totalPages)
     }
 }
-

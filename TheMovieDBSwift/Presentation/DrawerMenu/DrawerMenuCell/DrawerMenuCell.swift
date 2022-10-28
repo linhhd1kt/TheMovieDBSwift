@@ -8,17 +8,10 @@
 import UIKit
 
 class DrawerMenuCell: UITableViewCell {
-    @IBOutlet weak var menuItemLabel: UILabel!
+    @IBOutlet private weak var menuItemLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configure(model: DrawerMenuScreen) {
+        self.selectionStyle = .none
+        self.menuItemLabel.text = model.name
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

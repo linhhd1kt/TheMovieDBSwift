@@ -10,4 +10,3 @@ import Action
 protocol AuthRepositoryType {
     var login: Action<CredentialRequest, CredentialResponse> { get }
 }
-
