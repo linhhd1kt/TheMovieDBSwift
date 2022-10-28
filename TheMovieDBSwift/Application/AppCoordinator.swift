@@ -37,7 +37,7 @@ class AppCoordinator: BaseCoordinator {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.titleTextAttributes = [.foregroundColor: R.color.onBackground]
-            appearance.backgroundColor = R.color.background()
+            appearance.backgroundColor = R.color.primary()
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         } else {

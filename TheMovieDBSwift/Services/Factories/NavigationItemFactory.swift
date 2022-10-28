@@ -29,11 +29,14 @@ class NavigationItemFactory: NavigationItemCreatable {
     
     func makeNavigationItem(_ style: NavigationItemStyle) -> UIBarButtonItem {
         let icon = makeNavigatonIcon(style)
-        return UIBarButtonItem(image: icon, style: .plain, target: nil, action: nil)
+        let barButton = UIBarButtonItem(image: icon, style: .plain, target: nil, action: nil)
+        barButton.tintColor = R.color.onPrimary()
+        return barButton
     }
 
     func makeLogoButton() -> UIButton {
         let button = UIButton()
+        button.imageEdgeInsets = UIEdgeInsets(top: -8, left: 0, bottom: 8, right: 0)
         button.setImage(R.image.icLogo(), for: .normal)
         return button
     }

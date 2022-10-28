@@ -37,10 +37,7 @@ class DrawerMenuViewController: BaseViewController, UIScrollViewDelegate {
     private func setupTableView() {
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
-//        tableView.register(R.nib.drawerMenuCell, forCellReuseIdentifier: R.)
-//        tableView.register(R.nib.drawerMenuCell, bundle: nil)
-//        tableView.register(R.nib.drawerMenuCell.s, forCellReuseIdentifier: <#T##String#>)
-//        tableView.register(, forCellReuseIdentifier: R.nib.drawerMenuCell.name)
+        tableView.register(UINib(resource: R.nib.drawerMenuCell), forCellReuseIdentifier: R.nib.drawerMenuCell.name)
         tableView.rowHeight = 40
         tableView.separatorStyle = .none
     }
