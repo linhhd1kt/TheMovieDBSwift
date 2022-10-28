@@ -26,7 +26,7 @@ extension NetworkError: LocalizedError {
         case .redirectionMessages:
             return NSLocalizedString("Network Error: Not handle server redirection messages reponses",
                                      comment: "Network Error")
-        case .client(let code, var message):
+        case .client(let code, let message):
             return NSLocalizedString("Client Error with status code: \(code), message: \(message)",
                                      comment: "Network Error")
         case .server(let code, let message):

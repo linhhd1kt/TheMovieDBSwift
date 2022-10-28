@@ -9,15 +9,23 @@ target 'TheMovieDBSwift' do
   # Pods for TheMovieDBSwift
   pod 'R.swift'
   pod 'SwiftLint'
-
+  pod 'Swinject'
+  pod 'RxSwift'
+  pod 'Moya'
+  pod 'RealmSwift'
+  pod 'RxRealm'
+  pod 'RxMoya'
+  pod 'Willow'
+  pod 'Action'
+  pod 'XCGLogger'
+  pod 'ProgressHUD'
+  pod 'SideMenu'
+  pod 'SwiftPrettyPrint'
+  
 #  pod 'RxSwiftExt'
-  target 'TheMovieDBSwiftTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'TheMovieDBSwiftUITests' do
-    # Pods for testing
-  end
+#  target 'TheMovieDBSwiftTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
 
 end

@@ -1,24 +1,107 @@
 PODS:
+  - Action (5.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - Alamofire (5.6.2)
+  - ColorizeSwift (1.2.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - ProgressHUD (13.6)
   - R.swift (6.1.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - Realm (10.32.1):
+    - Realm/Headers (= 10.32.1)
+  - Realm/Headers (10.32.1)
+  - RealmSwift (10.32.1):
+    - Realm (= 10.32.1)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRealm (5.0.4):
+    - Realm (~> 10.21)
+    - RealmSwift (~> 10.21)
+    - RxCocoa (~> 6.1)
+    - RxSwift (~> 6.1)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SideMenu (6.5.0)
   - SwiftLint (0.48.0)
+  - SwiftPrettyPrint (1.2.0):
+    - ColorizeSwift
+  - Swinject (2.8.2)
+  - Willow (6.0.0)
+  - XCGLogger (7.0.1):
+    - XCGLogger/Core (= 7.0.1)
+  - XCGLogger/Core (7.0.1):
+    - ObjcExceptionBridging
 
 DEPENDENCIES:
+  - Action
+  - Moya
+  - ProgressHUD
   - R.swift
+  - RealmSwift
+  - RxRealm
+  - RxSwift
+  - SideMenu
   - SwiftLint
+  - SwiftPrettyPrint
+  - Swinject
+  - Willow
+  - XCGLogger
 
 SPEC REPOS:
   trunk:
+    - Action
+    - Alamofire
+    - ColorizeSwift
+    - Moya
+    - ObjcExceptionBridging
+    - ProgressHUD
     - R.swift
     - R.swift.Library
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxRealm
+    - RxRelay
+    - RxSwift
+    - SideMenu
     - SwiftLint
+    - SwiftPrettyPrint
+    - Swinject
+    - Willow
+    - XCGLogger
 
 SPEC CHECKSUMS:
+  Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  ColorizeSwift: 4eef354dce7335d7747a0ccacf78afe2b589a1be
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  Realm: fd821b81e5479be497cc5bca2e020f707d8323eb
+  RealmSwift: 8635e4cc524790916d72b0ffa51c1a91f4ec9668
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRealm: 666c8785327fe2fff972a3093b35dc7055c1ca38
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
+  SwiftPrettyPrint: feca848b6aba4de9201e38f73184e9e5ac09da55
+  Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
+  Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
+  XCGLogger: 1943831ef907df55108b0b18657953f868de973b
 
-PODFILE CHECKSUM: 09c896dfe72fd5024e370a685b2f1172e3b7e074
+PODFILE CHECKSUM: 0865834883c709019af093b981096886996b8f96
 
 COCOAPODS: 1.11.3

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1FDE09D66A294E71D1ABFDF8 /* Pods_TheMovieDBSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE20518767891ADF84D2FEDB /* Pods_TheMovieDBSwiftTests.framework */; };
-		87B3E14DA535EB0CB1770C88 /* Pods_TheMovieDBSwift_TheMovieDBSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37AC03D307B246C0DFB8C26B /* Pods_TheMovieDBSwift_TheMovieDBSwiftUITests.framework */; };
 		DC18B461290A309B00CA9C6B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B460290A309B00CA9C6B /* R.generated.swift */; };
 		DC18B4BD290BB15B00CA9C6B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4BC290BB15B00CA9C6B /* Colors.xcassets */; };
 		DC18B4C7290BC98600CA9C6B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4C6290BC98600CA9C6B /* .swiftlint.yml */; };
@@ -20,7 +18,6 @@
 		DC54870128FE45F9005106B0 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870028FE45F9005106B0 /* CoordinatorType.swift */; };
 		DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */; };
 		DC54870928FE538F005106B0 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870528FE538F005106B0 /* NavigationViewModel.swift */; };
-		DC54870D28FE53E4005106B0 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = DC54870C28FE53E4005106B0 /* SideMenu */; };
 		DC54870F28FE5425005106B0 /* DrawerMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870E28FE5425005106B0 /* DrawerMenuScreen.swift */; };
 		DC54871128FE9972005106B0 /* NavigationViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871028FE9972005106B0 /* NavigationViewModelType.swift */; };
 		DC54871428FEA6EB005106B0 /* DrawerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54871228FEA6EB005106B0 /* DrawerMenuViewController.swift */; };
@@ -50,7 +47,6 @@
 		DC5487492901084A005106B0 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5487472901084A005106B0 /* MovieCell.xib */; };
 		DC54874C2901269D005106B0 /* MovieListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54874B2901269D005106B0 /* MovieListCoordinator.swift */; };
 		DC54874E290139FC005106B0 /* ApiLogPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54874D290139FC005106B0 /* ApiLogPlugin.swift */; };
-		DC54875129014853005106B0 /* SwiftPrettyPrint in Frameworks */ = {isa = PBXBuildFile; productRef = DC54875029014853005106B0 /* SwiftPrettyPrint */; };
 		DC6E408428B75CAD00429771 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E408328B75CAD00429771 /* SceneDelegate.swift */; };
 		DC6E413D28B8638800429771 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC6E40C128B8638700429771 /* Localizable.strings */; };
 		DC6E413F28B8638800429771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6E40C628B8638700429771 /* Assets.xcassets */; };
@@ -60,19 +56,14 @@
 		DC6E417028B8638800429771 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E412228B8638700429771 /* LoginViewModel.swift */; };
 		DC6E417128B8638800429771 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E412328B8638700429771 /* LoginViewController.swift */; };
 		DC6E418528B87FA000429771 /* ServiceFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E418428B87FA000429771 /* ServiceFacade.swift */; };
-		DC6E418828B87FFB00429771 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = DC6E418728B87FFB00429771 /* Swinject */; };
 		DC6E419528B8862F00429771 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6E419328B8862F00429771 /* LoginViewController.xib */; };
 		DC6E41A728B8B51B00429771 /* AuthUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E41A628B8B51B00429771 /* AuthUseCaseType.swift */; };
 		DC6E41A928B8B6CE00429771 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E41A828B8B6CE00429771 /* CommonError.swift */; };
 		DC6E41AA28B8BE1A00429771 /* Pods_TheMovieDBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16138EC1972AD3B841A7C3AB /* Pods_TheMovieDBSwift.framework */; };
 		DC6E41AB28B8BE1A00429771 /* Pods_TheMovieDBSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16138EC1972AD3B841A7C3AB /* Pods_TheMovieDBSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DC6E41AF28B8BF7C00429771 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC6E41AE28B8BF7C00429771 /* RxCocoa */; };
-		DC6E41B128B8BF7C00429771 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = DC6E41B028B8BF7C00429771 /* RxRelay */; };
-		DC6E41B328B8BF7C00429771 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC6E41B228B8BF7C00429771 /* RxSwift */; };
 		DC6E41B728B8C7BE00429771 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */; };
 		DC833E3F28F3D8C40028DAFA /* LoginViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */; };
 		DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E4028F3F5C90028DAFA /* ViewModelType.swift */; };
-		DC833E4428F52A990028DAFA /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = DC833E4328F52A990028DAFA /* Action */; };
 		DC833E4628F52AC50028DAFA /* ActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E4528F52AC50028DAFA /* ActionResult.swift */; };
 		DC833E4C28F52C650028DAFA /* AuthRepositotyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E4B28F52C650028DAFA /* AuthRepositotyType.swift */; };
 		DC833E5028F52CC40028DAFA /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E4F28F52CC40028DAFA /* AuthRequest.swift */; };
@@ -81,13 +72,8 @@
 		DC833E5928F5521B0028DAFA /* AuthTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E5828F5521B0028DAFA /* AuthTranslator.swift */; };
 		DC833E5C28F557170028DAFA /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E5B28F557170028DAFA /* Credential.swift */; };
 		DC833E5E28F567580028DAFA /* Optional+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E5D28F567580028DAFA /* Optional+Ex.swift */; };
-		DC833E6128F569BE0028DAFA /* ObjcExceptionBridging in Frameworks */ = {isa = PBXBuildFile; productRef = DC833E6028F569BE0028DAFA /* ObjcExceptionBridging */; };
-		DC833E6328F569BE0028DAFA /* XCGLogger in Frameworks */ = {isa = PBXBuildFile; productRef = DC833E6228F569BE0028DAFA /* XCGLogger */; };
 		DC833E6528F56CE50028DAFA /* NSObject+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E6428F56CE50028DAFA /* NSObject+Ex.swift */; };
-		DC85BC1528BCBAA300187748 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DC85BC1428BCBAA300187748 /* Realm */; };
-		DC85BC1728BCBAA300187748 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC85BC1628BCBAA300187748 /* RealmSwift */; };
 		DC85BC1C28BCBDAE00187748 /* RealmPersistantStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85BC1B28BCBDAE00187748 /* RealmPersistantStorage.swift */; };
-		DC88488228EFE7A3006698A1 /* Willow in Frameworks */ = {isa = PBXBuildFile; productRef = DC88488128EFE7A3006698A1 /* Willow */; };
 		DC88488528EFE7B7006698A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88488428EFE7B7006698A1 /* Logger.swift */; };
 		DCA086FD2907D5310091BF79 /* NavigationItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA086FC2907D5310091BF79 /* NavigationItemFactory.swift */; };
 		DCA7DA7528DC0D410013996C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7DA7428DC0D410013996C /* BaseViewModel.swift */; };
@@ -105,32 +91,10 @@
 		DCCFEC8A28BC5CED00019DBB /* CredentialRespostitory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC8928BC5CED00019DBB /* CredentialRespostitory.swift */; };
 		DCCFEC8F28BC661600019DBB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC8E28BC661600019DBB /* API.swift */; };
 		DCCFEC9228BC67DB00019DBB /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC9128BC67DB00019DBB /* Networking.swift */; };
-		DCCFEC9528BC699900019DBB /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DCCFEC9428BC699900019DBB /* Moya */; };
-		DCCFEC9728BC699900019DBB /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DCCFEC9628BC699900019DBB /* ReactiveMoya */; };
-		DCCFEC9928BC699900019DBB /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DCCFEC9828BC699900019DBB /* RxMoya */; };
 		DCCFEC9B28BCA54200019DBB /* CredentialRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC9A28BCA54200019DBB /* CredentialRemoteDataSource.swift */; };
 		DCCFEC9D28BCA55000019DBB /* CredentialLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC9C28BCA55000019DBB /* CredentialLocalDataSource.swift */; };
 		DCD7857D28F65CBE008E36B2 /* UIViewControler+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7857C28F65CBE008E36B2 /* UIViewControler+Rx.swift */; };
-		DCD7858028F66066008E36B2 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = DCD7857F28F66066008E36B2 /* ProgressHUD */; };
-		DCEFA4EE28E159EF00869D4E /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = DCEFA4ED28E159EF00869D4E /* RxRealm */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DC6E409528B75CAE00429771 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC6E407628B75CAD00429771 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC6E407D28B75CAD00429771;
-			remoteInfo = TheMovieDBSwift;
-		};
-		DC6E409F28B75CAE00429771 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC6E407628B75CAD00429771 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC6E407D28B75CAD00429771;
-			remoteInfo = TheMovieDBSwift;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DC6E41AC28B8BE1A00429771 /* Embed Frameworks */ = {
@@ -198,8 +162,6 @@
 		DC54874D290139FC005106B0 /* ApiLogPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogPlugin.swift; sourceTree = "<group>"; };
 		DC6E407E28B75CAD00429771 /* TheMovieDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E408328B75CAD00429771 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DC6E409428B75CAE00429771 /* TheMovieDBSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDBSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC6E409E28B75CAE00429771 /* TheMovieDBSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDBSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E40C228B8638700429771 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC6E40C628B8638700429771 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC6E40C928B8638700429771 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -254,40 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC88488228EFE7A3006698A1 /* Willow in Frameworks */,
-				DC6E41B328B8BF7C00429771 /* RxSwift in Frameworks */,
-				DC6E41B128B8BF7C00429771 /* RxRelay in Frameworks */,
-				DCD7858028F66066008E36B2 /* ProgressHUD in Frameworks */,
 				DC6E41AA28B8BE1A00429771 /* Pods_TheMovieDBSwift.framework in Frameworks */,
-				DC833E6328F569BE0028DAFA /* XCGLogger in Frameworks */,
-				DC833E4428F52A990028DAFA /* Action in Frameworks */,
-				DC85BC1528BCBAA300187748 /* Realm in Frameworks */,
-				DC6E41AF28B8BF7C00429771 /* RxCocoa in Frameworks */,
-				DC54875129014853005106B0 /* SwiftPrettyPrint in Frameworks */,
-				DC833E6128F569BE0028DAFA /* ObjcExceptionBridging in Frameworks */,
-				DCCFEC9728BC699900019DBB /* ReactiveMoya in Frameworks */,
-				DCCFEC9928BC699900019DBB /* RxMoya in Frameworks */,
-				DC85BC1728BCBAA300187748 /* RealmSwift in Frameworks */,
-				DC54870D28FE53E4005106B0 /* SideMenu in Frameworks */,
-				DCCFEC9528BC699900019DBB /* Moya in Frameworks */,
-				DCEFA4EE28E159EF00869D4E /* RxRealm in Frameworks */,
-				DC6E418828B87FFB00429771 /* Swinject in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC6E409128B75CAE00429771 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1FDE09D66A294E71D1ABFDF8 /* Pods_TheMovieDBSwiftTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC6E409B28B75CAE00429771 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				87B3E14DA535EB0CB1770C88 /* Pods_TheMovieDBSwift_TheMovieDBSwiftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,8 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				DC6E407E28B75CAD00429771 /* TheMovieDBSwift.app */,
-				DC6E409428B75CAE00429771 /* TheMovieDBSwiftTests.xctest */,
-				DC6E409E28B75CAE00429771 /* TheMovieDBSwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -774,66 +701,10 @@
 			);
 			name = TheMovieDBSwift;
 			packageProductDependencies = (
-				DC6E418728B87FFB00429771 /* Swinject */,
-				DC6E41AE28B8BF7C00429771 /* RxCocoa */,
-				DC6E41B028B8BF7C00429771 /* RxRelay */,
-				DC6E41B228B8BF7C00429771 /* RxSwift */,
-				DCCFEC9428BC699900019DBB /* Moya */,
-				DCCFEC9628BC699900019DBB /* ReactiveMoya */,
-				DCCFEC9828BC699900019DBB /* RxMoya */,
-				DC85BC1428BCBAA300187748 /* Realm */,
-				DC85BC1628BCBAA300187748 /* RealmSwift */,
-				DCEFA4ED28E159EF00869D4E /* RxRealm */,
-				DC88488128EFE7A3006698A1 /* Willow */,
-				DC833E4328F52A990028DAFA /* Action */,
-				DC833E6028F569BE0028DAFA /* ObjcExceptionBridging */,
-				DC833E6228F569BE0028DAFA /* XCGLogger */,
-				DCD7857F28F66066008E36B2 /* ProgressHUD */,
-				DC54870C28FE53E4005106B0 /* SideMenu */,
-				DC54875029014853005106B0 /* SwiftPrettyPrint */,
 			);
 			productName = TheMovieDBSwift;
 			productReference = DC6E407E28B75CAD00429771 /* TheMovieDBSwift.app */;
 			productType = "com.apple.product-type.application";
-		};
-		DC6E409328B75CAE00429771 /* TheMovieDBSwiftTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC6E40AB28B75CAE00429771 /* Build configuration list for PBXNativeTarget "TheMovieDBSwiftTests" */;
-			buildPhases = (
-				0945BB6E676280BCE9FF1A28 /* [CP] Check Pods Manifest.lock */,
-				DC6E409028B75CAE00429771 /* Sources */,
-				DC6E409128B75CAE00429771 /* Frameworks */,
-				DC6E409228B75CAE00429771 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC6E409628B75CAE00429771 /* PBXTargetDependency */,
-			);
-			name = TheMovieDBSwiftTests;
-			productName = TheMovieDBSwiftTests;
-			productReference = DC6E409428B75CAE00429771 /* TheMovieDBSwiftTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DC6E409D28B75CAE00429771 /* TheMovieDBSwiftUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC6E40AE28B75CAE00429771 /* Build configuration list for PBXNativeTarget "TheMovieDBSwiftUITests" */;
-			buildPhases = (
-				579D4B354E31F170EFB10463 /* [CP] Check Pods Manifest.lock */,
-				DC6E409A28B75CAE00429771 /* Sources */,
-				DC6E409B28B75CAE00429771 /* Frameworks */,
-				DC6E409C28B75CAE00429771 /* Resources */,
-				9E5272BF7DAAE6B71F112F73 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC6E40A028B75CAE00429771 /* PBXTargetDependency */,
-			);
-			name = TheMovieDBSwiftUITests;
-			productName = TheMovieDBSwiftUITests;
-			productReference = DC6E409E28B75CAE00429771 /* TheMovieDBSwiftUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -848,14 +719,6 @@
 					DC6E407D28B75CAD00429771 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					DC6E409328B75CAE00429771 = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = DC6E407D28B75CAD00429771;
-					};
-					DC6E409D28B75CAE00429771 = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = DC6E407D28B75CAD00429771;
-					};
 				};
 			};
 			buildConfigurationList = DC6E407928B75CAD00429771 /* Build configuration list for PBXProject "TheMovieDBSwift" */;
@@ -869,25 +732,12 @@
 			);
 			mainGroup = DC6E407528B75CAD00429771;
 			packageReferences = (
-				DC6E418628B87FFB00429771 /* XCRemoteSwiftPackageReference "Swinject" */,
-				DC6E41AD28B8BF7C00429771 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				DCCFEC9328BC699900019DBB /* XCRemoteSwiftPackageReference "Moya" */,
-				DC85BC1328BCBAA300187748 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				DCEFA4EC28E159EF00869D4E /* XCRemoteSwiftPackageReference "RxRealm" */,
-				DC88488028EFE7A3006698A1 /* XCRemoteSwiftPackageReference "Willow" */,
-				DC833E4228F52A990028DAFA /* XCRemoteSwiftPackageReference "Action" */,
-				DC833E5F28F569BE0028DAFA /* XCRemoteSwiftPackageReference "XCGLogger" */,
-				DCD7857E28F66066008E36B2 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
-				DC54870B28FE53E4005106B0 /* XCRemoteSwiftPackageReference "SideMenu" */,
-				DC54874F29014853005106B0 /* XCRemoteSwiftPackageReference "SwiftPrettyPrint" */,
 			);
 			productRefGroup = DC6E407F28B75CAD00429771 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DC6E407D28B75CAD00429771 /* TheMovieDBSwift */,
-				DC6E409328B75CAE00429771 /* TheMovieDBSwiftTests */,
-				DC6E409D28B75CAE00429771 /* TheMovieDBSwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -911,67 +761,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC6E409228B75CAE00429771 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC6E409C28B75CAE00429771 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0945BB6E676280BCE9FF1A28 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TheMovieDBSwiftTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		579D4B354E31F170EFB10463 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TheMovieDBSwift-TheMovieDBSwiftUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8C5A8C6B274C15ED48F3DEE3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -987,23 +779,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheMovieDBSwift/Pods-TheMovieDBSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9E5272BF7DAAE6B71F112F73 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheMovieDBSwift-TheMovieDBSwiftUITests/Pods-TheMovieDBSwift-TheMovieDBSwiftUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheMovieDBSwift-TheMovieDBSwiftUITests/Pods-TheMovieDBSwift-TheMovieDBSwiftUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheMovieDBSwift-TheMovieDBSwiftUITests/Pods-TheMovieDBSwift-TheMovieDBSwiftUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BDB5D26845CD6C68EBD1FF13 /* [CP] Check Pods Manifest.lock */ = {
@@ -1148,34 +923,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC6E409028B75CAE00429771 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC6E409A28B75CAE00429771 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DC6E409628B75CAE00429771 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC6E407D28B75CAD00429771 /* TheMovieDBSwift */;
-			targetProxy = DC6E409528B75CAE00429771 /* PBXContainerItemProxy */;
-		};
-		DC6E40A028B75CAE00429771 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC6E407D28B75CAD00429771 /* TheMovieDBSwift */;
-			targetProxy = DC6E409F28B75CAE00429771 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DC6E40C128B8638700429771 /* Localizable.strings */ = {
@@ -1337,7 +1085,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HaLinh.TheMovieDBSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_SUPPRESS_WARNINGS = YES;
+				SWIFT_SUPPRESS_WARNINGS = NO;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1374,89 +1123,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HaLinh.TheMovieDBSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_SUPPRESS_WARNINGS = YES;
+				SWIFT_SUPPRESS_WARNINGS = NO;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DC6E40AC28B75CAE00429771 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E005B624649F319FF18DFC72 /* Pods-TheMovieDBSwiftTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q9JV89N8T3;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = HaLinh.TheMovieDBSwiftTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheMovieDBSwift.app/TheMovieDBSwift";
-			};
-			name = Debug;
-		};
-		DC6E40AD28B75CAE00429771 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57C13912713BC8DF4FFAB7C8 /* Pods-TheMovieDBSwiftTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q9JV89N8T3;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = HaLinh.TheMovieDBSwiftTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheMovieDBSwift.app/TheMovieDBSwift";
-			};
-			name = Release;
-		};
-		DC6E40AF28B75CAE00429771 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76B8E483D9709460957740A4 /* Pods-TheMovieDBSwift-TheMovieDBSwiftUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q9JV89N8T3;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = HaLinh.TheMovieDBSwiftUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TheMovieDBSwift;
-			};
-			name = Debug;
-		};
-		DC6E40B028B75CAE00429771 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8759C38EFF84C944041C508 /* Pods-TheMovieDBSwift-TheMovieDBSwiftUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q9JV89N8T3;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = HaLinh.TheMovieDBSwiftUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TheMovieDBSwift;
 			};
 			name = Release;
 		};
@@ -1481,204 +1151,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC6E40AB28B75CAE00429771 /* Build configuration list for PBXNativeTarget "TheMovieDBSwiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC6E40AC28B75CAE00429771 /* Debug */,
-				DC6E40AD28B75CAE00429771 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC6E40AE28B75CAE00429771 /* Build configuration list for PBXNativeTarget "TheMovieDBSwiftUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC6E40AF28B75CAE00429771 /* Debug */,
-				DC6E40B028B75CAE00429771 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		DC54870B28FE53E4005106B0 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		DC54874F29014853005106B0 /* XCRemoteSwiftPackageReference "SwiftPrettyPrint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/YusukeHosonuma/SwiftPrettyPrint";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		DC6E418628B87FFB00429771 /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
-			requirement = {
-				kind = exactVersion;
-				version = 2.8.2;
-			};
-		};
-		DC6E41AD28B8BF7C00429771 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = exactVersion;
-				version = 6.5.0;
-			};
-		};
-		DC833E4228F52A990028DAFA /* XCRemoteSwiftPackageReference "Action" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/Action";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		DC833E5F28F569BE0028DAFA /* XCRemoteSwiftPackageReference "XCGLogger" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/DaveWoodCom/XCGLogger";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		DC85BC1328BCBAA300187748 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		DC88488028EFE7A3006698A1 /* XCRemoteSwiftPackageReference "Willow" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Nike-Inc/Willow.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		DCCFEC9328BC699900019DBB /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = exactVersion;
-				version = 15.0.0;
-			};
-		};
-		DCD7857E28F66066008E36B2 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 13.0.0;
-			};
-		};
-		DCEFA4EC28E159EF00869D4E /* XCRemoteSwiftPackageReference "RxRealm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DC54870C28FE53E4005106B0 /* SideMenu */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC54870B28FE53E4005106B0 /* XCRemoteSwiftPackageReference "SideMenu" */;
-			productName = SideMenu;
-		};
-		DC54875029014853005106B0 /* SwiftPrettyPrint */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC54874F29014853005106B0 /* XCRemoteSwiftPackageReference "SwiftPrettyPrint" */;
-			productName = SwiftPrettyPrint;
-		};
-		DC6E418728B87FFB00429771 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC6E418628B87FFB00429771 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-		DC6E41AE28B8BF7C00429771 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC6E41AD28B8BF7C00429771 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		DC6E41B028B8BF7C00429771 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC6E41AD28B8BF7C00429771 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		DC6E41B228B8BF7C00429771 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC6E41AD28B8BF7C00429771 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		DC833E4328F52A990028DAFA /* Action */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC833E4228F52A990028DAFA /* XCRemoteSwiftPackageReference "Action" */;
-			productName = Action;
-		};
-		DC833E6028F569BE0028DAFA /* ObjcExceptionBridging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC833E5F28F569BE0028DAFA /* XCRemoteSwiftPackageReference "XCGLogger" */;
-			productName = ObjcExceptionBridging;
-		};
-		DC833E6228F569BE0028DAFA /* XCGLogger */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC833E5F28F569BE0028DAFA /* XCRemoteSwiftPackageReference "XCGLogger" */;
-			productName = XCGLogger;
-		};
-		DC85BC1428BCBAA300187748 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC85BC1328BCBAA300187748 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		DC85BC1628BCBAA300187748 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC85BC1328BCBAA300187748 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		DC88488128EFE7A3006698A1 /* Willow */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC88488028EFE7A3006698A1 /* XCRemoteSwiftPackageReference "Willow" */;
-			productName = Willow;
-		};
-		DCCFEC9428BC699900019DBB /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DCCFEC9328BC699900019DBB /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		DCCFEC9628BC699900019DBB /* ReactiveMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DCCFEC9328BC699900019DBB /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = ReactiveMoya;
-		};
-		DCCFEC9828BC699900019DBB /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DCCFEC9328BC699900019DBB /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
-		};
-		DCD7857F28F66066008E36B2 /* ProgressHUD */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DCD7857E28F66066008E36B2 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
-			productName = ProgressHUD;
-		};
-		DCEFA4ED28E159EF00869D4E /* RxRealm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DCEFA4EC28E159EF00869D4E /* XCRemoteSwiftPackageReference "RxRealm" */;
-			productName = RxRealm;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC6E407628B75CAD00429771 /* Project object */;
 }
