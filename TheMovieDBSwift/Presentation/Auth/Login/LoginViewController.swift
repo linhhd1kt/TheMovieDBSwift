@@ -8,7 +8,6 @@
 import RxSwift
 import UIKit
 import RxCocoa
-import NSObject_Rx
 import ProgressHUD
 
 final class LoginViewController: BaseViewController {

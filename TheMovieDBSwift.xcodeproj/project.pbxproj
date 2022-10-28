@@ -12,6 +12,7 @@
 		DC18B461290A309B00CA9C6B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B460290A309B00CA9C6B /* R.generated.swift */; };
 		DC18B4BD290BB15B00CA9C6B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4BC290BB15B00CA9C6B /* Colors.xcassets */; };
 		DC18B4C7290BC98600CA9C6B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4C6290BC98600CA9C6B /* .swiftlint.yml */; };
+		DC18B4C9290BDB6100CA9C6B /* HasDisposedBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4C8290BDB6100CA9C6B /* HasDisposedBag.swift */; };
 		DC28BCE828E1952C000D4FF0 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCE728E1952C000D4FF0 /* ResponseParser.swift */; };
 		DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCED28E559DC000D4FF0 /* Respository.swift */; };
 		DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCEF28E55A15000D4FF0 /* DataSource.swift */; };
@@ -89,7 +90,6 @@
 		DC88488228EFE7A3006698A1 /* Willow in Frameworks */ = {isa = PBXBuildFile; productRef = DC88488128EFE7A3006698A1 /* Willow */; };
 		DC88488528EFE7B7006698A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88488428EFE7B7006698A1 /* Logger.swift */; };
 		DCA086FD2907D5310091BF79 /* NavigationItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA086FC2907D5310091BF79 /* NavigationItemFactory.swift */; };
-		DCA7DA7228DAFA8F0013996C /* NSObject-Rx in Frameworks */ = {isa = PBXBuildFile; productRef = DCA7DA7128DAFA8F0013996C /* NSObject-Rx */; };
 		DCA7DA7528DC0D410013996C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7DA7428DC0D410013996C /* BaseViewModel.swift */; };
 		DCA7DA7728DC52B70013996C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7DA7628DC52B70013996C /* BaseViewController.swift */; };
 		DCA7DA7B28DD52B00013996C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7DA7A28DD52B00013996C /* NetworkError.swift */; };
@@ -158,6 +158,7 @@
 		DC18B4BC290BB15B00CA9C6B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		DC18B4BE290BBBF200CA9C6B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC18B4C6290BC98600CA9C6B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		DC18B4C8290BDB6100CA9C6B /* HasDisposedBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDisposedBag.swift; sourceTree = "<group>"; };
 		DC28BCE328E15AF2000D4FF0 /* RxSwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC28BCE728E1952C000D4FF0 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
 		DC28BCED28E559DC000D4FF0 /* Respository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respository.swift; sourceTree = "<group>"; };
@@ -270,7 +271,6 @@
 				DC54870D28FE53E4005106B0 /* SideMenu in Frameworks */,
 				DCCFEC9528BC699900019DBB /* Moya in Frameworks */,
 				DCEFA4EE28E159EF00869D4E /* RxRealm in Frameworks */,
-				DCA7DA7228DAFA8F0013996C /* NSObject-Rx in Frameworks */,
 				DC6E418828B87FFB00429771 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,6 +724,7 @@
 			isa = PBXGroup;
 			children = (
 				DCB246EE28CB19E800873CF2 /* RxSwift+Ex.swift */,
+				DC18B4C8290BDB6100CA9C6B /* HasDisposedBag.swift */,
 				DC833E5D28F567580028DAFA /* Optional+Ex.swift */,
 				DC833E6428F56CE50028DAFA /* NSObject+Ex.swift */,
 				DCD7857C28F65CBE008E36B2 /* UIViewControler+Rx.swift */,
@@ -782,7 +783,6 @@
 				DCCFEC9828BC699900019DBB /* RxMoya */,
 				DC85BC1428BCBAA300187748 /* Realm */,
 				DC85BC1628BCBAA300187748 /* RealmSwift */,
-				DCA7DA7128DAFA8F0013996C /* NSObject-Rx */,
 				DCEFA4ED28E159EF00869D4E /* RxRealm */,
 				DC88488128EFE7A3006698A1 /* Willow */,
 				DC833E4328F52A990028DAFA /* Action */,
@@ -873,7 +873,6 @@
 				DC6E41AD28B8BF7C00429771 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				DCCFEC9328BC699900019DBB /* XCRemoteSwiftPackageReference "Moya" */,
 				DC85BC1328BCBAA300187748 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				DCA7DA7028DAFA8E0013996C /* XCRemoteSwiftPackageReference "NSObject-Rx" */,
 				DCEFA4EC28E159EF00869D4E /* XCRemoteSwiftPackageReference "RxRealm" */,
 				DC88488028EFE7A3006698A1 /* XCRemoteSwiftPackageReference "Willow" */,
 				DC833E4228F52A990028DAFA /* XCRemoteSwiftPackageReference "Action" */,
@@ -1076,6 +1075,7 @@
 				DC54872528FF8FFE005106B0 /* DashboardViewModelType.swift in Sources */,
 				DC54871E28FF8FC5005106B0 /* DashboardViewController.swift in Sources */,
 				DC88488528EFE7B7006698A1 /* Logger.swift in Sources */,
+				DC18B4C9290BDB6100CA9C6B /* HasDisposedBag.swift in Sources */,
 				DC54872928FFF6EB005106B0 /* RickViewController.swift in Sources */,
 				DC54870128FE45F9005106B0 /* CoordinatorType.swift in Sources */,
 				DCB246EB28CB17D400873CF2 /* AuthUseCase.swift in Sources */,
@@ -1566,14 +1566,6 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		DCA7DA7028DAFA8E0013996C /* XCRemoteSwiftPackageReference "NSObject-Rx" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/NSObject-Rx";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		DCCFEC9328BC699900019DBB /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1660,11 +1652,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC88488028EFE7A3006698A1 /* XCRemoteSwiftPackageReference "Willow" */;
 			productName = Willow;
-		};
-		DCA7DA7128DAFA8F0013996C /* NSObject-Rx */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DCA7DA7028DAFA8E0013996C /* XCRemoteSwiftPackageReference "NSObject-Rx" */;
-			productName = "NSObject-Rx";
 		};
 		DCCFEC9428BC699900019DBB /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;

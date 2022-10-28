@@ -6,7 +6,6 @@
 //
 
 import RxSwift
-import NSObject_Rx
 
 class AuthUseCase {
     // MARK: - Dependency

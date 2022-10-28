@@ -71,11 +71,7 @@ protocol LoginListener {
 
 extension AppCoordinator: LoginListener {
     func didLogedIn() {
-        print("XXX Login In")
-        // TODO: Navigate to Dashboard
     }
     func didLogOut() {
-        print("XXX Log Out")
-        // TODO: Navigate to Login
     }
 }

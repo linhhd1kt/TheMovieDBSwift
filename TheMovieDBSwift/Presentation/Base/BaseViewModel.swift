@@ -5,7 +5,6 @@
 //  Created by Ha Linh on 22/09/2022.
 //
 
-import NSObject_Rx
 import UIKit
 
 class BaseViewModel: NSObject {

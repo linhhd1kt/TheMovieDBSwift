@@ -7,7 +7,6 @@
 
 import RxSwift
 import RxCocoa
-import NSObject_Rx
 import Action
 
 final class DashboardViewModel: BaseViewModel {

@@ -8,7 +8,6 @@
 import Foundation
 import RxSwift
 import Alamofire
-import NSObject_Rx
 import RealmSwift
 
 class CredentialRespository<L, R>: Respository

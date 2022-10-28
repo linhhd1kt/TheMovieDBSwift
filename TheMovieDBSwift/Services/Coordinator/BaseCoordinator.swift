@@ -7,7 +7,6 @@
 
 import UIKit
 import RxSwift
-import NSObject_Rx
 
 class BaseCoordinator: NSObject, CoordinatorType {
     var childCoordinators: [CoordinatorType] = []

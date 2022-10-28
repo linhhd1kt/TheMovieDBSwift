@@ -8,7 +8,6 @@
 import UIKit
 import RxCocoa
 import RxSwift
-import NSObject_Rx
 import SwiftUI
 
 class BaseViewController: UIViewController {

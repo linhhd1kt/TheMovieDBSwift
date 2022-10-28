@@ -55,10 +55,8 @@ class DrawerMenuCoordinator: BaseCoordinator {
             start(coordinator: coordinator)
             self.navigationController.dismiss(animated: true)
         case .profile:
-            // TODO navigate to profile
             self.navigationController.dismiss(animated: true)
         case .search:
-            // TODO navigate to search
             self.navigationController.dismiss(animated: true)
         case .movies:
             let viewModel = MovieListViewModel()

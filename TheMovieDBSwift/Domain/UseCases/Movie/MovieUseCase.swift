@@ -6,7 +6,6 @@
 //
 
 import RxSwift
-import NSObject_Rx
 
 class MovieUseCase {
     // MARK: - Dependency
