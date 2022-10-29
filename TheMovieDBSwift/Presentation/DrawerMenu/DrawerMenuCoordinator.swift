@@ -87,15 +87,16 @@ class DrawerMenuCoordinator: BaseCoordinator {
         let leftMenuNavigationController = SideMenuNavigationController(rootViewController: drawer)
         SideMenuManager.default.leftMenuNavigationController = leftMenuNavigationController
         leftMenuNavigationController.navigationBar.isHidden = true
+        leftMenuNavigationController.blurEffectStyle = .prominent
 
         let style = SideMenuPresentationStyle.menuSlideIn
-        style.backgroundColor = .black
+        style.backgroundColor = R.color.primary() ?? .black
         style.presentingEndAlpha = 0.32
-        style.onTopShadowColor = .black
+        style.onTopShadowColor = R.color.primary() ?? .black
         style.onTopShadowRadius = 4.0
         style.onTopShadowOpacity = 0.2
         style.onTopShadowOffset = CGSize(width: 2.0, height: 0.0)
-
+        
         var settings = SideMenuSettings()
         settings.presentationStyle = style
         settings.menuWidth = max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.75), 240)
