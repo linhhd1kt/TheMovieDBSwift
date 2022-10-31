@@ -39,7 +39,7 @@ class MovieListViewController: RickViewController, UIScrollViewDelegate {
     
     private func setupTableView() {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
-        tableView.register(UINib(nibName: MovieCell.className, bundle: nil), forCellReuseIdentifier: MovieCell.className)
+        tableView.register(MovieTableCell.self)
         tableView.rowHeight = 40
         tableView.separatorStyle = .none
     }
@@ -59,7 +59,7 @@ class MovieListViewController: RickViewController, UIScrollViewDelegate {
         output.moviesResult
             .elements
             .map { $0.results }
-            .bind(to: tableView.rx.items(cellIdentifier: MovieCell.className, cellType: MovieCell.self)) { _, model, cell in
+            .bind(to: tableView.rx.items(cellIdentifier: MovieTableCell.className, cellType: MovieTableCell.self)) { _, model, cell in
                 cell.configure(model)
             }
             .disposed(by: disposeBag)

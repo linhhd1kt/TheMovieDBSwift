@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleView" customModule="TheMovieDBSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="2JN-x0-BwX"/>
+                <outlet property="percentContainerView" destination="oVW-cf-n1r" id="N3n-ER-ySu"/>
+                <outlet property="percentLabel" destination="1WI-jd-AME" id="wuk-ws-cxT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="185" height="183"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVW-cf-n1r">
+                    <rect key="frame" x="0.0" y="0.0" width="185" height="183"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAM-1U-h2i">
+                    <rect key="frame" x="0.0" y="0.0" width="185" height="183"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-jd-AME" userLabel="Popularity">
+                            <rect key="frame" x="86.5" y="84.5" width="8" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                            <color key="textColor" name="on-secondary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzZ-4v-zaD" userLabel="%">
+                            <rect key="frame" x="94.5" y="84.5" width="6.5" height="7.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="6"/>
+                            <color key="textColor" name="on-secondary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="UzZ-4v-zaD" firstAttribute="leading" secondItem="1WI-jd-AME" secondAttribute="trailing" id="0ul-t5-FF8"/>
+                        <constraint firstItem="1WI-jd-AME" firstAttribute="centerX" secondItem="KAM-1U-h2i" secondAttribute="centerX" constant="-2" id="MVP-kr-dvT"/>
+                        <constraint firstItem="1WI-jd-AME" firstAttribute="top" secondItem="UzZ-4v-zaD" secondAttribute="top" id="j1C-8e-bp0"/>
+                        <constraint firstItem="1WI-jd-AME" firstAttribute="centerY" secondItem="KAM-1U-h2i" secondAttribute="centerY" id="tRx-wq-CX4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KAM-1U-h2i" secondAttribute="bottom" id="1Yf-fg-iRQ"/>
+                <constraint firstItem="KAM-1U-h2i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4Ia-1U-M9z"/>
+                <constraint firstItem="KAM-1U-h2i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gmk-ct-mk1"/>
+                <constraint firstAttribute="trailing" secondItem="oVW-cf-n1r" secondAttribute="trailing" id="Gt5-Kh-JKV"/>
+                <constraint firstItem="oVW-cf-n1r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WxE-R6-qeT"/>
+                <constraint firstAttribute="trailing" secondItem="KAM-1U-h2i" secondAttribute="trailing" id="gG3-RS-s67"/>
+                <constraint firstItem="oVW-cf-n1r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jAt-2J-I5j"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oVW-cf-n1r" secondAttribute="bottom" id="nzS-5f-wYa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-28.260869565217394" y="-163.05803571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="on-secondary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

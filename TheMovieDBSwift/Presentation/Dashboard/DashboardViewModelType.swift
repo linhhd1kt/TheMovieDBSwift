@@ -13,9 +13,9 @@ protocol DashboardViewModelType {
 }
 
 protocol DashboardViewModelInputType {
-    var viewDidLoad: AnyObserver<Void> { get }
+    var fetchPopularMovies: AnyObserver<Int> { get }
 }
 
 protocol DashboardViewModelOutputType {
-    var MoviesResult: Observable<[Movie]> { get }
+    var moviesResult: Observable<[Movie]> { get }
 }

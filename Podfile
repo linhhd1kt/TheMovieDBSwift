@@ -20,6 +20,9 @@ target 'TheMovieDBSwift' do
   pod 'ProgressHUD'
   pod 'SideMenu'
   pod 'SwiftPrettyPrint'
+  pod 'RxDataSources'
+  pod 'Kingfisher'
+  pod 'SwifterSwift'
   
 #  pod 'RxSwiftExt'
 #  target 'TheMovieDBSwiftTests' do

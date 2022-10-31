@@ -6,30 +6,61 @@
 //
 
 import UIKit
+import RxSwift
 
 class DashboardViewController: RickViewController {
-
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
     private let viewModel: DashboardViewModelType
+    private let dataSource = DataSourceFactory().mak()
         
     // MARK: - Initialization
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewModel: DashboardViewModelType, navigationViewModel: NavigationViewModelType) {
+    init(viewModel: DashboardViewModelType,
+         navigationViewModel: NavigationViewModelType) {
         self.viewModel = viewModel
         super.init(navigationViewModel: navigationViewModel)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLayouts()
         bindInput(viewModel.input)
         bindOutput(viewModel.output)
     }
-    
-    private func bindInput(_ input: DashboardViewModelInputType) {
+
+    private func setupLayouts() {
+        setupCollectionView()
     }
 
-    private func bindOutput(_ output: DashboardViewModelOutputType) {
+    private func setupCollectionView() {
+        collectionView.register(MovieCell.self)
+        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 160, height: 320)
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        collectionView.collectionViewLayout = layout
     }
+    
+    private func bindInput(_ input: DashboardViewModelInputType) {
+        rx.viewWillAppear
+            .take(1)
+            .map { 1 }
+            .bind(to: input.fetchPopularMovies)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindOutput(_ output: DashboardViewModelOutputType) {
+        output.moviesResult
+            .map { [MovieSection(title: "Popular", items: $0)] }
+            .bind(to: collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+    }
+}
+
+extension DashboardViewController: UIScrollViewDelegate {
 }

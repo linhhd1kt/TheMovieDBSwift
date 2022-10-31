@@ -11,6 +11,15 @@
 		DC18B4BD290BB15B00CA9C6B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4BC290BB15B00CA9C6B /* Colors.xcassets */; };
 		DC18B4C7290BC98600CA9C6B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4C6290BC98600CA9C6B /* .swiftlint.yml */; };
 		DC18B4C9290BDB6100CA9C6B /* HasDisposedBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4C8290BDB6100CA9C6B /* HasDisposedBag.swift */; };
+		DC18B4D0290E6FAC00CA9C6B /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4CE290E6FAC00CA9C6B /* MovieCell.swift */; };
+		DC18B4D1290E6FAC00CA9C6B /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4CF290E6FAC00CA9C6B /* MovieCell.xib */; };
+		DC18B4D4290E6FFF00CA9C6B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4D3290E6FFF00CA9C6B /* CircleView.swift */; };
+		DC18B4D6290E700B00CA9C6B /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4D5290E700B00CA9C6B /* CircleView.xib */; };
+		DC18B4D8290E77F000CA9C6B /* UITableView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4D7290E77F000CA9C6B /* UITableView+Ex.swift */; };
+		DC18B4DA290E781300CA9C6B /* UICollectionView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4D9290E781300CA9C6B /* UICollectionView+Ex.swift */; };
+		DC18B4DC290E798800CA9C6B /* MovieDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4DB290E798800CA9C6B /* MovieDataSource.swift */; };
+		DC18B4E1290F6D9300CA9C6B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4E0290F6D9300CA9C6B /* ImageLoader.swift */; };
+		DC18B4E3290F7C7700CA9C6B /* UICollectionViewCell+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4E2290F7C7700CA9C6B /* UICollectionViewCell+Ex.swift */; };
 		DC28BCE828E1952C000D4FF0 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCE728E1952C000D4FF0 /* ResponseParser.swift */; };
 		DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCED28E559DC000D4FF0 /* Respository.swift */; };
 		DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCEF28E55A15000D4FF0 /* DataSource.swift */; };
@@ -43,8 +52,8 @@
 		DC5487412901053D005106B0 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5487402901053D005106B0 /* Page.swift */; };
 		DC548744290107B4005106B0 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC548742290107B4005106B0 /* MovieListViewController.swift */; };
 		DC548745290107B4005106B0 /* MovieListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC548743290107B4005106B0 /* MovieListViewController.xib */; };
-		DC5487482901084A005106B0 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5487462901084A005106B0 /* MovieCell.swift */; };
-		DC5487492901084A005106B0 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5487472901084A005106B0 /* MovieCell.xib */; };
+		DC5487482901084A005106B0 /* MovieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5487462901084A005106B0 /* MovieTableCell.swift */; };
+		DC5487492901084A005106B0 /* MovieTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5487472901084A005106B0 /* MovieTableCell.xib */; };
 		DC54874C2901269D005106B0 /* MovieListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54874B2901269D005106B0 /* MovieListCoordinator.swift */; };
 		DC54874E290139FC005106B0 /* ApiLogPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54874D290139FC005106B0 /* ApiLogPlugin.swift */; };
 		DC6E408428B75CAD00429771 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E408328B75CAD00429771 /* SceneDelegate.swift */; };
@@ -123,6 +132,15 @@
 		DC18B4BE290BBBF200CA9C6B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC18B4C6290BC98600CA9C6B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DC18B4C8290BDB6100CA9C6B /* HasDisposedBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDisposedBag.swift; sourceTree = "<group>"; };
+		DC18B4CE290E6FAC00CA9C6B /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		DC18B4CF290E6FAC00CA9C6B /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		DC18B4D3290E6FFF00CA9C6B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		DC18B4D5290E700B00CA9C6B /* CircleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
+		DC18B4D7290E77F000CA9C6B /* UITableView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ex.swift"; sourceTree = "<group>"; };
+		DC18B4D9290E781300CA9C6B /* UICollectionView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ex.swift"; sourceTree = "<group>"; };
+		DC18B4DB290E798800CA9C6B /* MovieDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataSource.swift; sourceTree = "<group>"; };
+		DC18B4E0290F6D9300CA9C6B /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		DC18B4E2290F7C7700CA9C6B /* UICollectionViewCell+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ex.swift"; sourceTree = "<group>"; };
 		DC28BCE328E15AF2000D4FF0 /* RxSwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC28BCE728E1952C000D4FF0 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
 		DC28BCED28E559DC000D4FF0 /* Respository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respository.swift; sourceTree = "<group>"; };
@@ -156,8 +174,8 @@
 		DC5487402901053D005106B0 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		DC548742290107B4005106B0 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		DC548743290107B4005106B0 /* MovieListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListViewController.xib; sourceTree = "<group>"; };
-		DC5487462901084A005106B0 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
-		DC5487472901084A005106B0 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		DC5487462901084A005106B0 /* MovieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCell.swift; sourceTree = "<group>"; };
+		DC5487472901084A005106B0 /* MovieTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableCell.xib; sourceTree = "<group>"; };
 		DC54874B2901269D005106B0 /* MovieListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCoordinator.swift; sourceTree = "<group>"; };
 		DC54874D290139FC005106B0 /* ApiLogPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogPlugin.swift; sourceTree = "<group>"; };
 		DC6E407E28B75CAD00429771 /* TheMovieDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +265,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC18B4CB290E2EB400CA9C6B /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				DC18B4D2290E6FD600CA9C6B /* CirleView */,
+				DC18B4CD290E6F5800CA9C6B /* MovieCell */,
+				DC54874A29010854005106B0 /* MovieTableCell */,
+				DC18B4CC290E2EBD00CA9C6B /* PhalaxanHeader */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		DC18B4CC290E2EBD00CA9C6B /* PhalaxanHeader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PhalaxanHeader;
+			sourceTree = "<group>";
+		};
+		DC18B4CD290E6F5800CA9C6B /* MovieCell */ = {
+			isa = PBXGroup;
+			children = (
+				DC18B4CE290E6FAC00CA9C6B /* MovieCell.swift */,
+				DC18B4CF290E6FAC00CA9C6B /* MovieCell.xib */,
+				DC18B4DB290E798800CA9C6B /* MovieDataSource.swift */,
+			);
+			path = MovieCell;
+			sourceTree = "<group>";
+		};
+		DC18B4D2290E6FD600CA9C6B /* CirleView */ = {
+			isa = PBXGroup;
+			children = (
+				DC18B4D3290E6FFF00CA9C6B /* CircleView.swift */,
+				DC18B4D5290E700B00CA9C6B /* CircleView.xib */,
+			);
+			path = CirleView;
+			sourceTree = "<group>";
+		};
+		DC18B4DF290F6D8400CA9C6B /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				DC18B4E0290F6D9300CA9C6B /* ImageLoader.swift */,
+			);
+			path = ImageLoader;
+			sourceTree = "<group>";
+		};
 		DC28BCE628E1950F000D4FF0 /* ReponseParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,7 +382,6 @@
 		DC54872A2900E296005106B0 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				DC54874A29010854005106B0 /* MovieCell */,
 				DC54872B2900E2F5005106B0 /* MovieListViewModelType.swift */,
 				DC54874B2901269D005106B0 /* MovieListCoordinator.swift */,
 				DC548743290107B4005106B0 /* MovieListViewController.xib */,
@@ -356,13 +418,13 @@
 			path = Movie;
 			sourceTree = "<group>";
 		};
-		DC54874A29010854005106B0 /* MovieCell */ = {
+		DC54874A29010854005106B0 /* MovieTableCell */ = {
 			isa = PBXGroup;
 			children = (
-				DC5487462901084A005106B0 /* MovieCell.swift */,
-				DC5487472901084A005106B0 /* MovieCell.xib */,
+				DC5487462901084A005106B0 /* MovieTableCell.swift */,
+				DC5487472901084A005106B0 /* MovieTableCell.xib */,
 			);
-			path = MovieCell;
+			path = MovieTableCell;
 			sourceTree = "<group>";
 		};
 		DC6E407528B75CAD00429771 = {
@@ -461,6 +523,7 @@
 		DC6E410728B8638700429771 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DC18B4CB290E2EB400CA9C6B /* shared */,
 				DCA7DA7328DC0D370013996C /* Base */,
 				DC54870228FE538F005106B0 /* DrawerMenu */,
 				DC6E41A428B8B2EE00429771 /* Auth */,
@@ -485,6 +548,7 @@
 		DC6E418328B87F3500429771 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DC18B4DF290F6D8400CA9C6B /* ImageLoader */,
 				DC6E418428B87FA000429771 /* ServiceFacade.swift */,
 				DCA086FB2907D51D0091BF79 /* Factories */,
 				DC5486FD28FD3F21005106B0 /* Coordinator */,
@@ -651,10 +715,13 @@
 			isa = PBXGroup;
 			children = (
 				DCB246EE28CB19E800873CF2 /* RxSwift+Ex.swift */,
+				DC18B4D7290E77F000CA9C6B /* UITableView+Ex.swift */,
+				DC18B4D9290E781300CA9C6B /* UICollectionView+Ex.swift */,
 				DC18B4C8290BDB6100CA9C6B /* HasDisposedBag.swift */,
 				DC833E5D28F567580028DAFA /* Optional+Ex.swift */,
 				DC833E6428F56CE50028DAFA /* NSObject+Ex.swift */,
 				DCD7857C28F65CBE008E36B2 /* UIViewControler+Rx.swift */,
+				DC18B4E2290F7C7700CA9C6B /* UICollectionViewCell+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -752,8 +819,10 @@
 				DC6E413D28B8638800429771 /* Localizable.strings in Resources */,
 				DC54871F28FF8FC5005106B0 /* DashboardViewController.xib in Resources */,
 				DC54871528FEA6EB005106B0 /* DrawerMenuViewController.xib in Resources */,
+				DC18B4D6290E700B00CA9C6B /* CircleView.xib in Resources */,
 				DC6E413F28B8638800429771 /* Assets.xcassets in Resources */,
-				DC5487492901084A005106B0 /* MovieCell.xib in Resources */,
+				DC18B4D1290E6FAC00CA9C6B /* MovieCell.xib in Resources */,
+				DC5487492901084A005106B0 /* MovieTableCell.xib in Resources */,
 				DC18B4BD290BB15B00CA9C6B /* Colors.xcassets in Resources */,
 				DC6E419528B8862F00429771 /* LoginViewController.xib in Resources */,
 				DC548745290107B4005106B0 /* MovieListViewController.xib in Resources */,
@@ -868,7 +937,9 @@
 				DCAE4C3B28D0779300301B2C /* ActivityIndicator.swift in Sources */,
 				DCCFEC8A28BC5CED00019DBB /* CredentialRespostitory.swift in Sources */,
 				DCA7DA7728DC52B70013996C /* BaseViewController.swift in Sources */,
+				DC18B4E1290F6D9300CA9C6B /* ImageLoader.swift in Sources */,
 				DC6E41A728B8B51B00429771 /* AuthUseCaseType.swift in Sources */,
+				DC18B4D0290E6FAC00CA9C6B /* MovieCell.swift in Sources */,
 				DCCFEC9228BC67DB00019DBB /* Networking.swift in Sources */,
 				DCD7857D28F65CBE008E36B2 /* UIViewControler+Rx.swift in Sources */,
 				DC833E5E28F567580028DAFA /* Optional+Ex.swift in Sources */,
@@ -876,7 +947,9 @@
 				DC54872C2900E2F6005106B0 /* MovieListViewModelType.swift in Sources */,
 				DC5487362900E6DA005106B0 /* MovieRequest.swift in Sources */,
 				DC833E5428F52D880028DAFA /* AuthResponse.swift in Sources */,
+				DC18B4E3290F7C7700CA9C6B /* UICollectionViewCell+Ex.swift in Sources */,
 				DC54872428FF8FFE005106B0 /* DashboardViewModel.swift in Sources */,
+				DC18B4DC290E798800CA9C6B /* MovieDataSource.swift in Sources */,
 				DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */,
 				DC5487382900E6E5005106B0 /* MovieResponse.swift in Sources */,
 				DC6E414F28B8638800429771 /* AppConfigurations.swift in Sources */,
@@ -885,6 +958,8 @@
 				DC54870F28FE5425005106B0 /* DrawerMenuScreen.swift in Sources */,
 				DC54872E2900E450005106B0 /* MovieListViewModel.swift in Sources */,
 				DCB246EF28CB19E800873CF2 /* RxSwift+Ex.swift in Sources */,
+				DC18B4D8290E77F000CA9C6B /* UITableView+Ex.swift in Sources */,
+				DC18B4D4290E6FFF00CA9C6B /* CircleView.swift in Sources */,
 				DC6E414528B8638800429771 /* CredentialObject.swift in Sources */,
 				DC833E5C28F557170028DAFA /* Credential.swift in Sources */,
 				DC6E408428B75CAD00429771 /* SceneDelegate.swift in Sources */,
@@ -899,11 +974,12 @@
 				DC833E4C28F52C650028DAFA /* AuthRepositotyType.swift in Sources */,
 				DC54872128FF8FD0005106B0 /* DashboardCoordinator.swift in Sources */,
 				DC6E417128B8638800429771 /* LoginViewController.swift in Sources */,
+				DC18B4DA290E781300CA9C6B /* UICollectionView+Ex.swift in Sources */,
 				DC6E418528B87FA000429771 /* ServiceFacade.swift in Sources */,
 				DCAE4C3828D06C8100301B2C /* ErrorTracker.swift in Sources */,
 				DC54874C2901269D005106B0 /* MovieListCoordinator.swift in Sources */,
 				DC5487332900E660005106B0 /* MovieRepositoryType.swift in Sources */,
-				DC5487482901084A005106B0 /* MovieCell.swift in Sources */,
+				DC5487482901084A005106B0 /* MovieTableCell.swift in Sources */,
 				DCA086FD2907D5310091BF79 /* NavigationItemFactory.swift in Sources */,
 				DCB16F0428F966E8001686C1 /* AppCoordinator.swift in Sources */,
 				DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */,

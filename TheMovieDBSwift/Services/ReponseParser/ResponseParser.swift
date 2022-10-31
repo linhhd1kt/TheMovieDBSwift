@@ -51,7 +51,7 @@ class ResponseParser: ResponseParsable {
                 return CommonError.decode(description: error.localizedDescription)
             }
         default:
-            return NetworkError.other(message: "HTTPS status code unhandle: \(response.statusCode)")
+            return NetworkError.other(message: "https status code unhandle: \(response.statusCode)")
         }
     }
 }

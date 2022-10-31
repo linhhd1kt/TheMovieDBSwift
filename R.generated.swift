@@ -406,8 +406,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
+    /// Nib `CircleView`.
+    static let circleView = _R.nib._CircleView()
     /// Nib `DashboardViewController`.
     static let dashboardViewController = _R.nib._DashboardViewController()
     /// Nib `DrawerMenuCell`.
@@ -420,6 +422,16 @@ struct R: Rswift.Validatable {
     static let movieCell = _R.nib._MovieCell()
     /// Nib `MovieListViewController`.
     static let movieListViewController = _R.nib._MovieListViewController()
+    /// Nib `MovieTableCell`.
+    static let movieTableCell = _R.nib._MovieTableCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CircleView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.circleView) instead")
+    static func circleView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.circleView)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "DashboardViewController", in: bundle)`
@@ -469,6 +481,18 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MovieTableCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.movieTableCell) instead")
+    static func movieTableCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.movieTableCell)
+    }
+    #endif
+
+    static func circleView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.circleView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func dashboardViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.dashboardViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -491,6 +515,10 @@ struct R: Rswift.Validatable {
 
     static func movieListViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.movieListViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func movieTableCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieTableCell? {
+      return R.nib.movieTableCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieTableCell
     }
 
     fileprivate init() {}
@@ -681,6 +709,17 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _CircleView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CircleView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _DashboardViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "DashboardViewController"
@@ -742,6 +781,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MovieTableCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MovieTableCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieTableCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieTableCell
       }
 
       fileprivate init() {}

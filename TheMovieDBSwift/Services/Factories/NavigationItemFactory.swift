@@ -30,7 +30,14 @@ class NavigationItemFactory: NavigationItemCreatable {
     func makeNavigationItem(_ style: NavigationItemStyle) -> UIBarButtonItem {
         let icon = makeNavigatonIcon(style)
         let barButton = UIBarButtonItem(image: icon, style: .plain, target: nil, action: nil)
-        barButton.tintColor = R.color.onPrimary()
+        var tinColor: UIColor?
+        switch style {
+        case .search:
+            tinColor = R.color.ternary()
+        default:
+            tinColor = R.color.background()
+        }
+        barButton.tintColor = tinColor
         return barButton
     }
 
