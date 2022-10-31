@@ -14,7 +14,7 @@ final class DashboardViewModel: BaseViewModel {
     private let movieUseCase: MovieUseCaseType
 
     // MARK: - Input
-    private let fetchPopularMoviesObserver = BehaviorSubject<Int>(value: 1)
+    private let fetchPopularMoviesObserver = PublishSubject<Int>()
     // MARK: - Output
     private let errorObserver = BehaviorSubject<String>(value: "")
     private let movieListObserver = BehaviorSubject<[Movie]>(value: [])

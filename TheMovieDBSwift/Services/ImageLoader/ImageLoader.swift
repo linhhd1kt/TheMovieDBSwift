@@ -17,9 +17,7 @@ protocol ImageLoadable {
 class ImageLoader: ImageLoadable {
     func loadTMDBImage(with id: String, to imageView: UIImageView) {
         let imageBaseUrl = URL(string: AppConfiguration().imagesBaseURL)
-        let url = imageBaseUrl?
-            .appendingPathComponent("t/p/w185").appendingPathComponent(id)
-        print("XXX \(url)")
+        let url = imageBaseUrl?.appendingPathComponent("t/p/w185").appendingPathComponent(id)
         imageView.kf.setImage(with: url)
     }
 }
