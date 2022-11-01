@@ -54,15 +54,13 @@ class MovieListViewController: RickViewController, UIScrollViewDelegate {
     }
     
     private func bindOutput(_ output: MovieListViewModelOutputType) {
-        output.moviesResult
-            .elements
-            .map(\.results)
-            .scan([], accumulator: { oldItems, newItems in
-                return oldItems + newItems
-            })
+        output.movieList
             .bind(to: tableView.rx.items(cellIdentifier: MovieTableCell.className, cellType: MovieTableCell.self)) { _, model, cell in
                 cell.configure(model)
             }
+            .disposed(by: disposeBag)
+        output.loading
+            .bind(to: rx.loading)
             .disposed(by: disposeBag)
     }
 }

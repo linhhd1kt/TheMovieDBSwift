@@ -20,7 +20,6 @@ final class MovieListViewModel: BaseViewModel {
     // MARK: - Output
     private let errorObserver = BehaviorSubject<String>(value: "")
     private let movieListObserver = BehaviorSubject<Page<Movie>>(value: .empty)
-    private let items = PublishSubject<[Movie]>()
     
     init(movieUseCase: MovieUseCaseType = MovieUseCase()) {
         self.movieUseCase = movieUseCase
@@ -33,28 +32,26 @@ extension MovieListViewModel: MovieListViewModelType {
     var input: MovieListViewModelInputType {
         return self
     }
+
     var output: MovieListViewModelOutputType {
         return self
     }
     
     func binding() {
         nextPageObserver
-            .map { 1 }
+            .withLatestFrom(movieListObserver)
+            .map { $0.page + 1 } // Magic of loading more here
             .bind(to: movieUseCase.input.fetchPopular)
             .disposed(by: disposeBag)
-        
-//        let resultItems = movieUseCase.output
-//            .fetchPopularResult
-//            .elements
-//            .map { $0.results }
-//            .redu
-        
-//        movieUseCase.output
-//            .fetchPopularResult
-//            .elements
-//            .debug("XXX MovieListViewModel bind output to movie list observer")
-//            .bind(to: movieListObserver)
-//            .disposed(by: disposeBag)
+        // Magic of loading more here
+        movieUseCase.output.fetchPopularResult
+            .elements
+            .skip(while: { page in
+                // TODO remove + 35697(cheat only for skip action) when real running,
+                return page.page + 35696 >= page.totalPages
+            })
+            .bind(to: movieListObserver)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -68,7 +65,12 @@ extension MovieListViewModel: MovieListViewModelInputType {
 }
 
 extension MovieListViewModel: MovieListViewModelOutputType {
-    var moviesResult: ActionResult<Page<Movie>> {
-        return movieUseCase.output.fetchPopularResult
+    var movieList: Observable<[Movie]> {
+        return movieListObserver.asObservable()
+            .map(\.results)
+            .scan([], accumulator: +) // Magic of loading more here
+    }
+    var loading: Observable<Bool> {
+        return movieUseCase.output.fetchPopularResult.executing
     }
 }

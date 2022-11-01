@@ -18,5 +18,6 @@ protocol MovieListViewModelInputType {
 }
 
 protocol MovieListViewModelOutputType {
-    var moviesResult: ActionResult<Page<Movie>> { get }
+    var movieList: Observable<[Movie]> { get }
+    var loading: Observable<Bool> { get }
 }

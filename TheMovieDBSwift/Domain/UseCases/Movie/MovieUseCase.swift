@@ -24,10 +24,9 @@ class MovieUseCase {
 
     private func bindInput() {
         fetchPopularMoviePageObserver
-//            .withUnretained(self)
-            .map { page in
-                self.translator.toPopularRequest(page: page) }
-            .debug("XXX MovieUseCase bind input to repository")
+            .withUnretained(self)
+            .map { this, page in
+                this.translator.toPopularRequest(page: page) }
             .bind(to: respository.fetchPopular.inputs)
             .disposed(by: disposeBag)
     }
