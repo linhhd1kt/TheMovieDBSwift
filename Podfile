@@ -23,6 +23,7 @@ target 'TheMovieDBSwift' do
   pod 'RxDataSources'
   pod 'Kingfisher'
   pod 'SwifterSwift'
+  pod 'RxSwiftExt'
   
 #  pod 'RxSwiftExt'
 #  target 'TheMovieDBSwiftTests' do

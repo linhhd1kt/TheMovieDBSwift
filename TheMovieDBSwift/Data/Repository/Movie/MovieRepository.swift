@@ -6,7 +6,6 @@
 //
 
 import Action
-import RxSwift
 
 class MovieRepository: MovieRepositoryType {
     

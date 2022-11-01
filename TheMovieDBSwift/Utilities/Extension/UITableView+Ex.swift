@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 extension UITableView {
     func register<T: UITableViewCell>(_ type: T.Type, bundle: Bundle? = nil) {
@@ -19,7 +21,7 @@ extension UITableView {
         let nib = UINib(nibName: className, bundle: bundle)
         register(nib, forHeaderFooterViewReuseIdentifier: className)
     }
-
+    
     func dequeue<T: UITableViewCell>(_ type: T.Type, for indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withIdentifier: type.className, for: indexPath) as? T else {
             fatalError("Cast to \(type.className) failed")
@@ -60,5 +62,16 @@ extension UITableView {
             fatalError("Cast to \(type.className) failed")
         }
         return header
+    }
+}
+
+extension Reactive where Base: UIScrollView {
+    var reachEnd: Observable<Void> {
+        return base.rx.contentOffset
+            .filter { ($0.x + $0.y) > 0.0 }
+            .map { $0.y + base.frame.size.height + 20.0 > base.contentSize.height }
+            .distinctUntilChanged()
+            .filter { $0 }
+            .map { _ in return }
     }
 }

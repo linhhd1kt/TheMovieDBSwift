@@ -371,10 +371,10 @@
 			isa = PBXGroup;
 			children = (
 				DC54872028FF8FCF005106B0 /* DashboardCoordinator.swift */,
+				DC54871D28FF8FC5005106B0 /* DashboardViewController.xib */,
+				DC54871C28FF8FC5005106B0 /* DashboardViewController.swift */,
 				DC54872228FF8FFE005106B0 /* DashboardViewModelType.swift */,
 				DC54872328FF8FFE005106B0 /* DashboardViewModel.swift */,
-				DC54871C28FF8FC5005106B0 /* DashboardViewController.swift */,
-				DC54871D28FF8FC5005106B0 /* DashboardViewController.xib */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -382,10 +382,10 @@
 		DC54872A2900E296005106B0 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				DC54872B2900E2F5005106B0 /* MovieListViewModelType.swift */,
 				DC54874B2901269D005106B0 /* MovieListCoordinator.swift */,
 				DC548743290107B4005106B0 /* MovieListViewController.xib */,
 				DC548742290107B4005106B0 /* MovieListViewController.swift */,
+				DC54872B2900E2F5005106B0 /* MovieListViewModelType.swift */,
 				DC54872D2900E450005106B0 /* MovieListViewModel.swift */,
 			);
 			path = Movies;

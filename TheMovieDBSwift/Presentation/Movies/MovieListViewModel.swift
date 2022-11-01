@@ -15,11 +15,12 @@ final class MovieListViewModel: BaseViewModel {
 
     // MARK: - Input
     // only make private please
-    private let fetchPopularMoviesObserver = PublishSubject<Int>()
+    private let nextPageObserver = PublishSubject<Void>()
     private let movieSelectedObserver = PublishSubject<Movie?>()
     // MARK: - Output
     private let errorObserver = BehaviorSubject<String>(value: "")
-    private let movieListObserver = PublishSubject<[Movie]>()
+    private let movieListObserver = BehaviorSubject<Page<Movie>>(value: .empty)
+    private let items = PublishSubject<[Movie]>()
     
     init(movieUseCase: MovieUseCaseType = MovieUseCase()) {
         self.movieUseCase = movieUseCase
@@ -37,21 +38,29 @@ extension MovieListViewModel: MovieListViewModelType {
     }
     
     func binding() {
-        fetchPopularMoviesObserver
+        nextPageObserver
+            .map { 1 }
             .bind(to: movieUseCase.input.fetchPopular)
             .disposed(by: disposeBag)
-        movieUseCase.output
-            .fetchPopularResult
-            .elements
-            .map { $0.results }
-            .bind(to: movieListObserver)
-            .disposed(by: disposeBag)
+        
+//        let resultItems = movieUseCase.output
+//            .fetchPopularResult
+//            .elements
+//            .map { $0.results }
+//            .redu
+        
+//        movieUseCase.output
+//            .fetchPopularResult
+//            .elements
+//            .debug("XXX MovieListViewModel bind output to movie list observer")
+//            .bind(to: movieListObserver)
+//            .disposed(by: disposeBag)
     }
 }
 
 extension MovieListViewModel: MovieListViewModelInputType {
-    var fetchPopularMovies: AnyObserver<Int> {
-        return fetchPopularMoviesObserver.asObserver()
+    var nextPageTrigger: AnyObserver<Void> {
+        return nextPageObserver.asObserver()
     }
     var movieSelected: AnyObserver<Movie?> {
         return movieSelectedObserver.asObserver()

@@ -13,7 +13,7 @@ protocol MovieListViewModelType {
 }
 
 protocol MovieListViewModelInputType {
-    var fetchPopularMovies: AnyObserver<Int> { get }
+    var nextPageTrigger: AnyObserver<Void> { get }
     var movieSelected: AnyObserver<Movie?> { get }
 }
 

@@ -45,10 +45,8 @@ class MovieListViewController: RickViewController, UIScrollViewDelegate {
     }
     
     private func bindInput(_ input: MovieListViewModelInputType) {
-        rx.viewWillAppear
-            .take(1)
-            .map { 1 }
-            .bind(to: input.fetchPopularMovies)
+        Observable.merge(tableView.rx.reachEnd, rx.viewDidAppear.asObservable().take(1))
+            .bind(to: input.nextPageTrigger)
             .disposed(by: disposeBag)
         tableView.rx.modelSelected(Movie.self)
             .bind(to: input.movieSelected)
@@ -58,7 +56,10 @@ class MovieListViewController: RickViewController, UIScrollViewDelegate {
     private func bindOutput(_ output: MovieListViewModelOutputType) {
         output.moviesResult
             .elements
-            .map { $0.results }
+            .map(\.results)
+            .scan([], accumulator: { oldItems, newItems in
+                return oldItems + newItems
+            })
             .bind(to: tableView.rx.items(cellIdentifier: MovieTableCell.className, cellType: MovieTableCell.self)) { _, model, cell in
                 cell.configure(model)
             }
