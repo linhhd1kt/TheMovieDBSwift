@@ -13,6 +13,7 @@ protocol MovieListViewModelType {
 }
 
 protocol MovieListViewModelInputType {
+    var reloadTrigger: AnyObserver<Void> { get }
     var nextPageTrigger: AnyObserver<Void> { get }
     var movieSelected: AnyObserver<Movie?> { get }
 }

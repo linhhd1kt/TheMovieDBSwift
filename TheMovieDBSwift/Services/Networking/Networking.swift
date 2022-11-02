@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 import Moya
 import Alamofire
+import SwiftyJSON
 
 protocol Networking {
     func request<T: Decodable>(target: TargetType) -> Observable<T>
@@ -50,7 +51,7 @@ class Network: Networking {
                     if let error = self.responseParser.parseError(response: response) {
                         observer.onError(error)
                     } else {
-                        do {
+                        do {                            
                             let decoder = JSONDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             let object = try decoder.decode(T.self, from: response.data)

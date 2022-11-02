@@ -17,5 +17,5 @@ protocol MovieUseCaseInputType {
 }
 
 protocol MovieUseCaseOutputType {
-    var fetchPopularResult: ActionResult<Page<Movie>> { get }
+    var fetchPopularResult: ActionResult<MoviePage> { get }
 }

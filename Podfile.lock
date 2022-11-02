@@ -74,6 +74,7 @@ PODS:
   - SwiftLint (0.48.0)
   - SwiftPrettyPrint (1.2.0):
     - ColorizeSwift
+  - SwiftyJSON (5.0.1)
   - Swinject (2.8.2)
   - Willow (6.0.0)
   - XCGLogger (7.0.1):
@@ -96,6 +97,7 @@ DEPENDENCIES:
   - SwifterSwift
   - SwiftLint
   - SwiftPrettyPrint
+  - SwiftyJSON
   - Swinject
   - Willow
   - XCGLogger
@@ -124,6 +126,7 @@ SPEC REPOS:
     - SwifterSwift
     - SwiftLint
     - SwiftPrettyPrint
+    - SwiftyJSON
     - Swinject
     - Willow
     - XCGLogger
@@ -151,10 +154,11 @@ SPEC CHECKSUMS:
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
   SwiftPrettyPrint: feca848b6aba4de9201e38f73184e9e5ac09da55
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
   XCGLogger: 1943831ef907df55108b0b18657953f868de973b
 
-PODFILE CHECKSUM: 8bb6a7d2459a8fe908f30e3ca203e9e562e59d54
+PODFILE CHECKSUM: 9dea1ed661b1aba75c79280964066d416a8089ad
 
 COCOAPODS: 1.11.3

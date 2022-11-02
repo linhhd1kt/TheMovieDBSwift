@@ -7,9 +7,33 @@
 
 import UIKit
 import RxSwift
+import SwiftUI
+import RxCocoa
+
+class RickTableView: UITableView {    
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configure()
+    }
+    
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
+        configure()
+    }
+    
+    private func configure() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = R.color.primary()
+//        refreshControl?.rx.controlEvent(.valueChanged)
+//            .debug("XXX Pull to refresh")
+//            .subscribe()
+//            .disposed(by: disposeBag)
+    }
+}
 
 class MovieListViewController: RickViewController, UIScrollViewDelegate {
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: RickTableView!
     private let viewModel: MovieListViewModelType
     
     // MARK: - Initialization
@@ -45,6 +69,12 @@ class MovieListViewController: RickViewController, UIScrollViewDelegate {
     }
     
     private func bindInput(_ input: MovieListViewModelInputType) {
+        if let refreshControl = tableView.refreshControl {
+            Observable.merge(rx.viewDidAppear.asObservable().take(1),
+                             refreshControl.rx.controlEvent(.valueChanged).asObservable())
+                .bind(to: input.reloadTrigger)
+                .disposed(by: disposeBag)
+        }
         Observable.merge(tableView.rx.reachEnd, rx.viewDidAppear.asObservable().take(1))
             .bind(to: input.nextPageTrigger)
             .disposed(by: disposeBag)
@@ -62,5 +92,10 @@ class MovieListViewController: RickViewController, UIScrollViewDelegate {
         output.loading
             .bind(to: rx.loading)
             .disposed(by: disposeBag)
+        if let refreshControl = tableView.refreshControl {
+            output.loading
+                .bind(to: refreshControl.rx.isRefreshing)
+                .disposed(by: disposeBag)
+        }
     }
 }

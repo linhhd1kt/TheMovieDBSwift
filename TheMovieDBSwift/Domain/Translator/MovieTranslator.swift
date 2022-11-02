@@ -11,7 +11,7 @@ protocol MovieTranslatorType {
     func toPopularRequest(page: Int) -> PopularMovieRequest
     func toModels(response: MoviesResponse) -> [Movie]
     func toModel(response: MoviesResponse.Data) -> Movie
-    func toPage(response: MoviesResponse) -> Page<Movie>
+    func toPage(response: MoviesResponse) -> MoviePage
 }
 
 struct MovieTranslator: MovieTranslatorType {
@@ -20,12 +20,13 @@ struct MovieTranslator: MovieTranslatorType {
     }
     
     func toModel(response: MoviesResponse.Data) -> Movie {
+        
         return Movie(id: response.id,
                      posterPath: response.posterPath,
                      adult: response.adult,
                      overview: response.overview,
                      releaseDate: response.releaseDate,
-                     genreIds: response.genreIds,
+                     genreIds: response.genreIDS,
                      originalTitle: response.originalTitle,
                      originalLanguage: response.originalLanguage,
                      title: response.title,
@@ -40,10 +41,10 @@ struct MovieTranslator: MovieTranslatorType {
         response.results.map { toModel(response: $0) }
     }
     
-    func toPage(response: MoviesResponse) -> Page<Movie> {
-        return Page(page: response.page,
-                    results: response.results.map { toModel(response: $0) },
-                    totalResults: response.totalResults,
-                    totalPages: response.totalPages)
+    func toPage(response: MoviesResponse) -> MoviePage {
+        return MoviePage(page: response.page,
+                         results: response.results.map { toModel(response: $0) },
+                         totalResults: response.totalResults,
+                         totalPages: response.totalPages)
     }
 }

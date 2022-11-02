@@ -15,11 +15,13 @@ final class MovieListViewModel: BaseViewModel {
 
     // MARK: - Input
     // only make private please
+    private let reloadObserver = PublishSubject<Void>()
     private let nextPageObserver = PublishSubject<Void>()
     private let movieSelectedObserver = PublishSubject<Movie?>()
+
     // MARK: - Output
     private let errorObserver = BehaviorSubject<String>(value: "")
-    private let movieListObserver = BehaviorSubject<Page<Movie>>(value: .empty)
+    private var movieListObserver = BehaviorRelay<MoviePage>(value: .empty)
     
     init(movieUseCase: MovieUseCaseType = MovieUseCase()) {
         self.movieUseCase = movieUseCase
@@ -39,23 +41,36 @@ extension MovieListViewModel: MovieListViewModelType {
     
     func binding() {
         nextPageObserver
-            .withLatestFrom(movieListObserver)
-            .map { $0.page + 1 } // Magic of loading more here
+            .withLatestFrom(movieListObserver.asObservable().map(\.page))
+            .filter { $0 < 5 || $0 == 0 } // stop loading when first 5 page
+            .map { $0 + 1 } // increase page by 1 when loading next page
             .bind(to: movieUseCase.input.fetchPopular)
             .disposed(by: disposeBag)
-        // Magic of loading more here
-        movieUseCase.output.fetchPopularResult
+        
+        reloadObserver
+            .map { 1 }
+            .bind(to: movieUseCase.input.fetchPopular)
+            .disposed(by: disposeBag)
+
+        let movieElements = movieUseCase.output.fetchPopularResult
             .elements
-            .skip(while: { page in
-                // TODO remove + 35697(cheat only for skip action) when real running,
-                return page.page + 35696 >= page.totalPages
-            })
+            .share()
+        
+        movieElements
+            .filter { $0.page == 1 }
             .bind(to: movieListObserver)
+            .disposed(by: disposeBag)
+        movieElements
+            .filter { $0.page > 1 }
+            .bind(to: movieListObserver.append)
             .disposed(by: disposeBag)
     }
 }
 
 extension MovieListViewModel: MovieListViewModelInputType {
+    var reloadTrigger: AnyObserver<Void> {
+        return reloadObserver.asObserver()
+    }
     var nextPageTrigger: AnyObserver<Void> {
         return nextPageObserver.asObserver()
     }
@@ -66,9 +81,9 @@ extension MovieListViewModel: MovieListViewModelInputType {
 
 extension MovieListViewModel: MovieListViewModelOutputType {
     var movieList: Observable<[Movie]> {
-        return movieListObserver.asObservable()
+        return movieListObserver
             .map(\.results)
-            .scan([], accumulator: +) // Magic of loading more here
+            .asObservable()
     }
     var loading: Observable<Bool> {
         return movieUseCase.output.fetchPopularResult.executing

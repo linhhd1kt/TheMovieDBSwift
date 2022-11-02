@@ -11,11 +11,14 @@ import RxSwift
 import ObjectiveC
 
 protocol ImageLoadable {
-    func loadTMDBImage(with id: String, to imageView: UIImageView)
+    func loadTMDBImage(with id: String?, to imageView: UIImageView)
 }
 
 class ImageLoader: ImageLoadable {
-    func loadTMDBImage(with id: String, to imageView: UIImageView) {
+    func loadTMDBImage(with id: String?, to imageView: UIImageView) {
+        guard let id = id else {
+            return
+        }
         let imageBaseUrl = URL(string: AppConfiguration().imagesBaseURL)
         let url = imageBaseUrl?.appendingPathComponent("t/p/w185").appendingPathComponent(id)
         imageView.kf.setImage(with: url)

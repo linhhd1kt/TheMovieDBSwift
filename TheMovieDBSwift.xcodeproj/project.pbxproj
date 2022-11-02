@@ -24,6 +24,8 @@
 		DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCED28E559DC000D4FF0 /* Respository.swift */; };
 		DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCEF28E55A15000D4FF0 /* DataSource.swift */; };
 		DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */; };
+		DC3C9F04291262590075C81C /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F03291262590075C81C /* RefreshControl.swift */; };
+		DC3C9F0629126F210075C81C /* BehaviorRelay+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */; };
 		DC54870128FE45F9005106B0 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870028FE45F9005106B0 /* CoordinatorType.swift */; };
 		DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */; };
 		DC54870928FE538F005106B0 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870528FE538F005106B0 /* NavigationViewModel.swift */; };
@@ -71,6 +73,7 @@
 		DC6E41AA28B8BE1A00429771 /* Pods_TheMovieDBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16138EC1972AD3B841A7C3AB /* Pods_TheMovieDBSwift.framework */; };
 		DC6E41AB28B8BE1A00429771 /* Pods_TheMovieDBSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16138EC1972AD3B841A7C3AB /* Pods_TheMovieDBSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC6E41B728B8C7BE00429771 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */; };
+		DC7C0F8929120A040075517C /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C0F8829120A040075517C /* UIView+Ex.swift */; };
 		DC833E3F28F3D8C40028DAFA /* LoginViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */; };
 		DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E4028F3F5C90028DAFA /* ViewModelType.swift */; };
 		DC833E4628F52AC50028DAFA /* ActionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E4528F52AC50028DAFA /* ActionResult.swift */; };
@@ -146,6 +149,8 @@
 		DC28BCED28E559DC000D4FF0 /* Respository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respository.swift; sourceTree = "<group>"; };
 		DC28BCEF28E55A15000D4FF0 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesStorage.swift; sourceTree = "<group>"; };
+		DC3C9F03291262590075C81C /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Ex.swift"; sourceTree = "<group>"; };
 		DC54870028FE45F9005106B0 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuCoordinator.swift; sourceTree = "<group>"; };
 		DC54870528FE538F005106B0 /* NavigationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
@@ -193,6 +198,7 @@
 		DC6E41A628B8B51B00429771 /* AuthUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCaseType.swift; sourceTree = "<group>"; };
 		DC6E41A828B8B6CE00429771 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
 		DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DC7C0F8829120A040075517C /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelType.swift; sourceTree = "<group>"; };
 		DC833E4028F3F5C90028DAFA /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		DC833E4528F52AC50028DAFA /* ActionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionResult.swift; sourceTree = "<group>"; };
@@ -268,6 +274,7 @@
 		DC18B4CB290E2EB400CA9C6B /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				DC3C9F022912624B0075C81C /* RefreshControl */,
 				DC18B4D2290E6FD600CA9C6B /* CirleView */,
 				DC18B4CD290E6F5800CA9C6B /* MovieCell */,
 				DC54874A29010854005106B0 /* MovieTableCell */,
@@ -333,6 +340,14 @@
 				DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */,
 			);
 			path = UserPreferencesStorage;
+			sourceTree = "<group>";
+		};
+		DC3C9F022912624B0075C81C /* RefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				DC3C9F03291262590075C81C /* RefreshControl.swift */,
+			);
+			path = RefreshControl;
 			sourceTree = "<group>";
 		};
 		DC5486FD28FD3F21005106B0 /* Coordinator */ = {
@@ -722,6 +737,8 @@
 				DC833E6428F56CE50028DAFA /* NSObject+Ex.swift */,
 				DCD7857C28F65CBE008E36B2 /* UIViewControler+Rx.swift */,
 				DC18B4E2290F7C7700CA9C6B /* UICollectionViewCell+Ex.swift */,
+				DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */,
+				DC7C0F8829120A040075517C /* UIView+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -967,6 +984,7 @@
 				DCA7DA7528DC0D410013996C /* BaseViewModel.swift in Sources */,
 				DCCFEC9D28BCA55000019DBB /* CredentialLocalDataSource.swift in Sources */,
 				DC18B461290A309B00CA9C6B /* R.generated.swift in Sources */,
+				DC3C9F04291262590075C81C /* RefreshControl.swift in Sources */,
 				DC54871428FEA6EB005106B0 /* DrawerMenuViewController.swift in Sources */,
 				DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */,
 				DC5487312900E644005106B0 /* MovieRepository.swift in Sources */,
@@ -981,6 +999,7 @@
 				DC5487332900E660005106B0 /* MovieRepositoryType.swift in Sources */,
 				DC5487482901084A005106B0 /* MovieTableCell.swift in Sources */,
 				DCA086FD2907D5310091BF79 /* NavigationItemFactory.swift in Sources */,
+				DC3C9F0629126F210075C81C /* BehaviorRelay+Ex.swift in Sources */,
 				DCB16F0428F966E8001686C1 /* AppCoordinator.swift in Sources */,
 				DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */,
 				DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */,
@@ -990,6 +1009,7 @@
 				DCB16F0228F966CF001686C1 /* LoginCoordinator.swift in Sources */,
 				DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */,
 				DC54872728FF90AE005106B0 /* Movie.swift in Sources */,
+				DC7C0F8929120A040075517C /* UIView+Ex.swift in Sources */,
 				DCA7DA7D28DD54680013996C /* ReamlError.swift in Sources */,
 				DC833E5028F52CC40028DAFA /* AuthRequest.swift in Sources */,
 				DC5487412901053D005106B0 /* Page.swift in Sources */,

@@ -47,7 +47,7 @@ extension MovieUseCase: MovieUseCaseInputType {
 
 // MARK: - MovieUseCaseOutputType
 extension MovieUseCase: MovieUseCaseOutputType {
-    var fetchPopularResult: ActionResult<Page<Movie>> {
+    var fetchPopularResult: ActionResult<MoviePage> {
         return respository.fetchPopular.toResult()
             .map { self.translator.toPage(response: $0) }
     }

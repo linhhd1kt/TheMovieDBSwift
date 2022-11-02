@@ -24,6 +24,7 @@ target 'TheMovieDBSwift' do
   pod 'Kingfisher'
   pod 'SwifterSwift'
   pod 'RxSwiftExt'
+  pod 'SwiftyJSON'
   
 #  pod 'RxSwiftExt'
 #  target 'TheMovieDBSwiftTests' do

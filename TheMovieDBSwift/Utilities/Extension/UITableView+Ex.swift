@@ -75,3 +75,5 @@ extension Reactive where Base: UIScrollView {
             .map { _ in return }
     }
 }
+
+extension UITableView: HasDisposeBag {}
