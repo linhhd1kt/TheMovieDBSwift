@@ -24,8 +24,10 @@
 		DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCED28E559DC000D4FF0 /* Respository.swift */; };
 		DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCEF28E55A15000D4FF0 /* DataSource.swift */; };
 		DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */; };
+		DC347C9F29150AF000DC5CAB /* UIScrollView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC347C9E29150AF000DC5CAB /* UIScrollView+Ex.swift */; };
 		DC3C9F04291262590075C81C /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F03291262590075C81C /* RefreshControl.swift */; };
 		DC3C9F0629126F210075C81C /* BehaviorRelay+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */; };
+		DC3C9F082912B1F20075C81C /* RickTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F072912B1F20075C81C /* RickTableView.swift */; };
 		DC54870128FE45F9005106B0 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870028FE45F9005106B0 /* CoordinatorType.swift */; };
 		DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */; };
 		DC54870928FE538F005106B0 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54870528FE538F005106B0 /* NavigationViewModel.swift */; };
@@ -149,8 +151,10 @@
 		DC28BCED28E559DC000D4FF0 /* Respository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respository.swift; sourceTree = "<group>"; };
 		DC28BCEF28E55A15000D4FF0 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesStorage.swift; sourceTree = "<group>"; };
+		DC347C9E29150AF000DC5CAB /* UIScrollView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Ex.swift"; sourceTree = "<group>"; };
 		DC3C9F03291262590075C81C /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Ex.swift"; sourceTree = "<group>"; };
+		DC3C9F072912B1F20075C81C /* RickTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickTableView.swift; sourceTree = "<group>"; };
 		DC54870028FE45F9005106B0 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		DC54870428FE538F005106B0 /* DrawerMenuCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuCoordinator.swift; sourceTree = "<group>"; };
 		DC54870528FE538F005106B0 /* NavigationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
@@ -696,6 +700,7 @@
 				DCA7DA7428DC0D410013996C /* BaseViewModel.swift */,
 				DCA7DA7628DC52B70013996C /* BaseViewController.swift */,
 				DC54872828FFF6EB005106B0 /* RickViewController.swift */,
+				DC3C9F072912B1F20075C81C /* RickTableView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -730,6 +735,7 @@
 			isa = PBXGroup;
 			children = (
 				DCB246EE28CB19E800873CF2 /* RxSwift+Ex.swift */,
+				DC347C9E29150AF000DC5CAB /* UIScrollView+Ex.swift */,
 				DC18B4D7290E77F000CA9C6B /* UITableView+Ex.swift */,
 				DC18B4D9290E781300CA9C6B /* UICollectionView+Ex.swift */,
 				DC18B4C8290BDB6100CA9C6B /* HasDisposedBag.swift */,
@@ -978,6 +984,7 @@
 				DC18B4D8290E77F000CA9C6B /* UITableView+Ex.swift in Sources */,
 				DC18B4D4290E6FFF00CA9C6B /* CircleView.swift in Sources */,
 				DC6E414528B8638800429771 /* CredentialObject.swift in Sources */,
+				DC3C9F082912B1F20075C81C /* RickTableView.swift in Sources */,
 				DC833E5C28F557170028DAFA /* Credential.swift in Sources */,
 				DC6E408428B75CAD00429771 /* SceneDelegate.swift in Sources */,
 				DCA7DA7B28DD52B00013996C /* NetworkError.swift in Sources */,
@@ -991,6 +998,7 @@
 				DC28BCE828E1952C000D4FF0 /* ResponseParser.swift in Sources */,
 				DC833E4C28F52C650028DAFA /* AuthRepositotyType.swift in Sources */,
 				DC54872128FF8FD0005106B0 /* DashboardCoordinator.swift in Sources */,
+				DC347C9F29150AF000DC5CAB /* UIScrollView+Ex.swift in Sources */,
 				DC6E417128B8638800429771 /* LoginViewController.swift in Sources */,
 				DC18B4DA290E781300CA9C6B /* UICollectionView+Ex.swift in Sources */,
 				DC6E418528B87FA000429771 /* ServiceFacade.swift in Sources */,
