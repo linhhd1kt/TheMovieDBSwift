@@ -6,10 +6,14 @@ PODS:
   - ColorizeSwift (1.2.0)
   - Differentiator (5.0.0)
   - Kingfisher (7.4.1)
+  - MJRefresh (3.7.5)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
@@ -29,6 +33,9 @@ PODS:
     - Differentiator (~> 5.0)
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - RxMJ (0.5.1):
+    - MJRefresh
+    - RxCocoa (>= 4.5.0)
   - RxRealm (5.0.4):
     - Realm (~> 10.21)
     - RealmSwift (~> 10.21)
@@ -86,10 +93,12 @@ DEPENDENCIES:
   - Action
   - Kingfisher
   - Moya
+  - NVActivityIndicatorView
   - ProgressHUD
   - R.swift
   - RealmSwift
   - RxDataSources
+  - RxMJ
   - RxRealm
   - RxSwift
   - RxSwiftExt
@@ -109,7 +118,9 @@ SPEC REPOS:
     - ColorizeSwift
     - Differentiator
     - Kingfisher
+    - MJRefresh
     - Moya
+    - NVActivityIndicatorView
     - ObjcExceptionBridging
     - ProgressHUD
     - R.swift
@@ -118,6 +129,7 @@ SPEC REPOS:
     - RealmSwift
     - RxCocoa
     - RxDataSources
+    - RxMJ
     - RxRealm
     - RxRelay
     - RxSwift
@@ -137,7 +149,9 @@ SPEC CHECKSUMS:
   ColorizeSwift: 4eef354dce7335d7747a0ccacf78afe2b589a1be
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
@@ -146,6 +160,7 @@ SPEC CHECKSUMS:
   RealmSwift: 8635e4cc524790916d72b0ffa51c1a91f4ec9668
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxMJ: 3fbf23c21d53c248b8da4d9de40ba650050bb4ae
   RxRealm: 666c8785327fe2fff972a3093b35dc7055c1ca38
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
@@ -159,6 +174,6 @@ SPEC CHECKSUMS:
   Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
   XCGLogger: 1943831ef907df55108b0b18657953f868de973b
 
-PODFILE CHECKSUM: fd0b0f2c7049bf47ed7112309b08f89b79d6911e
+PODFILE CHECKSUM: 09efa678df67ec839739f3bf2516c60fd76833d4
 
 COCOAPODS: 1.11.3

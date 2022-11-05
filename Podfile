@@ -25,7 +25,11 @@ target 'TheMovieDBSwift' do
   pod 'SwifterSwift'
   pod 'RxSwiftExt'
   pod 'SwiftyJSON'
-  
+  pod 'NVActivityIndicatorView'
+
+  # https://github.com/srv7/RxMJ
+  pod 'RxMJ'
+
 #  pod 'RxSwiftExt'
 #  target 'TheMovieDBSwiftTests' do
 #    inherit! :search_paths
