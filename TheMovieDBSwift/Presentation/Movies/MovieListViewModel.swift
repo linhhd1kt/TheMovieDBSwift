@@ -60,6 +60,7 @@ extension MovieListViewModel: MovieListViewModelType {
             .filter { $0.page == 1 }
             .bind(to: movieListObserver)
             .disposed(by: disposeBag)
+
         movieElements
             .filter { $0.page > 1 }
             .bind(to: movieListObserver.append)
