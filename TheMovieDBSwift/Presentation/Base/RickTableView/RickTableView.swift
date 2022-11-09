@@ -42,7 +42,7 @@ class RickTableView<Page: Paginated>: UITableView {
     }
     
     private func configureLayouts() {
-        rowHeight = 40.0
+        rowHeight = 140.0
         separatorStyle = .none
     }
 
@@ -65,9 +65,6 @@ class RickTableView<Page: Paginated>: UITableView {
         // replace all items with first page items (eg: first load, reload)
         resultObserver
             .filter { $0.page == 1 }
-            .do { [weak self] _ in
-                self?.refreshControl?.endRefreshing()
-            }
             .bind(to: itemsObserver)
             .disposed(by: disposeBag)
         

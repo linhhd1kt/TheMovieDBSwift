@@ -23,7 +23,6 @@ class ResponseParser: ResponseParsable {
     
     init() {
         decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
     func parseError(response: Response) -> Error? {

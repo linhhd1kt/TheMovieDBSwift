@@ -8,10 +8,19 @@
 import UIKit
 
 class MovieTableCell: UITableViewCell {
-    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var backdropImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var releaseDateLabel: UILabel!
+    @IBOutlet private weak var overviewLabel: UILabel!
     
     func configure(_ movie: Movie) {
-        self.selectionStyle = .none
-        self.nameLabel.text = movie.title
+        selectionStyle = .none
+        imageLoader.loadTMDBImage(with: movie.posterPath, to: backdropImageView)
+        titleLabel.text = movie.title
+        releaseDateLabel.text = movie.releaseDate
+        overviewLabel.text = movie.overview        
     }
 }
+
+extension MovieTableCell: HasImageLoader { }
+extension MovieTableCell: HasLogger { }

@@ -105,12 +105,14 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 11 colors.
+  /// This `R.color` struct is generated, and contains static references to 12 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
     /// Color `background`.
     static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "background")
+    /// Color `on-background-variant`.
+    static let onBackgroundVariant = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-background-variant")
     /// Color `on-background`.
     static let onBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-background")
     /// Color `on-primary`.
@@ -154,6 +156,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func onBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.onBackground, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "on-background-variant", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func onBackgroundVariant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.onBackgroundVariant, compatibleWith: traitCollection)
     }
     #endif
 
@@ -250,6 +261,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func onBackground(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.onBackground.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "on-background-variant", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func onBackgroundVariant(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.onBackgroundVariant.name)
     }
     #endif
 

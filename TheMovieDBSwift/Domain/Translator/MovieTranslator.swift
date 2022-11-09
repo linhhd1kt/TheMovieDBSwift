@@ -20,7 +20,6 @@ struct MovieTranslator: MovieTranslatorType {
     }
     
     func toModel(response: MoviesResponse.Data) -> Movie {
-        
         return Movie(id: response.id,
                      posterPath: response.posterPath,
                      adult: response.adult,

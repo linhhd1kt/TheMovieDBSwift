@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MoviesResponse: Decodable {
+struct MoviesResponse: Codable {
     struct Data: Codable {
         let posterPath: String
         let adult: Bool
@@ -57,6 +57,13 @@ struct MoviesResponse: Decodable {
             video = try container.decodeIfPresent(Bool.self, forKey: .video) ?? false
             voteAverage = try container.decodeIfPresent(Double.self, forKey: .voteAverage) ?? 0.0
         }
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case page
+        case results
+        case totalResults = "total_results"
+        case totalPages = "total_pages"
     }
 
     let page: Int

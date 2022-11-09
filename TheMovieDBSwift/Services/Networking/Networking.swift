@@ -53,11 +53,11 @@ class Network: Networking {
                     } else {
                         do {                            
                             let decoder = JSONDecoder()
-                            decoder.keyDecodingStrategy = .convertFromSnakeCase
                             let object = try decoder.decode(T.self, from: response.data)
                             observer.onNext(object)
                             observer.onCompleted()
                         } catch {
+                            print(error)
                             observer.onError(error)
                         }
                     }

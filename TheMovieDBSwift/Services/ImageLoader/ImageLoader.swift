@@ -19,13 +19,13 @@ class ImageLoader: ImageLoadable {
         guard let id = id else {
             return
         }
-        let imageBaseUrl = URL(string: AppConfiguration().imagesBaseURL)
+        let imageBaseUrl = URL(string: AppConfiguration().imagesBaseURL)        
         let url = imageBaseUrl?.appendingPathComponent("t/p/w185").appendingPathComponent(id)
         imageView.kf.setImage(with: url)
     }
 }
 
-private var imageLoaderContext: UInt8 = 1
+private var imageLoaderContext: UInt8 = 2
 
 protocol HasImageLoader: AnyObject {
     var imageLoader: ImageLoadable { get set }
