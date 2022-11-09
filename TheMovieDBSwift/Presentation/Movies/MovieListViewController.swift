@@ -37,72 +37,28 @@ class MovieListViewController: RickViewController {
     
     private func setupLayouts() {
         setupTableView()
-        tableView.frame = view.bounds
-        view.addSubview(tableView)
     }
     
     private func setupTableView() {
-//        tableView.rx.setDelegate(self).disposed(by: disposeBag)
-//        tableView.register(MovieTableCell.self)
-//        tableView.rowHeight = 40
-//        tableView.separatorStyle = .none
+        tableView.frame = view.bounds
+        view.addSubview(tableView)
+        tableView.register(MovieTableCell.self)
+        tableView.configure(identifier: MovieTableCell.className, type: MovieTableCell.self) { _, model, cell in
+            cell.configure(model)
+        }
     }
     
     private func bindInput(_ input: MovieListViewModelInputType) {
-        Observable.merge(rx.viewDidAppear.asObservable().take(1).map { 1 },
-                         tableView.nextPageTrigger)
-            .debug("XXX input.nextPageTrigger")
+        let viewWillAppear = rx.viewDidAppear.asObservable().take(1).map { 1 }
+        Observable.merge(viewWillAppear, tableView.nextPageTrigger)
             .bind(to: input.nextPageTrigger)
             .disposed(by: disposeBag)
-        
-//        tableView.nextPageObserver.asObservable()
-//            .bind(to: input.nextPageTrigger)
-//            .disposed(by: disposeBag)
-
-//        tableView.nextPageObserver
-//            .debug("XXX MovieListViewController nextPageObserver")
-//            .bind(to: input.nextPageTrigger)
-//            .disposed(by: disposeBag)
-//        if let refreshControl = tableView.refreshControl {
-//            Observable.merge(rx.viewDidAppear.asObservable().take(1),
-//                             refreshControl.rx.controlEvent(.valueChanged).asObservable())
-//                .bind(to: input.reloadTrigger)
-//                .disposed(by: disposeBag)
-//        }
-//        rx.viewDidAppear.asObservable().take(1)
-//            .map { 1 }
-//            .debug("XXX viewDidAppear")
-//            .bind(to: tableView.nextPageObserver)
-//            .disposed(by: disposeBag)
-//        Observable.merge(tableView.rx.reachEnd, rx.viewDidAppear.asObservable().take(1))
-//            .bind(to: input.nextPageTrigger)
-//            .disposed(by: disposeBag)
-//        tableView.rx.modelSelected(Movie.self)
-//            .bind(to: input.movieSelected)
-//            .disposed(by: disposeBag)
     }
     
     private func bindOutput(_ output: MovieListViewModelOutputType) {
         output.fetchMovieResult
-            .debug("XXX MovieListViewController fetchMovieResult")
-//            .subscribe()
-//            .elements
-            .bind(to: tableView.resultObserver.append)
+            .bind(to: tableView.itemsResult)
             .disposed(by: disposeBag)
-            
-//        output.movieList
-//            .bind(to: tableView.rx.items(cellIdentifier: MovieTableCell.className, cellType: MovieTableCell.self)) { _, model, cell in
-//                cell.configure(model)
-//            }
-//            .disposed(by: disposeBag)
-//        output.loading
-//            .bind(to: rx.loading)
-//            .disposed(by: disposeBag)
-//        if let refreshControl = tableView.refreshControl {
-//            output.loading
-//                .bind(to: refreshControl.rx.isRefreshing)
-//                .disposed(by: disposeBag)
-//        }
     }
 }
 
