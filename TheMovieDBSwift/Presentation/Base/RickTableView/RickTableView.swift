@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 class RickTableView<Page: Paginated>: UITableView {
-    private let reloadObserver = PublishSubject<Void>()    
+    private let reloadObserver = PublishSubject<Void>()
     private let itemsObserver = BehaviorRelay<Page>(value: .init())
 
     // MARK: - Input
@@ -32,7 +32,8 @@ class RickTableView<Page: Paginated>: UITableView {
     private func configure() {
         refreshControl = UIRefreshControl()
         refreshControl?.tintColor = R.color.secondary()
-        rowHeight = 40
+        estimatedRowHeight = 40
+        rowHeight = UITableView.automaticDimension
         separatorStyle = .none
     }
 
@@ -58,7 +59,7 @@ class RickTableView<Page: Paginated>: UITableView {
             .filter { $0.page > 1 }
             .bind(to: itemsObserver.append)
             .disposed(by: disposeBag)
-        
+        // pull to refresh to clear and load table view again
         if let refreshControl = self.refreshControl {
             refreshControl.rx.controlEvent(.valueChanged)
                 .map { 1 }
@@ -79,15 +80,6 @@ class RickTableView<Page: Paginated>: UITableView {
             }
             .disposed(by: disposeBag)
     }
-}
-
-protocol RickTableViewInputType {
-    associatedtype Page
-    var itemsResult: AnyObserver<Page> { get }
-}
-
-protocol RickTableViewOutputType {
-    var nextPageTrigger: Observable<Int> { get }
 }
 
 extension RickTableView: RickTableViewInputType {
