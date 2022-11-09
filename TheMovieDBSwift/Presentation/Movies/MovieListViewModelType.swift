@@ -13,12 +13,12 @@ protocol MovieListViewModelType {
 }
 
 protocol MovieListViewModelInputType {
-    var reloadTrigger: AnyObserver<Void> { get }
-    var nextPageTrigger: AnyObserver<Void> { get }
-    var movieSelected: AnyObserver<Movie?> { get }
+//    var reloadTrigger: AnyObserver<Void> { get }
+    var nextPageTrigger: AnyObserver<Int> { get }
+//    var movieSelected: AnyObserver<Movie?> { get }
 }
 
 protocol MovieListViewModelOutputType {
-    var movieList: Observable<[Movie]> { get }
-    var loading: Observable<Bool> { get }
+    var fetchMovieResult: Observable<MoviePage> { get }
+//    var loading: Observable<Bool> { get }
 }
