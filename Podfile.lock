@@ -92,6 +92,7 @@ PODS:
 DEPENDENCIES:
   - Action
   - Kingfisher
+  - MJRefresh
   - Moya
   - NVActivityIndicatorView
   - ProgressHUD
@@ -174,6 +175,6 @@ SPEC CHECKSUMS:
   Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
   XCGLogger: 1943831ef907df55108b0b18657953f868de973b
 
-PODFILE CHECKSUM: 09efa678df67ec839739f3bf2516c60fd76833d4
+PODFILE CHECKSUM: d83cacff02d4de7db4d20743b0bde4aa8c5bf4a5
 
 COCOAPODS: 1.11.3

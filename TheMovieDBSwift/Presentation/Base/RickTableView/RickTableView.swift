@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import MJRefresh
 
 class RickTableView<Page: Paginated>: UITableView {
     private let reloadObserver = PublishSubject<Void>()
@@ -30,11 +31,26 @@ class RickTableView<Page: Paginated>: UITableView {
     }
     
     private func configure() {
+        configureLayouts()
+        configureRefreshControl()
+        configureSpiner()
+    }
+    
+    private func configureRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl?.tintColor = R.color.secondary()
-        estimatedRowHeight = 40
-        rowHeight = UITableView.automaticDimension
+    }
+    
+    private func configureLayouts() {
+        rowHeight = 40.0
         separatorStyle = .none
+    }
+
+    private func configureSpiner() {
+        let footer = MJRefreshAutoNormalFooter()
+        footer.loadingView?.color = R.color.secondary()
+        footer.stateLabel?.textColor = R.color.secondary()
+        mj_footer = footer
     }
 
     func binding() {
@@ -54,6 +70,7 @@ class RickTableView<Page: Paginated>: UITableView {
             }
             .bind(to: itemsObserver)
             .disposed(by: disposeBag)
+        
         // when load next page append data to existing items
         resultObserver
             .filter { $0.page > 1 }

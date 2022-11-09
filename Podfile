@@ -26,6 +26,7 @@ target 'TheMovieDBSwift' do
   pod 'RxSwiftExt'
   pod 'SwiftyJSON'
   pod 'NVActivityIndicatorView'
+  pod 'MJRefresh'
 
   # https://github.com/srv7/RxMJ
   pod 'RxMJ'
