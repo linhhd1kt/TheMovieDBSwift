@@ -425,7 +425,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
     /// Nib `CircleView`.
     static let circleView = _R.nib._CircleView()
@@ -437,14 +437,12 @@ struct R: Rswift.Validatable {
     static let drawerMenuViewController = _R.nib._DrawerMenuViewController()
     /// Nib `LoginViewController`.
     static let loginViewController = _R.nib._LoginViewController()
-    /// Nib `MovieCell`.
-    static let movieCell = _R.nib._MovieCell()
+    /// Nib `MovieCollectionCell`.
+    static let movieCollectionCell = _R.nib._MovieCollectionCell()
     /// Nib `MovieListViewController`.
     static let movieListViewController = _R.nib._MovieListViewController()
     /// Nib `MovieTableCell`.
     static let movieTableCell = _R.nib._MovieTableCell()
-    /// Nib `ShadowView`.
-    static let shadowView = _R.nib._ShadowView()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CircleView", in: bundle)`
@@ -487,10 +485,10 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "MovieCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.movieCell) instead")
-    static func movieCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.movieCell)
+    /// `UINib(name: "MovieCollectionCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.movieCollectionCell) instead")
+    static func movieCollectionCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.movieCollectionCell)
     }
     #endif
 
@@ -507,14 +505,6 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.movieTableCell) instead")
     static func movieTableCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.movieTableCell)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "ShadowView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.shadowView) instead")
-    static func shadowView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.shadowView)
     }
     #endif
 
@@ -538,8 +528,8 @@ struct R: Rswift.Validatable {
       return R.nib.loginViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
-    static func movieCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieCell? {
-      return R.nib.movieCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieCell
+    static func movieCollectionCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieCollectionCell? {
+      return R.nib.movieCollectionCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieCollectionCell
     }
 
     static func movieListViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -548,10 +538,6 @@ struct R: Rswift.Validatable {
 
     static func movieTableCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieTableCell? {
       return R.nib.movieTableCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieTableCell
-    }
-
-    static func shadowView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.shadowView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -797,12 +783,12 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _MovieCell: Rswift.NibResourceType {
+    struct _MovieCollectionCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let name = "MovieCell"
+      let name = "MovieCollectionCell"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieCollectionCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieCollectionCell
       }
 
       fileprivate init() {}
@@ -825,17 +811,6 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieTableCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieTableCell
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _ShadowView: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "ShadowView"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

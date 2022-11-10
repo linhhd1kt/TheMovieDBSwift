@@ -37,12 +37,13 @@ class DashboardViewController: RickViewController {
     }
 
     private func setupCollectionView() {
-        collectionView.register(MovieCell.self)
+        collectionView.register(MovieCollectionCell.self)
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 160, height: 320)
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
+        layout.minimumLineSpacing = 0
         collectionView.collectionViewLayout = layout
     }
     
@@ -62,5 +63,4 @@ class DashboardViewController: RickViewController {
     }
 }
 
-extension DashboardViewController: UIScrollViewDelegate {
-}
+extension DashboardViewController: UIScrollViewDelegate { }

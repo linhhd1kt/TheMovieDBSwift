@@ -29,7 +29,7 @@ struct DataSourceFactory {
     func mak() -> RxCollectionViewSectionedReloadDataSource<MovieSection> {
         let dataSource = RxCollectionViewSectionedReloadDataSource<MovieSection>(
             configureCell: { _, collectionView, indexPath, item in
-                let cell = collectionView.dequeue(MovieCell.self, for: indexPath)
+                let cell = collectionView.dequeue(MovieCollectionCell.self, for: indexPath)
                 cell.configure(item)
               return cell
             })

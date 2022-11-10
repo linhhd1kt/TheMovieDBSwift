@@ -11,8 +11,8 @@
 		DC18B4BD290BB15B00CA9C6B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4BC290BB15B00CA9C6B /* Colors.xcassets */; };
 		DC18B4C7290BC98600CA9C6B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4C6290BC98600CA9C6B /* .swiftlint.yml */; };
 		DC18B4C9290BDB6100CA9C6B /* HasDisposedBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4C8290BDB6100CA9C6B /* HasDisposedBag.swift */; };
-		DC18B4D0290E6FAC00CA9C6B /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4CE290E6FAC00CA9C6B /* MovieCell.swift */; };
-		DC18B4D1290E6FAC00CA9C6B /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4CF290E6FAC00CA9C6B /* MovieCell.xib */; };
+		DC18B4D0290E6FAC00CA9C6B /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4CE290E6FAC00CA9C6B /* MovieCollectionCell.swift */; };
+		DC18B4D1290E6FAC00CA9C6B /* MovieCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4CF290E6FAC00CA9C6B /* MovieCollectionCell.xib */; };
 		DC18B4D4290E6FFF00CA9C6B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4D3290E6FFF00CA9C6B /* CircleView.swift */; };
 		DC18B4D6290E700B00CA9C6B /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC18B4D5290E700B00CA9C6B /* CircleView.xib */; };
 		DC18B4D8290E77F000CA9C6B /* UITableView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18B4D7290E77F000CA9C6B /* UITableView+Ex.swift */; };
@@ -26,8 +26,10 @@
 		DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */; };
 		DC2F321A291B978100351318 /* RickTableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3219291B978100351318 /* RickTableViewType.swift */; };
 		DC2F321E291C956900351318 /* XibInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F321D291C956900351318 /* XibInstantiatable.swift */; };
-		DC2F3225291CB2F900351318 /* UITableViewCell+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3224291CB2F900351318 /* UITableViewCell+Ex.swift */; };
-		DC2F3228291CB3A900351318 /* ShadowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3227291CB3A900351318 /* ShadowCell.swift */; };
+		DC2F3228291CB3A900351318 /* ShadowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3227291CB3A900351318 /* ShadowTableCell.swift */; };
+		DC2F322A291CD1C800351318 /* ShadowCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3229291CD1C800351318 /* ShadowCollectionCell.swift */; };
+		DC2F322C291CD28400351318 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F322B291CD28400351318 /* BaseTableCell.swift */; };
+		DC2F322E291CD30F00351318 /* BaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F322D291CD30F00351318 /* BaseCollectionCell.swift */; };
 		DC347C9F29150AF000DC5CAB /* UIScrollView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC347C9E29150AF000DC5CAB /* UIScrollView+Ex.swift */; };
 		DC3C9F04291262590075C81C /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F03291262590075C81C /* RefreshControl.swift */; };
 		DC3C9F0629126F210075C81C /* BehaviorRelay+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */; };
@@ -141,8 +143,8 @@
 		DC18B4BE290BBBF200CA9C6B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC18B4C6290BC98600CA9C6B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DC18B4C8290BDB6100CA9C6B /* HasDisposedBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDisposedBag.swift; sourceTree = "<group>"; };
-		DC18B4CE290E6FAC00CA9C6B /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
-		DC18B4CF290E6FAC00CA9C6B /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		DC18B4CE290E6FAC00CA9C6B /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
+		DC18B4CF290E6FAC00CA9C6B /* MovieCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionCell.xib; sourceTree = "<group>"; };
 		DC18B4D3290E6FFF00CA9C6B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DC18B4D5290E700B00CA9C6B /* CircleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
 		DC18B4D7290E77F000CA9C6B /* UITableView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ex.swift"; sourceTree = "<group>"; };
@@ -157,8 +159,10 @@
 		DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesStorage.swift; sourceTree = "<group>"; };
 		DC2F3219291B978100351318 /* RickTableViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickTableViewType.swift; sourceTree = "<group>"; };
 		DC2F321D291C956900351318 /* XibInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibInstantiatable.swift; sourceTree = "<group>"; };
-		DC2F3224291CB2F900351318 /* UITableViewCell+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ex.swift"; sourceTree = "<group>"; };
-		DC2F3227291CB3A900351318 /* ShadowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCell.swift; sourceTree = "<group>"; };
+		DC2F3227291CB3A900351318 /* ShadowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTableCell.swift; sourceTree = "<group>"; };
+		DC2F3229291CD1C800351318 /* ShadowCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCollectionCell.swift; sourceTree = "<group>"; };
+		DC2F322B291CD28400351318 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
+		DC2F322D291CD30F00351318 /* BaseCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionCell.swift; sourceTree = "<group>"; };
 		DC347C9E29150AF000DC5CAB /* UIScrollView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Ex.swift"; sourceTree = "<group>"; };
 		DC3C9F03291262590075C81C /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Ex.swift"; sourceTree = "<group>"; };
@@ -289,9 +293,10 @@
 				DC2F3226291CB39700351318 /* ShadowCell */,
 				DC3C9F022912624B0075C81C /* RefreshControl */,
 				DC18B4D2290E6FD600CA9C6B /* CirleView */,
-				DC18B4CD290E6F5800CA9C6B /* MovieCell */,
+				DC18B4CD290E6F5800CA9C6B /* MovieCollectionCell */,
 				DC54874A29010854005106B0 /* MovieTableCell */,
 				DC18B4CC290E2EBD00CA9C6B /* PhalaxanHeader */,
+				DC2F3218291B973D00351318 /* RickTableView */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -303,14 +308,14 @@
 			path = PhalaxanHeader;
 			sourceTree = "<group>";
 		};
-		DC18B4CD290E6F5800CA9C6B /* MovieCell */ = {
+		DC18B4CD290E6F5800CA9C6B /* MovieCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				DC18B4CE290E6FAC00CA9C6B /* MovieCell.swift */,
-				DC18B4CF290E6FAC00CA9C6B /* MovieCell.xib */,
+				DC18B4CE290E6FAC00CA9C6B /* MovieCollectionCell.swift */,
+				DC18B4CF290E6FAC00CA9C6B /* MovieCollectionCell.xib */,
 				DC18B4DB290E798800CA9C6B /* MovieDataSource.swift */,
 			);
-			path = MovieCell;
+			path = MovieCollectionCell;
 			sourceTree = "<group>";
 		};
 		DC18B4D2290E6FD600CA9C6B /* CirleView */ = {
@@ -367,7 +372,8 @@
 		DC2F3226291CB39700351318 /* ShadowCell */ = {
 			isa = PBXGroup;
 			children = (
-				DC2F3227291CB3A900351318 /* ShadowCell.swift */,
+				DC2F3229291CD1C800351318 /* ShadowCollectionCell.swift */,
+				DC2F3227291CB3A900351318 /* ShadowTableCell.swift */,
 			);
 			path = ShadowCell;
 			sourceTree = "<group>";
@@ -722,8 +728,9 @@
 		DCA7DA7328DC0D370013996C /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				DC2F3218291B973D00351318 /* RickTableView */,
 				DC833E4028F3F5C90028DAFA /* ViewModelType.swift */,
+				DC2F322B291CD28400351318 /* BaseTableCell.swift */,
+				DC2F322D291CD30F00351318 /* BaseCollectionCell.swift */,
 				DCA7DA7428DC0D410013996C /* BaseViewModel.swift */,
 				DCA7DA7628DC52B70013996C /* BaseViewController.swift */,
 				DC54872828FFF6EB005106B0 /* RickViewController.swift */,
@@ -772,7 +779,6 @@
 				DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */,
 				DC7C0F8829120A040075517C /* UIView+Ex.swift */,
 				DC2F321D291C956900351318 /* XibInstantiatable.swift */,
-				DC2F3224291CB2F900351318 /* UITableViewCell+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -872,7 +878,7 @@
 				DC54871528FEA6EB005106B0 /* DrawerMenuViewController.xib in Resources */,
 				DC18B4D6290E700B00CA9C6B /* CircleView.xib in Resources */,
 				DC6E413F28B8638800429771 /* Assets.xcassets in Resources */,
-				DC18B4D1290E6FAC00CA9C6B /* MovieCell.xib in Resources */,
+				DC18B4D1290E6FAC00CA9C6B /* MovieCollectionCell.xib in Resources */,
 				DC5487492901084A005106B0 /* MovieTableCell.xib in Resources */,
 				DC18B4BD290BB15B00CA9C6B /* Colors.xcassets in Resources */,
 				DC6E419528B8862F00429771 /* LoginViewController.xib in Resources */,
@@ -967,9 +973,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6E415228B8638800429771 /* AppDelegate.swift in Sources */,
-				DC2F3225291CB2F900351318 /* UITableViewCell+Ex.swift in Sources */,
 				DC54872528FF8FFE005106B0 /* DashboardViewModelType.swift in Sources */,
 				DC54871E28FF8FC5005106B0 /* DashboardViewController.swift in Sources */,
+				DC2F322C291CD28400351318 /* BaseTableCell.swift in Sources */,
 				DC88488528EFE7B7006698A1 /* Logger.swift in Sources */,
 				DC18B4C9290BDB6100CA9C6B /* HasDisposedBag.swift in Sources */,
 				DC54872928FFF6EB005106B0 /* RickViewController.swift in Sources */,
@@ -992,7 +998,7 @@
 				DCA7DA7728DC52B70013996C /* BaseViewController.swift in Sources */,
 				DC18B4E1290F6D9300CA9C6B /* ImageLoader.swift in Sources */,
 				DC6E41A728B8B51B00429771 /* AuthUseCaseType.swift in Sources */,
-				DC18B4D0290E6FAC00CA9C6B /* MovieCell.swift in Sources */,
+				DC18B4D0290E6FAC00CA9C6B /* MovieCollectionCell.swift in Sources */,
 				DCCFEC9228BC67DB00019DBB /* Networking.swift in Sources */,
 				DCD7857D28F65CBE008E36B2 /* UIViewControler+Rx.swift in Sources */,
 				DC833E5E28F567580028DAFA /* Optional+Ex.swift in Sources */,
@@ -1010,9 +1016,10 @@
 				DC85BC1C28BCBDAE00187748 /* RealmPersistantStorage.swift in Sources */,
 				DC54870F28FE5425005106B0 /* DrawerMenuScreen.swift in Sources */,
 				DC54872E2900E450005106B0 /* MovieListViewModel.swift in Sources */,
-				DC2F3228291CB3A900351318 /* ShadowCell.swift in Sources */,
+				DC2F3228291CB3A900351318 /* ShadowTableCell.swift in Sources */,
 				DCB246EF28CB19E800873CF2 /* RxSwift+Ex.swift in Sources */,
 				DC18B4D8290E77F000CA9C6B /* UITableView+Ex.swift in Sources */,
+				DC2F322A291CD1C800351318 /* ShadowCollectionCell.swift in Sources */,
 				DC18B4D4290E6FFF00CA9C6B /* CircleView.swift in Sources */,
 				DC6E414528B8638800429771 /* CredentialObject.swift in Sources */,
 				DC3C9F082912B1F20075C81C /* RickTableView.swift in Sources */,
@@ -1043,6 +1050,7 @@
 				DC2F321A291B978100351318 /* RickTableViewType.swift in Sources */,
 				DC54870828FE538F005106B0 /* DrawerMenuCoordinator.swift in Sources */,
 				DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */,
+				DC2F322E291CD30F00351318 /* BaseCollectionCell.swift in Sources */,
 				DC833E5628F52EA30028DAFA /* AuthRepository.swift in Sources */,
 				DCB16F0028F96670001686C1 /* BaseCoordinator.swift in Sources */,
 				DCCFEC8F28BC661600019DBB /* API.swift in Sources */,

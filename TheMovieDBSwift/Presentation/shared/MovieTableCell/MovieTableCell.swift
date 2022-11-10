@@ -7,14 +7,13 @@
 
 import UIKit
 
-class MovieTableCell: ShadowCell {
+class MovieTableCell: ShadowTableCell {
     @IBOutlet private weak var backdropImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var releaseDateLabel: UILabel!
     @IBOutlet private weak var overviewLabel: UILabel!
     
-    func configure(_ movie: Movie) {
-        selectionStyle = .none
+    func configure(_ movie: Movie) {        
         imageLoader.loadTMDBImage(with: movie.posterPath, to: backdropImageView)
         titleLabel.text = movie.title
         releaseDateLabel.text = movie.releaseDate

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieCell: UICollectionViewCell {
+class MovieCollectionCell: ShadowCollectionCell {
     @IBOutlet private weak var posterImage: UIImageView!
     @IBOutlet private weak var voteView: CircleView!
     @IBOutlet private weak var movieTitleLabel: UILabel!

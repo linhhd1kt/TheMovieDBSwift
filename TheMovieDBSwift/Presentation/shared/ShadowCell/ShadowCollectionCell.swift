@@ -1,5 +1,5 @@
 //
-//  ShadowCell.swift
+//  ShadowCollectionCell.swift
 //  TheMovieDBSwift
 //
 //  Created by Ha Linh on 10/11/2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShadowCell: UITableViewCell {
+class ShadowCollectionCell: BaseCollectionCell {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var layerView: UIView!
     private var shawdowSetuped = false
@@ -21,7 +21,7 @@ class ShadowCell: UITableViewCell {
             layerView.layer.masksToBounds = false
             layerView.layer.shadowOffset = .init(width: 3, height: 3)
             layerView.layer.shadowColor = UIColor.black.cgColor
-            layerView.layer.shadowOpacity = 0.5
+            layerView.layer.shadowOpacity = 0.7
             layerView.layer.shadowRadius = 4
             
             layerView.layer.shouldRasterize = true
