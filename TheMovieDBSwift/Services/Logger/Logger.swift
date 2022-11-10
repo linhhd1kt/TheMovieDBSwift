@@ -94,38 +94,3 @@ class Logger: Logable {
         #endif
     }
 }
-
-private var loggerContext: UInt8 = 3
-
-protocol HasLogger: AnyObject {
-    var logger: Logable { get set }
-}
-
-extension HasLogger {
-    // swiftlint:disable type_contents_order
-    func synchronizedLogger<T>(_ action: () -> T) -> T {
-        objc_sync_enter(self)
-        let result = action()
-        objc_sync_exit(self)
-        return result
-    }
-
-    public var logger: Logable {
-        get {
-            return synchronizedLogger {
-                if let loggerObject = objc_getAssociatedObject(self, &loggerContext) as? Logable {
-                    return loggerObject
-                }
-                let loggerObject = Logger()
-                objc_setAssociatedObject(self, &loggerContext, loggerObject, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                return loggerObject
-            }
-        }
-
-        set {
-            synchronizedLogger {
-                objc_setAssociatedObject(self, &loggerContext, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            }
-        }
-    }
-}

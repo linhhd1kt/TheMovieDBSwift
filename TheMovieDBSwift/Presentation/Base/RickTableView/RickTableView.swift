@@ -62,6 +62,12 @@ class RickTableView<Page: Paginated>: UITableView {
             .bind(to: nextPageObserver)
             .disposed(by: disposeBag)
         
+        resultObserver
+            .withUnretained(self)
+            .subscribe { this, _ in
+                this.refreshControl?.endRefreshing()
+            }.disposed(by: disposeBag)
+        
         // replace all items with first page items (eg: first load, reload)
         resultObserver
             .filter { $0.page == 1 }

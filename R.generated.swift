@@ -425,7 +425,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
   struct nib {
     /// Nib `CircleView`.
     static let circleView = _R.nib._CircleView()
@@ -443,6 +443,8 @@ struct R: Rswift.Validatable {
     static let movieListViewController = _R.nib._MovieListViewController()
     /// Nib `MovieTableCell`.
     static let movieTableCell = _R.nib._MovieTableCell()
+    /// Nib `ShadowView`.
+    static let shadowView = _R.nib._ShadowView()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CircleView", in: bundle)`
@@ -508,6 +510,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ShadowView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.shadowView) instead")
+    static func shadowView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.shadowView)
+    }
+    #endif
+
     static func circleView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.circleView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -538,6 +548,10 @@ struct R: Rswift.Validatable {
 
     static func movieTableCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieTableCell? {
       return R.nib.movieTableCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieTableCell
+    }
+
+    static func shadowView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.shadowView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -811,6 +825,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieTableCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieTableCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ShadowView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ShadowView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

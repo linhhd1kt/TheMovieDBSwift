@@ -25,8 +25,10 @@
 		DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCEF28E55A15000D4FF0 /* DataSource.swift */; };
 		DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */; };
 		DC2F321A291B978100351318 /* RickTableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3219291B978100351318 /* RickTableViewType.swift */; };
+		DC2F321E291C956900351318 /* XibInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F321D291C956900351318 /* XibInstantiatable.swift */; };
+		DC2F3225291CB2F900351318 /* UITableViewCell+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3224291CB2F900351318 /* UITableViewCell+Ex.swift */; };
+		DC2F3228291CB3A900351318 /* ShadowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3227291CB3A900351318 /* ShadowCell.swift */; };
 		DC347C9F29150AF000DC5CAB /* UIScrollView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC347C9E29150AF000DC5CAB /* UIScrollView+Ex.swift */; };
-		DC347CDD29161BCC00DC5CAB /* RickTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC347CDC29161BCC00DC5CAB /* RickTableViewModel.swift */; };
 		DC3C9F04291262590075C81C /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F03291262590075C81C /* RefreshControl.swift */; };
 		DC3C9F0629126F210075C81C /* BehaviorRelay+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */; };
 		DC3C9F082912B1F20075C81C /* RickTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F072912B1F20075C81C /* RickTableView.swift */; };
@@ -154,8 +156,10 @@
 		DC28BCEF28E55A15000D4FF0 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesStorage.swift; sourceTree = "<group>"; };
 		DC2F3219291B978100351318 /* RickTableViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickTableViewType.swift; sourceTree = "<group>"; };
+		DC2F321D291C956900351318 /* XibInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibInstantiatable.swift; sourceTree = "<group>"; };
+		DC2F3224291CB2F900351318 /* UITableViewCell+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ex.swift"; sourceTree = "<group>"; };
+		DC2F3227291CB3A900351318 /* ShadowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCell.swift; sourceTree = "<group>"; };
 		DC347C9E29150AF000DC5CAB /* UIScrollView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Ex.swift"; sourceTree = "<group>"; };
-		DC347CDC29161BCC00DC5CAB /* RickTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickTableViewModel.swift; sourceTree = "<group>"; };
 		DC3C9F03291262590075C81C /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Ex.swift"; sourceTree = "<group>"; };
 		DC3C9F072912B1F20075C81C /* RickTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickTableView.swift; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 		DC18B4CB290E2EB400CA9C6B /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				DC2F3226291CB39700351318 /* ShadowCell */,
 				DC3C9F022912624B0075C81C /* RefreshControl */,
 				DC18B4D2290E6FD600CA9C6B /* CirleView */,
 				DC18B4CD290E6F5800CA9C6B /* MovieCell */,
@@ -357,6 +362,14 @@
 				DC3C9F072912B1F20075C81C /* RickTableView.swift */,
 			);
 			path = RickTableView;
+			sourceTree = "<group>";
+		};
+		DC2F3226291CB39700351318 /* ShadowCell */ = {
+			isa = PBXGroup;
+			children = (
+				DC2F3227291CB3A900351318 /* ShadowCell.swift */,
+			);
+			path = ShadowCell;
 			sourceTree = "<group>";
 		};
 		DC3C9F022912624B0075C81C /* RefreshControl */ = {
@@ -714,7 +727,6 @@
 				DCA7DA7428DC0D410013996C /* BaseViewModel.swift */,
 				DCA7DA7628DC52B70013996C /* BaseViewController.swift */,
 				DC54872828FFF6EB005106B0 /* RickViewController.swift */,
-				DC347CDC29161BCC00DC5CAB /* RickTableViewModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -759,6 +771,8 @@
 				DC18B4E2290F7C7700CA9C6B /* UICollectionViewCell+Ex.swift */,
 				DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */,
 				DC7C0F8829120A040075517C /* UIView+Ex.swift */,
+				DC2F321D291C956900351318 /* XibInstantiatable.swift */,
+				DC2F3224291CB2F900351318 /* UITableViewCell+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -953,6 +967,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6E415228B8638800429771 /* AppDelegate.swift in Sources */,
+				DC2F3225291CB2F900351318 /* UITableViewCell+Ex.swift in Sources */,
 				DC54872528FF8FFE005106B0 /* DashboardViewModelType.swift in Sources */,
 				DC54871E28FF8FC5005106B0 /* DashboardViewController.swift in Sources */,
 				DC88488528EFE7B7006698A1 /* Logger.swift in Sources */,
@@ -973,6 +988,7 @@
 				DC54871128FE9972005106B0 /* NavigationViewModelType.swift in Sources */,
 				DCAE4C3B28D0779300301B2C /* ActivityIndicator.swift in Sources */,
 				DCCFEC8A28BC5CED00019DBB /* CredentialRespostitory.swift in Sources */,
+				DC2F321E291C956900351318 /* XibInstantiatable.swift in Sources */,
 				DCA7DA7728DC52B70013996C /* BaseViewController.swift in Sources */,
 				DC18B4E1290F6D9300CA9C6B /* ImageLoader.swift in Sources */,
 				DC6E41A728B8B51B00429771 /* AuthUseCaseType.swift in Sources */,
@@ -986,7 +1002,6 @@
 				DC833E5428F52D880028DAFA /* AuthResponse.swift in Sources */,
 				DC18B4E3290F7C7700CA9C6B /* UICollectionViewCell+Ex.swift in Sources */,
 				DC54872428FF8FFE005106B0 /* DashboardViewModel.swift in Sources */,
-				DC347CDD29161BCC00DC5CAB /* RickTableViewModel.swift in Sources */,
 				DC18B4DC290E798800CA9C6B /* MovieDataSource.swift in Sources */,
 				DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */,
 				DC5487382900E6E5005106B0 /* MovieResponse.swift in Sources */,
@@ -995,6 +1010,7 @@
 				DC85BC1C28BCBDAE00187748 /* RealmPersistantStorage.swift in Sources */,
 				DC54870F28FE5425005106B0 /* DrawerMenuScreen.swift in Sources */,
 				DC54872E2900E450005106B0 /* MovieListViewModel.swift in Sources */,
+				DC2F3228291CB3A900351318 /* ShadowCell.swift in Sources */,
 				DCB246EF28CB19E800873CF2 /* RxSwift+Ex.swift in Sources */,
 				DC18B4D8290E77F000CA9C6B /* UITableView+Ex.swift in Sources */,
 				DC18B4D4290E6FFF00CA9C6B /* CircleView.swift in Sources */,

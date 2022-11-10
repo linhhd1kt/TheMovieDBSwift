@@ -19,6 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="339" height="136"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwo-Fo-G5d">
+                        <rect key="frame" x="16" y="8" width="307" height="120"/>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOv-yW-YlQ">
                         <rect key="frame" x="16" y="8" width="307" height="120"/>
                         <subviews>
@@ -63,27 +66,19 @@
                             <constraint firstAttribute="bottom" secondItem="hzT-DG-Xne" secondAttribute="bottom" constant="12" id="ulW-NH-uia"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" name="on-background-variant"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="3" height="3"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="3"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" name="on-background-variant"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="gOv-yW-YlQ" secondAttribute="bottom" constant="8" id="D9F-Kz-WMJ"/>
+                    <constraint firstItem="pwo-Fo-G5d" firstAttribute="top" secondItem="gOv-yW-YlQ" secondAttribute="top" id="SSz-oe-yYc"/>
+                    <constraint firstItem="pwo-Fo-G5d" firstAttribute="bottom" secondItem="gOv-yW-YlQ" secondAttribute="bottom" id="WpH-a5-okR"/>
                     <constraint firstAttribute="trailing" secondItem="gOv-yW-YlQ" secondAttribute="trailing" constant="16" id="eFH-vX-8Ez"/>
+                    <constraint firstItem="pwo-Fo-G5d" firstAttribute="trailing" secondItem="gOv-yW-YlQ" secondAttribute="trailing" id="gqt-CZ-G8l"/>
+                    <constraint firstItem="pwo-Fo-G5d" firstAttribute="leading" secondItem="gOv-yW-YlQ" secondAttribute="leading" id="jCd-jq-lUn"/>
                     <constraint firstItem="gOv-yW-YlQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="llk-Mh-7Q5"/>
                     <constraint firstItem="gOv-yW-YlQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xbS-la-Odp"/>
                 </constraints>
@@ -91,6 +86,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="backdropImageView" destination="t1f-1Z-5dP" id="ZEu-8y-3Ng"/>
+                <outlet property="containerView" destination="gOv-yW-YlQ" id="JU2-AE-tkf"/>
+                <outlet property="layerView" destination="pwo-Fo-G5d" id="eZh-cB-397"/>
                 <outlet property="overviewLabel" destination="hzT-DG-Xne" id="WF4-3r-vcM"/>
                 <outlet property="releaseDateLabel" destination="WbN-XA-RnE" id="mHf-iF-gx6"/>
                 <outlet property="titleLabel" destination="Ep8-pa-4a9" id="3lE-BF-wfI"/>

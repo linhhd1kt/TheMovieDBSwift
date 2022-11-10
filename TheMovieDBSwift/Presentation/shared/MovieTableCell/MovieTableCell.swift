@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieTableCell: UITableViewCell {
+class MovieTableCell: ShadowCell {
     @IBOutlet private weak var backdropImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var releaseDateLabel: UILabel!
@@ -18,9 +18,8 @@ class MovieTableCell: UITableViewCell {
         imageLoader.loadTMDBImage(with: movie.posterPath, to: backdropImageView)
         titleLabel.text = movie.title
         releaseDateLabel.text = movie.releaseDate
-        overviewLabel.text = movie.overview        
+        overviewLabel.text = movie.overview
     }
 }
 
 extension MovieTableCell: HasImageLoader { }
-extension MovieTableCell: HasLogger { }
