@@ -9,11 +9,22 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-extension Reactive where Base: UIScrollView {
+extension Reactive where Base: UITableView {
     var reachEnd: Observable<Void> {
         return base.rx.contentOffset
             .filter { ($0.x + $0.y) > 0.0 }
             .map { $0.y + base.frame.size.height + 20.0 > base.contentSize.height }
+            .distinctUntilChanged()
+            .filter { $0 }
+            .map { _ in return }
+    }
+}
+
+extension Reactive where Base: UICollectionView {
+    var reachEnd: Observable<Void> {
+        return base.rx.contentOffset
+            .filter { ($0.x + $0.y) > 0.0 }
+            .map { $0.x + base.frame.size.width + 20.0 > base.contentSize.width }
             .distinctUntilChanged()
             .filter { $0 }
             .map { _ in return }

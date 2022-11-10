@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController" customModule="TheMovieDBSwift" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="Jfr-vq-h4u" id="RJc-FF-wvA"/>
+                <outlet property="popularMovieContainerView" destination="YBJ-RL-AIm" id="DPu-BZ-jLz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,26 +20,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jfr-vq-h4u">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBJ-RL-AIm">
                     <rect key="frame" x="0.0" y="44" width="414" height="336"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="336" id="IWb-PN-XPc"/>
+                        <constraint firstAttribute="height" constant="336" id="4xT-EM-OUE"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J0h-0G-POp">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Jfr-vq-h4u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5KU-vX-1Oz"/>
-                <constraint firstItem="Jfr-vq-h4u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Fu2-Gf-UmV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jfr-vq-h4u" secondAttribute="trailing" id="wkw-2U-oTa"/>
+                <constraint firstItem="YBJ-RL-AIm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TFt-aS-8fk"/>
+                <constraint firstItem="YBJ-RL-AIm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mOO-kT-Q2g"/>
+                <constraint firstItem="YBJ-RL-AIm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rRy-no-hQO"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
         </view>

@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import MJRefresh
+import RxDataSources
 
 class RickCollectionView<Page: Paginated>: UICollectionView {
     private let reloadObserver = PublishSubject<Void>()
@@ -32,23 +33,15 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
     
     private func configure() {
         configureLayouts()
-        configureRefreshControl()
-        configureSpiner()
-    }
-    
-    private func configureRefreshControl() {
-        refreshControl = UIRefreshControl()
-        refreshControl?.tintColor = R.color.secondary()
     }
     
     private func configureLayouts() {
-    }
-
-    private func configureSpiner() {
-        let footer = MJRefreshAutoNormalFooter()
-        footer.loadingView?.color = R.color.secondary()
-        footer.stateLabel?.textColor = R.color.secondary()
-        mj_footer = footer
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 160, height: 320)
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
+        layout.minimumLineSpacing = 0
+        collectionViewLayout = layout
     }
 
     func binding() {
@@ -77,27 +70,25 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
             .filter { $0.page > 1 }
             .bind(to: itemsObserver.append)
             .disposed(by: disposeBag)
-        // pull to refresh to clear and load table view again
-        if let refreshControl = self.refreshControl {
-            refreshControl.rx.controlEvent(.valueChanged)
-                .map { 1 }
-                .bind(to: nextPageObserver)
-                .disposed(by: disposeBag)
-        }
     }
     
     func configure<Element, Cell: UICollectionViewCell>(
         identifier: String,
         type: Cell.Type,
-        configureCell: @escaping (Int, Element, Cell) -> Void)
+        configureCell: @escaping (IndexPath, Element, Cell) -> Void)
     where Page.Element == Element {
+        let dataSource = RxCollectionViewSectionedReloadDataSource<MovieSection<Element>>(
+            configureCell: { _, collectionView, indexPath, item in
+                let cell = collectionView.dequeue(Cell.self, for: indexPath)
+                configureCell(indexPath, item, cell)
+                return cell
+            })
         itemsObserver
             .map(\.results)
-            .bind(to: rx.items(cellIdentifier: identifier, cellType: type)) { index, model, cell in
-                configureCell(index, model, cell)
-            }
+            .map { [MovieSection(title: "Popular", items: $0)] }
+            .bind(to: rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-    }
+  }
 }
 
 extension RickCollectionView: RickCollectionViewInputType {

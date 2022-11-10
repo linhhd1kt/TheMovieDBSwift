@@ -17,5 +17,5 @@ protocol DashboardViewModelInputType {
 }
 
 protocol DashboardViewModelOutputType {
-    var moviesResult: Observable<[Movie]> { get }
+    var moviesResult: Observable<MoviePage> { get }
 }

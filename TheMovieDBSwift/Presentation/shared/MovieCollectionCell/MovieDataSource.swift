@@ -6,14 +6,15 @@
 //
 
 import RxDataSources
+import CloudKit
 
-struct MovieSection {
+struct MovieSection<Element> {
   var title: String
-  var items: [Item]
+  var items: [Element]
 }
 
 extension MovieSection: SectionModelType {
-  typealias Item = Movie
+  typealias Item = Element
     
     var identity: String {
         return title
@@ -26,13 +27,13 @@ extension MovieSection: SectionModelType {
 }
 
 struct DataSourceFactory {
-    func mak() -> RxCollectionViewSectionedReloadDataSource<MovieSection> {
-        let dataSource = RxCollectionViewSectionedReloadDataSource<MovieSection>(
-            configureCell: { _, collectionView, indexPath, item in
-                let cell = collectionView.dequeue(MovieCollectionCell.self, for: indexPath)
-                cell.configure(item)
-              return cell
-            })
-        return dataSource
-    }
+//    func make<Element>() -> RxCollectionViewSectionedReloadDataSource<MovieSection<Element>> {
+//        let dataSource = RxCollectionViewSectionedReloadDataSource<MovieSection<Element>>(
+//            configureCell: { _, collectionView, indexPath, item in
+//                let cell = collectionView.dequeue(MovieCollectionCell.self, for: indexPath)
+//                cell.configure(item)
+//              return cell
+//            })
+//        return dataSource
+//    }
 }

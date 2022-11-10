@@ -17,7 +17,7 @@ final class DashboardViewModel: BaseViewModel {
     private let fetchPopularMoviesObserver = PublishSubject<Int>()
     // MARK: - Output
     private let errorObserver = BehaviorSubject<String>(value: "")
-    private let movieListObserver = BehaviorSubject<[Movie]>(value: [])
+    private let movieListObserver = BehaviorSubject<MoviePage>(value: .init())
     
     init(movieUseCase: MovieUseCaseType = MovieUseCase()) {
         self.movieUseCase = movieUseCase
@@ -32,7 +32,6 @@ final class DashboardViewModel: BaseViewModel {
         movieUseCase.output
             .fetchPopularResult
             .elements
-            .map { $0.results }
             .bind(to: movieListObserver)
             .disposed(by: disposeBag)
     }
@@ -54,7 +53,7 @@ extension DashboardViewModel: DashboardViewModelInputType {
 }
 
 extension DashboardViewModel: DashboardViewModelOutputType {
-    var moviesResult: Observable<[Movie]> {
+    var moviesResult: Observable<MoviePage> {
         return movieListObserver.asObservable()
     }
 }
