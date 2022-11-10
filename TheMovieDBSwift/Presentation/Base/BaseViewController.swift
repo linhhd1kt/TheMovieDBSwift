@@ -11,6 +11,10 @@ import RxSwift
 import SwiftUI
 
 class BaseViewController: UIViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
     var logger: Logger {
         guard let logger = ServiceFacade.getService(Logable.self) as? Logger else {
             fatalError("Logger should be implemented!")

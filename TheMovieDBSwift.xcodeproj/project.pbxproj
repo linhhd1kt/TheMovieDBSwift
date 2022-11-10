@@ -30,6 +30,8 @@
 		DC2F322A291CD1C800351318 /* ShadowCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3229291CD1C800351318 /* ShadowCollectionCell.swift */; };
 		DC2F322C291CD28400351318 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F322B291CD28400351318 /* BaseTableCell.swift */; };
 		DC2F322E291CD30F00351318 /* BaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F322D291CD30F00351318 /* BaseCollectionCell.swift */; };
+		DC2F3232291CDF1E00351318 /* RickCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3231291CDEC600351318 /* RickCollectionView.swift */; };
+		DC2F3233291CDF1E00351318 /* RickCollectionViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3230291CDEC400351318 /* RickCollectionViewType.swift */; };
 		DC347C9F29150AF000DC5CAB /* UIScrollView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC347C9E29150AF000DC5CAB /* UIScrollView+Ex.swift */; };
 		DC3C9F04291262590075C81C /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F03291262590075C81C /* RefreshControl.swift */; };
 		DC3C9F0629126F210075C81C /* BehaviorRelay+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */; };
@@ -163,6 +165,8 @@
 		DC2F3229291CD1C800351318 /* ShadowCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCollectionCell.swift; sourceTree = "<group>"; };
 		DC2F322B291CD28400351318 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		DC2F322D291CD30F00351318 /* BaseCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionCell.swift; sourceTree = "<group>"; };
+		DC2F3230291CDEC400351318 /* RickCollectionViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickCollectionViewType.swift; sourceTree = "<group>"; };
+		DC2F3231291CDEC600351318 /* RickCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickCollectionView.swift; sourceTree = "<group>"; };
 		DC347C9E29150AF000DC5CAB /* UIScrollView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Ex.swift"; sourceTree = "<group>"; };
 		DC3C9F03291262590075C81C /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Ex.swift"; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				DC54874A29010854005106B0 /* MovieTableCell */,
 				DC18B4CC290E2EBD00CA9C6B /* PhalaxanHeader */,
 				DC2F3218291B973D00351318 /* RickTableView */,
+				DC2F322F291CDEB300351318 /* RickCollectionView */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -376,6 +381,15 @@
 				DC2F3227291CB3A900351318 /* ShadowTableCell.swift */,
 			);
 			path = ShadowCell;
+			sourceTree = "<group>";
+		};
+		DC2F322F291CDEB300351318 /* RickCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DC2F3230291CDEC400351318 /* RickCollectionViewType.swift */,
+				DC2F3231291CDEC600351318 /* RickCollectionView.swift */,
+			);
+			path = RickCollectionView;
 			sourceTree = "<group>";
 		};
 		DC3C9F022912624B0075C81C /* RefreshControl */ = {
@@ -981,6 +995,7 @@
 				DC54872928FFF6EB005106B0 /* RickViewController.swift in Sources */,
 				DC54870128FE45F9005106B0 /* CoordinatorType.swift in Sources */,
 				DCB246EB28CB17D400873CF2 /* AuthUseCase.swift in Sources */,
+				DC2F3232291CDF1E00351318 /* RickCollectionView.swift in Sources */,
 				DC54874E290139FC005106B0 /* ApiLogPlugin.swift in Sources */,
 				DCCFEC9B28BCA54200019DBB /* CredentialRemoteDataSource.swift in Sources */,
 				DC833E6528F56CE50028DAFA /* NSObject+Ex.swift in Sources */,
@@ -1042,6 +1057,7 @@
 				DC6E418528B87FA000429771 /* ServiceFacade.swift in Sources */,
 				DCAE4C3828D06C8100301B2C /* ErrorTracker.swift in Sources */,
 				DC54874C2901269D005106B0 /* MovieListCoordinator.swift in Sources */,
+				DC2F3233291CDF1E00351318 /* RickCollectionViewType.swift in Sources */,
 				DC5487332900E660005106B0 /* MovieRepositoryType.swift in Sources */,
 				DC5487482901084A005106B0 /* MovieTableCell.swift in Sources */,
 				DCA086FD2907D5310091BF79 /* NavigationItemFactory.swift in Sources */,
