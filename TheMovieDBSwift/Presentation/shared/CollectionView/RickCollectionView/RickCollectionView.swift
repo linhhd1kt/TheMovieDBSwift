@@ -77,7 +77,7 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
         type: Cell.Type,
         configureCell: @escaping (IndexPath, Element, Cell) -> Void)
     where Page.Element == Element {
-        let dataSource = RxCollectionViewSectionedReloadDataSource<MovieSection<Element>>(
+        let dataSource = RxCollectionViewSectionedReloadDataSource<ItemSession<Element>>(
             configureCell: { _, collectionView, indexPath, item in
                 let cell = collectionView.dequeue(Cell.self, for: indexPath)
                 configureCell(indexPath, item, cell)
@@ -85,7 +85,7 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
             })
         itemsObserver
             .map(\.results)
-            .map { [MovieSection(title: "Popular", items: $0)] }
+            .map { [ItemSession(title: "Popular", items: $0)] }
             .bind(to: rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
   }

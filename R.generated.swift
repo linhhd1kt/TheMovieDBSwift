@@ -105,7 +105,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 12 colors.
+  /// This `R.color` struct is generated, and contains static references to 13 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
@@ -117,6 +117,8 @@ struct R: Rswift.Validatable {
     static let onBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-background")
     /// Color `on-primary`.
     static let onPrimary = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-primary")
+    /// Color `on-secondary-variant`.
+    static let onSecondaryVariant = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-secondary-variant")
     /// Color `on-secondary`.
     static let onSecondary = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-secondary")
     /// Color `on-ternary`.
@@ -183,6 +185,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func onSecondary(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.onSecondary, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "on-secondary-variant", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func onSecondaryVariant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.onSecondaryVariant, compatibleWith: traitCollection)
     }
     #endif
 
@@ -289,6 +300,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "on-secondary-variant", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func onSecondaryVariant(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.onSecondaryVariant.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "on-ternary", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func onTernary(_: Void = ()) -> UIKit.UIColor? {
@@ -353,8 +372,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
+    /// Image `bg-header`.
+    static let bgHeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "bg-header")
     /// Image `ic-logo`.
     static let icLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-logo")
     /// Image `ic-menu`.
@@ -363,6 +384,13 @@ struct R: Rswift.Validatable {
     static let icProfile = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-profile")
     /// Image `ic-search`.
     static let icSearch = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic-search")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bg-header", bundle: ..., traitCollection: ...)`
+    static func bgHeader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bgHeader, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "ic-logo", bundle: ..., traitCollection: ...)`
@@ -425,8 +453,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
   struct nib {
+    /// Nib `CategoryDropdownCell`.
+    static let categoryDropdownCell = _R.nib._CategoryDropdownCell()
+    /// Nib `CategoryDropdown`.
+    static let categoryDropdown = _R.nib._CategoryDropdown()
     /// Nib `CircleView`.
     static let circleView = _R.nib._CircleView()
     /// Nib `DashboardViewController`.
@@ -435,6 +467,8 @@ struct R: Rswift.Validatable {
     static let drawerMenuCell = _R.nib._DrawerMenuCell()
     /// Nib `DrawerMenuViewController`.
     static let drawerMenuViewController = _R.nib._DrawerMenuViewController()
+    /// Nib `ItemSessionHeaderView`.
+    static let itemSessionHeaderView = _R.nib._ItemSessionHeaderView()
     /// Nib `LoginViewController`.
     static let loginViewController = _R.nib._LoginViewController()
     /// Nib `MovieCollectionCell`.
@@ -443,6 +477,26 @@ struct R: Rswift.Validatable {
     static let movieListViewController = _R.nib._MovieListViewController()
     /// Nib `MovieTableCell`.
     static let movieTableCell = _R.nib._MovieTableCell()
+    /// Nib `RoundedSearchView`.
+    static let roundedSearchView = _R.nib._RoundedSearchView()
+    /// Nib `SelectedCategoryDropdownCell`.
+    static let selectedCategoryDropdownCell = _R.nib._SelectedCategoryDropdownCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CategoryDropdown", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.categoryDropdown) instead")
+    static func categoryDropdown(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.categoryDropdown)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CategoryDropdownCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.categoryDropdownCell) instead")
+    static func categoryDropdownCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.categoryDropdownCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CircleView", in: bundle)`
@@ -473,6 +527,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.drawerMenuViewController) instead")
     static func drawerMenuViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.drawerMenuViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ItemSessionHeaderView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.itemSessionHeaderView) instead")
+    static func itemSessionHeaderView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.itemSessionHeaderView)
     }
     #endif
 
@@ -508,6 +570,30 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "RoundedSearchView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.roundedSearchView) instead")
+    static func roundedSearchView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.roundedSearchView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SelectedCategoryDropdownCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.selectedCategoryDropdownCell) instead")
+    static func selectedCategoryDropdownCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.selectedCategoryDropdownCell)
+    }
+    #endif
+
+    static func categoryDropdown(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.categoryDropdown.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func categoryDropdownCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CategoryDropdownCell? {
+      return R.nib.categoryDropdownCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CategoryDropdownCell
+    }
+
     static func circleView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.circleView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -524,6 +610,10 @@ struct R: Rswift.Validatable {
       return R.nib.drawerMenuViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func itemSessionHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.itemSessionHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func loginViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.loginViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -538,6 +628,14 @@ struct R: Rswift.Validatable {
 
     static func movieTableCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieTableCell? {
       return R.nib.movieTableCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieTableCell
+    }
+
+    static func roundedSearchView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.roundedSearchView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func selectedCategoryDropdownCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SelectedCategoryDropdownCell? {
+      return R.nib.selectedCategoryDropdownCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SelectedCategoryDropdownCell
     }
 
     fileprivate init() {}
@@ -722,12 +820,51 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _CategoryDropdown.validate()
+      try _DashboardViewController.validate()
+      try _SelectedCategoryDropdownCell.validate()
+    }
+
+    struct _CategoryDropdown: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CategoryDropdown"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.down") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.down' is used in nib 'CategoryDropdown', but couldn't be loaded.") } }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary' is used in nib 'CategoryDropdown', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'secondary' is used in nib 'CategoryDropdown', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CategoryDropdownCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CategoryDropdownCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CategoryDropdownCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CategoryDropdownCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _CircleView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "CircleView"
@@ -739,12 +876,19 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _DashboardViewController: Rswift.NibResourceType {
+    struct _DashboardViewController: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "DashboardViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "bg-header", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg-header' is used in nib 'DashboardViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "on-primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-primary' is used in nib 'DashboardViewController', but couldn't be loaded.") }
+        }
       }
 
       fileprivate init() {}
@@ -764,6 +908,17 @@ struct _R: Rswift.Validatable {
     struct _DrawerMenuViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "DrawerMenuViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ItemSessionHeaderView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ItemSessionHeaderView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -811,6 +966,37 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MovieTableCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MovieTableCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _RoundedSearchView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "RoundedSearchView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SelectedCategoryDropdownCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SelectedCategoryDropdownCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SelectedCategoryDropdownCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SelectedCategoryDropdownCell
+      }
+
+      static func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.down") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.down' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") } }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "on-secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-secondary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'secondary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
+        }
       }
 
       fileprivate init() {}

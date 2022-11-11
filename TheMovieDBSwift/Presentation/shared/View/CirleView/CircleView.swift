@@ -27,10 +27,7 @@ class CircleView: UIView {
         commonInit()
     }
     private func commonInit() {
-        Bundle.main.loadNibNamed(R.nib.circleView.name, owner: self)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        loadFromXib()
     }
     
     func createCircularPath(percentage: CGFloat) {
