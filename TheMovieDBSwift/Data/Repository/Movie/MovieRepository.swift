@@ -9,10 +9,12 @@ import Action
 
 class MovieRepository: MovieRepositoryType {
     
-    let fetchPopular: Action<PopularMovieRequest, MoviesResponse>
+    let fetchPopularMovie: Action<PopularMovieRequest, MoviesResponse>
+    let fetchDiscoverMovie: Action<DiscoverMovieRequest, MoviesResponse>
     
     init(network: Networking = Network()) {
-        fetchPopular = Action { input in network.request(target: input.toTarget()) }
+        fetchPopularMovie = Action { input in network.request(target: input.toTarget()) }
+        fetchDiscoverMovie = Action { input in network.request(target: input.toTarget()) }
     }
 }
 

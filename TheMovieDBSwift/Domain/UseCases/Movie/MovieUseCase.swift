@@ -13,6 +13,7 @@ class MovieUseCase {
     private let translator: MovieTranslatorType
     // MARK: - Input
     private let fetchPopularMoviePageObserver = PublishSubject<Int>()
+    private let fetchDiscoverMoviePageObserver = PublishSubject<Int>()
     // MARK: - Other
     
     init(respository: MovieRepositoryType = MovieRepository(),
@@ -27,7 +28,13 @@ class MovieUseCase {
             .withUnretained(self)
             .map { this, page in
                 this.translator.toPopularRequest(page: page) }
-            .bind(to: respository.fetchPopular.inputs)
+            .bind(to: respository.fetchPopularMovie.inputs)
+            .disposed(by: disposeBag)
+        fetchDiscoverMoviePageObserver
+            .withUnretained(self)
+            .map { this, page in
+                this.translator.toPopularRequest(page: page) }
+            .bind(to: respository.fetchPopularMovie.inputs)
             .disposed(by: disposeBag)
     }
 }
@@ -43,12 +50,20 @@ extension MovieUseCase: MovieUseCaseInputType {
     var fetchPopular: AnyObserver<Int> {
         return fetchPopularMoviePageObserver.asObserver()
     }
+    var fetchDicover: AnyObserver<Int> {
+        return fetchDiscoverMoviePageObserver.asObserver()
+    }
 }
 
 // MARK: - MovieUseCaseOutputType
 extension MovieUseCase: MovieUseCaseOutputType {
+    var fetchDiscoverResult: ActionResult<MoviePage> {
+        return respository.fetchDiscoverMovie.toResult()
+            .map { self.translator.toPage(response: $0) }
+    }
+    
     var fetchPopularResult: ActionResult<MoviePage> {
-        return respository.fetchPopular.toResult()
+        return respository.fetchPopularMovie.toResult()
             .map { self.translator.toPage(response: $0) }
     }
 }

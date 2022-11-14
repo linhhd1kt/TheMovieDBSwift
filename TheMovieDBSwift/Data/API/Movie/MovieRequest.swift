@@ -17,3 +17,14 @@ extension PopularMovieRequest: ApiRequestable {
         return API.popularMovie(page: page)
     }
 }
+
+struct DiscoverMovieRequest {
+    let page: Int
+    let monetization: MonetizationType
+}
+
+extension DiscoverMovieRequest: ApiRequestable {
+    func toTarget() -> TargetType {
+        return API.discover(page: page, monetization: monetization)
+    }
+}

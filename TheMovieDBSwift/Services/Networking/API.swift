@@ -18,6 +18,7 @@ enum API {
     case popularMovie(page: Int)
     case movie(movieId: String)
     case search(query: String)
+    case discover(page: Int, monetization: MonetizationType)
 }
 
 extension API: TargetType {
@@ -40,6 +41,8 @@ extension API: TargetType {
             return "movie/\(movieId)"
         case .search:
             return "search/movie"
+        case .discover:
+            return "discover/movie"
         }
     }
     
@@ -69,12 +72,16 @@ extension API: TargetType {
             return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey,
                                                    "page": page],
                                       encoding: URLEncoding.queryString)
-
         case .movie:
             return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey],
                                       encoding: URLEncoding.httpBody)
         case .search(let query):
             return .requestParameters(parameters: ["query": query, "api_key": AppConfiguration().apiKey], encoding: URLEncoding.queryString)
+        case .discover(page: let page, monetization: let monetization):
+            return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey,
+                                                   "page": page,
+                                                   "with_watch_monetization_types": monetization.filterParameter],
+                                      encoding: URLEncoding.queryString)
         }
     }
     
