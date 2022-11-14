@@ -21,10 +21,11 @@ extension PopularMovieRequest: ApiRequestable {
 struct DiscoverMovieRequest {
     let page: Int
     let monetization: MonetizationType
+    let releaseTypes: Set<ReleaseType>
 }
 
 extension DiscoverMovieRequest: ApiRequestable {
     func toTarget() -> TargetType {
-        return API.discover(page: page, monetization: monetization)
+        return API.discover(page: page, monetization: monetization, releaseTypes: releaseTypes)
     }
 }

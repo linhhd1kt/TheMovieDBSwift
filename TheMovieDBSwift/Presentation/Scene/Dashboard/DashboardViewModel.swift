@@ -14,7 +14,7 @@ final class DashboardViewModel: BaseViewModel {
     private let movieUseCase: MovieUseCaseType
 
     // MARK: - Input
-    private let fetchPopularMoviesObserver = PublishSubject<Int>()
+    private let fetchDiscoverMoviesObserver = PublishSubject<(page: Int, category: PopularCategory)>()
     // MARK: - Output
     private let errorObserver = BehaviorSubject<String>(value: "")
     private let movieListObserver = BehaviorSubject<MoviePage>(value: .init())
@@ -26,11 +26,11 @@ final class DashboardViewModel: BaseViewModel {
     }
     
     private func binding() {
-        fetchPopularMoviesObserver
-            .bind(to: movieUseCase.input.fetchPopular)
+        fetchDiscoverMoviesObserver
+            .bind(to: movieUseCase.input.fetchDicover)
             .disposed(by: disposeBag)
         movieUseCase.output
-            .fetchPopularResult
+            .fetchDiscoverResult
             .elements
             .bind(to: movieListObserver)
             .disposed(by: disposeBag)
@@ -47,8 +47,8 @@ extension DashboardViewModel: DashboardViewModelType {
 }
 
 extension DashboardViewModel: DashboardViewModelInputType {
-    var fetchPopularMovies: AnyObserver<Int> {
-        return fetchPopularMoviesObserver.asObserver()
+    var fetchDiscoverMovies: AnyObserver<(page: Int, category: PopularCategory)> {
+        return fetchDiscoverMoviesObserver.asObserver()
     }
 }
 

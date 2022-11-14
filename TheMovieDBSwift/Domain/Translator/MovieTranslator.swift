@@ -9,7 +9,7 @@ import Foundation
 
 protocol MovieTranslatorType {
     func toPopularRequest(page: Int) -> PopularMovieRequest
-    func toDiscoverRequest(page: Int, monetization: MonetizationType) -> DiscoverMovieRequest
+    func toDiscoverRequest(page: Int, category: PopularCategory) -> DiscoverMovieRequest
     func toModels(response: MoviesResponse) -> [Movie]
     func toModel(response: MoviesResponse.Data) -> Movie
     func toPage(response: MoviesResponse) -> MoviePage
@@ -18,10 +18,25 @@ protocol MovieTranslatorType {
 struct MovieTranslator: MovieTranslatorType {
     func toPopularRequest(page: Int) -> PopularMovieRequest {
         return PopularMovieRequest(page: page)
-    }
+}
     
-    func toDiscoverRequest(page: Int, monetization: MonetizationType) -> DiscoverMovieRequest {
-        return DiscoverMovieRequest(page: page, monetization: monetization)
+    func toDiscoverRequest(page: Int, category: PopularCategory) -> DiscoverMovieRequest {
+        let monetization: MonetizationType
+        var releaseTypes = Set<ReleaseType>()
+        switch category {
+        case .streaming:
+            monetization = .flatrate
+        case .onTV:
+            monetization = .none
+            releaseTypes.insert(.TV)
+        case .forRent:
+            monetization = .rent
+        case .onThreaters:
+            monetization = .none
+            releaseTypes.insert(.theatrical)
+            releaseTypes.insert(.theatricalLimited)
+        }
+        return DiscoverMovieRequest(page: page, monetization: monetization, releaseTypes: releaseTypes)
     }
     
     func toModel(response: MoviesResponse.Data) -> Movie {

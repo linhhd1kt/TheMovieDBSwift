@@ -13,8 +13,8 @@ protocol MovieUseCaseType {
 }
 
 protocol MovieUseCaseInputType {
+    var fetchDicover: AnyObserver<(page: Int, category: PopularCategory)> { get }
     var fetchPopular: AnyObserver<Int> { get }
-    var fetchDicover: AnyObserver<Int> { get }
 }
 
 protocol MovieUseCaseOutputType {

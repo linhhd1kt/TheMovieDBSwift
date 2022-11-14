@@ -13,7 +13,7 @@ protocol DashboardViewModelType {
 }
 
 protocol DashboardViewModelInputType {
-    var fetchPopularMovies: AnyObserver<Int> { get }
+    var fetchDiscoverMovies: AnyObserver<(page: Int, category: PopularCategory)> { get }
 }
 
 protocol DashboardViewModelOutputType {

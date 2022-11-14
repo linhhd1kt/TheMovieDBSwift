@@ -12,7 +12,7 @@ class DashboardViewController: RickViewController {
     @IBOutlet private weak var dashboardHeaderView: UIView!
     @IBOutlet private weak var searchView: RoundedSearchView!
     
-    @IBOutlet private weak var popularHeaderSectionView: UIView!
+    @IBOutlet private weak var popularHeaderSectionView: ItemSessionHeaderView!
     @IBOutlet private weak var popularMovieContainerView: UIView!
     
     private var popularMovieCollectionView = RickCollectionView<MoviePage>(frame: .zero, collectionViewLayout: UICollectionViewLayout())
@@ -50,9 +50,12 @@ class DashboardViewController: RickViewController {
         }
     }
     private func bindInput(_ input: DashboardViewModelInputType) {
-        let viewWillAppear = rx.viewDidAppear.asObservable().take(1).map { 1 }
-        Observable.merge(viewWillAppear, popularMovieCollectionView.nextPageTrigger)
-            .bind(to: input.fetchPopularMovies)
+        let viewWillAppear = rx.viewWillAppearOnce.map { 1 }
+        let pageTrigger = Observable.merge(viewWillAppear, popularMovieCollectionView.nextPageTrigger)
+        let selectedCategory = popularHeaderSectionView.rx.selectedCategory
+        Observable.combineLatest(pageTrigger, selectedCategory)
+            .map { (page: $0, category: $1) }
+            .bind(to: input.fetchDiscoverMovies)
             .disposed(by: disposeBag)
     }
     

@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class ItemSessionHeaderView: UIView {
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var sessionTitleLabel: UILabel!
-    @IBOutlet private weak var dropdown: CategoryDropdown!
+    @IBOutlet fileprivate weak var dropdown: CategoryDropdown!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,5 +27,11 @@ class ItemSessionHeaderView: UIView {
         configureLayouts()
     }
     private func configureLayouts() {
+    }
+}
+
+extension Reactive where Base: ItemSessionHeaderView {
+    var selectedCategory: Observable<PopularCategory> {
+        return base.dropdown.selectedPopularCategory
     }
 }

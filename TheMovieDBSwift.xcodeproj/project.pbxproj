@@ -126,6 +126,7 @@
 		DCCFEC9B28BCA54200019DBB /* CredentialRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC9A28BCA54200019DBB /* CredentialRemoteDataSource.swift */; };
 		DCCFEC9D28BCA55000019DBB /* CredentialLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFEC9C28BCA55000019DBB /* CredentialLocalDataSource.swift */; };
 		DCD2CBCF291E4D1B0019EA5D /* MonetizationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2CBCE291E4D1B0019EA5D /* MonetizationType.swift */; };
+		DCD2CBD12921E2EA0019EA5D /* ReleaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2CBD02921E2EA0019EA5D /* ReleaseType.swift */; };
 		DCD7857D28F65CBE008E36B2 /* UIViewControler+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7857C28F65CBE008E36B2 /* UIViewControler+Rx.swift */; };
 		DCDA0BAD291DF60000CDE26B /* CategorySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA0BAC291DF60000CDE26B /* CategorySession.swift */; };
 		DCDA0BAF291DF62600CDE26B /* CategoryDropdownType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA0BAE291DF62600CDE26B /* CategoryDropdownType.swift */; };
@@ -274,6 +275,7 @@
 		DCCFEC9A28BCA54200019DBB /* CredentialRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialRemoteDataSource.swift; sourceTree = "<group>"; };
 		DCCFEC9C28BCA55000019DBB /* CredentialLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialLocalDataSource.swift; sourceTree = "<group>"; };
 		DCD2CBCE291E4D1B0019EA5D /* MonetizationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonetizationType.swift; sourceTree = "<group>"; };
+		DCD2CBD02921E2EA0019EA5D /* ReleaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseType.swift; sourceTree = "<group>"; };
 		DCD7857C28F65CBE008E36B2 /* UIViewControler+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControler+Rx.swift"; sourceTree = "<group>"; };
 		DCDA0BAC291DF60000CDE26B /* CategorySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySession.swift; sourceTree = "<group>"; };
 		DCDA0BAE291DF62600CDE26B /* CategoryDropdownType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropdownType.swift; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 			isa = PBXGroup;
 			children = (
 				DC54870E28FE5425005106B0 /* DrawerMenuScreen.swift */,
+				DCD2CBD02921E2EA0019EA5D /* ReleaseType.swift */,
 				DCD2CBCE291E4D1B0019EA5D /* MonetizationType.swift */,
 				DC5487402901053D005106B0 /* Page.swift */,
 				DC6E41A828B8B6CE00429771 /* CommonError.swift */,
@@ -1149,6 +1152,7 @@
 				DCB246EF28CB19E800873CF2 /* RxSwift+Ex.swift in Sources */,
 				DC18B4D8290E77F000CA9C6B /* UITableView+Ex.swift in Sources */,
 				DC2F322A291CD1C800351318 /* ShadowCollectionCell.swift in Sources */,
+				DCD2CBD12921E2EA0019EA5D /* ReleaseType.swift in Sources */,
 				DC18B4D4290E6FFF00CA9C6B /* CircleView.swift in Sources */,
 				DC6E414528B8638800429771 /* CredentialObject.swift in Sources */,
 				DC3C9F082912B1F20075C81C /* RickTableView.swift in Sources */,

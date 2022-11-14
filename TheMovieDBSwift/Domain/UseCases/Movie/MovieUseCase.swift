@@ -13,7 +13,7 @@ class MovieUseCase {
     private let translator: MovieTranslatorType
     // MARK: - Input
     private let fetchPopularMoviePageObserver = PublishSubject<Int>()
-    private let fetchDiscoverMoviePageObserver = PublishSubject<Int>()
+    private let fetchDiscoverMoviePageObserver = PublishSubject<(page: Int, category: PopularCategory)>()
     // MARK: - Other
     
     init(respository: MovieRepositoryType = MovieRepository(),
@@ -32,9 +32,9 @@ class MovieUseCase {
             .disposed(by: disposeBag)
         fetchDiscoverMoviePageObserver
             .withUnretained(self)
-            .map { this, page in
-                this.translator.toPopularRequest(page: page) }
-            .bind(to: respository.fetchPopularMovie.inputs)
+            .map { this, info in
+                this.translator.toDiscoverRequest(page: info.page, category: info.category) }
+            .bind(to: respository.fetchDiscoverMovie.inputs)
             .disposed(by: disposeBag)
     }
 }
@@ -50,7 +50,7 @@ extension MovieUseCase: MovieUseCaseInputType {
     var fetchPopular: AnyObserver<Int> {
         return fetchPopularMoviePageObserver.asObserver()
     }
-    var fetchDicover: AnyObserver<Int> {
+    var fetchDicover: AnyObserver<(page: Int, category: PopularCategory)> {
         return fetchDiscoverMoviePageObserver.asObserver()
     }
 }

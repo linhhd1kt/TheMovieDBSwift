@@ -18,7 +18,7 @@ enum API {
     case popularMovie(page: Int)
     case movie(movieId: String)
     case search(query: String)
-    case discover(page: Int, monetization: MonetizationType)
+    case discover(page: Int, monetization: MonetizationType, releaseTypes: Set<ReleaseType>)
 }
 
 extension API: TargetType {
@@ -77,10 +77,13 @@ extension API: TargetType {
                                       encoding: URLEncoding.httpBody)
         case .search(let query):
             return .requestParameters(parameters: ["query": query, "api_key": AppConfiguration().apiKey], encoding: URLEncoding.queryString)
-        case .discover(page: let page, monetization: let monetization):
-            return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey,
-                                                   "page": page,
-                                                   "with_watch_monetization_types": monetization.filterParameter],
+        case .discover(page: let page, monetization: let monetization, releaseTypes: let releaseTypes):
+            var parameters:[String: Any] = [:]
+            parameters["api_key"] = AppConfiguration().apiKey
+            parameters["page"] = page
+            parameters["with_watch_monetization_types"] = monetization.filterParameter
+            parameters["with_release_type"] = releaseTypes.map { "\($0.rawValue)" }.joined(separator: "|")
+            return .requestParameters(parameters: parameters,
                                       encoding: URLEncoding.queryString)
         }
     }
