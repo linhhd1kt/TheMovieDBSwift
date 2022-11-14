@@ -22,12 +22,12 @@ final class ApiLogPlugin: PluginType {
     func willSend(_ request: RequestType, target: TargetType) {
         let decoratedPath = "\(target.method.rawValue) \(target.baseURL.appendingPathComponent(target.path).absoluteString)"
         if let body = request.request?.httpBody {
-            logger.verbose("""
+            logger.debug("""
                         \n\n🇻🇳🇻🇳🇻🇳 REQUEST START API_ \(decoratedPath)
                          \(String(decoding: body, as: UTF8.self))\n
                         """)
         } else {
-            logger.verbose("\n\n🇻🇳🇻🇳🇻🇳 REQUEST START API_ \(decoratedPath)\n")
+            logger.debug("\n\n🇻🇳🇻🇳🇻🇳 REQUEST START API_ \(decoratedPath)\n")
         }
     }
 
@@ -35,16 +35,20 @@ final class ApiLogPlugin: PluginType {
         let decoratedPath = "\(target.method.rawValue) \(target.baseURL.appendingPathComponent(target.path).absoluteString)"
         switch result {
         case .success(let response):
-            logger.verbose("\n\n🇻🇳🇻🇳🇻🇳 RESPONSE SUCCESS API_ \(decoratedPath)")
+            logger.debug("\n\n🇻🇳🇻🇳🇻🇳 RESPONSE SUCCESS API_ \(decoratedPath)")
             if let json = try? JSONSerialization.jsonObject(with: response.data, options: .mutableContainers) as? [String: Any] {
-                Pretty.prettyPrint(json)
+                if logger.getLogLevel().rawValue < LogLevel.debug.rawValue {
+                    Pretty.prettyPrint(json)
+                }
             } else {
                 if let responseString = String(data: response.data, encoding: .utf8) {
-                    Pretty.prettyPrint(responseString)
+                    if logger.getLogLevel().rawValue < LogLevel.debug.rawValue {
+                        Pretty.prettyPrint(responseString)
+                    }
                 }
             }
         case .failure(let error):
-            logger.verbose("\n\n🇻🇳🇻🇳🇻🇳 RESPONSE ERROR API_ \(decoratedPath): \(error.localizedDescription)")
+            logger.debug("\n\n🇻🇳🇻🇳🇻🇳 RESPONSE ERROR API_ \(decoratedPath): \(error.localizedDescription)")
         }
     }
 }

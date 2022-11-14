@@ -14,7 +14,7 @@ target 'TheMovieDBSwift' do
   pod 'Moya'
   pod 'RealmSwift'
   pod 'RxRealm'
-  pod 'Willow'
+#  pod 'Willow'
   pod 'Action'
   pod 'XCGLogger'
   pod 'ProgressHUD'

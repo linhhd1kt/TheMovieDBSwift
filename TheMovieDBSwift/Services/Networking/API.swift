@@ -78,7 +78,7 @@ extension API: TargetType {
         case .search(let query):
             return .requestParameters(parameters: ["query": query, "api_key": AppConfiguration().apiKey], encoding: URLEncoding.queryString)
         case .discover(page: let page, monetization: let monetization, releaseTypes: let releaseTypes):
-            var parameters:[String: Any] = [:]
+            var parameters: [String: Any] = [:]
             parameters["api_key"] = AppConfiguration().apiKey
             parameters["page"] = page
             parameters["with_watch_monetization_types"] = monetization.filterParameter
