@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uao-cd-hRZ">
-                        <rect key="frame" x="24" y="12" width="71" height="20"/>
+                        <rect key="frame" x="24" y="12" width="87" height="20"/>
                         <color key="tintColor" name="on-secondary"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <color key="textColor" name="secondary"/>
@@ -41,7 +41,7 @@
                 </subviews>
                 <color key="backgroundColor" name="primary"/>
                 <constraints>
-                    <constraint firstItem="Fir-8w-SpP" firstAttribute="leading" secondItem="Uao-cd-hRZ" secondAttribute="trailing" constant="24" id="E6i-uc-Djh"/>
+                    <constraint firstItem="Fir-8w-SpP" firstAttribute="leading" secondItem="Uao-cd-hRZ" secondAttribute="trailing" constant="8" id="E6i-uc-Djh"/>
                     <constraint firstItem="Uao-cd-hRZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="GLK-Z2-R03"/>
                     <constraint firstItem="Fir-8w-SpP" firstAttribute="centerY" secondItem="Uao-cd-hRZ" secondAttribute="centerY" id="cvd-65-6VC"/>
                     <constraint firstAttribute="trailing" secondItem="Fir-8w-SpP" secondAttribute="trailing" constant="16" id="lSS-zD-Oof"/>
@@ -54,7 +54,7 @@
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" name="secondary"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="categoryNameLabel" destination="Uao-cd-hRZ" id="Wjx-go-Y6J"/>
             </connections>

@@ -14,10 +14,12 @@ final class DashboardViewModel: BaseViewModel {
     private let movieUseCase: MovieUseCaseType
 
     // MARK: - Input
-    private let fetchDiscoverMoviesObserver = PublishSubject<(page: Int, category: PopularCategory)>()
+    private let fetchPopularObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
+    private let fetchFreeWatchObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
     // MARK: - Output
     private let errorObserver = BehaviorSubject<String>(value: "")
-    private let movieListObserver = BehaviorSubject<MoviePage>(value: .init())
+    private let popularResultObserver = BehaviorSubject<MoviePage>(value: .init())
+    private let freeWatchResultObserver = BehaviorSubject<MoviePage>(value: .init())
     
     init(movieUseCase: MovieUseCaseType = MovieUseCase()) {
         self.movieUseCase = movieUseCase
@@ -26,13 +28,29 @@ final class DashboardViewModel: BaseViewModel {
     }
     
     private func binding() {
-        fetchDiscoverMoviesObserver
-            .bind(to: movieUseCase.input.fetchDicover)
+        // fetch popular
+        fetchPopularObserver
+            .bind(to: movieUseCase.input.fetchPopular)
             .disposed(by: disposeBag)
         movieUseCase.output
-            .fetchDiscoverResult
+            .fetchPopularResult
             .elements
-            .bind(to: movieListObserver)
+            .bind(to: popularResultObserver)
+            .disposed(by: disposeBag)
+        
+        // fetch free watch
+        fetchFreeWatchObserver
+            .filter { $0.category == .movie }
+            .bind(to: movieUseCase.input.fetchFreeWatchMovie)
+            .disposed(by: disposeBag)
+        fetchFreeWatchObserver
+            .filter { $0.category == .TV }
+            .bind(to: movieUseCase.input.fetchFreeWatchTV)
+            .disposed(by: disposeBag)
+                        
+        Observable.merge(movieUseCase.output.fetchFreeWatchMovieResult.elements,
+                         movieUseCase.output.fetchFreeWatchTVResult.elements)
+            .bind(to: freeWatchResultObserver)
             .disposed(by: disposeBag)
     }
 }
@@ -47,13 +65,19 @@ extension DashboardViewModel: DashboardViewModelType {
 }
 
 extension DashboardViewModel: DashboardViewModelInputType {
-    var fetchDiscoverMovies: AnyObserver<(page: Int, category: PopularCategory)> {
-        return fetchDiscoverMoviesObserver.asObserver()
+    var fetchDiscoverMovies: AnyObserver<(page: Int, category: DiscoverCategory)> {
+        return fetchPopularObserver.asObserver()
+    }
+    var fetchFreeWatchMovies: AnyObserver<(page: Int, category: DiscoverCategory)> {
+        return fetchFreeWatchObserver.asObserver()
     }
 }
 
 extension DashboardViewModel: DashboardViewModelOutputType {
-    var moviesResult: Observable<MoviePage> {
-        return movieListObserver.asObservable()
+    var fetchPopularResult: Observable<MoviePage> {
+        return popularResultObserver.asObservable()
+    }
+    var fetchFreeWatchResult: Observable<MoviePage> {
+        return freeWatchResultObserver.asObservable()
     }
 }

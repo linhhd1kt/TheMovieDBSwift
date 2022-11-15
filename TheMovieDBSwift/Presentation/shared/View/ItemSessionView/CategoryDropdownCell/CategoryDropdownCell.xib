@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" name="secondary"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="d0n-Jr-fRQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Dkt-b9-eI5"/>
                     <constraint firstItem="d0n-Jr-fRQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="iKo-fM-mYB"/>
@@ -33,7 +33,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" name="secondary"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="categoryNameLabel" destination="d0n-Jr-fRQ" id="qFq-eb-0oC"/>
             </connections>
@@ -43,9 +43,6 @@
     <resources>
         <namedColor name="on-secondary-variant">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="secondary">
-            <color red="0.1289999932050705" green="0.81599998474121094" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

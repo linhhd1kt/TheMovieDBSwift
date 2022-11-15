@@ -10,22 +10,32 @@ import Moya
 
 struct PopularMovieRequest {
     let page: Int
-}
-
-extension PopularMovieRequest: ApiRequestable {
-    func toTarget() -> TargetType {
-        return API.popularMovie(page: page)
-    }
-}
-
-struct DiscoverMovieRequest {
-    let page: Int
     let monetization: MonetizationType
     let releaseTypes: Set<ReleaseType>
 }
 
-extension DiscoverMovieRequest: ApiRequestable {
+extension PopularMovieRequest: ApiRequestable {
     func toTarget() -> TargetType {
-        return API.discover(page: page, monetization: monetization, releaseTypes: releaseTypes)
+        return API.discoverMovie(page: page, monetization: monetization, releaseTypes: releaseTypes)
+    }
+}
+
+struct FreeWatchMovieRequest {
+    let page: Int
+}
+
+extension FreeWatchMovieRequest: ApiRequestable {
+    func toTarget() -> TargetType {
+        return API.discoverMovie(page: page, monetization: .free, releaseTypes: [])
+    }
+}
+
+struct FreeWatchTVRequest {
+    let page: Int
+}
+
+extension FreeWatchTVRequest: ApiRequestable {
+    func toTarget() -> TargetType {
+        return API.discoverTV(page: page, monetization: .free)
     }
 }

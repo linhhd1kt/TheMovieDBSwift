@@ -12,8 +12,9 @@ class MovieUseCase {
     private let respository: MovieRepositoryType
     private let translator: MovieTranslatorType
     // MARK: - Input
-    private let fetchPopularMoviePageObserver = PublishSubject<Int>()
-    private let fetchDiscoverMoviePageObserver = PublishSubject<(page: Int, category: PopularCategory)>()
+    private let fetchPopularObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
+    private let fetchFreeWatchMovieObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
+    private let fetchFreeWatchTVObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
     // MARK: - Other
     
     init(respository: MovieRepositoryType = MovieRepository(),
@@ -24,17 +25,26 @@ class MovieUseCase {
     }
 
     private func bindInput() {
-        fetchPopularMoviePageObserver
-            .withUnretained(self)
-            .map { this, page in
-                this.translator.toPopularRequest(page: page) }
-            .bind(to: respository.fetchPopularMovie.inputs)
-            .disposed(by: disposeBag)
-        fetchDiscoverMoviePageObserver
+        fetchPopularObserver
             .withUnretained(self)
             .map { this, info in
-                this.translator.toDiscoverRequest(page: info.page, category: info.category) }
-            .bind(to: respository.fetchDiscoverMovie.inputs)
+                this.translator.toPopularRequest(page: info.page, category: info.category)
+            }
+            .bind(to: respository.fetchPopularMovie.inputs)
+            .disposed(by: disposeBag)
+        
+        fetchFreeWatchMovieObserver
+            .map { $0.page }
+            .withUnretained(self)
+            .map { this, page in this.translator.toFreeWatchMovieRequest(page: page) }
+            .bind(to: respository.fetchFreeWatchMovie.inputs)
+            .disposed(by: disposeBag)
+        
+        fetchFreeWatchTVObserver
+            .map { $0.page }
+            .withUnretained(self)
+            .map { this, page in this.translator.toFreeWatchTVRequest(page: page) }
+            .bind(to: respository.fetchFreeWatchTV.inputs)
             .disposed(by: disposeBag)
     }
 }
@@ -47,23 +57,29 @@ extension MovieUseCase: MovieUseCaseType {
 
 // MARK: - MovieUseCaseInputType
 extension MovieUseCase: MovieUseCaseInputType {
-    var fetchPopular: AnyObserver<Int> {
-        return fetchPopularMoviePageObserver.asObserver()
+    var fetchPopular: AnyObserver<(page: Int, category: DiscoverCategory)> {
+        fetchPopularObserver.asObserver()
+    }    
+    var fetchFreeWatchMovie: AnyObserver<(page: Int, category: DiscoverCategory)> {
+        return fetchFreeWatchMovieObserver.asObserver()
     }
-    var fetchDicover: AnyObserver<(page: Int, category: PopularCategory)> {
-        return fetchDiscoverMoviePageObserver.asObserver()
+    var fetchFreeWatchTV: AnyObserver<(page: Int, category: DiscoverCategory)> {
+        return fetchFreeWatchTVObserver.asObserver()
     }
 }
 
 // MARK: - MovieUseCaseOutputType
 extension MovieUseCase: MovieUseCaseOutputType {
-    var fetchDiscoverResult: ActionResult<MoviePage> {
-        return respository.fetchDiscoverMovie.toResult()
-            .map { self.translator.toPage(response: $0) }
-    }
-    
     var fetchPopularResult: ActionResult<MoviePage> {
         return respository.fetchPopularMovie.toResult()
+            .map { self.translator.toPage(response: $0) }
+    }
+    var fetchFreeWatchMovieResult: ActionResult<MoviePage> {
+        return respository.fetchFreeWatchMovie.toResult()
+            .map { self.translator.toPage(response: $0) }
+    }    
+    var fetchFreeWatchTVResult: ActionResult<MoviePage> {
+        return respository.fetchFreeWatchTV.toResult()
             .map { self.translator.toPage(response: $0) }
     }
 }

@@ -13,11 +13,13 @@ protocol MovieUseCaseType {
 }
 
 protocol MovieUseCaseInputType {
-    var fetchDicover: AnyObserver<(page: Int, category: PopularCategory)> { get }
-    var fetchPopular: AnyObserver<Int> { get }
+    var fetchPopular: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
+    var fetchFreeWatchMovie: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
+    var fetchFreeWatchTV: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
 }
 
 protocol MovieUseCaseOutputType {
     var fetchPopularResult: ActionResult<MoviePage> { get }
-    var fetchDiscoverResult: ActionResult<MoviePage> { get }
+    var fetchFreeWatchMovieResult: ActionResult<MoviePage> { get }
+    var fetchFreeWatchTVResult: ActionResult<MoviePage> { get }
 }

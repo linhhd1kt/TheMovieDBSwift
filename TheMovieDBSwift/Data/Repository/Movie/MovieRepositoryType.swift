@@ -9,5 +9,6 @@ import Action
 
 protocol MovieRepositoryType {
     var fetchPopularMovie: Action<PopularMovieRequest, MoviesResponse> { get }
-    var fetchDiscoverMovie: Action<DiscoverMovieRequest, MoviesResponse> { get }
+    var fetchFreeWatchMovie: Action<FreeWatchMovieRequest, MoviesResponse> { get }
+    var fetchFreeWatchTV: Action<FreeWatchTVRequest, MoviesResponse> { get }
 }

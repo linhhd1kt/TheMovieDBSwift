@@ -18,7 +18,8 @@ enum API {
     case popularMovie(page: Int)
     case movie(movieId: String)
     case search(query: String)
-    case discover(page: Int, monetization: MonetizationType, releaseTypes: Set<ReleaseType>)
+    case discoverMovie(page: Int, monetization: MonetizationType, releaseTypes: Set<ReleaseType>)
+    case discoverTV(page: Int, monetization: MonetizationType)
 }
 
 extension API: TargetType {
@@ -41,8 +42,10 @@ extension API: TargetType {
             return "movie/\(movieId)"
         case .search:
             return "search/movie"
-        case .discover:
+        case .discoverMovie:
             return "discover/movie"
+        case .discoverTV:
+            return "discover/tv"
         }
     }
     
@@ -77,14 +80,21 @@ extension API: TargetType {
                                       encoding: URLEncoding.httpBody)
         case .search(let query):
             return .requestParameters(parameters: ["query": query, "api_key": AppConfiguration().apiKey], encoding: URLEncoding.queryString)
-        case .discover(page: let page, monetization: let monetization, releaseTypes: let releaseTypes):
+        case .discoverMovie(page: let page, monetization: let monetization, releaseTypes: let releaseTypes):
             var parameters: [String: Any] = [:]
             parameters["api_key"] = AppConfiguration().apiKey
             parameters["page"] = page
             parameters["with_watch_monetization_types"] = monetization.filterParameter
-            parameters["with_release_type"] = releaseTypes.map { "\($0.rawValue)" }.joined(separator: "|")
-            return .requestParameters(parameters: parameters,
-                                      encoding: URLEncoding.queryString)
+            if !releaseTypes.isEmpty {
+                parameters["with_release_type"] = releaseTypes.map { "\($0.rawValue)" }.joined(separator: "|")
+            }
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .discoverTV(page: let page, monetization: let monetization):
+            var parameters: [String: Any] = [:]
+            parameters["api_key"] = AppConfiguration().apiKey
+            parameters["page"] = page
+            parameters["with_watch_monetization_types"] = monetization.filterParameter
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }
     

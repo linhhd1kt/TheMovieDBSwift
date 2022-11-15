@@ -51,6 +51,7 @@ class MovieListViewController: RickViewController {
     private func bindInput(_ input: MovieListViewModelInputType) {
         let viewWillAppear = rx.viewDidAppear.asObservable().take(1).map { 1 }
         Observable.merge(viewWillAppear, tableView.nextPageTrigger)
+            .map { (page: $0, category: .movie) }
             .bind(to: input.nextPageTrigger)
             .disposed(by: disposeBag)
     }

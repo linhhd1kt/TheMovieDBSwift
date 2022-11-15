@@ -13,7 +13,7 @@ protocol MovieListViewModelType {
 }
 
 protocol MovieListViewModelInputType {
-    var nextPageTrigger: AnyObserver<Int> { get }
+    var nextPageTrigger: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
 }
 
 protocol MovieListViewModelOutputType {

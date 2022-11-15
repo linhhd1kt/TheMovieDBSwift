@@ -14,9 +14,7 @@ final class MovieListViewModel: BaseViewModel {
     private let movieUseCase: MovieUseCaseType
 
     // MARK: - Input
-    // only make private please
-//    private let reloadObserver = PublishSubject<Void>()
-    private let nextPageObserver = PublishSubject<Int>()
+    private let nextPageObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
 //    private let movieSelectedObserver = PublishSubject<Movie?>()
 
     // MARK: - Output
@@ -43,8 +41,9 @@ extension MovieListViewModel: MovieListViewModelType {
         nextPageObserver
             .bind(to: movieUseCase.input.fetchPopular)
             .disposed(by: disposeBag)
-        
-        movieUseCase.output.fetchPopularResult
+        movieUseCase
+            .output
+            .fetchPopularResult
             .elements
             .bind(to: movieListObserver)
             .disposed(by: disposeBag)
@@ -52,7 +51,7 @@ extension MovieListViewModel: MovieListViewModelType {
 }
 
 extension MovieListViewModel: MovieListViewModelInputType {
-    var nextPageTrigger: AnyObserver<Int> {
+    var nextPageTrigger: AnyObserver<(page: Int, category: DiscoverCategory)> {
         return nextPageObserver.asObserver()
     }
 }

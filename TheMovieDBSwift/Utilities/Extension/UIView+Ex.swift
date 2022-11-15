@@ -218,6 +218,18 @@ extension UIView {
         /// radians.
         case radians
     }
+    
+    var parentViewController: UIViewController? {
+        // Starts from next (As we know self is not a UIViewController).
+        var parentResponder: UIResponder? = self.next
+        while parentResponder != nil {
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+            parentResponder = parentResponder?.next
+        }
+        return nil
+    }
 
     /// SwifterSwift: Shake view.
     ///
@@ -226,7 +238,10 @@ extension UIView {
     ///   - duration: animation duration in seconds (default is 1 second).
     ///   - animationType: shake animation type (default is .easeOut).
     ///   - completion: optional completion handler to run with animation finishes (default is nil).
-    public func shake(direction: ShakeDirection = .horizontal, duration: TimeInterval = 1, animationType: ShakeAnimationType = .easeOut, completion:(() -> Void)? = nil) {
+    public func shake(direction: ShakeDirection = .horizontal,
+                      duration: TimeInterval = 1,
+                      animationType: ShakeAnimationType = .easeOut,
+                      completion:(() -> Void)? = nil) {
         CATransaction.begin()
         let animation: CAKeyframeAnimation
         switch direction {
@@ -332,16 +347,4 @@ extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
       }
-    
-    var parentViewController: UIViewController? {
-        // Starts from next (As we know self is not a UIViewController).
-        var parentResponder: UIResponder? = self.next
-        while parentResponder != nil {
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-            parentResponder = parentResponder?.next
-        }
-        return nil
-    }
 }

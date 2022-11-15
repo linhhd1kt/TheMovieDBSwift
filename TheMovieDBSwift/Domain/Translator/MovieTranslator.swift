@@ -8,19 +8,16 @@
 import Foundation
 
 protocol MovieTranslatorType {
-    func toPopularRequest(page: Int) -> PopularMovieRequest
-    func toDiscoverRequest(page: Int, category: PopularCategory) -> DiscoverMovieRequest
+    func toPopularRequest(page: Int, category: DiscoverCategory) -> PopularMovieRequest
+    func toFreeWatchMovieRequest(page: Int) -> FreeWatchMovieRequest
+    func toFreeWatchTVRequest(page: Int) -> FreeWatchTVRequest
     func toModels(response: MoviesResponse) -> [Movie]
     func toModel(response: MoviesResponse.Data) -> Movie
     func toPage(response: MoviesResponse) -> MoviePage
 }
 
 struct MovieTranslator: MovieTranslatorType {
-    func toPopularRequest(page: Int) -> PopularMovieRequest {
-        return PopularMovieRequest(page: page)
-}
-    
-    func toDiscoverRequest(page: Int, category: PopularCategory) -> DiscoverMovieRequest {
+    func toPopularRequest(page: Int, category: DiscoverCategory) -> PopularMovieRequest {
         let monetization: MonetizationType
         var releaseTypes = Set<ReleaseType>()
         switch category {
@@ -35,8 +32,18 @@ struct MovieTranslator: MovieTranslatorType {
             monetization = .none
             releaseTypes.insert(.theatrical)
             releaseTypes.insert(.theatricalLimited)
+        default:
+            monetization = .none
         }
-        return DiscoverMovieRequest(page: page, monetization: monetization, releaseTypes: releaseTypes)
+        return PopularMovieRequest(page: page, monetization: monetization, releaseTypes: releaseTypes)
+    }
+    
+    func toFreeWatchMovieRequest(page: Int) -> FreeWatchMovieRequest {
+        return FreeWatchMovieRequest(page: page)
+    }
+    
+    func toFreeWatchTVRequest(page: Int) -> FreeWatchTVRequest {
+        return FreeWatchTVRequest(page: page)
     }
     
     func toModel(response: MoviesResponse.Data) -> Movie {

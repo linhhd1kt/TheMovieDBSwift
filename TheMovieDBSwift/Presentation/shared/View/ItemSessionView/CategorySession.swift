@@ -13,7 +13,7 @@ struct CategorySession {
 }
 
 extension CategorySession: SectionModelType {
-  typealias Item = PopularCategory
+  typealias Item = DiscoverCategory
 
    init(original: CategorySession, items: [Item]) {
     self = original
@@ -21,13 +21,19 @@ extension CategorySession: SectionModelType {
   }
 }
 
-enum PopularCategory: String, CaseIterable {
+enum DiscoverCategory: String, CaseIterable {
     case streaming = "Streaming"
     case onTV = "On TV"
     case forRent = "For Rent"
     case onThreaters = "On Threaters"
+    case movie
+    case TV
     
     var title: String {
         return self.rawValue
+    }
+    
+    static var popularItems: [DiscoverCategory] {
+        return [.streaming, .onTV, .onThreaters, .forRent]
     }
 }
