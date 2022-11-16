@@ -42,7 +42,7 @@ class ItemSessionView: UIView {
         configureLayouts()
         binding()
     }
-    
+    /// set title and category for item section
     func configure(title: String, categories: [DiscoverCategory]) {
         sessionTitleLabel.text = title
         selectedCategoryObserver.onNext(categories.first ?? .streaming)
@@ -55,7 +55,7 @@ class ItemSessionView: UIView {
         configureDropdown()
         setupItemsCollectionView()
     }
-    
+    /// configure dropdown
     private func configureDropdown() {
         dropdownTableView.register(CategoryDropdownCell.self)
         dropdownTableView.register(SelectedCategoryDropdownCell.self)
@@ -126,7 +126,9 @@ class ItemSessionView: UIView {
             .bind(to: nextPageTriggerObserver)
             .disposed(by: disposeBag)
         // selected distinct category
-        let selectedCategory = selectedCategoryObserver.distinctUntilChanged().map { _ in 1 }
+        let selectedCategory = selectedCategoryObserver
+            .distinctUntilChanged()
+            .map { _ in 1 }
         // binding next page trigger
         selectedCategory
             .bind(to: nextPageTriggerObserver)
@@ -143,13 +145,15 @@ class ItemSessionView: UIView {
 extension ItemSessionView: HasDisposeBag {}
 
 extension Reactive where Base: ItemSessionView {
+    // input
+    var items: AnyObserver<MoviePage> {
+        return base.itemsCollectionView.itemsResult
+    }
+    // output
     var selectedCategory: Observable<DiscoverCategory> {
-        return base.selectedCategoryObserver.asObservable().distinctUntilChanged()
+        return base.selectedCategoryObserver.asObservable()
     }
     var nextPage: Observable<Int> {
         return base.nextPageTriggerObserver.asObservable()
-    }
-    var items: AnyObserver<MoviePage> {
-        return base.itemsCollectionView.itemsResult
     }
 }
