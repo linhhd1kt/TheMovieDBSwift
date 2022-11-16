@@ -39,3 +39,15 @@ extension FreeWatchTVRequest: ApiRequestable {
         return API.discoverTV(page: page, monetization: .free)
     }
 }
+
+struct TrendingRequest {
+    let page: Int
+    let mediaType: MediaType
+    let timeWindow: TimeWindow
+}
+
+extension TrendingRequest: ApiRequestable {
+    func toTarget() -> TargetType {
+        return API.trending(page: page, mediaType: mediaType, timeWindow: timeWindow)
+    }
+}

@@ -16,10 +16,12 @@ final class DashboardViewModel: BaseViewModel {
     // MARK: - Input
     private let fetchPopularObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
     private let fetchFreeWatchObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
+    private let fetchTrendingObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
     // MARK: - Output
     private let errorObserver = BehaviorSubject<String>(value: "")
     private let popularResultObserver = BehaviorSubject<MoviePage>(value: .init())
     private let freeWatchResultObserver = BehaviorSubject<MoviePage>(value: .init())
+    private let trendingResultObserver = BehaviorSubject<MoviePage>(value: .init())
     
     init(movieUseCase: MovieUseCaseType = MovieUseCase()) {
         self.movieUseCase = movieUseCase
@@ -37,21 +39,28 @@ final class DashboardViewModel: BaseViewModel {
             .elements
             .bind(to: popularResultObserver)
             .disposed(by: disposeBag)
-        
         // fetch free watch
         fetchFreeWatchObserver
             .filter { $0.category == .movie }
             .bind(to: movieUseCase.input.fetchFreeWatchMovie)
             .disposed(by: disposeBag)
-
         fetchFreeWatchObserver
-            .filter { $0.category == .TV }
+            .filter { $0.category == .tv }
             .bind(to: movieUseCase.input.fetchFreeWatchTV)
             .disposed(by: disposeBag)
-                        
         Observable.merge(movieUseCase.output.fetchFreeWatchMovieResult.elements,
                          movieUseCase.output.fetchFreeWatchTVResult.elements)
             .bind(to: freeWatchResultObserver)
+            .disposed(by: disposeBag)
+        // fetch trending
+        fetchTrendingObserver
+            .map { (page: $0, mediaType: MediaType.all, timeWindow: TimeWindow(rawValue: $1.rawValue) ?? .day) }
+            .bind(to: movieUseCase.input.fetchTrending)
+            .disposed(by: disposeBag)
+        movieUseCase.output
+            .fetchTrendingResult
+            .elements
+            .bind(to: trendingResultObserver)
             .disposed(by: disposeBag)
     }
 }
@@ -72,6 +81,9 @@ extension DashboardViewModel: DashboardViewModelInputType {
     var fetchFreeWatchMovies: AnyObserver<(page: Int, category: DiscoverCategory)> {
         return fetchFreeWatchObserver.asObserver()
     }
+    var fetchTrending: AnyObserver<(page: Int, category: DiscoverCategory)> {
+        return fetchTrendingObserver.asObserver()
+    }
 }
 
 extension DashboardViewModel: DashboardViewModelOutputType {
@@ -80,5 +92,8 @@ extension DashboardViewModel: DashboardViewModelOutputType {
     }
     var fetchFreeWatchResult: Observable<MoviePage> {
         return freeWatchResultObserver.asObservable()
+    }
+    var fetchTrendingResult: Observable<MoviePage> {
+        return trendingResultObserver.asObservable()
     }
 }

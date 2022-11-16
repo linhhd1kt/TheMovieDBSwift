@@ -13,6 +13,7 @@ class DashboardViewController: RickViewController {
     @IBOutlet private weak var searchView: RoundedSearchView!
     @IBOutlet private weak var popularItemSessionView: ItemSessionView!
     @IBOutlet private weak var freeItemSessionView: ItemSessionView!
+    @IBOutlet private weak var trendingItemSessionView: ItemSessionView!
     
     private let viewModel: DashboardViewModelType
     
@@ -36,28 +37,42 @@ class DashboardViewController: RickViewController {
     private func setupLayouts() {
         popularItemSessionView.configure(title: "What's Popular", categories: DiscoverCategory.popularItems)
         freeItemSessionView.configure(title: "Free To Watch", categories: DiscoverCategory.freeItems)
+        trendingItemSessionView.configure(title: "Trending", categories: DiscoverCategory.treding)
     }
     
     private func bindInput(_ input: DashboardViewModelInputType) {
+        // popular
         Observable.combineLatest(popularItemSessionView.rx.nextPage,
                                  popularItemSessionView.rx.selectedCategory)
         .map { (page: $0, category: $1) }
         .bind(to: input.fetchDiscoverMovies)
         .disposed(by: disposeBag)
-        
+        // free watch
         Observable.combineLatest(freeItemSessionView.rx.nextPage,
                                  freeItemSessionView.rx.selectedCategory)
         .map { (page: $0, category: $1) }
         .bind(to: input.fetchFreeWatchMovies)
         .disposed(by: disposeBag)
+        // trending
+        trendingItemSessionView.rx.selectedCategory
+            .debug("XXX selectedCategory")
+            .map { (page: 1, category: $0) }
+            .bind(to: input.fetchTrending)
+            .disposed(by: disposeBag)
     }
     
     private func bindOutput(_ output: DashboardViewModelOutputType) {
+        // popular
         output.fetchPopularResult
             .bind(to: popularItemSessionView.rx.items)
             .disposed(by: disposeBag)
+        // free watch
         output.fetchFreeWatchResult
             .bind(to: freeItemSessionView.rx.items)
+            .disposed(by: disposeBag)
+        // trending
+        output.fetchTrendingResult
+            .bind(to: trendingItemSessionView.rx.items)
             .disposed(by: disposeBag)
     }
 }

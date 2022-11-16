@@ -16,6 +16,7 @@
                 <outlet property="freeItemSessionView" destination="iR2-aB-Lpp" id="cGr-Ei-UC4"/>
                 <outlet property="popularItemSessionView" destination="xxN-FK-ZG3" id="YGB-yk-eCB"/>
                 <outlet property="searchView" destination="dQt-c3-YPR" id="i7Z-JZ-Heo"/>
+                <outlet property="trendingItemSessionView" destination="CZW-UG-1NO" id="uqi-pn-zDo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -87,7 +88,7 @@
                                         <constraint firstAttribute="height" constant="420" id="MeH-hJ-d3L"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZW-UG-1NO">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZW-UG-1NO" customClass="ItemSessionView" customModule="TheMovieDBSwift" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="808" width="488" height="452"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>

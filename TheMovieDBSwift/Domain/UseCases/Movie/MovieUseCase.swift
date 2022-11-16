@@ -11,10 +11,13 @@ class MovieUseCase {
     // MARK: - Dependency
     private let respository: MovieRepositoryType
     private let translator: MovieTranslatorType
-    // MARK: - Input
+
     private let fetchPopularObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
     private let fetchFreeWatchMovieObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
     private let fetchFreeWatchTVObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
+    private let fetchTrendingObserver = PublishSubject<(page: Int,
+                                                        mediaType: MediaType,
+                                                        timeWindow: TimeWindow)>()
     // MARK: - Other
     
     init(respository: MovieRepositoryType = MovieRepository(),
@@ -46,6 +49,15 @@ class MovieUseCase {
             .map { this, page in this.translator.toFreeWatchTVRequest(page: page) }
             .bind(to: respository.fetchFreeWatchTV.inputs)
             .disposed(by: disposeBag)
+        
+        fetchTrendingObserver
+            .withUnretained(self)
+            .map { this, info in
+                this.translator.toTrendingRequest(page: info.page,
+                                                  mediaType: info.mediaType,
+                                                  timeWindow: info.timeWindow)}
+            .bind(to: respository.fetchTrending.inputs)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -66,6 +78,9 @@ extension MovieUseCase: MovieUseCaseInputType {
     var fetchFreeWatchTV: AnyObserver<(page: Int, category: DiscoverCategory)> {
         return fetchFreeWatchTVObserver.asObserver()
     }
+    var fetchTrending: AnyObserver<(page: Int, mediaType: MediaType, timeWindow: TimeWindow)> {
+        fetchTrendingObserver.asObserver()
+    }
 }
 
 // MARK: - MovieUseCaseOutputType
@@ -80,6 +95,10 @@ extension MovieUseCase: MovieUseCaseOutputType {
     }    
     var fetchFreeWatchTVResult: ActionResult<MoviePage> {
         return respository.fetchFreeWatchTV.toResult()
+            .map { self.translator.toPage(response: $0) }
+    }
+    var fetchTrendingResult: ActionResult<MoviePage> {
+        return respository.fetchTrending.toResult()
             .map { self.translator.toPage(response: $0) }
     }
 }

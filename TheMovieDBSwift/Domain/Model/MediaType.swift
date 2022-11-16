@@ -5,7 +5,9 @@
 //  Created by Ha Linh on 14/11/2022.
 //
 
-enum MediaType {
+enum MediaType: String {
+    case all
     case movie
-    case TV
+    case tv
+    case person
 }

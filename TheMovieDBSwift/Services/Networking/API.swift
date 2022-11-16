@@ -20,6 +20,7 @@ enum API {
     case search(query: String)
     case discoverMovie(page: Int, monetization: MonetizationType, releaseTypes: Set<ReleaseType>)
     case discoverTV(page: Int, monetization: MonetizationType)
+    case trending(page: Int, mediaType: MediaType, timeWindow: TimeWindow)
 }
 
 extension API: TargetType {
@@ -46,6 +47,8 @@ extension API: TargetType {
             return "discover/movie"
         case .discoverTV:
             return "discover/tv"
+        case .trending(page: _, mediaType: let mediaType, timeWindow: let timeWindow):
+            return "trending/\(mediaType)/\(timeWindow)"
         }
     }
     
@@ -94,6 +97,10 @@ extension API: TargetType {
             parameters["api_key"] = AppConfiguration().apiKey
             parameters["page"] = page
             parameters["with_watch_monetization_types"] = monetization.filterParameter
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .trending:
+            var parameters: [String: Any] = [:]
+            parameters["api_key"] = AppConfiguration().apiKey
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }

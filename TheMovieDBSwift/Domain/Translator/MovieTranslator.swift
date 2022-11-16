@@ -11,6 +11,7 @@ protocol MovieTranslatorType {
     func toPopularRequest(page: Int, category: DiscoverCategory) -> PopularMovieRequest
     func toFreeWatchMovieRequest(page: Int) -> FreeWatchMovieRequest
     func toFreeWatchTVRequest(page: Int) -> FreeWatchTVRequest
+    func toTrendingRequest(page: Int, mediaType: MediaType, timeWindow: TimeWindow) -> TrendingRequest
     func toModels(response: MoviesResponse) -> [Movie]
     func toModel(response: MoviesResponse.Data) -> Movie
     func toPage(response: MoviesResponse) -> MoviePage
@@ -44,6 +45,10 @@ struct MovieTranslator: MovieTranslatorType {
     
     func toFreeWatchTVRequest(page: Int) -> FreeWatchTVRequest {
         return FreeWatchTVRequest(page: page)
+    }
+    
+    func toTrendingRequest(page: Int, mediaType: MediaType, timeWindow: TimeWindow) -> TrendingRequest {
+        return TrendingRequest(page: page, mediaType: mediaType, timeWindow: timeWindow)
     }
     
     func toModel(response: MoviesResponse.Data) -> Movie {
