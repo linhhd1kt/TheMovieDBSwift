@@ -26,8 +26,8 @@ enum DiscoverCategory: String, CaseIterable {
     case onTV = "On TV"
     case forRent = "For Rent"
     case onThreaters = "On Threaters"
-    case movie
-    case TV
+    case movie = "Movie"
+    case TV = "TV"
     
     var title: String {
         return self.rawValue
@@ -35,5 +35,9 @@ enum DiscoverCategory: String, CaseIterable {
     
     static var popularItems: [DiscoverCategory] {
         return [.streaming, .onTV, .onThreaters, .forRent]
+    }
+    
+    static var freeItems: [DiscoverCategory] {
+        return [.movie, .TV]
     }
 }

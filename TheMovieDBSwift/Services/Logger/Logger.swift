@@ -62,7 +62,7 @@ class Logger: Logable {
     private var logger: XCGLogger = .default
     init() {
 #if DEBUG
-        self.logger.setup(level: .debug,
+        self.logger.setup(level: .verbose,
                           showThreadName: true,
                           showLevel: true,
                           showFileNames: true,

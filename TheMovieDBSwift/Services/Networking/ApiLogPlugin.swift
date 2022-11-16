@@ -24,10 +24,10 @@ final class ApiLogPlugin: PluginType {
         if let body = request.request?.httpBody {
             logger.debug("""
                         \n\n🇻🇳🇻🇳🇻🇳 REQUEST START API_ \(decoratedPath)
-                         \(String(decoding: body, as: UTF8.self))\n
+                         \(String(decoding: body, as: UTF8.self))
                         """)
         } else {
-            logger.debug("\n\n🇻🇳🇻🇳🇻🇳 REQUEST START API_ \(decoratedPath)\n")
+            logger.debug("\n\n🇻🇳🇻🇳🇻🇳 REQUEST START API_ \(decoratedPath)")
         }
     }
 
@@ -38,7 +38,20 @@ final class ApiLogPlugin: PluginType {
             logger.debug("\n\n🇻🇳🇻🇳🇻🇳 RESPONSE SUCCESS API_ \(decoratedPath)")
             if let json = try? JSONSerialization.jsonObject(with: response.data, options: .mutableContainers) as? [String: Any] {
                 if logger.getLogLevel().rawValue < LogLevel.debug.rawValue {
-                    Pretty.prettyPrint(json)
+                    if let page = json["page"] as? Int,
+                       let results = json["results"] as? [Any],
+                       let totalPages = json["total_pages"] as? Int,
+                       let totalResults = json["total_results"] as? Int {
+                        Pretty.prettyPrint([
+                            "page": page,
+                            "results": results.count,
+                            "total_pages": totalPages,
+                            "total_results": totalResults,
+                            "short_item": results.first ?? ""
+                        ])
+                    } else {
+                        Pretty.prettyPrint(json)
+                    }
                 }
             } else {
                 if let responseString = String(data: response.data, encoding: .utf8) {

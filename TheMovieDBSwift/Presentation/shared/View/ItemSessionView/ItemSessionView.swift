@@ -16,11 +16,14 @@ class ItemSessionView: UIView {
     @IBOutlet private weak var dropdownHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var itemsContainer: UIView!
     fileprivate var itemsCollectionView = RickCollectionView<MoviePage>()
-
-    fileprivate let categoryListObserver = PublishSubject<[DiscoverCategory]>()
-    fileprivate let initialCategoryObserver = PublishSubject<DiscoverCategory>()
-    fileprivate let selectedCategoryObserver = PublishSubject<DiscoverCategory>()
+    
     private let expandDropdownObserver = BehaviorSubject<Bool>(value: false)
+    
+    // MARK: - Input
+    fileprivate let categoryListObserver = PublishSubject<[DiscoverCategory]>()
+    fileprivate let selectedCategoryObserver = PublishSubject<DiscoverCategory>()
+    // MARK: - Output
+    fileprivate let nextPageTriggerObserver = BehaviorSubject<Int>(value: 1)
     
     static let dropdownItemHeight: CGFloat = 32.0
 
@@ -56,12 +59,12 @@ class ItemSessionView: UIView {
     private func configureDropdown() {
         dropdownTableView.register(CategoryDropdownCell.self)
         dropdownTableView.register(SelectedCategoryDropdownCell.self)
-        dropdownTableView.rowHeight = 32
+        dropdownTableView.rowHeight = ItemSessionView.dropdownItemHeight
         dropdownTableView.backgroundColor = R.color.secondary()
-        dropdownTableView.cornerRadius = 16
+        dropdownTableView.cornerRadius = ItemSessionView.dropdownItemHeight / 2
         dropdownTableView.separatorStyle = .none
         dropdownTableView.isScrollEnabled = false
-        dropdownTableView.layer.cornerRadius = 16
+        dropdownTableView.layer.cornerRadius = ItemSessionView.dropdownItemHeight / 2
         dropdownTableView.backgroundColor = R.color.secondary()
     }
     
@@ -76,15 +79,15 @@ class ItemSessionView: UIView {
     
     private func binding() {
         bindingDropdown()
-        bindingItems()
     }
     
     private func bindingDropdown() {
+        // expand or collapse dropdown
         selectedCategoryObserver
             .scan(true) { lastState, _ in !lastState }
             .bind(to: expandDropdownObserver)
             .disposed(by: disposeBag)
-        
+        // dropdown data source setup
         let dataSource = RxTableViewSectionedReloadDataSource<CategorySession> { _, tableView, indexPath, item in
             if indexPath.row == 0 {
                 let cell = tableView.dequeue(SelectedCategoryDropdownCell.self)
@@ -96,11 +99,9 @@ class ItemSessionView: UIView {
                 return cell
             }
         }
-        let items: Observable<[DiscoverCategory]> =
-        Observable
-            .combineLatest(categoryListObserver.asObservable(),
-                           expandDropdownObserver.asObservable(),
-                           selectedCategoryObserver.asObservable())
+        // expand/collapse dropdown items base on selected category
+        let items: Observable<[DiscoverCategory]> = PublishSubject
+            .combineLatest(categoryListObserver, expandDropdownObserver, selectedCategoryObserver)
             .map({ items, display, selectedItem in
                 if display {
                     return [selectedItem] + items.filter { $0.title != selectedItem.title }
@@ -108,18 +109,34 @@ class ItemSessionView: UIView {
                     return [selectedItem]
                 }
             })
-        items.map { [CategorySession(header: "Popular Categories", items: $0)] }
+        // show dropdown items
+        items.map { [CategorySession(header: "What's popular", items: $0)] }
             .bind(to: dropdownTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        // fix size of dropdown
         items.map { CGFloat($0.count) * ItemSessionView.dropdownItemHeight }
             .bind(to: dropdownHeightConstraint.rx.constant)
             .disposed(by: disposeBag)
+        // binding selected dropdown item
         dropdownTableView.rx.modelSelected(DiscoverCategory.self)
             .bind(to: selectedCategoryObserver)
             .disposed(by: disposeBag)
-    }
-    
-    private func bindingItems() {
+        // binding next page trigger
+        itemsCollectionView.nextPageTrigger
+            .bind(to: nextPageTriggerObserver)
+            .disposed(by: disposeBag)
+        // selected distinct category
+        let selectedCategory = selectedCategoryObserver.distinctUntilChanged().map { _ in 1 }
+        // binding next page trigger
+        selectedCategory
+            .bind(to: nextPageTriggerObserver)
+            .disposed(by: disposeBag)
+        // scroll collection view to left when category selected
+        selectedCategory
+            .withUnretained(self)
+            .subscribe {  this, _ in
+                this.itemsCollectionView.setContentOffset(.init(x: 0, y: 0), animated: true)
+            }.disposed(by: disposeBag)
     }
 }
 
@@ -127,10 +144,10 @@ extension ItemSessionView: HasDisposeBag {}
 
 extension Reactive where Base: ItemSessionView {
     var selectedCategory: Observable<DiscoverCategory> {
-        return base.selectedCategoryObserver.asObservable()
+        return base.selectedCategoryObserver.asObservable().distinctUntilChanged()
     }
     var nextPage: Observable<Int> {
-        return base.itemsCollectionView.nextPageTrigger.startWith(1)
+        return base.nextPageTriggerObserver.asObservable()
     }
     var items: AnyObserver<MoviePage> {
         return base.itemsCollectionView.itemsResult

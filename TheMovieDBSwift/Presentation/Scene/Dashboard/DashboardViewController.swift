@@ -12,6 +12,7 @@ class DashboardViewController: RickViewController {
     @IBOutlet private weak var dashboardHeaderView: UIView!
     @IBOutlet private weak var searchView: RoundedSearchView!
     @IBOutlet private weak var popularItemSessionView: ItemSessionView!
+    @IBOutlet private weak var freeItemSessionView: ItemSessionView!
     
     private let viewModel: DashboardViewModelType
     
@@ -33,7 +34,8 @@ class DashboardViewController: RickViewController {
     }
     
     private func setupLayouts() {
-        popularItemSessionView.configure(title: "Some title", categories: DiscoverCategory.popularItems)
+        popularItemSessionView.configure(title: "What's Popular", categories: DiscoverCategory.popularItems)
+        freeItemSessionView.configure(title: "What's Popular", categories: DiscoverCategory.freeItems)
     }
     
     private func bindInput(_ input: DashboardViewModelInputType) {
@@ -42,14 +44,20 @@ class DashboardViewController: RickViewController {
         .map { (page: $0, category: $1) }
         .bind(to: input.fetchDiscoverMovies)
         .disposed(by: disposeBag)
+        
+        Observable.combineLatest(freeItemSessionView.rx.nextPage,
+                                 freeItemSessionView.rx.selectedCategory)
+        .map { (page: $0, category: $1) }
+        .bind(to: input.fetchFreeWatchMovies)
+        .disposed(by: disposeBag)
     }
     
     private func bindOutput(_ output: DashboardViewModelOutputType) {
         output.fetchPopularResult
             .bind(to: popularItemSessionView.rx.items)
             .disposed(by: disposeBag)
-        output.fetchPopularResult
-            .subscribe()
+        output.fetchFreeWatchResult
+            .bind(to: freeItemSessionView.rx.items)
             .disposed(by: disposeBag)
     }
 }

@@ -43,6 +43,7 @@ final class DashboardViewModel: BaseViewModel {
             .filter { $0.category == .movie }
             .bind(to: movieUseCase.input.fetchFreeWatchMovie)
             .disposed(by: disposeBag)
+
         fetchFreeWatchObserver
             .filter { $0.category == .TV }
             .bind(to: movieUseCase.input.fetchFreeWatchTV)
