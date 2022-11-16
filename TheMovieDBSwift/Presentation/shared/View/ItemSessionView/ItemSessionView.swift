@@ -118,27 +118,31 @@ class ItemSessionView: UIView {
             .bind(to: dropdownHeightConstraint.rx.constant)
             .disposed(by: disposeBag)
         // binding selected dropdown item
-        dropdownTableView.rx.modelSelected(DiscoverCategory.self)
+        let modelSelected = dropdownTableView.rx.modelSelected(DiscoverCategory.self)
+            .share()
+        // binding model selected to selected category
+        modelSelected
             .bind(to: selectedCategoryObserver)
             .disposed(by: disposeBag)
-        // binding next page trigger
-        itemsCollectionView.nextPageTrigger
-            .bind(to: nextPageTriggerObserver)
-            .disposed(by: disposeBag)
         // selected distinct category
-        let selectedCategory = selectedCategoryObserver
+        let distinctModelSelected = modelSelected
+            .skip(1)
             .distinctUntilChanged()
             .map { _ in 1 }
         // binding next page trigger
-        selectedCategory
+        distinctModelSelected
             .bind(to: nextPageTriggerObserver)
             .disposed(by: disposeBag)
         // scroll collection view to left when category selected
-        selectedCategory
+        distinctModelSelected
             .withUnretained(self)
             .subscribe {  this, _ in
                 this.itemsCollectionView.setContentOffset(.init(x: 0, y: 0), animated: true)
             }.disposed(by: disposeBag)
+        // binding next page trigger
+        itemsCollectionView.nextPageTrigger
+            .bind(to: nextPageTriggerObserver)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -151,9 +155,12 @@ extension Reactive where Base: ItemSessionView {
     }
     // output
     var selectedCategory: Observable<DiscoverCategory> {
-        return base.selectedCategoryObserver.asObservable()
+        return base.selectedCategoryObserver
+            .asObservable()
+            .distinctUntilChanged()
     }
     var nextPage: Observable<Int> {
-        return base.nextPageTriggerObserver.asObservable()
+        return base.nextPageTriggerObserver
+            .asObservable()
     }
 }

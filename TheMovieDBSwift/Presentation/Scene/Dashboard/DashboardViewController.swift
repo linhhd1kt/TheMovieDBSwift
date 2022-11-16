@@ -35,7 +35,7 @@ class DashboardViewController: RickViewController {
     
     private func setupLayouts() {
         popularItemSessionView.configure(title: "What's Popular", categories: DiscoverCategory.popularItems)
-        freeItemSessionView.configure(title: "What's Popular", categories: DiscoverCategory.freeItems)
+        freeItemSessionView.configure(title: "Free To Watch", categories: DiscoverCategory.freeItems)
     }
     
     private func bindInput(_ input: DashboardViewModelInputType) {
