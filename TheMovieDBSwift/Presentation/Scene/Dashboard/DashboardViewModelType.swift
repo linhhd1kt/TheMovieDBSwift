@@ -15,7 +15,7 @@ protocol DashboardViewModelType {
 protocol DashboardViewModelInputType {
     var fetchDiscoverMovies: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
     var fetchFreeWatchMovies: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
-    var fetchTrending: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
+    var fetchTrending: AnyObserver<DiscoverCategory> { get }
 }
 
 protocol DashboardViewModelOutputType {

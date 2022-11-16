@@ -15,9 +15,7 @@ class MovieUseCase {
     private let fetchPopularObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
     private let fetchFreeWatchMovieObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
     private let fetchFreeWatchTVObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
-    private let fetchTrendingObserver = PublishSubject<(page: Int,
-                                                        mediaType: MediaType,
-                                                        timeWindow: TimeWindow)>()
+    private let fetchTrendingObserver = PublishSubject<TimeWindow>()
     // MARK: - Other
     
     init(respository: MovieRepositoryType = MovieRepository(),
@@ -52,10 +50,8 @@ class MovieUseCase {
         
         fetchTrendingObserver
             .withUnretained(self)
-            .map { this, info in
-                this.translator.toTrendingRequest(page: info.page,
-                                                  mediaType: info.mediaType,
-                                                  timeWindow: info.timeWindow)}
+            .map { this, timeWindow in
+                this.translator.toTrendingRequest(timeWindow: timeWindow)}
             .bind(to: respository.fetchTrending.inputs)
             .disposed(by: disposeBag)
     }
@@ -78,7 +74,7 @@ extension MovieUseCase: MovieUseCaseInputType {
     var fetchFreeWatchTV: AnyObserver<(page: Int, category: DiscoverCategory)> {
         return fetchFreeWatchTVObserver.asObserver()
     }
-    var fetchTrending: AnyObserver<(page: Int, mediaType: MediaType, timeWindow: TimeWindow)> {
+    var fetchTrending: AnyObserver<TimeWindow> {
         fetchTrendingObserver.asObserver()
     }
 }

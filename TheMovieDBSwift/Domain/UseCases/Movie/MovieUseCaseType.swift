@@ -16,7 +16,7 @@ protocol MovieUseCaseInputType {
     var fetchPopular: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
     var fetchFreeWatchMovie: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
     var fetchFreeWatchTV: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
-    var fetchTrending: AnyObserver<(page: Int, mediaType: MediaType, timeWindow: TimeWindow)> { get }
+    var fetchTrending: AnyObserver<TimeWindow> { get }
 }
 
 protocol MovieUseCaseOutputType {

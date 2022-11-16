@@ -16,7 +16,7 @@ final class DashboardViewModel: BaseViewModel {
     // MARK: - Input
     private let fetchPopularObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
     private let fetchFreeWatchObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
-    private let fetchTrendingObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
+    private let fetchTrendingObserver = PublishSubject<DiscoverCategory>()
     // MARK: - Output
     private let errorObserver = BehaviorSubject<String>(value: "")
     private let popularResultObserver = BehaviorSubject<MoviePage>(value: .init())
@@ -54,7 +54,7 @@ final class DashboardViewModel: BaseViewModel {
             .disposed(by: disposeBag)
         // fetch trending
         fetchTrendingObserver
-            .map { (page: $0, mediaType: MediaType.all, timeWindow: TimeWindow(rawValue: $1.rawValue) ?? .day) }
+            .map { TimeWindow(rawValue: $0.rawValue) ?? .day }
             .bind(to: movieUseCase.input.fetchTrending)
             .disposed(by: disposeBag)
         movieUseCase.output
@@ -81,7 +81,7 @@ extension DashboardViewModel: DashboardViewModelInputType {
     var fetchFreeWatchMovies: AnyObserver<(page: Int, category: DiscoverCategory)> {
         return fetchFreeWatchObserver.asObserver()
     }
-    var fetchTrending: AnyObserver<(page: Int, category: DiscoverCategory)> {
+    var fetchTrending: AnyObserver<DiscoverCategory> {
         return fetchTrendingObserver.asObserver()
     }
 }

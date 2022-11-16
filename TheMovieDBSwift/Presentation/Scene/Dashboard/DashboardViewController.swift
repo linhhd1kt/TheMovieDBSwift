@@ -55,8 +55,6 @@ class DashboardViewController: RickViewController {
         .disposed(by: disposeBag)
         // trending
         trendingItemSessionView.rx.selectedCategory
-            .debug("XXX selectedCategory")
-            .map { (page: 1, category: $0) }
             .bind(to: input.fetchTrending)
             .disposed(by: disposeBag)
     }
