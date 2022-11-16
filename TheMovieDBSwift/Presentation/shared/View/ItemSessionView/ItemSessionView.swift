@@ -15,7 +15,7 @@ class ItemSessionView: UIView {
     @IBOutlet private weak var dropdownTableView: UITableView!
     @IBOutlet private weak var dropdownHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var itemsContainer: UIView!
-    fileprivate var itemsCollectionView = RickCollectionView<MoviePage>(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    fileprivate var itemsCollectionView = RickCollectionView<MoviePage>()
 
     fileprivate let categoryListObserver = PublishSubject<[DiscoverCategory]>()
     fileprivate let initialCategoryObserver = PublishSubject<DiscoverCategory>()
@@ -66,8 +66,7 @@ class ItemSessionView: UIView {
     }
     
     private func setupItemsCollectionView() {
-        itemsCollectionView.frame = itemsContainer.bounds
-        itemsContainer.addSubview(itemsCollectionView)
+        itemsContainer.attach(itemsCollectionView)
         itemsCollectionView.register(MovieCollectionCell.self)
         itemsCollectionView.configure(identifier: MovieCollectionCell.className, type: MovieCollectionCell.self) { _, model, cell in
             cell.configure(model)

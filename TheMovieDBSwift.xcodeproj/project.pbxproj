@@ -91,6 +91,7 @@
 		DC6E41AA28B8BE1A00429771 /* Pods_TheMovieDBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16138EC1972AD3B841A7C3AB /* Pods_TheMovieDBSwift.framework */; };
 		DC6E41AB28B8BE1A00429771 /* Pods_TheMovieDBSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16138EC1972AD3B841A7C3AB /* Pods_TheMovieDBSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC6E41B728B8C7BE00429771 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */; };
+		DC75C5592924856C00CA400E /* ConstraintAttachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC75C5582924856C00CA400E /* ConstraintAttachable.swift */; };
 		DC7C0F8929120A040075517C /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C0F8829120A040075517C /* UIView+Ex.swift */; };
 		DC833E3F28F3D8C40028DAFA /* LoginViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */; };
 		DC833E4128F3F5C90028DAFA /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC833E4028F3F5C90028DAFA /* ViewModelType.swift */; };
@@ -238,6 +239,7 @@
 		DC6E41A628B8B51B00429771 /* AuthUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCaseType.swift; sourceTree = "<group>"; };
 		DC6E41A828B8B6CE00429771 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
 		DC6E41B628B8C7BE00429771 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DC75C5582924856C00CA400E /* ConstraintAttachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintAttachable.swift; sourceTree = "<group>"; };
 		DC7C0F8829120A040075517C /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		DC833E3E28F3D8C40028DAFA /* LoginViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelType.swift; sourceTree = "<group>"; };
 		DC833E4028F3F5C90028DAFA /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
@@ -827,6 +829,7 @@
 				DC18B4E2290F7C7700CA9C6B /* UICollectionViewCell+Ex.swift */,
 				DC3C9F0529126F210075C81C /* BehaviorRelay+Ex.swift */,
 				DC7C0F8829120A040075517C /* UIView+Ex.swift */,
+				DC75C5582924856C00CA400E /* ConstraintAttachable.swift */,
 				DC2F321D291C956900351318 /* XibInstantiatable.swift */,
 			);
 			path = Extension;
@@ -1180,6 +1183,7 @@
 				DCA7DA7D28DD54680013996C /* ReamlError.swift in Sources */,
 				DC833E5028F52CC40028DAFA /* AuthRequest.swift in Sources */,
 				DC5487412901053D005106B0 /* Page.swift in Sources */,
+				DC75C5592924856C00CA400E /* ConstraintAttachable.swift in Sources */,
 				DC2F324A291DE56200351318 /* SelectedCategoryDropdownCell.swift in Sources */,
 				DC833E4628F52AC50028DAFA /* ActionResult.swift in Sources */,
 				DC54870928FE538F005106B0 /* NavigationViewModel.swift in Sources */,

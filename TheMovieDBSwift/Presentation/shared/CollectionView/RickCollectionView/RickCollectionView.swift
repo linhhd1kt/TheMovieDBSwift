@@ -23,26 +23,36 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configure()
+//        configure()
     }
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
-        configure()
+//        configure()
     }
     
-    private func configure() {
-        configureLayouts()
-    }
-    
-    private func configureLayouts() {
+    convenience init() {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 160, height: 320)
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
         layout.minimumLineSpacing = 0
-        collectionViewLayout = layout
+        self.init(frame: .zero, collectionViewLayout: layout)
+        contentInsetAdjustmentBehavior = .never
     }
+    
+//    private func configure() {
+//        configureLayouts()
+//    }
+//
+//    private func configureLayouts() {
+//        let layout = UICollectionViewFlowLayout()
+//        layout.itemSize = CGSize(width: 160, height: 320)
+//        layout.scrollDirection = .horizontal
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
+//        layout.minimumLineSpacing = 0
+//        collectionViewLayout = layout
+//    }
 
     func binding() {
         rx.reachEnd

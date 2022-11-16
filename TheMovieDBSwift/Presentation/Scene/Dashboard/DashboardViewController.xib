@@ -73,21 +73,21 @@
                             <rect key="frame" x="0.0" y="0.0" width="488" height="1260"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxN-FK-ZG3" customClass="ItemSessionView" customModule="TheMovieDBSwift" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="488" height="420"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="488" height="388"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="420" id="59V-mA-YTh"/>
+                                        <constraint firstAttribute="height" constant="388" id="59V-mA-YTh"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iR2-aB-Lpp">
-                                    <rect key="frame" x="0.0" y="420" width="488" height="420"/>
+                                    <rect key="frame" x="0.0" y="388" width="488" height="420"/>
                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="420" id="MeH-hJ-d3L"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZW-UG-1NO">
-                                    <rect key="frame" x="0.0" y="840" width="488" height="420"/>
+                                    <rect key="frame" x="0.0" y="808" width="488" height="452"/>
                                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 </view>
                             </subviews>
