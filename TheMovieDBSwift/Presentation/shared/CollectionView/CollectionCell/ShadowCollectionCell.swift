@@ -20,7 +20,7 @@ class ShadowCollectionCell: BaseCollectionCell {
 
             layerView.layer.masksToBounds = false
             layerView.layer.shadowOffset = .init(width: 3, height: 3)
-            layerView.layer.shadowColor = UIColor.black.cgColor
+            layerView.layer.shadowColor = design.style.colors.shadow.cgColor
             layerView.layer.shadowOpacity = 0.7
             layerView.layer.shadowRadius = 4
             
