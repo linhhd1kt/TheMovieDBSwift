@@ -38,7 +38,7 @@ class RickTableView<Page: Paginated>: UITableView {
     
     private func configureRefreshControl() {
         refreshControl = UIRefreshControl()
-        refreshControl?.tintColor = R.color.secondary()
+        refreshControl?.tintColor = design.style.colors.primary
     }
     
     private func configureLayouts() {
@@ -48,8 +48,8 @@ class RickTableView<Page: Paginated>: UITableView {
 
     private func configureSpiner() {
         let footer = MJRefreshAutoNormalFooter()
-        footer.loadingView?.color = R.color.secondary()
-        footer.stateLabel?.textColor = R.color.secondary()
+        footer.loadingView?.color = design.style.colors.secondary
+        footer.stateLabel?.textColor = design.style.colors.secondary
         mj_footer = footer
     }
 

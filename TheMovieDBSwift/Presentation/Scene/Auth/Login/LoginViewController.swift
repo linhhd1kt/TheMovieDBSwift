@@ -10,9 +10,9 @@ import UIKit
 import RxCocoa
 import ProgressHUD
 
-final class LoginViewController: BaseViewController {
-    @IBOutlet private weak var usernameTextField: UITextField!
-    @IBOutlet private weak var passwordTextField: UITextField!
+final class LoginViewController: RickViewController {
+    @IBOutlet private weak var usernameInput: Input!
+    @IBOutlet private weak var passwordInput: Input!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var forgotPasswordButton: UIButton!
     @IBOutlet private weak var registerButton: UIButton!
@@ -24,9 +24,10 @@ final class LoginViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewModel: LoginViewModelType = LoginViewModel()) {
+    init(viewModel: LoginViewModelType = LoginViewModel(),
+         navigationViewModel: NavigationViewModelType) {
         self.viewModel = viewModel
-        super.init()
+        super.init(navigationViewModel: navigationViewModel)
     }
     
     override func viewDidLoad() {
@@ -36,11 +37,11 @@ final class LoginViewController: BaseViewController {
     }
     
     private func bindInput(_ input: LoginViewModelInputType) {
-        usernameTextField.rx.text
+        usernameInput.rx.outputText
             .filterNil()
             .bind(to: input.username)
             .disposed(by: disposeBag)
-        passwordTextField.rx.text
+        passwordInput.rx.outputText
             .filterNil()
             .bind(to: input.password)
             .disposed(by: disposeBag)
@@ -51,15 +52,12 @@ final class LoginViewController: BaseViewController {
 
     private func bindOutput(_ output: LoginViewModelOutputType) {
         output.loginResult.enabled
-            .debug("Login Action Enabled")
             .bind(to: loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
         output.loginResult.errors
-            .debug("Error")
             .bind(to: rx.showError)
             .disposed(by: disposeBag)
         output.loginResult.executing
-            .debug("Executing")
             .bind(to: rx.loading)
             .disposed(by: disposeBag)
     }

@@ -17,49 +17,48 @@ class AppCoordinator: BaseCoordinator {
         return preference
     }
     private let navigationItemFactory: NavigationItemCreatable
+    private let navigationViewModel: NavigationViewModelType
     
-    init(navigationItemFactory: NavigationItemCreatable = NavigationItemFactory()) {
+    init(navigationItemFactory: NavigationItemCreatable = NavigationItemFactory(),
+         navigationViewModel: NavigationViewModelType = NavigationViewModel()) {
         self.navigationItemFactory = navigationItemFactory
+        self.navigationViewModel = navigationViewModel
         super.init(navigationController: UINavigationController())
         setupAppearance()
     }
     
     override func start() {
-        if let _: String = userPreference.value(for: UserPreferencesKey.requestTokenId.rawValue) {
-            showDashboard()
-        } else {
-            showSignIn()
-        }
+        showDashboard()
     }
     
     func setupAppearance() {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.titleTextAttributes = [.foregroundColor: R.color.onBackground]
-            appearance.backgroundColor = R.color.primary()
+            appearance.titleTextAttributes = [.foregroundColor: design.style.colors.background]
+            appearance.backgroundColor = design.style.colors.primary
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         } else {
-            UINavigationBar.appearance().barTintColor = R.color.primary()
-            UINavigationBar.appearance().tintColor = R.color.background()
-            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: R.color.onPrimary]
+            UINavigationBar.appearance().barTintColor = design.style.colors.surfaceTint
+            UINavigationBar.appearance().tintColor = design.style.colors.background
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: design.style.colors.onBackground]
         }
     }
     
-    private func showSignIn() {
+    private func showLogin() {
         removeChildCoordinators()
         let viewModel = LoginViewModel()
         let coordinator = LoginCoordinator(navigationController: self.navigationController,
-                                           viewModel: viewModel)
+                                           viewModel: viewModel,
+                                           navigationViewModel: navigationViewModel)
         start(coordinator: coordinator)
     }
     
     private func showDashboard() {
         removeChildCoordinators()
-        let viewModel = NavigationViewModel()
         let coordinator = DrawerMenuCoordinator(navigationController: self.navigationController,
-                                                viewModel: viewModel)
+                                                navigationViewModel: navigationViewModel)
         start(coordinator: coordinator)
     }
 }
@@ -71,7 +70,9 @@ protocol LoginListener {
 
 extension AppCoordinator: LoginListener {
     func didLogedIn() {
+        showDashboard()
     }
     func didLogOut() {
+        showLogin()
     }
 }

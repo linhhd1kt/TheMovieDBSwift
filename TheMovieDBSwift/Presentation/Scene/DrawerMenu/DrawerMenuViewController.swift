@@ -43,8 +43,8 @@ class DrawerMenuViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     private func bindInput(_ input: NavigationViewModelInputType) {
-        tableView.rx.itemSelected        
-            .compactMap { DrawerMenuScreen(rawValue: $0.row) }
+        tableView.rx.itemSelected
+            .compactMap { Screen(rawValue: $0.row) }
             .bind(to: input.navigationSelect)
             .disposed(by: disposeBag)
     }

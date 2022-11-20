@@ -21,7 +21,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0n-Jr-fRQ">
                         <rect key="frame" x="16" y="12.5" width="167" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                        <color key="textColor" name="on-secondary-variant"/>
+                        <color key="textColor" name="on-secondary"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -41,8 +41,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="on-secondary-variant">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="on-secondary">
+            <color red="0.32549019607843138" green="0.37254901960784315" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

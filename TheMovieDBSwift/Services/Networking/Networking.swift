@@ -57,8 +57,7 @@ class Network: Networking {
                             observer.onNext(object)
                             observer.onCompleted()
                         } catch {
-                            print(error)
-                            observer.onError(error)
+                           observer.onError(error)
                         }
                     }
                 case .failure(let error):

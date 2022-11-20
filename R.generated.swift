@@ -105,41 +105,73 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 13 colors.
+  /// This `R.color` struct is generated, and contains static references to 29 colors.
   struct color {
-    /// Color `AccentColor`.
-    static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
+    /// Color `MainColor`.
+    static let mainColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "MainColor")
     /// Color `background`.
     static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "background")
-    /// Color `on-background-variant`.
-    static let onBackgroundVariant = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-background-variant")
+    /// Color `error-container`.
+    static let errorContainer = Rswift.ColorResource(bundle: R.hostingBundle, name: "error-container")
+    /// Color `error`.
+    static let error = Rswift.ColorResource(bundle: R.hostingBundle, name: "error")
+    /// Color `inverse-on-surface`.
+    static let inverseOnSurface = Rswift.ColorResource(bundle: R.hostingBundle, name: "inverse-on-surface")
+    /// Color `inverse-primary`.
+    static let inversePrimary = Rswift.ColorResource(bundle: R.hostingBundle, name: "inverse-primary")
+    /// Color `inverse-surface`.
+    static let inverseSurface = Rswift.ColorResource(bundle: R.hostingBundle, name: "inverse-surface")
     /// Color `on-background`.
     static let onBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-background")
+    /// Color `on-error-container`.
+    static let onErrorContainer = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-error-container")
+    /// Color `on-error`.
+    static let onError = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-error")
+    /// Color `on-primary-container`.
+    static let onPrimaryContainer = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-primary-container")
     /// Color `on-primary`.
     static let onPrimary = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-primary")
-    /// Color `on-secondary-variant`.
-    static let onSecondaryVariant = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-secondary-variant")
+    /// Color `on-secondary-container`.
+    static let onSecondaryContainer = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-secondary-container")
     /// Color `on-secondary`.
     static let onSecondary = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-secondary")
+    /// Color `on-surface-variant`.
+    static let onSurfaceVariant = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-surface-variant")
+    /// Color `on-surface`.
+    static let onSurface = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-surface")
+    /// Color `on-ternary-container`.
+    static let onTernaryContainer = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-ternary-container")
     /// Color `on-ternary`.
     static let onTernary = Rswift.ColorResource(bundle: R.hostingBundle, name: "on-ternary")
-    /// Color `primary-variant`.
-    static let primaryVariant = Rswift.ColorResource(bundle: R.hostingBundle, name: "primary-variant")
+    /// Color `outline`.
+    static let outline = Rswift.ColorResource(bundle: R.hostingBundle, name: "outline")
+    /// Color `primary-container`.
+    static let primaryContainer = Rswift.ColorResource(bundle: R.hostingBundle, name: "primary-container")
     /// Color `primary`.
     static let primary = Rswift.ColorResource(bundle: R.hostingBundle, name: "primary")
-    /// Color `secondary-variant`.
-    static let secondaryVariant = Rswift.ColorResource(bundle: R.hostingBundle, name: "secondary-variant")
+    /// Color `secondary-container`.
+    static let secondaryContainer = Rswift.ColorResource(bundle: R.hostingBundle, name: "secondary-container")
     /// Color `secondary`.
     static let secondary = Rswift.ColorResource(bundle: R.hostingBundle, name: "secondary")
+    /// Color `shadow`.
+    static let shadow = Rswift.ColorResource(bundle: R.hostingBundle, name: "shadow")
+    /// Color `surface-tint`.
+    static let surfaceTint = Rswift.ColorResource(bundle: R.hostingBundle, name: "surface-tint")
+    /// Color `surface-variant`.
+    static let surfaceVariant = Rswift.ColorResource(bundle: R.hostingBundle, name: "surface-variant")
+    /// Color `surface`.
+    static let surface = Rswift.ColorResource(bundle: R.hostingBundle, name: "surface")
+    /// Color `ternary-container`.
+    static let ternaryContainer = Rswift.ColorResource(bundle: R.hostingBundle, name: "ternary-container")
     /// Color `ternary`.
     static let ternary = Rswift.ColorResource(bundle: R.hostingBundle, name: "ternary")
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "MainColor", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func accentColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.accentColor, compatibleWith: traitCollection)
+    static func mainColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.mainColor, compatibleWith: traitCollection)
     }
     #endif
 
@@ -153,6 +185,51 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "error", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func error(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.error, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "error-container", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func errorContainer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.errorContainer, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "inverse-on-surface", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func inverseOnSurface(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.inverseOnSurface, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "inverse-primary", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func inversePrimary(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.inversePrimary, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "inverse-surface", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func inverseSurface(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.inverseSurface, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "on-background", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -162,11 +239,20 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "on-background-variant", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "on-error", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func onBackgroundVariant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.onBackgroundVariant, compatibleWith: traitCollection)
+    static func onError(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.onError, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "on-error-container", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func onErrorContainer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.onErrorContainer, compatibleWith: traitCollection)
     }
     #endif
 
@@ -180,6 +266,15 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "on-primary-container", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func onPrimaryContainer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.onPrimaryContainer, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "on-secondary", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -189,11 +284,29 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "on-secondary-variant", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "on-secondary-container", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func onSecondaryVariant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.onSecondaryVariant, compatibleWith: traitCollection)
+    static func onSecondaryContainer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.onSecondaryContainer, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "on-surface", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func onSurface(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.onSurface, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "on-surface-variant", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func onSurfaceVariant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.onSurfaceVariant, compatibleWith: traitCollection)
     }
     #endif
 
@@ -207,6 +320,24 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "on-ternary-container", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func onTernaryContainer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.onTernaryContainer, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "outline", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func outline(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.outline, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "primary", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -216,11 +347,11 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "primary-variant", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "primary-container", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func primaryVariant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.primaryVariant, compatibleWith: traitCollection)
+    static func primaryContainer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.primaryContainer, compatibleWith: traitCollection)
     }
     #endif
 
@@ -234,11 +365,47 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "secondary-variant", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "secondary-container", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func secondaryVariant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.secondaryVariant, compatibleWith: traitCollection)
+    static func secondaryContainer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.secondaryContainer, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "shadow", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func shadow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.shadow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "surface", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func surface(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.surface, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "surface-tint", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func surfaceTint(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.surfaceTint, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "surface-variant", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func surfaceVariant(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.surfaceVariant, compatibleWith: traitCollection)
     }
     #endif
 
@@ -251,11 +418,20 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "ternary-container", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func ternaryContainer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.ternaryContainer, compatibleWith: traitCollection)
+    }
+    #endif
+
     #if os(watchOS)
-    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "MainColor", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
-    static func accentColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.accentColor.name)
+    static func mainColor(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.mainColor.name)
     }
     #endif
 
@@ -268,6 +444,46 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "error", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func error(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.error.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "error-container", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func errorContainer(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.errorContainer.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "inverse-on-surface", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func inverseOnSurface(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.inverseOnSurface.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "inverse-primary", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func inversePrimary(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.inversePrimary.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "inverse-surface", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func inverseSurface(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.inverseSurface.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "on-background", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func onBackground(_: Void = ()) -> UIKit.UIColor? {
@@ -276,10 +492,18 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "on-background-variant", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "on-error", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
-    static func onBackgroundVariant(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.onBackgroundVariant.name)
+    static func onError(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.onError.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "on-error-container", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func onErrorContainer(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.onErrorContainer.name)
     }
     #endif
 
@@ -292,6 +516,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "on-primary-container", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func onPrimaryContainer(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.onPrimaryContainer.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "on-secondary", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func onSecondary(_: Void = ()) -> UIKit.UIColor? {
@@ -300,10 +532,26 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "on-secondary-variant", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "on-secondary-container", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
-    static func onSecondaryVariant(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.onSecondaryVariant.name)
+    static func onSecondaryContainer(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.onSecondaryContainer.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "on-surface", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func onSurface(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.onSurface.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "on-surface-variant", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func onSurfaceVariant(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.onSurfaceVariant.name)
     }
     #endif
 
@@ -316,6 +564,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "on-ternary-container", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func onTernaryContainer(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.onTernaryContainer.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "outline", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func outline(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.outline.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "primary", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func primary(_: Void = ()) -> UIKit.UIColor? {
@@ -324,10 +588,10 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "primary-variant", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "primary-container", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
-    static func primaryVariant(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.primaryVariant.name)
+    static func primaryContainer(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.primaryContainer.name)
     }
     #endif
 
@@ -340,10 +604,42 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "secondary-variant", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "secondary-container", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
-    static func secondaryVariant(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.secondaryVariant.name)
+    static func secondaryContainer(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.secondaryContainer.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "shadow", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func shadow(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.shadow.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "surface", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func surface(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.surface.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "surface-tint", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func surfaceTint(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.surfaceTint.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "surface-variant", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func surfaceVariant(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.surfaceVariant.name)
     }
     #endif
 
@@ -352,6 +648,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func ternary(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.ternary.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "ternary-container", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func ternaryContainer(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.ternaryContainer.name)
     }
     #endif
 
@@ -453,7 +757,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 12 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
   struct nib {
     /// Nib `CategoryDropdownCell`.
     static let categoryDropdownCell = _R.nib._CategoryDropdownCell()
@@ -465,6 +769,8 @@ struct R: Rswift.Validatable {
     static let drawerMenuCell = _R.nib._DrawerMenuCell()
     /// Nib `DrawerMenuViewController`.
     static let drawerMenuViewController = _R.nib._DrawerMenuViewController()
+    /// Nib `Input`.
+    static let input = _R.nib._Input()
     /// Nib `ItemSessionView`.
     static let itemSessionView = _R.nib._ItemSessionView()
     /// Nib `LoginViewController`.
@@ -517,6 +823,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.drawerMenuViewController) instead")
     static func drawerMenuViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.drawerMenuViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "Input", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.input) instead")
+    static func input(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.input)
     }
     #endif
 
@@ -594,6 +908,10 @@ struct R: Rswift.Validatable {
 
     static func drawerMenuViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.drawerMenuViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func input(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.input.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func itemSessionView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -853,6 +1171,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "bg-header", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg-header' is used in nib 'DashboardViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in nib 'DashboardViewController', but couldn't be loaded.") }
           if UIKit.UIColor(named: "on-primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-primary' is used in nib 'DashboardViewController', but couldn't be loaded.") }
         }
       }
@@ -874,6 +1193,17 @@ struct _R: Rswift.Validatable {
     struct _DrawerMenuViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "DrawerMenuViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _Input: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "Input"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -960,8 +1290,8 @@ struct _R: Rswift.Validatable {
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "chevron.down") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'chevron.down' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "on-secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-secondary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'secondary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "on-ternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-ternary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "ternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ternary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
         }
       }
 

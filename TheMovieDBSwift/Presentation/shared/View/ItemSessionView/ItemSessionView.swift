@@ -60,12 +60,11 @@ class ItemSessionView: UIView {
         dropdownTableView.register(CategoryDropdownCell.self)
         dropdownTableView.register(SelectedCategoryDropdownCell.self)
         dropdownTableView.rowHeight = ItemSessionView.dropdownItemHeight
-        dropdownTableView.backgroundColor = R.color.secondary()
+        dropdownTableView.backgroundColor = design.style.colors.secondary
         dropdownTableView.cornerRadius = ItemSessionView.dropdownItemHeight / 2
         dropdownTableView.separatorStyle = .none
         dropdownTableView.isScrollEnabled = false
         dropdownTableView.layer.cornerRadius = ItemSessionView.dropdownItemHeight / 2
-        dropdownTableView.backgroundColor = R.color.secondary()
     }
     
     private func setupItemsCollectionView() {

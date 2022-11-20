@@ -348,3 +348,5 @@ extension UIView {
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
       }
 }
+
+extension UIView: HasDeSign {}

@@ -33,9 +33,7 @@ final class LoginViewModel: BaseViewModel {
         // login button enabled when username and password is not empty
         let loginInfo = Observable.combineLatest(usernameTextObserver, passwordTextObserver)
         loginInfo
-            .debug("Login Info")
             .map { !$0.isEmpty && !$1.isEmpty }
-            .debug("Login Info Valid")
             .bind(to: loginButtonEnabledObserver)
             .disposed(by: disposeBag)
         loginActionObserver
@@ -77,10 +75,8 @@ extension LoginViewModel: LoginViewModelOutputType {
         return loginButtonEnabledObserver
     }
     var loginResult: ActionResult<Credential> {
-        let enabled = Observable.combineLatestAll(usecase.output.loginResult.enabled.debug("Login Result Enabled"),
-                                                  loginButtonEnabledObserver.debug("Login Button Enabled"))
-            .debug("Login Result Enabled combine with login button")
-        return usecase.output.loginResult
-            .swapEnabled(enabled)
+        let enabled = Observable.combineLatestAll(usecase.output.loginResult.enabled,
+                                                  loginButtonEnabledObserver)
+        return usecase.output.loginResult.swapEnabled(enabled)
     }
 }

@@ -43,21 +43,21 @@ class CircleView: UIView {
         // circleLayer path defined to circularPath
         circleLayer.path = circularPath.cgPath
         // ui edits
-        circleLayer.fillColor = R.color.primary()?.cgColor
+        circleLayer.fillColor = design.style.colors.secondary.cgColor
         circleLayer.lineCap = .round
         circleLayer.lineWidth = 8
         circleLayer.strokeEnd = 1.0
-        circleLayer.strokeColor = R.color.primary()?.cgColor
+        circleLayer.strokeColor = design.style.colors.secondary.cgColor
         // added circleLayer to layer
         percentContainerView.layer.addSublayer(circleLayer)
         // progressLayer path defined to circularPath
         progressLayer.path = circularPath.cgPath
         // ui edits
-        progressLayer.fillColor = R.color.primary()?.cgColor
+        progressLayer.fillColor = design.style.colors.secondary.cgColor
         progressLayer.lineCap = .round
         progressLayer.lineWidth = 4
         progressLayer.strokeEnd = 0
-        progressLayer.strokeColor = R.color.secondary()?.cgColor
+        progressLayer.strokeColor = design.style.colors.tertiary.cgColor
         // added progressLayer to layer
         percentContainerView.layer.addSublayer(progressLayer)
     }

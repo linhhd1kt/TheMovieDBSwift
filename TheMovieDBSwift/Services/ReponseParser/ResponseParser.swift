@@ -13,6 +13,11 @@ protocol ResponseParsable {
 }
 
 struct NetworkReponse: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case statusCode = "status_code"
+        case statusMessage = "status_message"
+        case success = "success"
+    }
     let statusCode: Int
     let statusMessage: String
     let success: Bool

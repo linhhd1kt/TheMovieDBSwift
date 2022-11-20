@@ -69,8 +69,13 @@ extension API: TargetType {
         case .createRequestToken:
             return .requestParameters(parameters: ["api_key": AppConfiguration().apiKey],
                                       encoding: URLEncoding.queryString)
-        case .createSessionWithLogin(let parameters):
+        case .createSessionWithLogin(var parameters):
             let urlParameter: [String: Any] = ["api_key": AppConfiguration().apiKey]
+            if let token = parameters["request_token"] as? String {
+                if token.isEmpty {
+                    parameters.removeValue(forKey: "request_token")
+                }
+            }
             return .requestCompositeParameters(bodyParameters: parameters,
                                                bodyEncoding: URLEncoding.httpBody,
                                                urlParameters: urlParameter)

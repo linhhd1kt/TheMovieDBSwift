@@ -9,7 +9,7 @@ protocol DashboardNavigatable {
 }
 
 class DrawerMenuCoordinator: BaseCoordinator {
-    private let viewModel: NavigationViewModelType
+    private let navigationViewModel: NavigationViewModelType
     
     private let menuNavigationItem: UIBarButtonItem
     private let logoNavigationItem: UIButton
@@ -17,7 +17,7 @@ class DrawerMenuCoordinator: BaseCoordinator {
     private let searchNavigationItem: UIBarButtonItem
     
     init(navigationController: UINavigationController,
-         viewModel: NavigationViewModelType,
+         navigationViewModel: NavigationViewModelType,
          navigationItemFactory: NavigationItemCreatable = NavigationItemFactory()) {
        
         // initial navigation items
@@ -30,16 +30,16 @@ class DrawerMenuCoordinator: BaseCoordinator {
         navigationItem.titleView = logoNavigationItem
         navigationItem.rightBarButtonItems = [searchNavigationItem, profileNavigationItem]
 
-        self.viewModel = viewModel
+        self.navigationViewModel = navigationViewModel
         super.init(navigationController: navigationController)
     }
 
     override func start() {
         setUpSideMenu()
-        bindOutput(viewModel.output)
+        bindOutput(navigationViewModel.output)
     }
 
-    func selectScreen(_ screen: DrawerMenuScreen) {
+    func selectScreen(_ screen: Screen) {
         logger.info("DrawerMenuCoordinator selectScreen: \(screen)")
         switch screen {
         case .menu:
@@ -51,7 +51,7 @@ class DrawerMenuCoordinator: BaseCoordinator {
             let viewModel = DashboardViewModel()
             let coordinator = DashboardCoordinator(navigationController: self.navigationController,
                                                    viewModel: viewModel,
-                                                   navigationViewModel: self.viewModel)
+                                                   navigationViewModel: self.navigationViewModel)
             start(coordinator: coordinator)
             self.navigationController.dismiss(animated: true)
         case .profile:
@@ -62,12 +62,23 @@ class DrawerMenuCoordinator: BaseCoordinator {
             let viewModel = MovieListViewModel()
             let coordinator = MovieListCoordinator(navigationController: self.navigationController,
                                                    viewModel: viewModel,
-                                                   navigationViewModel: self.viewModel)
+                                                   navigationViewModel: self.navigationViewModel)
             start(coordinator: coordinator)
             self.navigationController.dismiss(animated: true)
         case .settings:
             self.navigationController.dismiss(animated: true)
         case .signOut:
+            self.navigationController.dismiss(animated: true)
+        case .signUp:
+            print("tap sign up in profile menu")
+        case .signIn:
+            let viewModel = LoginViewModel()
+            let coordinator = LoginCoordinator(navigationController: self.navigationController,
+                                               viewModel: viewModel,
+                                               navigationViewModel: navigationViewModel)
+            start(coordinator: coordinator)
+        case .toggleTheme:
+            design.toggleTheme()
             self.navigationController.dismiss(animated: true)
         }
     }
@@ -83,20 +94,20 @@ class DrawerMenuCoordinator: BaseCoordinator {
     
     private func setUpSideMenu() {
         // Define the menus
-        let drawer = DrawerMenuViewController(viewModel: self.viewModel)
+        let drawer = DrawerMenuViewController(viewModel: self.navigationViewModel)
         let leftMenuNavigationController = SideMenuNavigationController(rootViewController: drawer)
         SideMenuManager.default.leftMenuNavigationController = leftMenuNavigationController
         leftMenuNavigationController.navigationBar.isHidden = true
         leftMenuNavigationController.blurEffectStyle = .prominent
 
         let style = SideMenuPresentationStyle.menuSlideIn
-        style.backgroundColor = R.color.primary() ?? .black
-        style.presentingEndAlpha = 0.32
-        style.onTopShadowColor = R.color.primary() ?? .black
+        style.backgroundColor = design.style.colors.background
+//        style.presentingEndAlpha = 0.32
+        style.onTopShadowColor = design.style.colors.primary
         style.onTopShadowRadius = 4.0
         style.onTopShadowOpacity = 0.2
         style.onTopShadowOffset = CGSize(width: 2.0, height: 0.0)
-        
+//
         var settings = SideMenuSettings()
         settings.presentationStyle = style
         settings.menuWidth = max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.75), 240)

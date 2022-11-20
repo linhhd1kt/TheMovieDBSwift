@@ -8,6 +8,11 @@
 import Foundation
 
 struct CredentialResponse: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case success = "success"
+        case expiresAt = "expires_at"
+        case requestToken = "request_token"
+    }
     let success: Bool
     let expiresAt: String?
     let requestToken: String?

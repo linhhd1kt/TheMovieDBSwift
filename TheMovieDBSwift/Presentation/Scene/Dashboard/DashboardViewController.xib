@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -51,7 +50,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="background"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="dQt-c3-YPR" secondAttribute="bottom" constant="16" id="0Zi-5P-FHY"/>
                         <constraint firstAttribute="bottom" secondItem="SK3-pu-cui" secondAttribute="bottom" id="150-eF-1SA"/>
@@ -76,24 +75,24 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxN-FK-ZG3" customClass="ItemSessionView" customModule="TheMovieDBSwift" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="488" height="388"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" name="background"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="388" id="59V-mA-YTh"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iR2-aB-Lpp" customClass="ItemSessionView" customModule="TheMovieDBSwift" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="388" width="488" height="420"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="background"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="420" id="MeH-hJ-d3L"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZW-UG-1NO" customClass="ItemSessionView" customModule="TheMovieDBSwift" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="808" width="488" height="452"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="background"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" name="background"/>
                             <constraints>
                                 <constraint firstItem="xxN-FK-ZG3" firstAttribute="leading" secondItem="eqn-B1-r0g" secondAttribute="leading" id="1CW-W5-hG3"/>
                                 <constraint firstAttribute="trailing" secondItem="iR2-aB-Lpp" secondAttribute="trailing" id="7AC-m7-Npk"/>
@@ -109,6 +108,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" name="background"/>
                     <constraints>
                         <constraint firstItem="eqn-B1-r0g" firstAttribute="trailing" secondItem="mb8-B7-nzh" secondAttribute="trailing" id="0lo-Bt-s5S"/>
                         <constraint firstItem="eqn-B1-r0g" firstAttribute="bottom" secondItem="mb8-B7-nzh" secondAttribute="bottom" id="3v3-m8-92r"/>
@@ -121,7 +121,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="N1M-wV-zPR"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="background"/>
             <constraints>
                 <constraint firstItem="Vvu-gK-cYG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0td-Qv-Tcb"/>
                 <constraint firstItem="nsX-8I-1ej" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5pn-Rk-333"/>
@@ -138,11 +138,11 @@
     </objects>
     <resources>
         <image name="bg-header" width="880" height="600"/>
+        <namedColor name="background">
+            <color red="0.99215686274509807" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="on-primary">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -11,15 +11,19 @@ import UIKit
 class LoginCoordinator: BaseCoordinator {
     
     let viewModel: LoginViewModelType
+    let navigationViewModel: NavigationViewModelType
     
     init(navigationController: UINavigationController,
-         viewModel: LoginViewModelType) {
+         viewModel: LoginViewModelType,
+         navigationViewModel: NavigationViewModelType) {
         self.viewModel = viewModel
+        self.navigationViewModel = navigationViewModel
         super.init(navigationController: navigationController)
     }
     
     override func start() {
-        let loginViewController = LoginViewController(viewModel: viewModel)
+        let loginViewController = LoginViewController(viewModel: viewModel,
+                                                      navigationViewModel: navigationViewModel)
         viewModel.output
             .loginResult
             .elements

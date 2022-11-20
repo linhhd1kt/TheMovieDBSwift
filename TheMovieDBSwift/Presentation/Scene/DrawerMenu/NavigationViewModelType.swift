@@ -13,10 +13,10 @@ protocol NavigationViewModelType {
 }
 
 protocol NavigationViewModelInputType {
-    var navigationSelect: AnyObserver<DrawerMenuScreen> { get }
+    var navigationSelect: AnyObserver<Screen> { get }
 }
 
 protocol NavigationViewModelOutputType {
-    var navigationSelected: Observable<DrawerMenuScreen> { get }
-    var menuItems: Observable<[DrawerMenuScreen]> { get }
+    var navigationSelected: Observable<Screen> { get }
+    var menuItems: Observable<[Screen]> { get }
 }

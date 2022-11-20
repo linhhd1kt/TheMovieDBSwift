@@ -18,7 +18,7 @@ import UIKit
 extension Refreshable where Self: UIViewController {
     func installRefreshControl() {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = R.color.primary()
+        refreshControl.tintColor = design.style.colors.surfaceTint
         refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
         self.refreshControl = refreshControl
         

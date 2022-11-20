@@ -10,7 +10,7 @@ import UIKit
 class DrawerMenuCell: UITableViewCell {
     @IBOutlet private weak var menuItemLabel: UILabel!
 
-    func configure(model: DrawerMenuScreen) {
+    func configure(model: Screen) {
         self.selectionStyle = .none
         self.menuItemLabel.text = model.name
     }

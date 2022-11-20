@@ -22,7 +22,8 @@ class RickViewController: BaseViewController {
     var profileNavigationItem: UIBarButtonItem
     var searchNavigationItem: UIBarButtonItem
     
-    let navigationViewModel: NavigationViewModelType
+    private let profileAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    private let navigationViewModel: NavigationViewModelType
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -43,6 +44,7 @@ class RickViewController: BaseViewController {
         super.viewDidLoad()
         setupGesture()
         setupNavigationItem()
+        setupPopUp()
         bindNavigationInput(navigationViewModel.input)
     }
     
@@ -58,13 +60,19 @@ class RickViewController: BaseViewController {
     
     private func bindNavigationInput(_ input: NavigationViewModelInputType) {
         ControlEvent.merge(
-            menuNavigationItem.rx.tap.map { DrawerMenuScreen.menu },
-            logoNavigationItem.rx.tap.map { DrawerMenuScreen.dashboard },
-            profileNavigationItem.rx.tap.map { DrawerMenuScreen.profile },
-            searchNavigationItem.rx.tap.map { DrawerMenuScreen.search }
+            menuNavigationItem.rx.tap.map { Screen.menu },
+            logoNavigationItem.rx.tap.map { Screen.dashboard },
+            searchNavigationItem.rx.tap.map { Screen.search }
         )
         .bind(to: navigationViewModel.input.navigationSelect)
         .disposed(by: disposeBag)
+        
+        profileNavigationItem.rx.tap
+            .withUnretained(self)
+            .subscribe { this, _ in
+                this.present(this.profileAlert, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func setupGesture() {
@@ -81,6 +89,19 @@ class RickViewController: BaseViewController {
         navigationItem.leftBarButtonItem = menuNavigationItem
         navigationItem.titleView = logoNavigationItem
         navigationItem.rightBarButtonItems = [searchNavigationItem, profileNavigationItem]
+    }
+    
+    private func setupPopUp() {
+        let loginAction = UIAlertAction(title: "Login", style: .default) { [weak self] _ in
+            self?.navigationViewModel.input.navigationSelect.onNext(.signIn)
+        }
+        let signUpAction = UIAlertAction(title: "Sign Up", style: .default) { [weak self] _ in
+            self?.navigationViewModel.input.navigationSelect.onNext(.signUp)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
+        profileAlert.addAction(loginAction)
+        profileAlert.addAction(signUpAction)
+        profileAlert.addAction(cancelAction)
     }
     
     func disableSideMenu() {

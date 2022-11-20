@@ -52,4 +52,5 @@ class BaseCoordinator: NSObject, CoordinatorType {
     }
 }
 
-extension BaseCoordinator: HasDisposeBag {}
+extension BaseCoordinator: HasDisposeBag { }
+extension BaseCoordinator: HasDeSign { }

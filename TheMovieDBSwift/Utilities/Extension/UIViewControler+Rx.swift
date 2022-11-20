@@ -11,6 +11,8 @@ import UIKit
 import Action
 import ProgressHUD
 
+extension UIViewController: HasDeSign {}
+
 extension Reactive where Base: UIViewController {
     var showError: Binder<ActionError> {
         return Binder(self.base) { view, actionError in
@@ -32,11 +34,11 @@ extension Reactive where Base: UIViewController {
     
     var loading: Binder<Bool> {
         return Binder(self.base) { _, isLoading in
-            ProgressHUD.colorBackground = R.color.ternary() ?? .cyan
+            ProgressHUD.colorBackground = base.design.style.colors.surfaceTint
             ProgressHUD.colorHUD = .clear
             ProgressHUD.colorProgress = .clear
             ProgressHUD.colorAnimation = .clear
-            ProgressHUD.colorAnimation = R.color.primary() ?? .cyan
+            ProgressHUD.colorAnimation = base.design.style.colors.primary
             if isLoading {
                 ProgressHUD.showSucceed()
             } else {

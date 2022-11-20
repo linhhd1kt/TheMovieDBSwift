@@ -33,14 +33,15 @@
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnP-5T-LWx" userLabel="Search Button">
                             <rect key="frame" x="181" y="0.0" width="120" height="59"/>
-                            <color key="backgroundColor" name="secondary"/>
+                            <color key="backgroundColor" name="ternary"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="ShL-0t-bLb"/>
                             </constraints>
+                            <color key="tintColor" name="surface-tint"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Search">
                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
-                                <color key="baseForegroundColor" name="on-primary"/>
+                                <color key="baseForegroundColor" name="on-ternary"/>
                             </buttonConfiguration>
                         </button>
                     </subviews>
@@ -74,16 +75,19 @@
     </objects>
     <resources>
         <namedColor name="background">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99215686274509807" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="on-background">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10196078431372549" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="on-primary">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="on-ternary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="secondary">
-            <color red="0.1289999932050705" green="0.81599998474121094" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="surface-tint">
+            <color red="0.047058823529411764" green="0.38039215686274508" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ternary">
+            <color red="0.42352941176470588" green="0.3411764705882353" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

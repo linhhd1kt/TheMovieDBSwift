@@ -40,8 +40,7 @@ class MovieListViewController: RickViewController {
     }
     
     private func setupTableView() {
-        tableView.frame = view.bounds
-        view.addSubview(tableView)
+        view.attach(tableView)
         tableView.register(MovieTableCell.self)
         tableView.configure(identifier: MovieTableCell.className, type: MovieTableCell.self) { _, model, cell in
             cell.configure(model)

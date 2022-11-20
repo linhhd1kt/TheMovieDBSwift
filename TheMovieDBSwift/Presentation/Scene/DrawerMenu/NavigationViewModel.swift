@@ -11,11 +11,12 @@ final class NavigationViewModel: BaseViewModel {
     // MARK: - Dependency
     
     // MARK: - Input
-    private let navigationMenuObserver = BehaviorSubject<DrawerMenuScreen>(value: .dashboard)
+    private let navigationMenuObserver = BehaviorSubject<Screen>(value: .dashboard)
 
     // MARK: - Output
-    private let navigationSelectedObserver = BehaviorSubject<DrawerMenuScreen>(value: .dashboard)
-    private let menuItemsObserver = BehaviorSubject<[DrawerMenuScreen]>(value: DrawerMenuScreen.displayItems)
+    private let navigationSelectedObserver = BehaviorSubject<Screen>(value: .dashboard)
+    private let menuItemsObserver = BehaviorSubject<[Screen]>(value: Screen.displayItems)
+    
     override init() {
         super.init()
         self.binding()
@@ -38,16 +39,16 @@ extension NavigationViewModel: NavigationViewModelType {
 }
 
 extension NavigationViewModel: NavigationViewModelInputType {
-    var navigationSelect: AnyObserver<DrawerMenuScreen> {
+    var navigationSelect: AnyObserver<Screen> {
         return navigationMenuObserver.asObserver()
     }
 }
 
 extension NavigationViewModel: NavigationViewModelOutputType {
-    var navigationSelected: Observable<DrawerMenuScreen> {
+    var navigationSelected: Observable<Screen> {
         return navigationSelectedObserver.asObservable()
     }
-    var menuItems: Observable<[DrawerMenuScreen]> {
+    var menuItems: Observable<[Screen]> {
         return menuItemsObserver.asObservable()
     }
 }

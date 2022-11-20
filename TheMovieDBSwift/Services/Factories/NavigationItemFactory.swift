@@ -21,21 +21,21 @@ protocol NavigationItemCreatable {
 class NavigationItemFactory: NavigationItemCreatable {
     private func makeNavigatonIcon(_ style: NavigationItemStyle) -> UIImage? {
         switch style {
-        case .menu: return R.image.icMenu()
-        case .profile: return R.image.icProfile()
-        case .search: return R.image.icSearch()
+        case .menu: return design.style.icons.menu.symbol
+        case .profile: return design.style.icons.profile.symbol
+        case .search: return design.style.icons.search.symbol
         }
     }
-    
+
     func makeNavigationItem(_ style: NavigationItemStyle) -> UIBarButtonItem {
         let icon = makeNavigatonIcon(style)
         let barButton = UIBarButtonItem(image: icon, style: .plain, target: nil, action: nil)
         var tinColor: UIColor?
         switch style {
         case .search:
-            tinColor = R.color.ternary()
+            tinColor = design.style.colors.tertiary
         default:
-            tinColor = R.color.background()
+            tinColor = design.style.colors.background
         }
         barButton.tintColor = tinColor
         return barButton
@@ -44,7 +44,9 @@ class NavigationItemFactory: NavigationItemCreatable {
     func makeLogoButton() -> UIButton {
         let button = UIButton()
         button.imageEdgeInsets = UIEdgeInsets(top: -8, left: 0, bottom: 8, right: 0)
-        button.setImage(R.image.icLogo(), for: .normal)
+        button.setImage(design.style.icons.logo.symbol, for: .normal)
         return button
     }
 }
+
+extension NavigationItemFactory: HasDeSign {}

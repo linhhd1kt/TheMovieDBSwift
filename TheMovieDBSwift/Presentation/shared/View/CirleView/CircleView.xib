@@ -31,13 +31,13 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-jd-AME" userLabel="Popularity">
                             <rect key="frame" x="86.5" y="84.5" width="8" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                            <color key="textColor" name="on-secondary"/>
+                            <color key="textColor" name="on-ternary"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzZ-4v-zaD" userLabel="%">
                             <rect key="frame" x="94.5" y="84.5" width="6.5" height="7.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="6"/>
-                            <color key="textColor" name="on-secondary"/>
+                            <color key="textColor" name="on-ternary"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -67,8 +67,8 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="on-secondary">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="on-ternary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

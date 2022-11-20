@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieTableCell: ShadowTableCell {
+final class MovieTableCell: ShadowTableCell {
     @IBOutlet private weak var backdropImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var releaseDateLabel: UILabel!
