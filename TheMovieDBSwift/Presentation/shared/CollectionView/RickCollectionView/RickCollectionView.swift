@@ -22,6 +22,13 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
     // MARK: - Output
     private let nextPageObserver = PublishSubject<Int>()
     
+    var logger: Logger {
+        guard let logger = ServiceFacade.getService(Logable.self) as? Logger else {
+            fatalError("Logger should be implemented!")
+        }
+        return logger
+    }
+        
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -38,6 +45,7 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
         layout.minimumLineSpacing = 0
         self.init(frame: .zero, collectionViewLayout: layout)
         contentInsetAdjustmentBehavior = .never
+        logger.debug("\(className) is initialized.")
     }
 
     func binding() {
@@ -54,19 +62,19 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
             .subscribe { this, _ in
                 this.refreshControl?.endRefreshing()
             }.disposed(by: disposeBag)
-        
+
         // replace all items with first page items (eg: first load, reload)
         resultObserver
             .filter { $0.page == 1 }
             .bind(to: itemsObserver)
             .disposed(by: disposeBag)
-        
+
         // when load next page append data to existing items
         resultObserver
             .filter { $0.page > 1 }
             .bind(to: itemsObserver.append)
             .disposed(by: disposeBag)
-        
+
         // clear all items
         resetObserver
             .map { Page() }
@@ -90,7 +98,10 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
             .map { [ItemSession(title: "Popular", items: $0)] }
             .bind(to: rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-  }
+    }
+    deinit {
+        logger.debug("\(className) is release.")
+    }
 }
 
 extension RickCollectionView: RickCollectionViewInputType {

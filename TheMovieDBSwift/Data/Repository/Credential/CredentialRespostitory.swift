@@ -43,14 +43,12 @@ where L: DataSource, L.T == CredentialObject, R: DataSource, R.T == CredentialOb
             .flatMapLatest { this, id in
                 this.userPreferencesStorage.valueObservable(for: id)
             }
-            .debug("CredentialRespository get saved credential id from user preferences")
         
         let localData: Observable<CredentialObject?> = getSavedCredentialId
             .withUnretained(self)
             .flatMapLatest { this, id in
                 this.localDataSource.get(id: id, parameters: parameters)
             }
-            .debug("CredentialRespository get local data from LocalDataSource")
 
         let remoteData: Observable<CredentialObject?> = remoteDataSource
             .get(id: id, parameters: parameters)
