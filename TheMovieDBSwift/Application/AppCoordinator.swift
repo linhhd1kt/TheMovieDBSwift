@@ -10,8 +10,8 @@ import UIKit
 import SideMenu
 
 class AppCoordinator: BaseCoordinator {
-    private var userPreference: UserPreferencesStorable {
-        guard let preference = ServiceFacade.getService(UserPreferencesStorable.self) else {
+    private var preferences: PreferencesStorable {
+        guard let preference = ServiceFacade.getService(PreferencesStorable.self) else {
             fatalError("User preferences should be initilized!")
         }
         return preference

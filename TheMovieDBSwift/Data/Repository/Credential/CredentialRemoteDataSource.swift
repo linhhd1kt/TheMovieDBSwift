@@ -16,17 +16,16 @@ final class CredentialRemoteDataSource: DataSource {
         }
         return network
     }
-    var userPreferencesStorage: UserPreferencesStorable {
-        guard let preferences = ServiceFacade.getService(UserPreferencesStorable.self) else {
+    var preferences: PreferencesStorable {
+        guard let preferences = ServiceFacade.getService(PreferencesStorable.self) else {
             preconditionFailure("User Preferences Storage service not registered!")
         }
         return preferences
     }
     
     func get(id: String?, parameters: [String: Any]) -> Observable<T?> {
-        
         var parameters = parameters
-        let storedToken: String? = userPreferencesStorage.value(for: UserPreferencesKey.requestTokenId.rawValue)
+        let storedToken = preferences.requestTokenId
         if let token = storedToken {
             parameters["request_token"] = token
         }
@@ -44,15 +43,12 @@ final class CredentialRemoteDataSource: DataSource {
                 }
                 return Observable.error(error)
             })
-            .debug("CredentialRemoteDataSource get \(id ?? "") with parameter: \(parameters) catch error")
             .do { [weak self] credentail in
                 guard let self = self else {
                     return
                 }
-                self.userPreferencesStorage.set(credentail?.requestToken,
-                                                for: UserPreferencesKey.requestTokenId.rawValue)
+                self.preferences.requestTokenId = credentail?.requestToken
             }
-            .debug("CredentialRemoteDataSource get \(id ?? "") with parameter: \(parameters) save to user preferences")
     }
     
     func save(entity: T) -> Observable<Void> {

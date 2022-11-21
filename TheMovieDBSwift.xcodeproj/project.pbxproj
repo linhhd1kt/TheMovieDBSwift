@@ -23,7 +23,7 @@
 		DC28BCE828E1952C000D4FF0 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCE728E1952C000D4FF0 /* ResponseParser.swift */; };
 		DC28BCEE28E559DC000D4FF0 /* Respository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCED28E559DC000D4FF0 /* Respository.swift */; };
 		DC28BCF028E55A15000D4FF0 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCEF28E55A15000D4FF0 /* DataSource.swift */; };
-		DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */; };
+		DC28BCF328E55BA9000D4FF0 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC28BCF228E55BA9000D4FF0 /* Preferences.swift */; };
 		DC2F321A291B978100351318 /* RickTableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3219291B978100351318 /* RickTableViewType.swift */; };
 		DC2F321E291C956900351318 /* XibInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F321D291C956900351318 /* XibInstantiatable.swift */; };
 		DC2F3228291CB3A900351318 /* ShadowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F3227291CB3A900351318 /* ShadowTableCell.swift */; };
@@ -183,7 +183,7 @@
 		DC28BCE728E1952C000D4FF0 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
 		DC28BCED28E559DC000D4FF0 /* Respository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respository.swift; sourceTree = "<group>"; };
 		DC28BCEF28E55A15000D4FF0 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesStorage.swift; sourceTree = "<group>"; };
+		DC28BCF228E55BA9000D4FF0 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		DC2F3219291B978100351318 /* RickTableViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickTableViewType.swift; sourceTree = "<group>"; };
 		DC2F321D291C956900351318 /* XibInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibInstantiatable.swift; sourceTree = "<group>"; };
 		DC2F3227291CB3A900351318 /* ShadowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTableCell.swift; sourceTree = "<group>"; };
@@ -394,12 +394,12 @@
 			path = Respository;
 			sourceTree = "<group>";
 		};
-		DC28BCF128E55B1E000D4FF0 /* UserPreferencesStorage */ = {
+		DC28BCF128E55B1E000D4FF0 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				DC28BCF228E55BA9000D4FF0 /* UserPreferencesStorage.swift */,
+				DC28BCF228E55BA9000D4FF0 /* Preferences.swift */,
 			);
-			path = UserPreferencesStorage;
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 		DC2F3218291B973D00351318 /* RickTableView */ = {
@@ -674,7 +674,7 @@
 				DCA086FB2907D51D0091BF79 /* Factories */,
 				DC5486FD28FD3F21005106B0 /* Coordinator */,
 				DC88488328EFE7A9006698A1 /* Logger */,
-				DC28BCF128E55B1E000D4FF0 /* UserPreferencesStorage */,
+				DC28BCF128E55B1E000D4FF0 /* Preferences */,
 				DC85BC1028BCB96F00187748 /* PersistantStorage */,
 				DC28BCE628E1950F000D4FF0 /* ReponseParser */,
 				DCCFEC8D28BC65A900019DBB /* Networking */,
@@ -1259,7 +1259,7 @@
 				DCB16F0028F96670001686C1 /* BaseCoordinator.swift in Sources */,
 				DCCFEC8F28BC661600019DBB /* API.swift in Sources */,
 				DCB16F0228F966CF001686C1 /* LoginCoordinator.swift in Sources */,
-				DC28BCF328E55BA9000D4FF0 /* UserPreferencesStorage.swift in Sources */,
+				DC28BCF328E55BA9000D4FF0 /* Preferences.swift in Sources */,
 				DC80E86129276A19000A55E3 /* Shape.swift in Sources */,
 				DC54872728FF90AE005106B0 /* Movie.swift in Sources */,
 				DC7C0F8929120A040075517C /* UIView+Ex.swift in Sources */,

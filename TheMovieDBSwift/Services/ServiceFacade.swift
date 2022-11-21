@@ -18,7 +18,7 @@ extension Container {
 
 class ServiceFacade {
     private static let logger: Logable = Logger()
-    private static let userPreferencesStorage: UserPreferencesStorable = UserPreferencesStorage()
+    private static let userPreferencesStorage: PreferencesStorable = Preferences()
     private static let appCoordinator: CoordinatorType = AppCoordinator()
     private static let network: Networking = Network()
     private static let persistantStorage: PersistantStorable = RealmPersistantStorage()
@@ -36,7 +36,7 @@ class ServiceFacade {
         Container.default.register(Logable.self) { _ in
             ServiceFacade.logger
         }
-        Container.default.register(UserPreferencesStorable.self) { _ in
+        Container.default.register(PreferencesStorable.self) { _ in
             ServiceFacade.userPreferencesStorage
         }
         Container.default.register(CoordinatorType.self) { _ in

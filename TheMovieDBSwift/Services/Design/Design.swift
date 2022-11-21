@@ -15,6 +15,12 @@ protocol Designable {
 
 struct DefautDesign: Designable {
     let style: StyleType = LightStyle()
+    private var preferences: PreferencesStorable {
+        guard let preference = ServiceFacade.getService(PreferencesStorable.self) else {
+            fatalError("User preferences should be initilized!")
+        }
+        return preference
+    }
     
     init() {
         if let rawSaveInterfaceStyle = UserDefaults.standard.value(forKey: "user-interface-style") as? Int,
