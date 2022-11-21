@@ -11,6 +11,7 @@ import ObjectiveC
 protocol Designable {
     var style: StyleType { get }
     func toggleTheme()
+    func initialized()
 }
 
 struct DefautDesign: Designable {
@@ -22,18 +23,14 @@ struct DefautDesign: Designable {
         return preference
     }
     
-    init() {
-        if let rawSaveInterfaceStyle = UserDefaults.standard.value(forKey: "user-interface-style") as? Int,
-           let saveInterfaceStyle: UIUserInterfaceStyle = .init(rawValue: rawSaveInterfaceStyle) {
-            self.setTheme(saveInterfaceStyle)
-        }
+    func initialized() {
+        setTheme(preferences.userInterfaceStyle)
     }
     
     func toggleTheme() {
+        let savedInterfaceStyle = preferences.userInterfaceStyle
         var interfaceStyle: UIUserInterfaceStyle
-        if let rawSaveInterfaceStyle = UserDefaults.standard.value(forKey: "user-interface-style") as? Int,
-           let saveInterfaceStyle: UIUserInterfaceStyle = .init(rawValue: rawSaveInterfaceStyle) {
-            switch saveInterfaceStyle {
+            switch savedInterfaceStyle {
             case .unspecified:
                 interfaceStyle = .light
             case .light:
@@ -43,14 +40,11 @@ struct DefautDesign: Designable {
             @unknown default:
                 interfaceStyle = .light
             }
-        } else {
-            interfaceStyle = .light
-        }
-        UserDefaults.standard.set(interfaceStyle.rawValue, forKey: "user-interface-style")
         setTheme(interfaceStyle)
     }
     
     func setTheme(_ style: UIUserInterfaceStyle) {
+        preferences.userInterfaceStyle = style
         let scenes = UIApplication.shared.connectedScenes
         let windowScenes = scenes.first as? UIWindowScene
         let window = windowScenes?.windows.first

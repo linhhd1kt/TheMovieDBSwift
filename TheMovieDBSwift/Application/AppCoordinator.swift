@@ -44,6 +44,7 @@ class AppCoordinator: BaseCoordinator {
             UINavigationBar.appearance().tintColor = design.style.colors.background
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: design.style.colors.onBackground]
         }
+        design.initialized()
     }
     
     private func showLogin() {

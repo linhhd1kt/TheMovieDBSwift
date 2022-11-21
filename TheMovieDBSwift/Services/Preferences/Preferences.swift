@@ -28,16 +28,22 @@ extension Preferences: PreferencesStorable {
         }
         set {
             defaults.setValue(newValue, forKey: Key.requestTokenId.rawValue)
+            defaults.synchronize()
         }
     }
     
     var userInterfaceStyle: UIUserInterfaceStyle {
         get {
             let value = defaults.integer(forKey: Key.userInterfaceStyle.rawValue)
-            return UIUserInterfaceStyle(rawValue: value) ?? .unspecified
+            if value == 0 {
+                return .light
+            }
+            let style = UIUserInterfaceStyle(rawValue: value) ?? .light
+            return style
         }
         set {
             defaults.setValue(newValue.rawValue, forKey: Key.userInterfaceStyle.rawValue)
+            defaults.synchronize()
         }
     }
 }
