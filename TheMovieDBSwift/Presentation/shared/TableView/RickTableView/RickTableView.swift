@@ -20,6 +20,13 @@ class RickTableView<Page: Paginated>: UITableView {
     // MARK: - Output
     private let nextPageObserver = PublishSubject<Int>()
     
+    var logger: Logger {
+        guard let logger = ServiceFacade.getService(Logable.self) as? Logger else {
+            fatalError("Logger should be implemented!")
+        }
+        return logger
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
@@ -34,6 +41,7 @@ class RickTableView<Page: Paginated>: UITableView {
         configureLayouts()
         configureRefreshControl()
         configureSpiner()
+        logger.debug("\(className) is initialized.")
     }
     
     private func configureRefreshControl() {
@@ -66,14 +74,15 @@ class RickTableView<Page: Paginated>: UITableView {
             .withUnretained(self)
             .subscribe { this, _ in
                 this.refreshControl?.endRefreshing()
-            }.disposed(by: disposeBag)
-        
+            }
+            .disposed(by: disposeBag)
+
         // replace all items with first page items (eg: first load, reload)
         resultObserver
             .filter { $0.page == 1 }
             .bind(to: itemsObserver)
             .disposed(by: disposeBag)
-        
+
         // when load next page append data to existing items
         resultObserver
             .filter { $0.page > 1 }
@@ -99,6 +108,10 @@ class RickTableView<Page: Paginated>: UITableView {
                 configureCell(index, model, cell)
             }
             .disposed(by: disposeBag)
+    }
+    
+    deinit {
+        logger.debug("\(className) is release.")
     }
 }
 
