@@ -9,12 +9,12 @@ protocol DashboardNavigatable {
 }
 
 class DrawerMenuCoordinator: BaseCoordinator {
-    private let navigationViewModel: NavigationViewModelType
-    
     private let menuNavigationItem: UIBarButtonItem
     private let logoNavigationItem: UIButton
     private let profileNavigationItem: UIBarButtonItem
     private let searchNavigationItem: UIBarButtonItem
+    
+    private let navigationViewModel: NavigationViewModelType
     
     init(navigationController: UINavigationController,
          navigationViewModel: NavigationViewModelType,
@@ -40,6 +40,7 @@ class DrawerMenuCoordinator: BaseCoordinator {
     }
 
     func selectScreen(_ screen: Screen) {
+        removeChildCoordinators()
         logger.info("DrawerMenuCoordinator selectScreen: \(screen)")
         switch screen {
         case .menu:
