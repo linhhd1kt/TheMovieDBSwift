@@ -16,11 +16,39 @@ protocol Designable {
 struct DefautDesign: Designable {
     let style: StyleType = LightStyle()
     
+    init() {
+        if let rawSaveInterfaceStyle = UserDefaults.standard.value(forKey: "user-interface-style") as? Int,
+           let saveInterfaceStyle: UIUserInterfaceStyle = .init(rawValue: rawSaveInterfaceStyle) {
+            self.setTheme(saveInterfaceStyle)
+        }
+    }
+    
     func toggleTheme() {
+        var interfaceStyle: UIUserInterfaceStyle
+        if let rawSaveInterfaceStyle = UserDefaults.standard.value(forKey: "user-interface-style") as? Int,
+           let saveInterfaceStyle: UIUserInterfaceStyle = .init(rawValue: rawSaveInterfaceStyle) {
+            switch saveInterfaceStyle {
+            case .unspecified:
+                interfaceStyle = .light
+            case .light:
+                interfaceStyle = .dark
+            case .dark:
+                interfaceStyle = .light
+            @unknown default:
+                interfaceStyle = .light
+            }
+        } else {
+            interfaceStyle = .light
+        }
+        UserDefaults.standard.set(interfaceStyle.rawValue, forKey: "user-interface-style")
+        setTheme(interfaceStyle)
+    }
+    
+    func setTheme(_ style: UIUserInterfaceStyle) {
         let scenes = UIApplication.shared.connectedScenes
         let windowScenes = scenes.first as? UIWindowScene
         let window = windowScenes?.windows.first
-        window?.overrideUserInterfaceStyle = (window?.overrideUserInterfaceStyle == .light) ? .dark : .light
+        window?.overrideUserInterfaceStyle = style
     }
 }
 
