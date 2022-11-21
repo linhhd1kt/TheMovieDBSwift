@@ -1172,7 +1172,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "bg-header", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg-header' is used in nib 'DashboardViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in nib 'DashboardViewController', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "on-primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-primary' is used in nib 'DashboardViewController', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "on-primary-container", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-primary-container' is used in nib 'DashboardViewController', but couldn't be loaded.") }
         }
       }
 
