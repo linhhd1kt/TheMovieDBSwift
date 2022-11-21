@@ -10,7 +10,7 @@ import RxSwift
 
 class BaseCoordinator: NSObject, CoordinatorType {
     var childCoordinators: [CoordinatorType] = []
-    var parentCoordinator: CoordinatorType?
+    weak var parentCoordinator: CoordinatorType?
     var navigationController: UINavigationController
     
     var logger: Logger {
