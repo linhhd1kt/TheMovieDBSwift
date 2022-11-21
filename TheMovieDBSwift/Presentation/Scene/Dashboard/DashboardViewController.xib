@@ -12,11 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController" customModule="TheMovieDBSwift" customModuleProvider="target">
             <connections>
                 <outlet property="containerScrollView" destination="nsX-8I-1ej" id="7N2-FF-Dko"/>
-                <outlet property="dashboardHeaderView" destination="Vvu-gK-cYG" id="uhI-Jl-cis"/>
                 <outlet property="freeItemSessionView" destination="iR2-aB-Lpp" id="cGr-Ei-UC4"/>
                 <outlet property="headerHeightContraint" destination="ZDf-iC-fbp" id="SBl-zw-qnj"/>
+                <outlet property="headerView" destination="Vvu-gK-cYG" id="v5N-mE-zFd"/>
                 <outlet property="popularItemSessionView" destination="xxN-FK-ZG3" id="YGB-yk-eCB"/>
-                <outlet property="searchView" destination="dQt-c3-YPR" id="i7Z-JZ-Heo"/>
+                <outlet property="searchView" destination="JZ3-eH-Ndy" id="0th-oF-Id4"/>
                 <outlet property="trendingItemSessionView" destination="CZW-UG-1NO" id="uqi-pn-zDo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,51 +26,18 @@
             <rect key="frame" x="0.0" y="0.0" width="488" height="1620"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vvu-gK-cYG" userLabel="Header View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vvu-gK-cYG" userLabel="Header View" customClass="StretchyView" customModule="TheMovieDBSwift" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="488" height="360"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-header" translatesAutoresizingMaskIntoConstraints="NO" id="SK3-pu-cui">
-                            <rect key="frame" x="0.0" y="0.0" width="488" height="360"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OR9-Un-7As">
-                            <rect key="frame" x="20" y="114" width="448" height="48"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                            <color key="textColor" name="on-primary-container"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Millions of movies, TV shows and people to discover. Explore now." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ox3-su-QnN">
-                            <rect key="frame" x="20" y="162" width="448" height="112"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="112" id="5md-Vk-Hrt"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                            <color key="textColor" name="on-primary-container"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQt-c3-YPR" customClass="RoundedSearchView" customModule="TheMovieDBSwift" customModuleProvider="target">
-                            <rect key="frame" x="16" y="298" width="456" height="46"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="46" id="lHt-7K-ATX"/>
-                            </constraints>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" name="background"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="dQt-c3-YPR" secondAttribute="bottom" constant="16" id="0Zi-5P-FHY"/>
-                        <constraint firstAttribute="bottom" secondItem="SK3-pu-cui" secondAttribute="bottom" id="150-eF-1SA"/>
-                        <constraint firstItem="SK3-pu-cui" firstAttribute="top" secondItem="Vvu-gK-cYG" secondAttribute="top" id="9U6-s2-Vop"/>
-                        <constraint firstAttribute="trailing" secondItem="dQt-c3-YPR" secondAttribute="trailing" constant="16" id="EKe-Uu-ESL"/>
-                        <constraint firstAttribute="trailing" secondItem="OR9-Un-7As" secondAttribute="trailing" constant="20" id="KhX-od-lu9"/>
-                        <constraint firstItem="Ox3-su-QnN" firstAttribute="leading" secondItem="OR9-Un-7As" secondAttribute="leading" id="S24-7c-xVd"/>
-                        <constraint firstAttribute="trailing" secondItem="SK3-pu-cui" secondAttribute="trailing" id="Xkb-L3-K5o"/>
                         <constraint firstAttribute="height" constant="360" id="ZDf-iC-fbp"/>
-                        <constraint firstItem="Ox3-su-QnN" firstAttribute="top" secondItem="OR9-Un-7As" secondAttribute="bottom" id="bsU-3f-XVJ"/>
-                        <constraint firstItem="dQt-c3-YPR" firstAttribute="leading" secondItem="Vvu-gK-cYG" secondAttribute="leading" constant="16" id="cXu-4m-lbT"/>
-                        <constraint firstItem="OR9-Un-7As" firstAttribute="leading" secondItem="Vvu-gK-cYG" secondAttribute="leading" constant="20" id="oNx-Qc-l5G"/>
-                        <constraint firstItem="SK3-pu-cui" firstAttribute="leading" secondItem="Vvu-gK-cYG" secondAttribute="leading" id="rhN-KB-Wsl"/>
-                        <constraint firstItem="dQt-c3-YPR" firstAttribute="top" secondItem="Ox3-su-QnN" secondAttribute="bottom" constant="24" id="vKb-65-cjh"/>
-                        <constraint firstItem="Ox3-su-QnN" firstAttribute="trailing" secondItem="OR9-Un-7As" secondAttribute="trailing" id="xas-uU-NgD"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZ3-eH-Ndy" customClass="RoundedSearchView" customModule="TheMovieDBSwift" customModuleProvider="target">
+                    <rect key="frame" x="40" y="302" width="408" height="46"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="Gkh-OG-byA"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsX-8I-1ej">
@@ -130,8 +97,11 @@
             <color key="backgroundColor" name="background"/>
             <constraints>
                 <constraint firstItem="Vvu-gK-cYG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0td-Qv-Tcb"/>
+                <constraint firstItem="JZ3-eH-Ndy" firstAttribute="leading" secondItem="N1M-wV-zPR" secondAttribute="leading" constant="40" id="2td-X4-0Y7"/>
                 <constraint firstItem="nsX-8I-1ej" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5pn-Rk-333"/>
                 <constraint firstAttribute="bottom" secondItem="nsX-8I-1ej" secondAttribute="bottom" id="9L2-xE-YJk"/>
+                <constraint firstItem="JZ3-eH-Ndy" firstAttribute="bottom" secondItem="Vvu-gK-cYG" secondAttribute="bottom" constant="-12" id="GT7-uy-fl4"/>
+                <constraint firstItem="N1M-wV-zPR" firstAttribute="trailing" secondItem="JZ3-eH-Ndy" secondAttribute="trailing" constant="40" id="Krg-8m-2YU"/>
                 <constraint firstAttribute="trailing" secondItem="nsX-8I-1ej" secondAttribute="trailing" id="R4p-Qk-JNt"/>
                 <constraint firstAttribute="trailing" secondItem="Vvu-gK-cYG" secondAttribute="trailing" id="Ub0-Cy-Cek"/>
                 <constraint firstItem="nsX-8I-1ej" firstAttribute="top" secondItem="Vvu-gK-cYG" secondAttribute="bottom" id="Wpk-71-2U0"/>
@@ -142,12 +112,8 @@
         </view>
     </objects>
     <resources>
-        <image name="bg-header" width="880" height="600"/>
         <namedColor name="background">
             <color red="0.99215686274509807" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="on-primary-container">
-            <color red="0.82352948188781738" green="0.89411771297454834" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

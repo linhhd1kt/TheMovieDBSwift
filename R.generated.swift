@@ -757,7 +757,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 14 nibs.
   struct nib {
     /// Nib `CategoryDropdownCell`.
     static let categoryDropdownCell = _R.nib._CategoryDropdownCell()
@@ -785,6 +785,8 @@ struct R: Rswift.Validatable {
     static let roundedSearchView = _R.nib._RoundedSearchView()
     /// Nib `SelectedCategoryDropdownCell`.
     static let selectedCategoryDropdownCell = _R.nib._SelectedCategoryDropdownCell()
+    /// Nib `StretchyView`.
+    static let stretchyView = _R.nib._StretchyView()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CategoryDropdownCell", in: bundle)`
@@ -890,6 +892,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "StretchyView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.stretchyView) instead")
+    static func stretchyView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.stretchyView)
+    }
+    #endif
+
     static func categoryDropdownCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CategoryDropdownCell? {
       return R.nib.categoryDropdownCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CategoryDropdownCell
     }
@@ -940,6 +950,10 @@ struct R: Rswift.Validatable {
 
     static func selectedCategoryDropdownCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SelectedCategoryDropdownCell? {
       return R.nib.selectedCategoryDropdownCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SelectedCategoryDropdownCell
+    }
+
+    static func stretchyView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.stretchyView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -1134,8 +1148,8 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
-      try _DashboardViewController.validate()
       try _SelectedCategoryDropdownCell.validate()
+      try _StretchyView.validate()
     }
 
     struct _CategoryDropdownCell: Rswift.NibResourceType {
@@ -1160,20 +1174,12 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _DashboardViewController: Rswift.NibResourceType, Rswift.Validatable {
+    struct _DashboardViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "DashboardViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "bg-header", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg-header' is used in nib 'DashboardViewController', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in nib 'DashboardViewController', but couldn't be loaded.") }
-          if UIKit.UIColor(named: "on-primary-container", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-primary-container' is used in nib 'DashboardViewController', but couldn't be loaded.") }
-        }
       }
 
       fileprivate init() {}
@@ -1292,6 +1298,25 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "on-secondary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-secondary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "on-ternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-ternary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
           if UIKit.UIColor(named: "ternary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'ternary' is used in nib 'SelectedCategoryDropdownCell', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _StretchyView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "StretchyView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "bg-header", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg-header' is used in nib 'StretchyView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in nib 'StretchyView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "on-primary-container", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'on-primary-container' is used in nib 'StretchyView', but couldn't be loaded.") }
         }
       }
 
