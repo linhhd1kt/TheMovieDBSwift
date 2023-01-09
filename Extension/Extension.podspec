@@ -32,7 +32,7 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'Extension/**/*.{swift}'
   
-  
   s.resources = ['Extension/**/*.{xcassets}']
   
+  s.dependency 'Action'
 end
