@@ -34,6 +34,7 @@ post_install do |installer|
             config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = "YES"
             config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
             config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+            config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'NO'
         end
     end
 end

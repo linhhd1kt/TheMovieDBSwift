@@ -27,6 +27,7 @@ PODS:
   - DynamicBlurView (4.1.0)
   - Extension (0.1.1):
     - Action
+    - SVProgressHUD
   - FontBlaster (5.3.0)
   - Kingfisher (7.5.0)
   - MJRefresh (3.7.5)
@@ -61,6 +62,7 @@ PODS:
     - SwiftyJSON (~> 4.0)
     - XCGLogger
   - SideMenu (6.5.0)
+  - SVProgressHUD (2.2.5)
   - SwiftLint (0.50.3)
   - SwiftyJSON (4.3.0)
   - Swinject (2.8.2)
@@ -101,6 +103,7 @@ SPEC REPOS:
     - RxSwift
     - RxTest
     - SideMenu
+    - SVProgressHUD
     - SwiftLint
     - SwiftyJSON
     - Swinject
@@ -126,7 +129,7 @@ SPEC CHECKSUMS:
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Domain: 3e3731ff4fc8728a43cb8fe78c2c23f79b927c66
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
-  Extension: 9f575088aac24d05f1ce65e03900c924538144ab
+  Extension: 05cdf78e61b0f36317af19dbf4a5e29c4cd86c6e
   FontBlaster: 941f89d735a29e1c7d24e7a90d3e16939ef1609a
   Kingfisher: b9c2a4a4af2990a768445c277359b27bde287d71
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
@@ -142,11 +145,12 @@ SPEC CHECKSUMS:
   RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
   Services: 81e79253b98d6ee50789b3412e34f0623e309eea
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   XCGLogger: 1943831ef907df55108b0b18657953f868de973b
 
-PODFILE CHECKSUM: 51af944cf13b8330118e0a2b390a3bb9c3dbfaf9
+PODFILE CHECKSUM: 3d483b0f23f3d767dec30e0def22e804e6f0ab22
 
 COCOAPODS: 1.11.3

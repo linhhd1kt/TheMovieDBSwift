@@ -35,4 +35,5 @@ TODO: Add long description of the pod here.
   s.resources = ['Extension/**/*.{xcassets}']
   
   s.dependency 'Action'
+  s.dependency 'SVProgressHUD'
 end
