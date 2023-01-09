@@ -44,6 +44,7 @@ TODO: Add long description of the pod here.
   s.dependency 'Kingfisher', '~> 7.0'
   s.dependency 'SwiftyJSON', '~> 4.0'
   s.dependency 'XCGLogger'
+  s.dependency 'SwiftPrettyPrint'
   s.dependency 'Extension'
   s.dependency 'Design'
 end

@@ -3,6 +3,7 @@ PODS:
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
   - Alamofire (5.6.4)
+  - ColorizeSwift (1.2.0)
   - Data (0.1.0):
     - Extension
     - Services
@@ -59,11 +60,14 @@ PODS:
     - Extension
     - Kingfisher (~> 7.0)
     - Moya (~> 15.0)
+    - SwiftPrettyPrint
     - SwiftyJSON (~> 4.0)
     - XCGLogger
   - SideMenu (6.5.0)
   - SVProgressHUD (2.2.5)
   - SwiftLint (0.50.3)
+  - SwiftPrettyPrint (1.2.0):
+    - ColorizeSwift
   - SwiftyJSON (4.3.0)
   - Swinject (2.8.2)
   - XCGLogger (7.0.1):
@@ -87,6 +91,7 @@ SPEC REPOS:
   trunk:
     - Action
     - Alamofire
+    - ColorizeSwift
     - Differentiator
     - DynamicBlurView
     - FontBlaster
@@ -105,6 +110,7 @@ SPEC REPOS:
     - SideMenu
     - SVProgressHUD
     - SwiftLint
+    - SwiftPrettyPrint
     - SwiftyJSON
     - Swinject
     - XCGLogger
@@ -124,6 +130,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  ColorizeSwift: 4eef354dce7335d7747a0ccacf78afe2b589a1be
   Data: 88dd0c1a70668010f0387ed96d12b45e2aeea461
   Design: 136ac0178ee296becb051eaa4d1c1fc04acc87d6
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
@@ -143,10 +150,11 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
-  Services: 81e79253b98d6ee50789b3412e34f0623e309eea
+  Services: 5ce984d8b5d63c1c43f7a8068c8dba58e377ce2b
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  SwiftPrettyPrint: feca848b6aba4de9201e38f73184e9e5ac09da55
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
   XCGLogger: 1943831ef907df55108b0b18657953f868de973b

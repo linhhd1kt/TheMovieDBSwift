@@ -443,8 +443,7 @@
 				DC61293E2967DF9D003DBDA8 /* CollectionView */,
 				DC6129482967DF9D003DBDA8 /* RefreshControl */,
 				DC61294A2967DF9D003DBDA8 /* ViewControllers */,
-				DC6129512967DF9D003DBDA8 /* View */,
-				DC6129602967DF9D003DBDA8 /* RoundedSearchView */,
+				DC6129512967DF9D003DBDA8 /* Views */,
 				DC6129612967DF9D003DBDA8 /* Base */,
 			);
 			path = Shared;
@@ -568,14 +567,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		DC6129512967DF9D003DBDA8 /* View */ = {
+		DC6129512967DF9D003DBDA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				DC6129522967DF9D003DBDA8 /* CirleView */,
 				DC6129552967DF9D003DBDA8 /* RoundedSearchView */,
 				DC6129582967DF9D003DBDA8 /* ItemSessionView */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DC6129522967DF9D003DBDA8 /* CirleView */ = {
@@ -615,13 +614,6 @@
 				DC61295D2967DF9D003DBDA8 /* CategoryDropdownCell.xib */,
 			);
 			path = CategoryDropdownCell;
-			sourceTree = "<group>";
-		};
-		DC6129602967DF9D003DBDA8 /* RoundedSearchView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RoundedSearchView;
 			sourceTree = "<group>";
 		};
 		DC6129612967DF9D003DBDA8 /* Base */ = {
