@@ -22,7 +22,7 @@ PODS:
     - SideMenu
     - Swinject
   - DynamicBlurView (4.1.0)
-  - Extension (0.1.0)
+  - Extension (0.1.1)
   - FontBlaster (5.3.0)
   - Kingfisher (7.4.1)
   - MJRefresh (3.7.5)
@@ -120,7 +120,7 @@ SPEC CHECKSUMS:
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Domain: 3e3731ff4fc8728a43cb8fe78c2c23f79b927c66
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
-  Extension: cc63ebbd273646393abfac734d4a61462e4b7d02
+  Extension: d3bc6aa7c905c006effd69aecf79b65412e7f890
   FontBlaster: 941f89d735a29e1c7d24e7a90d3e16939ef1609a
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
