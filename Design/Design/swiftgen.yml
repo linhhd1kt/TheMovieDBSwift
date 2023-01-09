@@ -1,0 +1,10 @@
+input_dir: ./
+output_dir: ./Classes/
+xcassets:
+  - inputs: ./Assets/Colors.xcassets
+    outputs:
+      - templateName: structured-swift5
+        output: SwiftGen+Colors.swift
+        params:
+          enumName: Colors
+          publicAccess: true
