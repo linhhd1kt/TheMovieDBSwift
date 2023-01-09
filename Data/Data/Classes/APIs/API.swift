@@ -43,7 +43,8 @@ public class API: TargetType {
       return "3/discover/movie"
     case .discoverTV:
       return "3/discover/tv"
-    case .trending(page: _, mediaType: let mediaType, timeWindow: let timeWindow):
+    // swiftlint:disable pattern_matching_keywords
+    case .trending(page: _, mediaType: var mediaType, timeWindow: var timeWindow):
       return "3/trending/\(mediaType)/\(timeWindow)"
     case .latestTrailerOnTV:
       return "3/disvoer/tv"

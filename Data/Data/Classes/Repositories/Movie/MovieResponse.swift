@@ -8,18 +8,6 @@
 import Foundation
 
 public struct MoviesResponse: Codable {
-  public let page: Int
-  public let results: [Data]
-  public let totalResults: Int
-  public let totalPages: Int
-  
-  public enum CodingKeys: String, CodingKey {
-    case page
-    case results
-    case totalResults = "total_results"
-    case totalPages = "total_pages"
-  }
-  
   public struct Data: Codable {
     public let posterPath: String
     public let adult: Bool
@@ -70,4 +58,9 @@ public struct MoviesResponse: Codable {
       voteAverage = try container.decodeIfPresent(Double.self, forKey: .voteAverage) ?? 0.0
     }
   }
+  
+  public let page: Int
+  public let results: [Data]
+  public let totalResults: Int
+  public let totalPages: Int
 }

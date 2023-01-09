@@ -14,12 +14,11 @@ public protocol UserDefaultType: AnyObject {
 }
 
 public class UserDefault {
-  fileprivate let defaults = UserDefaults.standard
-
   fileprivate enum Key: String {
     case requestTokenId = "userdefault.request_token_id"
     case userInterfaceStyle = "userdefault.user_interface_style"
-  }
+  }  
+  fileprivate let `defaults` = UserDefaults.standard
 
   public init() {}
 }
