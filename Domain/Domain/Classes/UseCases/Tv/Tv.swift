@@ -7,16 +7,16 @@
 
 import Data
 
-public struct Movie {
+public struct Tv {
   public let id: Int
   public let posterPath: String
-  public let adult: Bool
+  public let originCountry: [String]
   public let overview: String
-  public let releaseDate: String
+  public let firstAirDate: String
   public let genreIds: [Int]
-  public let originalTitle: String
+  public let originalName: String
   public let originalLanguage: String
-  public let title: String
+  public let name: String
   public let backdropPath: String
   public let popularity: Double
   public let voteCount: Int
@@ -25,13 +25,13 @@ public struct Movie {
 
   public init(id: Int,
               posterPath: String,
-              adult: Bool,
+              originCountry: [String],
               overview: String,
-              releaseDate: String,
+              firstAirDate: String,
               genreIds: [Int],
-              originalTitle: String,
+              originalName: String,
               originalLanguage: String,
-              title: String,
+              name: String,
               backdropPath: String,
               popularity: Double,
               voteCount: Int,
@@ -39,13 +39,13 @@ public struct Movie {
               voteAverage: Double) {
     self.id = id
     self.posterPath = posterPath
-    self.adult = adult
+    self.originCountry = originCountry
     self.overview = overview
-    self.releaseDate = releaseDate
+    self.firstAirDate = firstAirDate
     self.genreIds = genreIds
-    self.originalTitle = originalTitle
+    self.originalName = originalName
     self.originalLanguage = originalLanguage
-    self.title = title
+    self.name = name
     self.backdropPath = backdropPath
     self.popularity = popularity
     self.voteCount = voteCount
@@ -54,16 +54,16 @@ public struct Movie {
   }
 }
 
-public struct MoviePage: Paginated {
-  public typealias Element = Movie
+public struct TvPage: Paginated {
+  public typealias Element = Tv
 
   public var page: Int
   public var results: [Element]
   public var totalResults: Int
   public var totalPages: Int
 
-  public static var empty: MoviePage {
-    return MoviePage(page: 0, results: [], totalResults: 0, totalPages: 0)
+  public static var empty: TvPage {
+    return TvPage(page: 0, results: [], totalResults: 0, totalPages: 0)
   }
 
   public init() {

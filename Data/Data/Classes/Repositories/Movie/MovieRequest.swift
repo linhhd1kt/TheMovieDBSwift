@@ -23,8 +23,7 @@ public struct PopularMovieRequest {
 extension PopularMovieRequest: ApiRequestType {
   public func toTarget(baseUrl: URL, apiKey: String) -> TargetType {
     return API(baseURL: baseUrl,
-               target: .discoverTV(page: page,
-                                   monetization: monetization),
+               target: .popularMovie(page: page),
                apiKey: apiKey)
   }
 }
@@ -45,23 +44,7 @@ extension FreeWatchMovieRequest: ApiRequestType {
   }
 }
 
-public struct FreeWatchTVRequest {
-  public let page: Int
-
-  public init(page: Int) {
-    self.page = page
-  }
-}
-
-extension FreeWatchTVRequest: ApiRequestType {
-  public func toTarget(baseUrl: URL, apiKey: String) -> TargetType {
-    return API(baseURL: baseUrl,
-               target: .discoverTV(page: page, monetization: .free),
-               apiKey: apiKey)
-  }
-}
-
-public struct TrendingRequest {
+public struct TrendingMovieRequest {
   public let page: Int
   public let mediaType: MediaType
   public let timeWindow: TimeWindow
@@ -73,34 +56,10 @@ public struct TrendingRequest {
   }
 }
 
-extension TrendingRequest: ApiRequestType {
+extension TrendingMovieRequest: ApiRequestType {
   public func toTarget(baseUrl: URL, apiKey: String) -> TargetType {
     return API(baseURL: baseUrl,
-               target: .trending(page: page, mediaType: mediaType, timeWindow: timeWindow),
-               apiKey: apiKey)
-  }
-}
-
-public struct LatestTrailerOnTVRequest {
-  public init() {}
-}
-
-extension LatestTrailerOnTVRequest: ApiRequestType {
-  public func toTarget(baseUrl: URL, apiKey: String) -> TargetType {
-    return API(baseURL: baseUrl,
-               target: .latestTrailerOnTV,
-               apiKey: apiKey)
-  }
-}
-
-public struct LatestTrailerOnThreatersRequest {
-  public init() {}
-}
-
-extension LatestTrailerOnThreatersRequest: ApiRequestType {
-  public func toTarget(baseUrl: URL, apiKey: String) -> TargetType {
-    return API(baseURL: baseUrl,
-               target: .latestTrailerOnThreaters,
+               target: .trending(page: page, mediaType: .movie, timeWindow: timeWindow),
                apiKey: apiKey)
   }
 }

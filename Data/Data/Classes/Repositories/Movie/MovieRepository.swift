@@ -10,17 +10,15 @@ import Services
 import Extension
 
 public protocol MovieRepositoryType {
-  var fetchPopularMovie: Action<PopularMovieRequest, MoviesResponse> { get }
-  var fetchFreeWatchMovie: Action<FreeWatchMovieRequest, MoviesResponse> { get }
-  var fetchFreeWatchTV: Action<FreeWatchTVRequest, MoviesResponse> { get }
-  var fetchTrending: Action<TrendingRequest, MoviesResponse> { get }
+  var fetchPopularMovie: Action<PopularMovieRequest, MovieResponse> { get }
+  var fetchFreeWatchMovie: Action<FreeWatchMovieRequest, MovieResponse> { get }
+  var fetchTrendingMovie: Action<TrendingMovieRequest, MovieResponse> { get }
 }
 
 public class MovieRepository: MovieRepositoryType {
-  public let fetchPopularMovie: Action<PopularMovieRequest, MoviesResponse>
-  public var fetchFreeWatchMovie: Action<FreeWatchMovieRequest, MoviesResponse>
-  public var fetchFreeWatchTV: Action<FreeWatchTVRequest, MoviesResponse>
-  public var fetchTrending: Action<TrendingRequest, MoviesResponse>
+  public let fetchPopularMovie: Action<PopularMovieRequest, MovieResponse>
+  public var fetchFreeWatchMovie: Action<FreeWatchMovieRequest, MovieResponse>
+  public var fetchTrendingMovie: Action<TrendingMovieRequest, MovieResponse>
 
   public init(network: Networking) {
     fetchPopularMovie = Action { input in
@@ -29,10 +27,7 @@ public class MovieRepository: MovieRepositoryType {
     fetchFreeWatchMovie = Action { input in
       network.request(target: input.toTarget(baseUrl: network.endPoint, apiKey: network.apiKey))
     }
-    fetchFreeWatchTV = Action { input in
-      network.request(target: input.toTarget(baseUrl: network.endPoint, apiKey: network.apiKey))
-    }
-    fetchTrending = Action { input in
+    fetchTrendingMovie = Action { input in
       network.request(target: input.toTarget(baseUrl: network.endPoint, apiKey: network.apiKey))
     }
   }

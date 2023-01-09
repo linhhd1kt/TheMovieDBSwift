@@ -1,5 +1,5 @@
 //
-//  MovieResponse.swift
+//  TvResponse.swift
 //  SwiftBase
 //
 //  Copyright © HaLinh Co., Ltd.
@@ -7,17 +7,17 @@
 
 import Foundation
 
-public struct MovieResponse: Codable {
+public struct TvResponse: Codable {
   public struct Data: Codable {
     public let posterPath: String
-    public let adult: Bool
+    public let originCountry: [String]
     public let overview: String
-    public let releaseDate: String
+    public let firstAirDate: String
     public let genreIDS: [Int]
     public let id: Int
-    public let originalTitle: String
+    public let originalName: String
     public let originalLanguage: String
-    public let title: String
+    public let name: String
     public let backdropPath: String
     public let popularity: Double
     public let voteCount: Int
@@ -26,13 +26,14 @@ public struct MovieResponse: Codable {
     
     public enum CodingKeys: String, CodingKey {
       case posterPath = "poster_path"
-      case adult, overview
-      case releaseDate = "release_date"
+      case overview
+      case firstAirDate = "first_air_date"
       case genreIDS = "genre_ids"
       case id
-      case originalTitle = "original_title"
+      case originalName = "original_name"
       case originalLanguage = "original_language"
-      case title
+      case originCountry = "origin_country"
+      case name
       case backdropPath = "backdrop_path"
       case popularity
       case voteCount = "vote_count"
@@ -44,13 +45,13 @@ public struct MovieResponse: Codable {
       let container = try decoder.container(keyedBy: CodingKeys.self)
       id = try container.decodeIfPresent(Int.self, forKey: .id) ?? -1
       posterPath = try container.decodeIfPresent(String.self, forKey: .posterPath) ?? ""
-      adult = try container.decodeIfPresent(Bool.self, forKey: .adult) ?? false
+      originCountry = try container.decodeIfPresent([String].self, forKey: .originCountry) ?? []
       overview = try container.decodeIfPresent(String.self, forKey: .overview) ?? ""
-      releaseDate = try container.decodeIfPresent(String.self, forKey: .releaseDate) ?? "2000-01-01"
+      firstAirDate = try container.decodeIfPresent(String.self, forKey: .firstAirDate) ?? "2000-01-01"
       genreIDS = try container.decodeIfPresent([Int].self, forKey: .genreIDS) ?? []
-      originalTitle = try container.decodeIfPresent(String.self, forKey: .originalTitle) ?? ""
-      originalLanguage = try container.decodeIfPresent(String.self, forKey: .originalLanguage) ?? "en"
-      title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
+      originalName = try container.decodeIfPresent(String.self, forKey: .originalName) ?? ""
+      originalLanguage = try container.decodeIfPresent(String.self, forKey: .originalLanguage) ?? ""
+      name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
       backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath) ?? ""
       popularity = try container.decodeIfPresent(Double.self, forKey: .popularity) ?? 0.0
       voteCount = try container.decodeIfPresent(Int.self, forKey: .voteCount) ?? 0

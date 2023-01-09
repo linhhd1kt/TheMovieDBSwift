@@ -18,11 +18,14 @@ protocol DashboardViewModelType {
 protocol DashboardViewModelInputType {
   var fetchDiscoverMovies: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
   var fetchFreeWatchMovies: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
+  var fetchFreeWatchTvs: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
   var fetchTrending: AnyObserver<DiscoverCategory> { get }
 }
 
 protocol DashboardViewModelOutputType {
-  var fetchPopularResult: Observable<MoviePage> { get }
-  var fetchFreeWatchResult: Observable<MoviePage> { get }
-  var fetchTrendingResult: Observable<MoviePage> { get }
+  var fetchPopularResult: ActionResult<MoviePage> { get }
+  var fetchFreeWatchMoviesResult: ActionResult<MoviePage> { get }
+  var fetchFreeWatchTvsResult: ActionResult<TvPage> { get }
+  var fetchTrendingMoviesResult: ActionResult<MoviePage> { get }
+  var fetchTrendingTvsResult: ActionResult<TvPage> { get }
 }

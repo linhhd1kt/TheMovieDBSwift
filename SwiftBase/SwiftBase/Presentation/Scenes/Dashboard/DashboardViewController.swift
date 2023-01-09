@@ -25,7 +25,6 @@ class DashboardViewController: RickViewController {
 
   private let viewModel: DashboardViewModelType
 
-  @available(*, unavailable)
   required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -73,15 +72,24 @@ class DashboardViewController: RickViewController {
   private func bindOutput(_ output: DashboardViewModelOutputType) {
     // popular
     output.fetchPopularResult
+      .elements
       .bind(to: popularItemSessionView.rx.items)
       .disposed(by: disposeBag)
     // free watch
-    output.fetchFreeWatchResult
+    output.fetchFreeWatchMoviesResult
+      .elements
       .bind(to: freeItemSessionView.rx.items)
       .disposed(by: disposeBag)
     // trending
-    output.fetchTrendingResult
+    output.fetchTrendingMoviesResult
+      .elements
       .bind(to: trendingItemSessionView.rx.items)
       .disposed(by: disposeBag)
+    
+    Observable.merge(output.fetchPopularResult.errors,
+                     output.fetchFreeWatchMoviesResult.errors,
+                     output.fetchTrendingMoviesResult.errors)
+    .bind(to: rx.showError)
+    .disposed(by: disposeBag)
   }
 }

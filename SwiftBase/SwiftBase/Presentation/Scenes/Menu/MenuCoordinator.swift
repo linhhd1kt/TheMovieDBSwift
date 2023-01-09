@@ -28,7 +28,7 @@ class MenuCoordinator: BaseCoordinator {
   private let navigationViewModel: NavigationViewModelType
 
   private var logger: Logger {
-    guard let logger = ServiceFacade.getService(Logable.self) as? Logger else {
+    guard let logger = ServiceFacade.getService(LoggerType.self) as? Logger else {
       fatalError("Logger should be initilized!")
     }
     return logger
@@ -88,17 +88,19 @@ class MenuCoordinator: BaseCoordinator {
       design.toggleTheme()
       navigationController.dismiss(animated: true)
     case .dashboard:
-      let repository = MovieRepository(network: network)
-      let traslator = MovieTranslator()
-      let usecase = MovieUseCase(repository: repository, translator: traslator)
-      let viewModel = DashboardViewModel(movieUseCase: usecase)
+      let movieRepository = MovieRepository(network: network)
+      let movieTranslator = MovieTranslator()
+      let movieUsecase = MovieUseCase(repository: movieRepository,
+                                      translator: movieTranslator)
+      
+      let tvRepository = TvRepository(network: network)
+      let tvTranslator = TvTranslator()
+      let tvUseCase = TvUseCase(repository: tvRepository, translator: tvTranslator)
+      
+      let viewModel = DashboardViewModel(movieUseCase: movieUsecase, tvUseCase: tvUseCase)
       let coordinator = DashboardCoordinator(navigationController: navigationController,
                                              viewModel: viewModel,
                                              navigationViewModel: navigationViewModel)
-//      let viewModel = TabbarViewModel()
-//      let coordinator = TabbarCoordinator(navigationController: navigationController,
-//                                          viewModel: viewModel,
-//                                          navigationViewModel: navigationViewModel)
       start(coordinator: coordinator)
     default:
       break

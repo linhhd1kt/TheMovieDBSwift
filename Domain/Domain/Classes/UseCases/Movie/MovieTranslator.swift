@@ -11,7 +11,7 @@ public struct MovieTranslator: MovieTranslatorType {
   
   public init() { }
   
-  public func toPopularRequest(page: Int, category: DiscoverCategory) -> PopularMovieRequest {
+  public func toPopularMovieRequest(page: Int, category: DiscoverCategory) -> PopularMovieRequest {
     let monetization: MonetizationType
     var releaseTypes = Set<ReleaseType>()
     switch category {
@@ -36,24 +36,20 @@ public struct MovieTranslator: MovieTranslatorType {
     return FreeWatchMovieRequest(page: page)
   }
 
-  public func toFreeWatchTVRequest(page: Int) -> FreeWatchTVRequest {
-    return FreeWatchTVRequest(page: page)
+  public func toTrendingMovieRequest(timeWindow: TimeWindow) -> TrendingMovieRequest {
+    return TrendingMovieRequest(page: 1, mediaType: .all, timeWindow: timeWindow)
   }
 
-  public func toTrendingRequest(timeWindow: TimeWindow) -> TrendingRequest {
-    return TrendingRequest(page: 1, mediaType: .all, timeWindow: timeWindow)
-  }
-
-  public func toModel(response: MoviesResponse.Data) -> Movie {
+  public func toModel(response: MovieResponse.Data) -> Movie {
     return Movie(id: response.id,
                  posterPath: response.posterPath,
                  adult: response.adult,
                  overview: response.overview,
                  releaseDate: response.releaseDate,
                  genreIds: response.genreIDS,
-                 originalName: response.originalName,
+                 originalTitle: response.originalTitle,
                  originalLanguage: response.originalLanguage,
-                 name: response.name,
+                 title: response.title,
                  backdropPath: response.backdropPath,
                  popularity: response.popularity,
                  voteCount: response.voteCount,
@@ -61,11 +57,11 @@ public struct MovieTranslator: MovieTranslatorType {
                  voteAverage: response.voteAverage)
   }
 
-  public func toModels(response: MoviesResponse) -> [Movie] {
+  public func toModels(response: MovieResponse) -> [Movie] {
     response.results.map { toModel(response: $0) }
   }
 
-  public func toPage(response: MoviesResponse) -> MoviePage {
+  public func toPage(response: MovieResponse) -> MoviePage {
     return MoviePage(page: response.page,
                      results: response.results.map { toModel(response: $0) },
                      totalResults: response.totalResults,

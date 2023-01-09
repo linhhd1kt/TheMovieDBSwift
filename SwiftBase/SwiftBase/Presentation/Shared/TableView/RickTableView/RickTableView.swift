@@ -27,7 +27,7 @@ class RickTableView<Page: Paginated>: UITableView {
   private let nextPageObserver = PublishSubject<Int>()
 
   var logger: Logger {
-    guard let logger = ServiceFacade.getService(Logable.self) as? Logger else {
+    guard let logger = ServiceFacade.getService(LoggerType.self) as? Logger else {
       fatalError("Logger should be implemented!")
     }
     return logger

@@ -16,7 +16,7 @@ final class MovieTableCell: ShadowTableCell {
   
   func configure(_ movie: Movie) {
     imageLoader.loadTMDBImage(with: movie.posterPath, to: backdropImageView)
-    titleLabel.text = movie.name
+    titleLabel.text = movie.title
     releaseDateLabel.text = movie.releaseDate
     overviewLabel.text = movie.overview
   }

@@ -19,8 +19,6 @@ public protocol Networking {
   func request<T: Codable>(target: TargetType) -> Observable<T>
 }
 
-extension Logger: CanLogDebug {}
-
 public class Network<Provider: MoyaProviderType>: Networking {
   private var provider: Provider
   private let parser: ResponseParserType

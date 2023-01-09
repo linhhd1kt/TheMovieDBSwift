@@ -10,17 +10,12 @@ import Data
 import Extension
 
 public class MovieUseCase {
-  // MARK: - Dependency
-
   private let repository: MovieRepositoryType
   private let translator: MovieTranslatorType
 
-  private let fetchPopularObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
+  private let fetchPopularMovieObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
   private let fetchFreeWatchMovieObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
-  private let fetchFreeWatchTVObserver = PublishSubject<(page: Int, category: DiscoverCategory)>()
-  private let fetchTrendingObserver = PublishSubject<TimeWindow>()
-
-  // MARK: - Other
+  private let fetchTrendingMovieObserver = PublishSubject<TimeWindow>()
 
   public init(repository: MovieRepositoryType, translator: MovieTranslatorType) {
     self.repository = repository
@@ -29,10 +24,10 @@ public class MovieUseCase {
   }
 
   private func bindInput() {
-    fetchPopularObserver
+    fetchPopularMovieObserver
       .withUnretained(self)
       .map { this, info in
-        this.translator.toPopularRequest(page: info.page, category: info.category)
+          this.translator.toPopularMovieRequest(page: info.page, category: info.category)
       }
       .bind(to: repository.fetchPopularMovie.inputs)
       .disposed(by: disposeBag)
@@ -44,19 +39,12 @@ public class MovieUseCase {
       .bind(to: repository.fetchFreeWatchMovie.inputs)
       .disposed(by: disposeBag)
 
-    fetchFreeWatchTVObserver
-      .map { $0.page }
-      .withUnretained(self)
-      .map { this, page in this.translator.toFreeWatchTVRequest(page: page) }
-      .bind(to: repository.fetchFreeWatchTV.inputs)
-      .disposed(by: disposeBag)
-
-    fetchTrendingObserver
+    fetchTrendingMovieObserver
       .withUnretained(self)
       .map { this, timeWindow in
-        this.translator.toTrendingRequest(timeWindow: timeWindow)
+        this.translator.toTrendingMovieRequest(timeWindow: timeWindow)
       }
-      .bind(to: repository.fetchTrending.inputs)
+      .bind(to: repository.fetchTrendingMovie.inputs)
       .disposed(by: disposeBag)
   }
 }
@@ -72,19 +60,15 @@ extension MovieUseCase: MovieUseCaseType {
 
 extension MovieUseCase: MovieUseCaseInputType {
   public var fetchPopular: AnyObserver<(page: Int, category: DiscoverCategory)> {
-    fetchPopularObserver.asObserver()
+    fetchPopularMovieObserver.asObserver()
   }
 
   public var fetchFreeWatchMovie: AnyObserver<(page: Int, category: DiscoverCategory)> {
     return fetchFreeWatchMovieObserver.asObserver()
   }
 
-  public var fetchFreeWatchTV: AnyObserver<(page: Int, category: DiscoverCategory)> {
-    return fetchFreeWatchTVObserver.asObserver()
-  }
-
   public var fetchTrending: AnyObserver<TimeWindow> {
-    fetchTrendingObserver.asObserver()
+    fetchTrendingMovieObserver.asObserver()
   }
 }
 
@@ -102,12 +86,12 @@ extension MovieUseCase: MovieUseCaseOutputType {
   }
 
   public var fetchFreeWatchTVResult: ActionResult<MoviePage> {
-    return repository.fetchFreeWatchTV.toResult()
+    return repository.fetchFreeWatchMovie.toResult()
       .map { self.translator.toPage(response: $0) }
   }
 
   public var fetchTrendingResult: ActionResult<MoviePage> {
-    return repository.fetchTrending.toResult()
+    return repository.fetchTrendingMovie.toResult()
       .map { self.translator.toPage(response: $0) }
   }
 }

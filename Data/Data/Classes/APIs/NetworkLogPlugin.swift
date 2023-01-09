@@ -11,10 +11,10 @@ import Extension
 import Services
 
 public final class NetworkLogPlugin: PluginType {
-  private let logger: Logable
+  private let logger: LoggerType
   private var requestLogMessage: String = ""
   
-  public init(logger: Logable) {
+  public init(logger: LoggerType) {
     self.logger = logger
   }
   

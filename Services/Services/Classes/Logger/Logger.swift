@@ -7,10 +7,6 @@
 
 import XCGLogger
 
-public protocol CanLogDebug {
-  func debug(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
-}
-
 public enum LogLevel: Int, CaseIterable, CustomStringConvertible {
   case verbose
   case debug
@@ -49,7 +45,7 @@ public enum LogLevel: Int, CaseIterable, CustomStringConvertible {
   }
 }
 
-public protocol Logable: CanLogDebug {
+public protocol LoggerType {
   func verbose(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
   func debug(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
   func info(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
@@ -60,12 +56,11 @@ public protocol Logable: CanLogDebug {
   func setLogLevel(_ logLevel: LogLevel)
 }
 
-public class Logger: Logable {
+public class Logger: LoggerType {
   private var logger: XCGLogger = .default
   private var shouldTrackWithFireBase = false
   
   public init() {
-// #if DEBUG
     logger.setup(level: .verbose,
                  showThreadName: true,
                  showLevel: true,
@@ -81,63 +76,48 @@ public class Logger: Logable {
     emojiLogFormatter.apply(prefix: "‼️", postfix: "‼️", to: .error)
     emojiLogFormatter.apply(prefix: "💣", postfix: "💣", to: .severe)
     logger.formatters = [emojiLogFormatter]
-// #endif
   }
   
   public func verbose(_ message: String,
                       functionName: StaticString = #function,
                       fileName: StaticString = #file,
                       lineNumber: Int = #line) {
-// #if DEBUG
     logger.verbose(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
-// #endif
   }
   
   public func debug(_ message: String,
                     functionName: StaticString = #function,
                     fileName: StaticString = #file,
                     lineNumber: Int = #line) {
-// #if DEBUG
     logger.verbose(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
-// #endif
   }
   
   public func info(_ message: String,
                    functionName: StaticString = #function,
                    fileName: StaticString = #file,
                    lineNumber: Int = #line) {
-// #if DEBUG
     logger.info(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
-// #endif
   }
   
   public func warn(_ message: String,
                    functionName: StaticString = #function,
                    fileName: StaticString = #file,
                    lineNumber: Int = #line) {
-// #if DEBUG
     logger.warning(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
-// #endif
   }
   
   public func error(_ message: String,
                     functionName: StaticString = #function,
                     fileName: StaticString = #file,
-                    lineNumber: Int = #line)
-  {
-// #if DEBUG
+                    lineNumber: Int = #line) {
     logger.error(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
-// #endif
   }
   
   public func severe(_ message: String,
                      functionName: StaticString = #function,
                      fileName: StaticString = #file,
-                     lineNumber: Int = #line)
-  {
-// #if DEBUG
+                     lineNumber: Int = #line) {
     logger.severe(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
-// #endif
   }
   
   public func getLogLevel() -> LogLevel {

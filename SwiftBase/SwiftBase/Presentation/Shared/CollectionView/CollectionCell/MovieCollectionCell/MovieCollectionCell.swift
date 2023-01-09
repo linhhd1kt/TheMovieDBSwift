@@ -16,7 +16,7 @@ class MovieCollectionCell: ShadowCollectionCell {
 
   func configure(_ model: Movie) {
     imageLoader.loadTMDBImage(with: model.posterPath, to: posterImage)
-    movieTitleLabel.text = model.name
+    movieTitleLabel.text = model.title
     releaseDateLabel.text = model.releaseDate
     voteView.createCircularPath(percentage: model.voteAverage)
     voteView.progressAnimation(duration: 2)

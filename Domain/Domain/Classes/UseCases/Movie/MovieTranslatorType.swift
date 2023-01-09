@@ -8,11 +8,10 @@
 import Data
 
 public protocol MovieTranslatorType {
-  func toPopularRequest(page: Int, category: DiscoverCategory) -> PopularMovieRequest
+  func toPopularMovieRequest(page: Int, category: DiscoverCategory) -> PopularMovieRequest
   func toFreeWatchMovieRequest(page: Int) -> FreeWatchMovieRequest
-  func toFreeWatchTVRequest(page: Int) -> FreeWatchTVRequest
-  func toTrendingRequest(timeWindow: TimeWindow) -> TrendingRequest
-  func toModels(response: MoviesResponse) -> [Movie]
-  func toModel(response: MoviesResponse.Data) -> Movie
-  func toPage(response: MoviesResponse) -> MoviePage
+  func toTrendingMovieRequest(timeWindow: TimeWindow) -> TrendingMovieRequest
+  func toModels(response: MovieResponse) -> [Movie]
+  func toModel(response: MovieResponse.Data) -> Movie
+  func toPage(response: MovieResponse) -> MoviePage
 }

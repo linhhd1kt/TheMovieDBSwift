@@ -14,9 +14,9 @@ public enum APITarget {
   case movie(movieId: String)
   case search(query: String)
   case discoverMovie(page: Int, monetization: MonetizationType, releaseTypes: Set<ReleaseType>)
-  case discoverTV(page: Int, monetization: MonetizationType)
+  case discoverTv(page: Int, monetization: MonetizationType, releaseTypes: Set<ReleaseType>)
   case trending(page: Int, mediaType: MediaType, timeWindow: TimeWindow)
-  case latestTrailerOnTV
+  case latestTrailerOnTv
   case latestTrailerOnThreaters
 }
 
@@ -41,12 +41,12 @@ public class API: TargetType {
       return "3/search/movie"
     case .discoverMovie:
       return "3/discover/movie"
-    case .discoverTV:
+    case .discoverTv:
       return "3/discover/tv"
     // swiftlint:disable pattern_matching_keywords
-    case .trending(page: _, mediaType: var mediaType, timeWindow: var timeWindow):
+    case .trending(page: _, mediaType: let mediaType, timeWindow: let timeWindow):
       return "3/trending/\(mediaType)/\(timeWindow)"
-    case .latestTrailerOnTV:
+    case .latestTrailerOnTv:
       return "3/disvoer/tv"
     case .latestTrailerOnThreaters:
       return "3/discover/movie"
@@ -94,7 +94,9 @@ public class API: TargetType {
         parameters["with_release_type"] = releaseTypes.map { "\($0.rawValue)" }.joined(separator: "|")
       }
       return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-    case let .discoverTV(page: page, monetization: monetization):
+    case let .discoverTv(page: page,
+                         monetization: monetization,
+                         releaseTypes: releaseTypes):
       var parameters: [String: Any] = [:]
       parameters["api_key"] = apiKey
       parameters["page"] = page
@@ -104,7 +106,7 @@ public class API: TargetType {
       var parameters: [String: Any] = [:]
       parameters["api_key"] = apiKey
       return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-    case .latestTrailerOnTV:
+    case .latestTrailerOnTv:
       var parameters: [String: Any] = [:]
       parameters["api_key"] = apiKey
       return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
