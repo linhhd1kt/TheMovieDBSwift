@@ -40,10 +40,10 @@ public struct TvTranslator: TvTranslatorType {
     response.results.map { toModel(response: $0) }
   }
   
-  public func toPage(response: TvResponse) -> TvPage {
-    return TvPage(page: response.page,
-                  results: response.results.map { toModel(response: $0) },
-                  totalResults: response.totalResults,
-                  totalPages: response.totalPages)
+  public func toPage(response: TvResponse) -> MediaPage {
+    return MediaPage(page: response.page,
+                     results: response.results.map { toModel(response: $0) },
+                     totalResults: response.totalResults,
+                     totalPages: response.totalPages)
   }
 }

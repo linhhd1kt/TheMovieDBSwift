@@ -12,5 +12,5 @@ public protocol TvTranslatorType {
   func toTrendingTvRequest(timeWindow: TimeWindow) -> TrendingTvRequest
   func toModels(response: TvResponse) -> [Tv]
   func toModel(response: TvResponse.Data) -> Tv
-  func toPage(response: TvResponse) -> TvPage
+  func toPage(response: TvResponse) -> MediaPage
 }

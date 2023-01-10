@@ -70,12 +70,12 @@ extension TvUseCase: TvUseCaseInputType {
 // MARK: - TvUseCaseOutputType
 
 extension TvUseCase: TvUseCaseOutputType {
-  public var fetchFreeWatchTvResult: ActionResult<TvPage> {
+  public var fetchFreeWatchTvResult: ActionResult<MediaPage> {
     return repository.fetchFreeWatchTv.toResult()
       .map { self.translator.toPage(response: $0) }
   }
   
-  public var fetchTrendingResult: ActionResult<TvPage> {
+  public var fetchTrendingResult: ActionResult<MediaPage> {
     return repository.fetchTrendingTv.toResult()
       .map { self.translator.toPage(response: $0) }
   }

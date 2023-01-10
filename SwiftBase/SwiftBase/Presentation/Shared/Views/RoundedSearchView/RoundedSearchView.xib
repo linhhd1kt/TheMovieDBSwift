@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoundedSearchView" customModule="TheMovieDBSwift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoundedSearchView" customModule="SwiftBase" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="2JN-x0-BwX"/>
                 <outlet property="roundedView" destination="oVW-cf-n1r" id="Rga-yn-Wbh"/>
@@ -33,7 +33,7 @@
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnP-5T-LWx" userLabel="Search Button">
                             <rect key="frame" x="181" y="0.0" width="120" height="59"/>
-                            <color key="backgroundColor" name="ternary"/>
+                            <color key="backgroundColor" name="primary"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="ShL-0t-bLb"/>
                             </constraints>
@@ -41,7 +41,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Search">
                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
-                                <color key="baseForegroundColor" name="on-ternary"/>
+                                <color key="baseForegroundColor" name="on-tertiary"/>
                             </buttonConfiguration>
                         </button>
                     </subviews>
@@ -75,19 +75,19 @@
     </objects>
     <resources>
         <namedColor name="background">
-            <color red="0.99215686274509807" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.9649999737739563" green="0.99599999189376831" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="on-background">
-            <color red="0.10196078431372549" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.12200000137090683" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="on-ternary">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="on-tertiary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.17299999296665192" green="0.34900000691413879" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="surface-tint">
-            <color red="0.047058823529411764" green="0.38039215686274508" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="ternary">
-            <color red="0.42352941176470588" green="0.3411764705882353" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.17299999296665192" green="0.34900000691413879" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

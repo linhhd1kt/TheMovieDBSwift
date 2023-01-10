@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieCollectionCell" customModule="TheMovieDBSwift" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MediaCollectionCell" customModule="SwiftBase" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="160" height="320"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" secondItem="IBT-EJ-GbQ" secondAttribute="height" multiplier="4:6" id="Krx-Gm-AOw"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y96-Gp-vRx" customClass="CircleView" customModule="TheMovieDBSwift" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y96-Gp-vRx" customClass="CircleView" customModule="SwiftBase" customModuleProvider="target">
                                 <rect key="frame" x="12" y="196" width="32" height="32"/>
                                 <color key="backgroundColor" name="secondary"/>
                                 <color key="tintColor" name="surface-tint"/>
@@ -104,16 +104,16 @@
     </objects>
     <resources>
         <namedColor name="background">
-            <color red="0.99215686274509807" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.9649999737739563" green="0.99599999189376831" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="on-background">
-            <color red="0.10196078431372549" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.12200000137090683" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="secondary">
-            <color red="0.32549019607843138" green="0.37254901960784315" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.40000000596046448" blue="0.53700000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="surface-tint">
-            <color red="0.047058823529411764" green="0.38039215686274508" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.17299999296665192" green="0.34900000691413879" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

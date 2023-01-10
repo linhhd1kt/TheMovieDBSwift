@@ -44,10 +44,14 @@ class DashboardViewController: RickViewController {
   }
 
   private func setupLayouts() {
-    popularItemSessionView.configure(title: "What's Popular", categories: DiscoverCategory.popularItems)
-    freeItemSessionView.configure(title: "Free To Watch", categories: DiscoverCategory.freeItems)
-    trendingItemSessionView.configure(title: "Trending", categories: DiscoverCategory.treding)
-    headerView.configure(headerHeightContraint, scrollView: containerScrollView)
+    popularItemSessionView.configure(title: "What's Popular",
+                                     categories: DiscoverCategory.popularItems)
+    freeItemSessionView.configure(title: "Free To Watch",
+                                  categories: DiscoverCategory.freeItems)
+    trendingItemSessionView.configure(title: "Trending",
+                                      categories: DiscoverCategory.treding)
+    headerView.configure(headerHeightContraint,
+                         scrollView: containerScrollView)
   }
 
   private func bindInput(_ input: DashboardViewModelInputType) {
@@ -55,13 +59,19 @@ class DashboardViewController: RickViewController {
     Observable.combineLatest(popularItemSessionView.rx.nextPage,
                              popularItemSessionView.rx.selectedCategory)
       .map { (page: $0, category: $1) }
-      .bind(to: input.fetchDiscoverMovies)
+      .distinctUntilChanged{ $0.category == $1.category && $0.page == $1.page }
+      .bind(to: input.fetchDiscover)
       .disposed(by: disposeBag)
     // free watch
-    Observable.combineLatest(freeItemSessionView.rx.nextPage,
-                             freeItemSessionView.rx.selectedCategory)
+    let freeWath = Observable.combineLatest(freeItemSessionView.rx.nextPage,
+                                            freeItemSessionView.rx.selectedCategory)
       .map { (page: $0, category: $1) }
-      .bind(to: input.fetchFreeWatchMovies)
+      .distinctUntilChanged{ $0.category == $1.category && $0.page == $1.page }
+    freeWath.filter { $0.category == .movie }
+      .bind(to: input.fetchFreeWatchMovie)
+      .disposed(by: disposeBag)
+    freeWath.filter { $0.category == .tv }
+      .bind(to: input.fetchFreeWatchTv)
       .disposed(by: disposeBag)
     // trending
     trendingItemSessionView.rx.selectedCategory
@@ -76,19 +86,20 @@ class DashboardViewController: RickViewController {
       .bind(to: popularItemSessionView.rx.items)
       .disposed(by: disposeBag)
     // free watch
-    output.fetchFreeWatchMoviesResult
-      .elements
+    Observable.merge(output.fetchFreeWatchMovieResult.elements,
+                     output.fetchFreeWatchTvResult.elements)
       .bind(to: freeItemSessionView.rx.items)
       .disposed(by: disposeBag)
     // trending
-    output.fetchTrendingMoviesResult
+    output.fetchTrendingResult
       .elements
       .bind(to: trendingItemSessionView.rx.items)
       .disposed(by: disposeBag)
-    
+    // all errors
     Observable.merge(output.fetchPopularResult.errors,
-                     output.fetchFreeWatchMoviesResult.errors,
-                     output.fetchTrendingMoviesResult.errors)
+                     output.fetchFreeWatchMovieResult.errors,
+                     output.fetchFreeWatchTvResult.errors,
+                     output.fetchTrendingResult.errors)
     .bind(to: rx.showError)
     .disposed(by: disposeBag)
   }

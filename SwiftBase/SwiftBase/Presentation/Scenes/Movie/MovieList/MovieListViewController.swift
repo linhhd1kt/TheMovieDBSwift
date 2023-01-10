@@ -12,7 +12,7 @@ import Extension
 import Data
 
 class MovieListViewController: RickViewController {
-  private var tableView: RickTableView<MoviePage> = .init(frame: .zero, style: .plain)
+  private var tableView: RickTableView<MediaPage> = .init(frame: .zero, style: .plain)
   private let viewModel: MovieListViewModelType
 
   // MARK: - Initialization

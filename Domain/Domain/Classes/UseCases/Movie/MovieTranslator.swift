@@ -11,7 +11,7 @@ public struct MovieTranslator: MovieTranslatorType {
   
   public init() { }
   
-  public func toPopularMovieRequest(page: Int, category: DiscoverCategory) -> PopularMovieRequest {
+  public func toDiscoverRequest(page: Int, category: DiscoverCategory) -> DiscoverMovieRequest {
     let monetization: MonetizationType
     var releaseTypes = Set<ReleaseType>()
     switch category {
@@ -29,7 +29,7 @@ public struct MovieTranslator: MovieTranslatorType {
     default:
       monetization = .none
     }
-    return PopularMovieRequest(page: page, monetization: monetization, releaseTypes: releaseTypes)
+    return DiscoverMovieRequest(page: page, monetization: monetization, releaseTypes: releaseTypes)
   }
 
   public func toFreeWatchMovieRequest(page: Int) -> FreeWatchMovieRequest {
@@ -61,8 +61,8 @@ public struct MovieTranslator: MovieTranslatorType {
     response.results.map { toModel(response: $0) }
   }
 
-  public func toPage(response: MovieResponse) -> MoviePage {
-    return MoviePage(page: response.page,
+  public func toPage(response: MovieResponse) -> MediaPage {
+    return MediaPage(page: response.page,
                      results: response.results.map { toModel(response: $0) },
                      totalResults: response.totalResults,
                      totalPages: response.totalPages)

@@ -24,7 +24,7 @@ public final class MovieListViewModel: BaseViewModel {
   // MARK: - Output
 
   private let errorObserver = BehaviorSubject<String>(value: "")
-  private var movieListObserver = BehaviorRelay<MoviePage>(value: .empty)
+  private var movieListObserver = BehaviorRelay<MediaPage>(value: .empty)
 
   public init(movieUseCase: MovieUseCaseType) {
     self.movieUseCase = movieUseCase
@@ -62,7 +62,7 @@ extension MovieListViewModel: MovieListViewModelInputType {
 }
 
 extension MovieListViewModel: MovieListViewModelOutputType {
-  public var fetchMovieResult: Observable<MoviePage> {
+  public var fetchMovieResult: Observable<MediaPage> {
     return movieListObserver.asObservable()
   }
 }

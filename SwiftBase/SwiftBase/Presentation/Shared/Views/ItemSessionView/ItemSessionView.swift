@@ -32,7 +32,7 @@ class ItemSessionView: UIView {
   @IBOutlet private var dropdownTableView: UITableView!
   @IBOutlet private var dropdownHeightConstraint: NSLayoutConstraint!
   @IBOutlet private var itemsContainer: UIView!
-  fileprivate var itemsCollectionView = RickCollectionView<MoviePage>()
+  fileprivate var itemsCollectionView = RickCollectionView<MediaPage>()
 
   private let expandDropdownObserver = BehaviorSubject<Bool>(value: false)
 
@@ -91,9 +91,9 @@ class ItemSessionView: UIView {
 
   private func setupItemsCollectionView() {
     itemsContainer.attach(itemsCollectionView)
-    itemsCollectionView.register(MovieCollectionCell.self)
-    itemsCollectionView.configure(identifier: MovieCollectionCell.className, type: MovieCollectionCell.self) { _, model, cell in
-      cell.configure(model)
+    itemsCollectionView.register(MediaCollectionCell.self)
+    itemsCollectionView.configure(identifier: MediaCollectionCell.className, type: MediaCollectionCell.self) { _, model, cell in
+      cell.configure(model as! Movie)
     }
     itemsCollectionView.binding()
   }
@@ -171,17 +171,15 @@ extension ItemSessionView: HasDisposeBag, HasDeSign {}
 
 extension Reactive where Base: ItemSessionView {
   // input
-  var items: AnyObserver<MoviePage> {
+  var items: AnyObserver<MediaPage> {
     return base.itemsCollectionView.itemsResult
   }
-
   // output
   var selectedCategory: Observable<DiscoverCategory> {
     return base.selectedCategoryObserver
       .asObservable()
       .distinctUntilChanged()
   }
-
   var nextPage: Observable<Int> {
     return base.nextPageTriggerObserver
       .asObservable()

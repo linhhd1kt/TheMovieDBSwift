@@ -91,9 +91,7 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
     identifier _: String,
     type _: Cell.Type,
     configureCell: @escaping (IndexPath, Element, Cell) -> Void
-  )
-    where Page.Element == Element
-  {
+  ) where Page.Element == Element {
     let dataSource = RxCollectionViewSectionedReloadDataSource<ItemSession<Element>>(
       configureCell: { _, collectionView, indexPath, item in
         let cell = collectionView.dequeue(Cell.self, for: indexPath)

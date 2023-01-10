@@ -19,5 +19,5 @@ public protocol MovieListViewModelInputType {
 }
 
 public protocol MovieListViewModelOutputType {
-  var fetchMovieResult: Observable<MoviePage> { get }
+  var fetchMovieResult: Observable<MediaPage> { get }
 }

@@ -31,8 +31,8 @@
 		DC61296C2967DF9D003DBDA8 /* RickTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61293A2967DF9D003DBDA8 /* RickTableView.swift */; };
 		DC61296D2967DF9D003DBDA8 /* RickTableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61293B2967DF9D003DBDA8 /* RickTableViewType.swift */; };
 		DC61296E2967DF9D003DBDA8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC61293D2967DF9D003DBDA8 /* BaseCoordinator.swift */; };
-		DC61296F2967DF9D003DBDA8 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6129412967DF9D003DBDA8 /* MovieCollectionCell.swift */; };
-		DC6129702967DF9D003DBDA8 /* MovieCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6129422967DF9D003DBDA8 /* MovieCollectionCell.xib */; };
+		DC61296F2967DF9D003DBDA8 /* MediaCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6129412967DF9D003DBDA8 /* MediaCollectionCell.swift */; };
+		DC6129702967DF9D003DBDA8 /* MediaCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6129422967DF9D003DBDA8 /* MediaCollectionCell.xib */; };
 		DC6129712967DF9D003DBDA8 /* MovieDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6129432967DF9D003DBDA8 /* MovieDataSource.swift */; };
 		DC6129722967DF9D003DBDA8 /* ShadowCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6129442967DF9D003DBDA8 /* ShadowCollectionCell.swift */; };
 		DC6129732967DF9D003DBDA8 /* RickCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6129462967DF9D003DBDA8 /* RickCollectionView.swift */; };
@@ -158,8 +158,8 @@
 		DC61293A2967DF9D003DBDA8 /* RickTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RickTableView.swift; sourceTree = "<group>"; };
 		DC61293B2967DF9D003DBDA8 /* RickTableViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RickTableViewType.swift; sourceTree = "<group>"; };
 		DC61293D2967DF9D003DBDA8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		DC6129412967DF9D003DBDA8 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
-		DC6129422967DF9D003DBDA8 /* MovieCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCollectionCell.xib; sourceTree = "<group>"; };
+		DC6129412967DF9D003DBDA8 /* MediaCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCollectionCell.swift; sourceTree = "<group>"; };
+		DC6129422967DF9D003DBDA8 /* MediaCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaCollectionCell.xib; sourceTree = "<group>"; };
 		DC6129432967DF9D003DBDA8 /* MovieDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDataSource.swift; sourceTree = "<group>"; };
 		DC6129442967DF9D003DBDA8 /* ShadowCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowCollectionCell.swift; sourceTree = "<group>"; };
 		DC6129462967DF9D003DBDA8 /* RickCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RickCollectionView.swift; sourceTree = "<group>"; };
@@ -507,20 +507,20 @@
 		DC61293F2967DF9D003DBDA8 /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				DC6129402967DF9D003DBDA8 /* MovieCollectionCell */,
+				DC6129402967DF9D003DBDA8 /* MediaCollectionCell */,
 				DC6129442967DF9D003DBDA8 /* ShadowCollectionCell.swift */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
 		};
-		DC6129402967DF9D003DBDA8 /* MovieCollectionCell */ = {
+		DC6129402967DF9D003DBDA8 /* MediaCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				DC6129412967DF9D003DBDA8 /* MovieCollectionCell.swift */,
-				DC6129422967DF9D003DBDA8 /* MovieCollectionCell.xib */,
+				DC6129412967DF9D003DBDA8 /* MediaCollectionCell.swift */,
+				DC6129422967DF9D003DBDA8 /* MediaCollectionCell.xib */,
 				DC6129432967DF9D003DBDA8 /* MovieDataSource.swift */,
 			);
-			path = MovieCollectionCell;
+			path = MediaCollectionCell;
 			sourceTree = "<group>";
 		};
 		DC6129452967DF9D003DBDA8 /* RickCollectionView */ = {
@@ -980,7 +980,7 @@
 				DC6129802967DF9E003DBDA8 /* SelectedCategoryDropdownCell.xib in Resources */,
 				DC6129C12967E07C003DBDA8 /* HomeViewController.xib in Resources */,
 				DC6129D72967E07C003DBDA8 /* DashboardViewController.xib in Resources */,
-				DC6129702967DF9D003DBDA8 /* MovieCollectionCell.xib in Resources */,
+				DC6129702967DF9D003DBDA8 /* MediaCollectionCell.xib in Resources */,
 				DC6129832967DF9E003DBDA8 /* ItemSessionView.xib in Resources */,
 				DC6129CD2967E07C003DBDA8 /* LoginViewController.xib in Resources */,
 				DC819DB0295C1EF700065C8B /* Localizable.strings in Resources */,
@@ -1171,7 +1171,7 @@
 				DC2C7FF02946152500BC4833 /* DemoEnvironment.swift in Sources */,
 				DC6129682967DF9D003DBDA8 /* MenuCell.swift in Sources */,
 				DC6129712967DF9D003DBDA8 /* MovieDataSource.swift in Sources */,
-				DC61296F2967DF9D003DBDA8 /* MovieCollectionCell.swift in Sources */,
+				DC61296F2967DF9D003DBDA8 /* MediaCollectionCell.swift in Sources */,
 				DC6129762967DF9D003DBDA8 /* AlertController.swift in Sources */,
 				DC282C502939D25400CE8C8A /* SceneDelegate.swift in Sources */,
 				DC2C7FF32946152500BC4833 /* WorkflowEnvironment.swift in Sources */,

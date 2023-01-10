@@ -7,6 +7,17 @@
 
 import XCGLogger
 
+public protocol LoggerType {
+  func verbose(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
+  func debug(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
+  func info(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
+  func warn(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
+  func error(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
+  func severe(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
+  func getLogLevel() -> LogLevel
+  func setLogLevel(_ logLevel: LogLevel)
+}
+
 public enum LogLevel: Int, CaseIterable, CustomStringConvertible {
   case verbose
   case debug
@@ -43,17 +54,6 @@ public enum LogLevel: Int, CaseIterable, CustomStringConvertible {
       return "None"
     }
   }
-}
-
-public protocol LoggerType {
-  func verbose(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
-  func debug(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
-  func info(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
-  func warn(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
-  func error(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
-  func severe(_ message: String, functionName: StaticString, fileName: StaticString, lineNumber: Int)
-  func getLogLevel() -> LogLevel
-  func setLogLevel(_ logLevel: LogLevel)
 }
 
 public class Logger: LoggerType {

@@ -14,10 +14,10 @@ final class MovieTableCell: ShadowTableCell {
   @IBOutlet private var releaseDateLabel: UILabel!
   @IBOutlet private var overviewLabel: UILabel!
   
-  func configure(_ movie: Movie) {
-    imageLoader.loadTMDBImage(with: movie.posterPath, to: backdropImageView)
-    titleLabel.text = movie.title
-    releaseDateLabel.text = movie.releaseDate
-    overviewLabel.text = movie.overview
+  func configure(_ item: MediaItemType) {
+    imageLoader.loadTMDBImage(with: item.posterPath, to: backdropImageView)
+    titleLabel.text = item.name
+    releaseDateLabel.text = item.date
+    overviewLabel.text = item.overview
   }
 }

@@ -28,10 +28,10 @@ final class DashboardViewModel: BaseViewModel {
   // MARK: - Output
 
   private let errorObserver = BehaviorSubject<String>(value: "")
-  private let popularResultObserver = BehaviorSubject<MoviePage>(value: .init())
-  private let freeWatchMovieResultObserver = BehaviorSubject<MoviePage>(value: .init())
-  private let freeWatchTvResultObserver = BehaviorSubject<TvPage>(value: .init())
-  private let trendingResultObserver = BehaviorSubject<MoviePage>(value: .init())
+  private let popularResultObserver = BehaviorSubject<MediaPage>(value: .init())
+  private let freeWatchMovieResultObserver = BehaviorSubject<MediaPage>(value: .init())
+  private let freeWatchTvResultObserver = BehaviorSubject<MediaPage>(value: .init())
+  private let trendingResultObserver = BehaviorSubject<MediaPage>(value: .init())
 
   init(movieUseCase: MovieUseCaseType, tvUseCase: TvUseCaseType) {
     self.movieUseCase = movieUseCase
@@ -64,20 +64,19 @@ extension DashboardViewModel: DashboardViewModelType {
   var input: DashboardViewModelInputType {
     return self
   }
-
   var output: DashboardViewModelOutputType {
     return self
   }
 }
 
 extension DashboardViewModel: DashboardViewModelInputType {
-  var fetchDiscoverMovies: AnyObserver<(page: Int, category: DiscoverCategory)> {
+  var fetchDiscover: AnyObserver<(page: Int, category: DiscoverCategory)> {
     return fetchPopularObserver.asObserver()
   }
-  var fetchFreeWatchMovies: AnyObserver<(page: Int, category: DiscoverCategory)> {
+  var fetchFreeWatchMovie: AnyObserver<(page: Int, category: DiscoverCategory)> {
     return fetchFreeWatchMovieObserver.asObserver()
   }
-  var fetchFreeWatchTvs: AnyObserver<(page: Int, category: DiscoverCategory)> {
+  var fetchFreeWatchTv: AnyObserver<(page: Int, category: DiscoverCategory)> {
     return fetchFreeWatchTvObserver.asObserver()
   }
   var fetchTrending: AnyObserver<DiscoverCategory> {
@@ -86,20 +85,15 @@ extension DashboardViewModel: DashboardViewModelInputType {
 }
 
 extension DashboardViewModel: DashboardViewModelOutputType {
-  var fetchPopularResult: ActionResult<MoviePage> {
+  var fetchPopularResult: ActionResult<MediaPage> {
     return movieUseCase.output.fetchPopularResult
   }
-  var fetchFreeWatchMoviesResult: ActionResult<MoviePage> {
+  var fetchFreeWatchMovieResult: ActionResult<MediaPage> {
     return movieUseCase.output.fetchFreeWatchMovieResult
   }
-  var fetchTrendingMoviesResult: ActionResult<MoviePage> {
+  var fetchFreeWatchTvResult: ActionResult<MediaPage> {
+    return movieUseCase.output.fetchFreeWatchMovieResult
+  }
+  var fetchTrendingResult: ActionResult<MediaPage> {
     return movieUseCase.output.fetchTrendingResult
-  }
-  var fetchFreeWatchTvsResult: ActionResult<TvPage> {
-    return tvUseCase.output.fetchFreeWatchTvResult
-  }
-  
-  var fetchTrendingTvsResult: ActionResult<TvPage> {
-    return tvUseCase.output.fetchTrendingResult
-  }
-}
+  }}

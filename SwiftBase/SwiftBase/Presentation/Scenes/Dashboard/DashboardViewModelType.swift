@@ -14,18 +14,15 @@ protocol DashboardViewModelType {
   var input: DashboardViewModelInputType { get }
   var output: DashboardViewModelOutputType { get }
 }
-
 protocol DashboardViewModelInputType {
-  var fetchDiscoverMovies: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
-  var fetchFreeWatchMovies: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
-  var fetchFreeWatchTvs: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
+  var fetchDiscover: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
+  var fetchFreeWatchMovie: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
+  var fetchFreeWatchTv: AnyObserver<(page: Int, category: DiscoverCategory)> { get }
   var fetchTrending: AnyObserver<DiscoverCategory> { get }
 }
-
 protocol DashboardViewModelOutputType {
-  var fetchPopularResult: ActionResult<MoviePage> { get }
-  var fetchFreeWatchMoviesResult: ActionResult<MoviePage> { get }
-  var fetchFreeWatchTvsResult: ActionResult<TvPage> { get }
-  var fetchTrendingMoviesResult: ActionResult<MoviePage> { get }
-  var fetchTrendingTvsResult: ActionResult<TvPage> { get }
+  var fetchPopularResult: ActionResult<MediaPage> { get }
+  var fetchFreeWatchMovieResult: ActionResult<MediaPage> { get }
+  var fetchFreeWatchTvResult: ActionResult<MediaPage> { get }
+  var fetchTrendingResult: ActionResult<MediaPage> { get }
 }

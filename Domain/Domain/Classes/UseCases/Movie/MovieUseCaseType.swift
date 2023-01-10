@@ -21,7 +21,7 @@ public protocol MovieUseCaseInputType {
 }
 
 public protocol MovieUseCaseOutputType {
-  var fetchPopularResult: ActionResult<MoviePage> { get }
-  var fetchFreeWatchMovieResult: ActionResult<MoviePage> { get }
-  var fetchTrendingResult: ActionResult<MoviePage> { get }
+  var fetchPopularResult: ActionResult<MediaPage> { get }
+  var fetchFreeWatchMovieResult: ActionResult<MediaPage> { get }
+  var fetchTrendingResult: ActionResult<MediaPage> { get }
 }

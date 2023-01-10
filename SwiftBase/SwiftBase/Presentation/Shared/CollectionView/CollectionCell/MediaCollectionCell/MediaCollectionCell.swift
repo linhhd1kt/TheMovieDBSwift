@@ -8,17 +8,17 @@
 import UIKit
 import Domain
 
-class MovieCollectionCell: ShadowCollectionCell {
+class MediaCollectionCell: ShadowCollectionCell {
   @IBOutlet private var posterImage: UIImageView!
   @IBOutlet private var voteView: CircleView!
   @IBOutlet private var movieTitleLabel: UILabel!
   @IBOutlet private var releaseDateLabel: UILabel!
 
-  func configure(_ model: Movie) {
-    imageLoader.loadTMDBImage(with: model.posterPath, to: posterImage)
-    movieTitleLabel.text = model.title
-    releaseDateLabel.text = model.releaseDate
-    voteView.createCircularPath(percentage: model.voteAverage)
+  func configure(_ item: MediaItemType) {
+    imageLoader.loadTMDBImage(with: item.posterPath, to: posterImage)
+    movieTitleLabel.text = item.name
+    releaseDateLabel.text = item.date
+    voteView.createCircularPath(percentage: item.voteAverage)
     voteView.progressAnimation(duration: 2)
   }
 }

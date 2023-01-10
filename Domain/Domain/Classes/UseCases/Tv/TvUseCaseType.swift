@@ -20,6 +20,6 @@ public protocol TvUseCaseInputType {
 }
 
 public protocol TvUseCaseOutputType {
-  var fetchFreeWatchTvResult: ActionResult<TvPage> { get }
-  var fetchTrendingResult: ActionResult<TvPage> { get }
+  var fetchFreeWatchTvResult: ActionResult<MediaPage> { get }
+  var fetchTrendingResult: ActionResult<MediaPage> { get }
 }

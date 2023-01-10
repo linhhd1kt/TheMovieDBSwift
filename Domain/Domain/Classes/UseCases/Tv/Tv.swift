@@ -7,7 +7,7 @@
 
 import Data
 
-public struct Tv {
+public struct Tv: MediaItemType {
   public let id: Int
   public let posterPath: String
   public let originCountry: [String]
@@ -22,6 +22,10 @@ public struct Tv {
   public let voteCount: Int
   public let video: Bool
   public let voteAverage: Double
+  
+  public var date: String {
+    return firstAirDate
+  }
 
   public init(id: Int,
               posterPath: String,
