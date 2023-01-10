@@ -939,7 +939,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 9999;
 				ORGANIZATIONNAME = "HaLinh Co., Ltd.";
 				TargetAttributes = {
 					DC26B0BC2938840000EB7B37 = {
