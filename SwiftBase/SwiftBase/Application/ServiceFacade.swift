@@ -17,7 +17,7 @@ extension Container {
 }
 
 enum ServiceFacade {
-  private static let design: Designable = DefautDesign()
+  private static let design: DesignType = DefautDesign()
   private static let logger: LoggerType = Logger()
   private static let appCoordinator: CoordinatorType = AppCoordinator()
   private static let appConfig: AppConfigType = AppConfig()
@@ -37,7 +37,7 @@ enum ServiceFacade {
   }
 
   private static func initializeService() {
-    Container.default.register(Designable.self) { _ in
+    Container.default.register(DesignType.self) { _ in
       ServiceFacade.design
     }
     Container.default.register(LoggerType.self) { _ in

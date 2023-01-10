@@ -8,13 +8,13 @@
 import ObjectiveC
 import UIKit
 
-public protocol Designable {
+public protocol DesignType {
   var style: StyleType { get }
   func toggleTheme()
   func initialized()
 }
 
-open class DefautDesign: Designable {
+open class DefautDesign: DesignType {
   public let style: StyleType = LightStyle()
   var userInterFaceStyle: UIUserInterfaceStyle = .light
 
@@ -52,7 +52,7 @@ open class DefautDesign: Designable {
 private var designContext: UInt8 = 1
 
 public protocol HasDeSign: AnyObject {
-  var design: Designable { get set }
+  var design: DesignType { get set }
 }
 
 public extension HasDeSign {
@@ -64,10 +64,10 @@ public extension HasDeSign {
     return result
   }
 
-  var design: Designable {
+  var design: DesignType {
     get {
       return synchronizedDesign {
-        if let designObject = objc_getAssociatedObject(self, &designContext) as? Designable {
+        if let designObject = objc_getAssociatedObject(self, &designContext) as? DesignType {
           return designObject
         }
         let designObject = DefautDesign()

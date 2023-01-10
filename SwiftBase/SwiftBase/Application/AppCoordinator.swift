@@ -12,8 +12,8 @@ import Services
 import SideMenu
 
 final class AppCoordinator: BaseCoordinator {
-  private var design: Designable {
-    guard let design = ServiceFacade.getService(Designable.self) else {
+  private var design: DesignType {
+    guard let design = ServiceFacade.getService(DesignType.self) else {
       fatalError("Design should be initilized!")
     }
     return design
