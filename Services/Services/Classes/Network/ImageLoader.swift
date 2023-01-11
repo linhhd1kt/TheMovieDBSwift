@@ -16,27 +16,37 @@ public protocol ImageLoaderType {
 }
 
 public final class ImageLoader: ImageLoaderType {
-  
   private let baseImageURL: URL
-  
+
   public init(baseImageURL: URL) {
     self.baseImageURL = baseImageURL
   }
   
   public func loadImage(with urlString: String?, to imageView: UIImageView) {
     guard let urlString = urlString,
-          let url = URL(string: urlString)
-    else {
+          let url = URL(string: urlString) else {
       return
     }
-    imageView.kf.setImage(with: url)
+    self.loadImage(with: url, to: imageView)
   }
   
   public func loadTMDBImage(with id: String?, to imageView: UIImageView) {
-      guard let id = id else {
-          return
-      }
-      let url = baseImageURL.appendingPathComponent("t/p/w185").appendingPathComponent(id)
-      imageView.kf.setImage(with: url)
+    guard let id = id else {
+      return
+    }
+    let url = self.baseImageURL.appendingPathComponent("t/p/w185").appendingPathComponent(id)
+    self.loadImage(with: url, to: imageView)
+  }
+  
+  private func loadImage(with url: URL, to imageView: UIImageView) {
+    imageView.kf.indicatorType = .activity
+    imageView.kf.setImage(
+      with: url,
+      placeholder: UIImage(systemName: "photo"),
+      options: [
+        .processor(DownsamplingImageProcessor(size: imageView.bounds.size)),
+        .scaleFactor(UIScreen.main.scale),
+        .cacheOriginalImage
+      ])
   }
 }

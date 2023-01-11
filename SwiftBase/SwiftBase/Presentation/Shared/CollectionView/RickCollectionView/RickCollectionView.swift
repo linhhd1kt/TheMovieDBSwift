@@ -13,18 +13,17 @@ import Domain
 import Services
 import Extension
 import Data
+import Design
 
 class RickCollectionView<Page: Paginated>: UICollectionView {
   private let reloadObserver = PublishSubject<Void>()
   private let itemsObserver = BehaviorRelay<Page>(value: .init())
 
   // MARK: - Input
-
   private let resultObserver = PublishSubject<Page>()
   private let resetObserver = PublishSubject<Void>()
 
   // MARK: - Output
-
   private let nextPageObserver = PublishSubject<Int>()
 
   var logger: Logger {
@@ -32,6 +31,13 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
       fatalError("Logger should be implemented!")
     }
     return logger
+  }
+  
+  var design: DesignType {
+    guard let design = ServiceFacade.getService(DesignType.self) else {
+      fatalError("Design should be implemented!")
+    }
+    return design
   }
 
   required init?(coder: NSCoder) {
@@ -50,6 +56,7 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
     layout.minimumLineSpacing = 0
     self.init(frame: .zero, collectionViewLayout: layout)
     contentInsetAdjustmentBehavior = .never
+    backgroundColor = design.style.colors.background
     logger.debug("\(className) is initialized.")
   }
 
