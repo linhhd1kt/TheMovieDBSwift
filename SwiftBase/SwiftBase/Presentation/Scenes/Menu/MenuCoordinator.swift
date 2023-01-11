@@ -70,7 +70,7 @@ class MenuCoordinator: BaseCoordinator {
 
   func selectScreen(_ screen: Screen) {
     removeChildCoordinators()
-    logger.info("MenuCoordinator select screen: \(screen)")
+    logger.info("Menu coordinator select screen: \(screen)")
     switch screen {
     case .signIn:
       showLogin()

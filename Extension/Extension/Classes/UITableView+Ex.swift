@@ -24,7 +24,7 @@ public extension UITableView {
   func registerFromPod<T: UITableViewCell>(_: T.Type, from controller: UIViewController) {
     let podBundle = Bundle(for: T.classForCoder())
     guard let bundleURL = podBundle.url(forResource: controller.moduleName, withExtension: "bundle") else {
-      fatalError("Cound not get bundle url from JinjerKit!")
+      fatalError("Cound not get bundle url from Domain!")
     }
     guard let bundle = Bundle(url: bundleURL) else {
       fatalError("Could not initial bundle from \(bundleURL)")

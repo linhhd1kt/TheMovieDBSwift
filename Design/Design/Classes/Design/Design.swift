@@ -10,19 +10,25 @@ import UIKit
 
 public protocol DesignType {
   var style: StyleType { get }
+  var userInterFaceStyle: UIUserInterfaceStyle { get }
   func toggleTheme()
   func initialized()
 }
 
 open class DefautDesign: DesignType {
   public let style: StyleType = LightStyle()
-  var userInterFaceStyle: UIUserInterfaceStyle = .light
+  public var userInterFaceStyle: UIUserInterfaceStyle = .light
 
   public init() {}
 
   open func initialized() {
     UIFont.overrideDefaultTypography()
-    setTheme(.light)
+    let isDarkInterface = UserDefaults.standard.bool(forKey: "theme")
+    if isDarkInterface {
+      setTheme(.dark)
+    } else {
+      setTheme(.light)
+    }
   }
 
   open func toggleTheme() {
@@ -44,8 +50,9 @@ open class DefautDesign: DesignType {
     userInterFaceStyle = style
     let scenes = UIApplication.shared.connectedScenes
     let windowScenes = scenes.first as? UIWindowScene
-    let window = windowScenes?.windows.first
-    window?.overrideUserInterfaceStyle = style
+    windowScenes?.windows.first?.overrideUserInterfaceStyle = style
+    let isDarkInterface = style == .dark
+    UserDefaults.standard.set(isDarkInterface, forKey: "theme")
   }
 }
 

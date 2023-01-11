@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint JinjerKit.podspec' to ensure this is a
+# Be sure to run `pod lib lint Domain.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -36,12 +36,8 @@ TODO: Add long description of the pod here.
     'Domain' => ['Domain/Classes/**/*.{png,jpeg,jpg,storyboard,xib}']
   }
   
-#  s.resources = ['JinjerKit/**/*.{xcassets,xib}']
-
   s.public_header_files = 'Pod/Classes/**/*.h'
 
-#  s.frameworks = 'UIKit'
-  
   s.dependency 'MJRefresh'
   s.dependency 'SideMenu'
   s.dependency 'RxDataSources'

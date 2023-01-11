@@ -9,29 +9,47 @@ import Action
 import PopupDialog
 import RxSwift
 import Extension
+import Services
+import Design
 
 open class BaseViewController: UIViewController {
-  override public var preferredStatusBarStyle: UIStatusBarStyle {
-    return .darkContent
+  open override var preferredStatusBarStyle: UIStatusBarStyle {
+    return design.userInterFaceStyle == .dark ? .darkContent : .lightContent
   }
-
   fileprivate var okActionObserver = PublishSubject<Void>()
   fileprivate var cancelActionObserber = PublishSubject<Void>()
-
-  @available(*, unavailable)
+  
+  private var design: DesignType {
+    guard let design = ServiceFacade.getService(DesignType.self) else {
+      fatalError("Design should be implemented!")
+    }
+    return design
+  }
+  
+  private var logger: LoggerType {
+    guard let logger = ServiceFacade.getService(LoggerType.self) else {
+      fatalError("Logger should be implemented!")
+    }
+    return logger
+  }
+  
   public required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
   public init() {
     super.init(nibName: nil, bundle: nil)
+    logger.debug("\(self.className) is initialized.", functionName: #function, fileName: #file, lineNumber: #line)
   }
 
   override open func viewDidLoad() {
     super.viewDidLoad()
+    overrideUserInterfaceStyle = design.userInterFaceStyle
   }
 
-  deinit {}
+  deinit {
+    logger.debug("\(self.className) is release.", functionName: #function, fileName: #file, lineNumber: #line)
+  }
 }
 
 extension BaseViewController: HasDisposeBag {}

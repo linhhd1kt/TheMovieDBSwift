@@ -56,7 +56,7 @@ class RickCollectionView<Page: Paginated>: UICollectionView {
     layout.minimumLineSpacing = 0
     self.init(frame: .zero, collectionViewLayout: layout)
     contentInsetAdjustmentBehavior = .never
-    backgroundColor = design.style.colors.background
+    backgroundColor = .clear
     logger.debug("\(className) is initialized.")
   }
 

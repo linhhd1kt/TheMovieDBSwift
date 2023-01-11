@@ -22,7 +22,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" interfaceStyle="dark" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" interfaceStyle="dark" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="488" height="1620"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -81,7 +81,8 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" name="background"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" name="surface-tint"/>
                     <constraints>
                         <constraint firstItem="eqn-B1-r0g" firstAttribute="trailing" secondItem="mb8-B7-nzh" secondAttribute="trailing" id="0lo-Bt-s5S"/>
                         <constraint firstItem="eqn-B1-r0g" firstAttribute="bottom" secondItem="mb8-B7-nzh" secondAttribute="bottom" id="3v3-m8-92r"/>
@@ -95,6 +96,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="N1M-wV-zPR"/>
             <color key="backgroundColor" name="background"/>
+            <color key="tintColor" name="surface-tint"/>
             <constraints>
                 <constraint firstItem="Vvu-gK-cYG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0td-Qv-Tcb"/>
                 <constraint firstItem="JZ3-eH-Ndy" firstAttribute="leading" secondItem="N1M-wV-zPR" secondAttribute="leading" constant="40" id="2td-X4-0Y7"/>
@@ -114,6 +116,9 @@
     <resources>
         <namedColor name="background">
             <color red="0.9649999737739563" green="0.99599999189376831" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="surface-tint">
+            <color red="0.17299999296665192" green="0.34900000691413879" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

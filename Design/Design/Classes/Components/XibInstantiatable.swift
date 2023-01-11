@@ -50,19 +50,4 @@ public extension XibInstantiatable where Self: UIView {
     
     attach(view)
   }
-  
-//  func loadFromXib(xibName _: String = Self.className) {
-//    let podBundle = Bundle(for: classForCoder)
-//    guard let bundleURL = podBundle.url(forResource: "Design", withExtension: "bundle") else {
-//      fatalError("Cound not get bundle url from Jinjer!")
-//    }
-//    guard let bundle = Bundle(url: bundleURL) else {
-//      fatalError("Could not initial bundle from \(bundleURL)")
-//    }
-//    let nib = UINib(nibName: className, bundle: bundle)
-//    guard let view = nib.instantiate(withOwner: self, options: nil)[0] as? UIView else {
-//      fatalError("Could not load view from class \(className)")
-//    }
-//    attach(view)
-//  }
 }

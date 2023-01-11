@@ -44,6 +44,7 @@ public final class ImageLoader: ImageLoaderType {
       with: url,
       placeholder: UIImage(systemName: "photo"),
       options: [
+        .transition(.fade(0.2)),
         .processor(DownsamplingImageProcessor(size: imageView.bounds.size)),
         .scaleFactor(UIScreen.main.scale),
         .cacheOriginalImage

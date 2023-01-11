@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint DesignKit.podspec' to ensure this is a
+# Be sure to run `pod lib lint Design.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Design'
   s.version          = '0.1.1'
-  s.summary          = 'A short description of DesignKit.'
+  s.summary          = 'A short description of Design.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '13129840' => 'linh.hd@neo-lab.vn' }
-  s.source           = { :git => 'https://github.com/13129840/DesignKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/13129840/Design.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '13.0'
