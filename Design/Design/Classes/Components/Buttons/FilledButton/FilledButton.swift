@@ -58,7 +58,6 @@ public extension Reactive where Base: FilledButton {
   var tap: Observable<Void> {
     return base.button.rx.tap.asObservable()
   }
-
   var enabled: Binder<Bool> {
     return base.button.rx.isEnabled
   }

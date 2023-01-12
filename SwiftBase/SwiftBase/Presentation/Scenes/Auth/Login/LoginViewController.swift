@@ -14,9 +14,9 @@ import UIKit
 final class LoginViewController: RickViewController {
   @IBOutlet private var usernameInput: Input!
   @IBOutlet private var passwordInput: Input!
-  @IBOutlet private var loginButton: UIButton!
-  @IBOutlet private var forgotPasswordButton: UIButton!
-  @IBOutlet private var registerButton: UIButton!
+  @IBOutlet private var loginButton: FilledButton!
+  @IBOutlet private var forgotPasswordButton: FilledButton!
+  @IBOutlet private var registerButton: FilledButton!
 
   private let viewModel: LoginViewModelType
 
@@ -54,7 +54,7 @@ final class LoginViewController: RickViewController {
 
   private func bindOutput(_ output: LoginViewModelOutputType) {
     output.loginResult.enabled
-      .bind(to: loginButton.rx.isEnabled)
+      .bind(to: loginButton.rx.enabled)
       .disposed(by: disposeBag)
     output.loginResult.errors
       .bind(to: rx.showError)
