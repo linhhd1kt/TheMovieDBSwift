@@ -15,8 +15,7 @@ class LoginCoordinator: BaseCoordinator {
 
   init(navigationController: UINavigationController,
        viewModel: LoginViewModelType,
-       navigationViewModel: NavigationViewModelType)
-  {
+       navigationViewModel: NavigationViewModelType) {
     self.viewModel = viewModel
     self.navigationViewModel = navigationViewModel
     super.init(navigationController: navigationController)

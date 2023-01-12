@@ -47,6 +47,13 @@ class MenuCoordinator: BaseCoordinator {
     }
     return network
   }
+  
+  private var config: AppConfigType {
+    guard let config = ServiceFacade.getService(AppConfigType.self) else {
+      fatalError("App Config should be initilized!")
+    }
+    return config
+  }
 
   init(navigationController: UINavigationController, navigationViewModel: NavigationViewModelType){
     // initial navigation items
@@ -69,10 +76,11 @@ class MenuCoordinator: BaseCoordinator {
   }
 
   func selectScreen(_ screen: Screen) {
-    removeChildCoordinators()
+    
     logger.info("Menu coordinator select screen: \(screen)")
     switch screen {
     case .signIn:
+      removeChildCoordinators()
       showLogin()
     case .profile:
       if let menu = SideMenuManager.default.leftMenuNavigationController {
@@ -80,15 +88,18 @@ class MenuCoordinator: BaseCoordinator {
           .present(menu, animated: true, completion: nil)
       }
     case .signOut:
+      removeChildCoordinators()
       navigationController.dismiss(animated: true)
       showLogin()
     case .signUp:
       print("tap sign up in profile menu")
     case .toggleTheme:
+      removeChildCoordinators()
       design.toggleTheme()
       navigationController.dismiss(animated: true)
       (parentCoordinator as? ThemeUpdateListener)?.didToggleTheme()
     case .dashboard:
+      removeChildCoordinators()
       let movieRepository = MovieRepository(network: network)
       let movieTranslator = MovieTranslator()
       let movieUsecase = MovieUseCase(repository: movieRepository,
@@ -103,6 +114,10 @@ class MenuCoordinator: BaseCoordinator {
                                              viewModel: viewModel,
                                              navigationViewModel: navigationViewModel)
       start(coordinator: coordinator)
+    case .toggleLanguage:
+      // current ios not support
+      navigationController.dismiss(animated: true)
+      config.toggleLanguage()
     default:
       break
     }

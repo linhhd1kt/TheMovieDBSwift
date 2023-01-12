@@ -15,6 +15,7 @@ import Services
 public protocol AppConfigType {
   func configureAppearance()
   func configureLanguage()
+  func toggleLanguage()
 }
 
 public final class AppConfig: AppConfigType {
@@ -69,13 +70,23 @@ public final class AppConfig: AppConfigType {
   }
 
   public func configureLanguage() {
-    // TODO: set en for debug, ja for build and run
-    #if DEVELOPMENT
-      let lang = "en"
-    #else
-      let lang = "ja"
-    #endif
     let defaults = UserDefaults.standard
+    let lang = defaults.stringArray(forKey: "AppleLanguages")?.first
+    if lang == nil {
+      defaults.set(["ja"], forKey: "AppleLanguages")
+      defaults.synchronize()
+      Bundle.setLanguage(lang)
+    }
+  }
+  
+  public func toggleLanguage() {
+    let defaults = UserDefaults.standard
+    var lang = defaults.stringArray(forKey: "AppleLanguages")?.first
+    if lang == "en" {
+      lang = "ja"
+    } else {
+      lang = "en"
+    }
     defaults.set([lang], forKey: "AppleLanguages")
     defaults.synchronize()
     Bundle.setLanguage(lang)
