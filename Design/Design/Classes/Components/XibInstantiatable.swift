@@ -31,7 +31,7 @@ public extension XibInstantiatable where Self: UIView {
 
   func loadFromXib(xibName _: String = Self.className, moduleName: String? = nil) {
     var nib: UINib
-    if let moduleName = moduleName {
+    if let moduleName = moduleName {      
       let podBundle = Bundle(for: classForCoder)
       guard let bundleURL = podBundle.url(forResource: moduleName, withExtension: "bundle") else {
         fatalError("Cound not get bundle url from \(moduleName)!")

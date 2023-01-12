@@ -81,7 +81,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="background"/>
                     <color key="tintColor" name="surface-tint"/>
                     <constraints>
                         <constraint firstItem="eqn-B1-r0g" firstAttribute="trailing" secondItem="mb8-B7-nzh" secondAttribute="trailing" id="0lo-Bt-s5S"/>

@@ -1357,6 +1357,7 @@
 				DEVELOPMENT_TEAM = Q9JV89N8T3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftBase/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TMDB;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
@@ -1394,6 +1395,7 @@
 				DEVELOPMENT_TEAM = Q9JV89N8T3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftBase/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TMDB;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
@@ -1533,6 +1535,7 @@
 				DEVELOPMENT_TEAM = Q9JV89N8T3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftBase/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TMDB;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
@@ -1651,6 +1654,7 @@
 				DEVELOPMENT_TEAM = Q9JV89N8T3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftBase/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TMDB;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
@@ -1770,6 +1774,7 @@
 				DEVELOPMENT_TEAM = Q9JV89N8T3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftBase/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TMDB;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";

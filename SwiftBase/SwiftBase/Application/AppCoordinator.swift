@@ -26,9 +26,12 @@ final class AppCoordinator: BaseCoordinator {
     return network
   }
 
-  private let navigationViewModel: NavigationViewModelType
+  private var navigationViewModel: NavigationViewModelType
+  private let window: UIWindow
 
-  init(navigationViewModel: NavigationViewModelType = NavigationViewModel()) {
+  init(navigationViewModel: NavigationViewModelType = NavigationViewModel(),
+       window: UIWindow) {
+    self.window = window
     self.navigationViewModel = navigationViewModel
     let navigationController = UINavigationController()
     super.init(navigationController: navigationController)
@@ -36,6 +39,8 @@ final class AppCoordinator: BaseCoordinator {
   }
 
   override func start() {
+    window.rootViewController = navigationController
+    window.makeKeyAndVisible()
     setUpSideMenu()
     showMenu()
   }
@@ -72,5 +77,22 @@ final class AppCoordinator: BaseCoordinator {
     settings.menuWidth = max(round(min(UIScreen.main.bounds.width, UIScreen.main.bounds.height) * 0.75), 240)
     settings.statusBarEndAlpha = 0.0
     leftMenuNavigationController.settings = settings
+  }
+}
+
+protocol ThemeUpdateListener {
+  func didToggleTheme()
+}
+
+extension AppCoordinator: ThemeUpdateListener {
+  func didToggleTheme() {
+    self.navigationController = UINavigationController()
+    window.rootViewController = self.navigationController
+    window.makeKeyAndVisible()
+    self.navigationViewModel = NavigationViewModel()
+    let coordinator = MenuCoordinator(navigationController: navigationController,
+                                      navigationViewModel: navigationViewModel)
+    start(coordinator: coordinator)
+
   }
 }

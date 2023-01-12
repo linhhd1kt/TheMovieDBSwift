@@ -19,7 +19,7 @@ extension Container {
 enum ServiceFacade {
   private static let design: DesignType = DefautDesign()
   private static let logger: LoggerType = Logger()
-  private static let appCoordinator: CoordinatorType = AppCoordinator()
+//  private static let appCoordinator: CoordinatorType = AppCoordinator()
   private static let appConfig: AppConfigType = AppConfig()
 
   private static let network: Networking = Network(endPoint: Environment.shared.baseUrl,
@@ -43,9 +43,9 @@ enum ServiceFacade {
     Container.default.register(LoggerType.self) { _ in
       ServiceFacade.logger
     }
-    Container.default.register(CoordinatorType.self) { _ in
-      ServiceFacade.appCoordinator
-    }
+//    Container.default.register(CoordinatorType.self) { _ in
+//      ServiceFacade.appCoordinator
+//    }
     Container.default.register(ResponseParserType.self) { _ in
       ServiceFacade.responseParser
     }

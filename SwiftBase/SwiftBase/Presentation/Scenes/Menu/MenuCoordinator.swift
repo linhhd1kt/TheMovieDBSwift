@@ -87,6 +87,7 @@ class MenuCoordinator: BaseCoordinator {
     case .toggleTheme:
       design.toggleTheme()
       navigationController.dismiss(animated: true)
+      (parentCoordinator as? ThemeUpdateListener)?.didToggleTheme()
     case .dashboard:
       let movieRepository = MovieRepository(network: network)
       let movieTranslator = MovieTranslator()

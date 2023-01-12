@@ -11,7 +11,7 @@ import SideMenu
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-  var window: UIWindow?
+//  var window: UIWindow?
   private var appCoordinator: CoordinatorType?
 
   func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
@@ -19,10 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       return
     }
     let window = UIWindow(windowScene: windowScene)
-    appCoordinator = ServiceFacade.getService(CoordinatorType.self)
-    window.rootViewController = appCoordinator?.navigationController
-    self.window = window
-    window.makeKeyAndVisible()
+    appCoordinator = AppCoordinator(window: window)
     appCoordinator?.start()
   }
 
